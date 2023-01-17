@@ -1,0 +1,68 @@
+{
+    "name": "msfs-pages",
+    "private": true,
+    "version": "1.0.0",
+    "author": {
+        "name": "diablohu"
+    },
+    "homepage": "https://github.com/cmux/koot#readme",
+    "license": "none",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cmux/koot.git"
+    },
+    "engines": {
+        "node": ">=12.20.0"
+    },
+    "scripts": {
+        "start": "koot-start",
+        "build": "koot-build",
+        "dev": "koot-dev",
+        "analyze": "koot-analyze",
+        "eslint": "eslint \"src/**/*.+(js|jsx)\"",
+        "check-types": "tsc --noEmit",
+        "prepare": "husky install",
+        "up": "yarn upgrade-interactive --latest"
+    },
+    "dependencies": {
+        "axios": "^0.27.2",
+        "bind-event": "^1.1.2",
+        "classnames": "^2.3.1",
+        "koot": "^0.15.12"
+    },
+    "devDependencies": {
+        "@types/classnames": "^2.3.0",
+        "autoprefixer": "^10.4.7",
+        "babel-eslint": "^10.1.0",
+        "cssnano": "^5.1.12",
+        "eslint": "^7.32.0",
+        "eslint-config-koot": "^3.1.1",
+        "husky": "^8.0.1",
+        "lint-staged": "^11.2.1",
+        "normalize.css": "^8.0.1",
+        "prettier": "^2.7.1",
+        "prettier-eslint": "^13.0.0",
+        "redux-logger": "^3.0.6",
+        "svg-url-loader": "^7.1.1"
+    },
+    "bugs": {
+        "url": "https://github.com/cmux/koot/issues"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,jsx,cjs,mjs,ts,tsx}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.{json,md,css,less,sass,scss}": [
+            "prettier --write"
+        ]
+    },
+    "koot": {
+        "version": "0.15.13"
+    }
+}

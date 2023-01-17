@@ -1,0 +1,228 @@
+@import '~vars.less';
+
+.component {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #000 no-repeat 50% 50%;
+    background-size: cover;
+    color: #fff;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 10vh 10vh 10vh 50px 15vh 15vh 1fr;
+
+    font-size: 1vw;
+    font-weight: 600;
+
+    & > .update {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        grid-column: 1 / span 2;
+        padding-left: 4vw;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 20px;
+            right: 20px;
+            border-right: 1px solid currentColor;
+        }
+    }
+
+    & > .title-free,
+    & > .title-paid {
+        grid-column: 15 / span 1;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5vw;
+        line-height: 2em;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 20px;
+            right: 20px;
+            border-left: 1px solid currentColor;
+        }
+    }
+
+    & > .title-free {
+        grid-row: 2 / span 3;
+    }
+    & > .title-paid {
+        grid-row: 6 / span 2;
+    }
+
+    & > .months,
+    & > .free-updates,
+    & > .paid-updates {
+        grid-column: 3 / span 12;
+        display: flex;
+        flex-flow: row nowrap;
+        & > * {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    & > .months {
+        grid-row: 5 / span 1;
+        .month > span {
+            background: Goldenrod;
+            padding: 8px 10px;
+            border-radius: 100px;
+        }
+    }
+
+    .free-update,
+    .paid-update {
+        & > span {
+            border: 1px solid currentColor;
+            width: calc(100% - 15px);
+            padding: 0.5em 0;
+            position: relative;
+            background: rgba(0, 0, 0, 1);
+            overflow: hidden;
+            & > span {
+                position: relative;
+                z-index: 5;
+            }
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 5px;
+                bottom: 5px;
+                left: 5px;
+                right: 5px;
+                z-index: 0;
+            }
+        }
+    }
+    .paid-update {
+        & > span {
+            &.has-content {
+                height: calc(100% - 15px);
+                display: flex;
+                flex-flow: column nowrap;
+                & > .img {
+                    flex: 10;
+                    display: block;
+                    object-fit: cover;
+                    width: 100%;
+                    top: -9px;
+                    position: relative;
+                }
+                & > span {
+                    flex: 1;
+                }
+                &::after {
+                    flex: none;
+                }
+            }
+        }
+    }
+
+    & > .sp {
+        grid-row: 2 / span 1;
+        .free-update > span::after {
+            background-color: Tomato;
+        }
+    }
+    & > .su,
+    & > .aau {
+        grid-row: 3 / span 1;
+    }
+    & > .su {
+        grid-row: 3 / span 1;
+        .free-update > span::after {
+            background-color: DodgerBlue;
+        }
+    }
+    & > .aau {
+        grid-row: 3 / span 1;
+        .free-update > span::after {
+            background-color: MediumBlue;
+        }
+    }
+    & > .wu,
+    & > .cu {
+        grid-row: 4 / span 1;
+    }
+    & > .wu {
+        grid-row: 4 / span 1;
+        .free-update > span::after {
+            background-color: MediumSeaGreen;
+        }
+    }
+    & > .cu {
+        grid-row: 4 / span 1;
+        .free-update > span::after {
+            background-color: DarkOliveGreen;
+        }
+    }
+    & > .ll {
+        grid-row: 6 / span 1;
+    }
+    & > .ff {
+        grid-row: 7 / span 1;
+    }
+
+    & > .info {
+        grid-column: 3 / span 12;
+        grid-row: 8 / span 1;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: 4vh;
+        font-size: 0.8vw;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+    }
+}
+
+.component.is-mask-mode {
+    color: #000;
+    background: #fff;
+
+    & > .months .month > span {
+        background: currentColor !important;
+    }
+    .free-update,
+    .paid-update {
+        & > span {
+            background: rgba(0, 0, 0, 0.25);
+        }
+    }
+    & > .free-updates {
+        .free-update > span::after {
+            background-color: currentColor !important;
+        }
+    }
+    & > .paid-updates {
+        .paid-update {
+            & > span {
+                &.has-content {
+                    & > .img {
+                        background: #000;
+                    }
+                }
+            }
+        }
+    }
+    & > .info {
+        opacity: 0.33333;
+    }
+}
