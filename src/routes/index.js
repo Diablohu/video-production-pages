@@ -48,6 +48,10 @@ export default {
                 require('@views/2023-full-year-plan').default,
             ],
             ['update-aau1', require('@views/update-aau1').default],
+            [
+                'best-small-airplanes-202301',
+                require('@views/best-small-airplanes-202301').default,
+            ],
         ].map(([path, component]) => ({
             path,
             component,
