@@ -40,7 +40,8 @@ html {
     }
 
     box-sizing: border-box;
-    color: @color-base;
+    // color: @color-base;
+    color: #fff;
     font-size: @root-font-size;
     text-decoration-skip-ink: auto;
     text-underline-position: under;
@@ -51,6 +52,10 @@ html {
 
     &[data-view-type='bg'] {
         background-image: url(./assets/bg.png);
+    }
+    &[data-view-type=''],
+    &[data-view-type='mask'] {
+        user-select: none;
     }
 }
 body {

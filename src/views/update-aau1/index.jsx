@@ -59,7 +59,16 @@ const AAU1 = extend({
                     textSize="lg"
                 />
             ))}
-            <div className="fixes"></div>
+            <div className="fixes">
+                <strong>其他改进</strong>
+                <ul>
+                    <li>
+                        优化【传统飞行模型】下或打开【辅助选项】时的直升机操控
+                    </li>
+                    <li>解决机场内停机坪和道路的完全积雪现象</li>
+                    <li>修正 XBOX 版地面地形细节问题</li>
+                </ul>
+            </div>
         </div>
     );
 });
