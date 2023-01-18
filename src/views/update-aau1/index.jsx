@@ -59,6 +59,7 @@ const AAU1 = extend({
                     textSize="lg"
                 />
             ))}
+            <div className="fixes"></div>
         </div>
     );
 });

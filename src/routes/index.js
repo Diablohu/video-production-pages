@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import routeCheck from 'koot/React/route-check';
 import App from '@views/app';
 
@@ -46,7 +47,7 @@ export default {
                 '2023-full-year-plan',
                 require('@views/2023-full-year-plan').default,
             ],
-            ['aau1', require('@views/aau1').default],
+            ['update-aau1', require('@views/update-aau1').default],
         ].map(([path, component]) => ({
             path,
             component,

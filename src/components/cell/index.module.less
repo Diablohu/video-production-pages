@@ -9,7 +9,7 @@
     align-items: flex-start;
 
     background: #000;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     overflow: hidden;
     color: #fff;
     padding: 15px 15px 10px 15px;
@@ -62,6 +62,14 @@
         background: #000 !important;
         color: transparent !important;
     }
+    .mod-mask({
+        background: #fff !important;
+        color: transparent !important;
+        text-shadow: none;
+        &::before {
+            display: none
+        }
+    });
 
     &.mod-text-size-lg {
         font-size: 1.2vw;

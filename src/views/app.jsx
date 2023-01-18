@@ -1,10 +1,8 @@
-import { StrictMode } from 'react';
+import { StrictMode, useState, useEffect, useCallback } from 'react';
 import { extend } from 'koot';
 import classNames from 'classnames';
 
-import Nav from '@components/nav';
-
-import styles from './app.module.less';
+import styles, { wrapper as classNameModule } from './app.module.less';
 
 // ============================================================================
 
@@ -24,6 +22,7 @@ const App = extend({
             {/* <Nav location={location} {...props} /> */}
             <Main children={children} />
         </div>
+        <Controls />
     </StrictMode>
 ));
 export default App;
@@ -31,3 +30,34 @@ export default App;
 // ============================================================================
 
 const Main = (props) => <main {...props} />;
+
+// ============================================================================
+
+const Controls = () => {
+    const [viewType, setViewType] = useState('bg');
+
+    useEffect(() => {
+        document.documentElement.setAttribute('data-view-type', viewType);
+    }, [viewType]);
+
+    const onButtonClick = useCallback((evt) => {
+        setViewType(
+            evt.nativeEvent.target.getAttribute('data-view-type') || ''
+        );
+    }, []);
+
+    return (
+        <div className={`${classNameModule}-controls`}>
+            {['', 'bg', 'mask'].map((t) => (
+                <button
+                    key={t}
+                    data-view-type={t}
+                    onClick={onButtonClick}
+                    className={classNames([{ 'is-active': t === viewType }])}
+                >
+                    {t.toUpperCase() || 'OUTPUT'}
+                </button>
+            ))}
+        </div>
+    );
+};

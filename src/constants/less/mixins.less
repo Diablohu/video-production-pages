@@ -74,3 +74,9 @@
     -webkit-hyphens: auto;
     hyphens: auto;
 }
+
+.mod-mask( @rules ) {
+    html[data-view-type='mask'] & {
+        @rules();
+    }
+}
