@@ -7,46 +7,49 @@ import styles from './index.module.less';
 // ============================================================================
 
 const SU = {
-    3: 'SU12',
+    3: 'SU_12',
 };
 const AAU = {
-    1: 'AAU1',
-    6: 'AAU2',
-    12: 'AAU3',
+    1: 'AAU_01',
+    6: 'AAU_02',
+    12: 'AAU_03',
 };
 const WU = {
-    2: ['WU12', '新西兰', ''],
-    4: 'WU13',
-    5: 'WU14',
-    10: 'WU15',
+    2: ['WU_12', '新西兰', ''],
+    4: 'WU_13',
+    5: 'WU_14',
+    10: 'WU_15',
 };
 const CU = {
-    6: 'CU2',
-    7: 'CU3',
-    8: 'CU4',
+    6: 'CU_02',
+    7: 'CU_03',
+    8: 'CU_04',
 };
 const SP = {
-    2: '惊喜',
+    2: '惊喜<br />AN-225',
     8: '惊喜',
     11: '惊喜',
 };
 const LL = {
-    2: ['LL8', 'DHC-4 驯鹿', require('./imgs/dhc-4.jpg')],
-    4: 'LL9',
-    5: 'LL10',
-    6: 'LL11',
-    7: 'LL12',
-    8: 'LL13',
-    10: 'LL14',
+    2: ['DHC-4 驯鹿', 'ORBX', require('./imgs/dhc-4.jpg')],
+    4: 'LL_09',
+    5: 'LL_10',
+    6: 'LL_11',
+    7: 'LL_12',
+    8: 'LL_13',
+    10: 'LL_14',
 };
 const FF = {
-    3: ['FF4', 'ATR-42/72', require('./imgs/atr-42.jpg')],
-    4: 'FF5',
-    5: 'FF6',
-    6: 'FF7',
-    7: 'FF8',
-    8: 'FF9',
-    10: 'FF10',
+    2: ['AN-225', 'iniBuilds', require('./imgs/an-225.jpg')],
+    3: ['AN-2', 'AT Sim.', require('./imgs/an-2.jpg')],
+    5: 'FF_05',
+    6: 'FF_06',
+    7: 'FF_07',
+    8: 'FF_08',
+    10: 'FF_09',
+};
+const ES = {
+    4: ['ATR-42/72', 'Hans & Alex', require('./imgs/atr-42.jpg')],
 };
 
 // Functional Component =======================================================
@@ -86,6 +89,11 @@ const FullYearPlan2023 = extend({
                 著名航空器
                 <br />
                 Famous Flyer
+            </div>
+            <div className="update es">
+                专业系列
+                <br />
+                Expert Series
             </div>
 
             <div className="title-free">
@@ -146,9 +154,15 @@ const FullYearPlan2023 = extend({
                 arr={FF}
                 mask={mask}
             />
+            <Group
+                className="paid-updates es"
+                classNameCell="paid-update"
+                arr={ES}
+                mask={mask}
+            />
 
             <div className="info">
-                官方已预告内容 | Diablohu | 2022/12/05 | fly-dbh.com
+                官方已预告内容 | Diablohu | 2023/02/03 | fly-dbh.com
             </div>
         </div>
     );
@@ -187,6 +201,11 @@ const Group = ({ className, classNameCell, arr, mask }) => (
                                     __html: hasImg
                                         ? arr[i + 1]
                                               .slice(0, arr[i + 1].length - 1)
+                                              .map((s, i) =>
+                                                  !i
+                                                      ? `<strong>${s}</strong>`
+                                                      : s
+                                              )
                                               .join('<br/>')
                                         : arr[i + 1],
                                 }}
