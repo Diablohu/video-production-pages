@@ -190,6 +190,37 @@
         grid-row: 8 / span 1;
     }
 
+    & > .current-month {
+        grid-row: 2 / span 7;
+        position: relative;
+        color: #0a0;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background: currentColor;
+        }
+        &::before {
+            top: 0;
+            bottom: -10px;
+            left: 0;
+            width: 1px;
+        }
+        &::after {
+            @size: 30px;
+            content: '✔';
+            color: #fff;
+            width: @size;
+            height: @size;
+            line-height: @size;
+            text-align: center;
+            background: #0a0;
+            top: 42.5%;
+            left: (0 - @size / 2);
+            border-radius: 50%;
+        }
+    }
+
     & > .info {
         grid-column: 3 / span 12;
         grid-row: 9 / span 1;

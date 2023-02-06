@@ -161,6 +161,13 @@ const FullYearPlan2023 = extend({
                 mask={mask}
             />
 
+            <span
+                className="current-month"
+                style={{
+                    gridColumn: `${3 + new Date().getMonth()} / span 1`,
+                }}
+            />
+
             <div className="info">
                 官方已预告内容 | Diablohu | 2023/02/03 | fly-dbh.com
             </div>
