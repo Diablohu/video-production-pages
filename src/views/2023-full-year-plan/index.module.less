@@ -215,7 +215,7 @@
             line-height: @size;
             text-align: center;
             background: #0a0;
-            top: 42.5%;
+            top: 42.75%;
             left: (0 - @size / 2);
             border-radius: 50%;
         }
@@ -262,6 +262,13 @@
                     }
                 }
             }
+        }
+    }
+    & > .current-month {
+        color: #000;
+        &::after {
+            color: #000;
+            background: #000;
         }
     }
     & > .info {
