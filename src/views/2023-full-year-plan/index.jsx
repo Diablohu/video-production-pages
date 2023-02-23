@@ -42,11 +42,11 @@ const LL = {
 const FF = {
     2: ['AN-225', 'iniBuilds', require('./imgs/an-225.jpg')],
     3: ['AN-2', 'AT Sim.', require('./imgs/an-2.jpg')],
-    5: 'FF_05',
-    6: 'FF_06',
-    7: 'FF_07',
-    8: 'FF_08',
-    10: 'FF_09',
+    5: 'FF_06',
+    6: 'FF_07',
+    7: 'FF_08',
+    8: 'FF_09',
+    10: 'FF_10',
 };
 const ES = {
     4: ['ATR-42/72', 'Hans & Alex', require('./imgs/atr-42.jpg')],

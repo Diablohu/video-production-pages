@@ -49,6 +49,10 @@ export default {
             ],
             ['update-aau1', require('@views/update-aau1').default],
             [
+                'update-202303-su12',
+                require('@views/update-202303-su12').default,
+            ],
+            [
                 'best-small-airplanes-202301',
                 require('@views/best-small-airplanes-202301').default,
             ],
