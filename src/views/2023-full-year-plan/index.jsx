@@ -32,12 +32,12 @@ const SP = {
 };
 const LL = {
     2: ['DHC-4 驯鹿', 'ORBX', require('./imgs/dhc-4.jpg')],
-    4: 'LL_09',
-    5: 'LL_10',
-    6: 'LL_11',
-    7: 'LL_12',
-    8: 'LL_13',
-    10: 'LL_14',
+    // 4: 'LL_09',
+    5: 'LL_09',
+    6: 'LL_10',
+    7: 'LL_11',
+    8: 'LL_12',
+    10: 'LL_13',
 };
 const FF = {
     2: ['AN-225', 'iniBuilds', require('./imgs/an-225.jpg')],
