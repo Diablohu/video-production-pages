@@ -6,16 +6,16 @@
     height: 100vh;
 
     display: grid;
-    grid-template-columns: 1.6fr 1.6fr 1fr;
+    grid-template-columns: 4fr 1fr;
     grid-template-rows: 1fr;
     gap: 20px;
-    padding: 200px 100px 125px 100px;
+    padding: 200px 50px 125px 50px;
     overflow: hidden;
 
     & > .changes {
         border: 1px solid #fff;
         border-radius: var(--border-radius);
-        grid-column: 1 / span 2;
+        grid-column: 1 / span 1;
         grid-row: 1 / span 1;
         background: rgba(0, 0, 0, 0.3333);
         display: flex;
@@ -27,7 +27,7 @@
             flex: 1;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
             padding: 1.5em 1em 0 2em;
-            font-size: 0.9vw;
+            font-size: 0.945vw;
             line-height: 1.45;
             font-weight: 400;
             .mod-mask({text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5) ;});
@@ -57,7 +57,7 @@
     }
 
     & > .releases {
-        grid-column: 3 / span 1;
+        grid-column: 2 / span 1;
         grid-row: 1 / span 1;
         display: flex;
         flex-flow: column nowrap;
