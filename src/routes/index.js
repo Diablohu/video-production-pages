@@ -53,6 +53,10 @@ export default {
                 require('@views/update-202303-su12').default,
             ],
             [
+                'update-202303-su12-summary',
+                require('@views/update-202303-su12-summary').default,
+            ],
+            [
                 'best-small-airplanes-202301',
                 require('@views/best-small-airplanes-202301').default,
             ],
