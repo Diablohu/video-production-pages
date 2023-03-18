@@ -34,7 +34,7 @@ const Main = (props) => <main {...props} />;
 // ============================================================================
 
 const Controls = () => {
-    const [viewType, setViewType] = useState('bg');
+    const [viewType, setViewType] = useState('bg-dark');
 
     useEffect(() => {
         document.documentElement.setAttribute('data-view-type', viewType);
@@ -48,7 +48,7 @@ const Controls = () => {
 
     return (
         <div className={`${classNameModule}-controls`}>
-            {['', 'bg', 'mask'].map((t) => (
+            {['', 'mask', 'bg-dark', 'bg-light'].map((t) => (
                 <button
                     key={t}
                     data-view-type={t}
