@@ -107,11 +107,13 @@ const SU12NotebleChanges = extend({
 })(({ className, params: { type } }) => {
     const isMask = useMemo(() => type === 'mask', [type]);
     const isDemo = useMemo(() => type === 'demo', [type]);
+    const isDark = useMemo(() => type === 'dark', [type]);
 
     return (
         <div
             className={classNames(className, {
                 'is-mask-mode': isMask === true,
+                'is-dark-mode': isDark === true,
             })}
         >
             <div className="upper">

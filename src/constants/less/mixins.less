@@ -81,6 +81,18 @@
     }
 }
 
+.mod-bg-dark( @rules ) {
+    html[data-view-type='bg-dark'] & {
+        @rules();
+    }
+}
+
+.mod-bg-light( @rules ) {
+    html[data-view-type='bg-light'] & {
+        @rules();
+    }
+}
+
 .title-style() {
     display: block;
     font-size: unit(5/3, em);

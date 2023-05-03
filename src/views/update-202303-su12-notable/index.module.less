@@ -101,5 +101,17 @@
     });
 }
 
-.component.is-mask-mode {
+.component.is-dark-mode {
+    .component-cell {
+        color: #fff;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
+        strong {
+            color: inherit;
+        }
+
+        .mod-mask({
+            text-shadow: 0 2px 5px rgba(255, 255, 255, 0.5);
+        });
+    }
 }

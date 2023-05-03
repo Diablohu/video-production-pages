@@ -8,6 +8,7 @@ import styles from './index.module.less';
 
 const SU = {
     3: 'SU_12',
+    8: 'SU_13',
 };
 const AAU = {
     1: 'AAU_01',
@@ -16,14 +17,13 @@ const AAU = {
 };
 const WU = {
     2: ['WU_12', '新西兰', ''],
-    4: 'WU_13',
-    5: 'WU_14',
+    4: ['WU_13', '大洋洲', ''],
+    7: ['WU_14 & CU_03', '捷克 & ?', ''],
     10: 'WU_15',
 };
 const CU = {
-    6: 'CU_02',
-    7: 'CU_03',
-    8: 'CU_04',
+    6: ['CU_02', '法国', ''],
+    8: 'CU_03',
 };
 const SP = {
     2: '惊喜<br />AN-225',
@@ -33,23 +33,24 @@ const SP = {
 const LL = {
     2: ['DHC-4 驯鹿', 'ORBX', require('./imgs/dhc-4.jpg')],
     // 4: 'LL_09',
-    5: 'LL_09',
-    6: 'LL_10',
-    7: 'LL_11',
-    8: 'LL_12',
+    6: ['Laté.631', 'BlueMesh', require('./imgs/latécoère-631.png')],
+    7: 'LL_10',
+    8: 'LL_11',
+    9: 'LL_12',
     10: 'LL_13',
+    11: 'LL_14',
 };
 const FF = {
     2: ['AN-225', 'iniBuilds', require('./imgs/an-225.jpg')],
     3: ['AN-2', 'AT Sim.', require('./imgs/an-2.jpg')],
-    5: 'FF_06',
-    6: 'FF_07',
-    7: 'FF_08',
-    8: 'FF_09',
-    10: 'FF_10',
+    6: 'FF_06',
+    7: 'FF_07',
+    8: 'FF_08',
+    9: 'FF_09',
+    12: 'FF_10',
 };
 const ES = {
-    4: ['ATR-42/72', 'Hans & Alex', require('./imgs/atr-42.jpg')],
+    4: ['ATR-42/72', 'S&H Sim.', require('./imgs/atr-42.jpg')],
 };
 
 // Functional Component =======================================================
@@ -169,7 +170,7 @@ const FullYearPlan2023 = extend({
             />
 
             <div className="info">
-                官方已预告内容 | Diablohu | 2023/03/06 | fly-dbh.com
+                官方已预告内容 | Diablohu | 2023/05/04 | fly-dbh.com
             </div>
         </div>
     );
