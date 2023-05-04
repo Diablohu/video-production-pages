@@ -1,10 +1,6 @@
 import { extend } from 'koot';
 
-import navItems from '@constants/nav-items';
-import { github as urlGithub } from '@constants/urls';
-
 import { Link } from 'react-router';
-import NavItem from '@components/nav/item';
 
 import styles from './index.module.less';
 
@@ -16,27 +12,33 @@ const PageHome = extend({
         metas: [{ description: __('pages.home.description') }],
     }),
     styles,
-})(({ className }) => (
-    <div className={className}>
-        <div className="wrapper">
-            <h2 className="title">Koot.js</h2>
-            <span className="intro">
-                {__('intro').map((str, index) => (
-                    <span className="line" key={index}>
-                        {str}
-                    </span>
+})(({ className, routes }) => {
+    const updates = [];
+    const others = [];
+
+    routes[0].childRoutes.forEach(({ path }) => {
+        if (/^update/.test(path)) updates.push(path);
+        else others.push(path);
+    });
+
+    return (
+        <div className={className}>
+            <div className="wrapper">
+                <h2 className="title">Updates</h2>
+                {updates.map((l) => (
+                    <Link className="link" to={`/${l}`} key={l}>
+                        {l}
+                    </Link>
                 ))}
-            </span>
-            <Link className="button-start" to="/start">
-                {__('pages.home.start')}
-            </Link>
+                <h2 className="title">Others</h2>
+                {others.map((l) => (
+                    <Link className="link" to={`/${l}`} key={l}>
+                        {l}
+                    </Link>
+                ))}
+            </div>
         </div>
-        <div className="nav">
-            {navItems.concat([[urlGithub, 'github']]).map((item, index) => (
-                <NavItem key={index} to={item} />
-            ))}
-        </div>
-    </div>
-));
+    );
+});
 
 export default PageHome;

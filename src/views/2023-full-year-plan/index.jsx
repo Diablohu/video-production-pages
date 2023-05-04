@@ -193,17 +193,20 @@ const Group = ({ className, classNameCell, arr, mask }) => (
                                 'has-content': hasImg,
                             })}
                         >
-                            {hasImg &&
-                                !!arr[i + 1][arr[i + 1].length - 1] &&
-                                (mask === true ? (
-                                    <i className="img"></i>
-                                ) : (
-                                    <img
-                                        src={arr[i + 1][arr[i + 1].length - 1]}
-                                        alt={arr[i + 1][0]}
-                                        className="img"
-                                    />
-                                ))}
+                            {hasImg && !!arr[i + 1][arr[i + 1].length - 1] && (
+                                <i className="img">
+                                    {mask === true ? null : (
+                                        <img
+                                            src={
+                                                arr[i + 1][
+                                                    arr[i + 1].length - 1
+                                                ]
+                                            }
+                                            alt={arr[i + 1][0]}
+                                        />
+                                    )}
+                                </i>
+                            )}
                             <span
                                 dangerouslySetInnerHTML={{
                                     __html: hasImg

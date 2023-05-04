@@ -66,27 +66,27 @@ export default {
             childRoutes: [{ path: ':type' }],
         })),
 
-        {
-            path: 'start',
-            getComponent: (nextState, cb) => {
-                import(
-                    /* webpackChunkName: "PageStart" */
-                    '@views/start'
-                ).then((module) => {
-                    if (routeCheck(nextState)) cb(null, module.default);
-                });
-            },
-        },
-        {
-            path: 'ts',
-            getComponent: (nextState, cb) => {
-                import(
-                    /* webpackChunkName: "PageTS" */
-                    '@views/ts-example'
-                ).then((module) => {
-                    if (routeCheck(nextState)) cb(null, module.default);
-                });
-            },
-        },
+        // {
+        //     path: 'start',
+        //     getComponent: (nextState, cb) => {
+        //         import(
+        //             /* webpackChunkName: "PageStart" */
+        //             '@views/start'
+        //         ).then((module) => {
+        //             if (routeCheck(nextState)) cb(null, module.default);
+        //         });
+        //     },
+        // },
+        // {
+        //     path: 'ts',
+        //     getComponent: (nextState, cb) => {
+        //         import(
+        //             /* webpackChunkName: "PageTS" */
+        //             '@views/ts-example'
+        //         ).then((module) => {
+        //             if (routeCheck(nextState)) cb(null, module.default);
+        //         });
+        //     },
+        // },
     ],
 };

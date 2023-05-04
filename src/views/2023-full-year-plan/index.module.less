@@ -4,8 +4,6 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: #000 no-repeat 50% 50%;
-    background-size: cover;
     color: #fff;
 
     display: grid;
@@ -92,7 +90,8 @@
             width: calc(100% - 15px);
             padding: 0.5em 0;
             position: relative;
-            background: rgba(0, 0, 0, 1);
+            // background: rgba(0, 0, 0, 1);
+            background: rgba(0, 0, 0, 0.25);
             overflow: hidden;
             & > span {
                 position: relative;
@@ -119,11 +118,19 @@
                 & > .img {
                     flex: 10;
                     display: block;
-                    object-fit: cover;
                     width: 100%;
                     top: -9px;
                     position: relative;
                     overflow: hidden;
+                    & > img {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
                 & > span {
                     flex: 1;
@@ -233,45 +240,45 @@
         font-weight: 400;
         letter-spacing: 0.2em;
     }
-}
 
-.component.is-mask-mode {
-    color: #000;
-    background: #fff;
-
-    & > .months .month > span {
-        background: currentColor !important;
-    }
-    .free-update,
-    .paid-update {
-        & > span {
-            background: rgba(0, 0, 0, 0.25);
+    .mod-mask({
+        & > .months .month > span {
+            background: currentColor !important;
         }
-    }
-    & > .free-updates {
-        .free-update > span::after {
-            background-color: currentColor !important;
-        }
-    }
-    & > .paid-updates {
+        .free-update,
         .paid-update {
             & > span {
-                &.has-content {
-                    & > .img {
-                        background: #000;
+                background: rgba(255, 255, 255, 0.25);
+            }
+        }
+        & > .free-updates {
+            .free-update > span::after {
+                background-color: currentColor !important;
+            }
+        }
+        & > .paid-updates {
+            .paid-update {
+                & > span {
+                    &.has-content {
+                        & > .img {
+                            background: #fff;
+                            &>img{
+                                opacity: 0;
+                            }
+                        }
                     }
                 }
             }
         }
-    }
-    & > .current-month {
-        color: #000;
-        &::after {
-            color: #000;
-            background: #000;
+        & > .current-month {
+            color: #fff;
+            &::after {
+                color: #fff;
+                background: #fff;
+            }
         }
-    }
-    & > .info {
-        opacity: 0.33333;
-    }
+        & > .info {
+            opacity: 0.33333;
+        }
+    });
 }
