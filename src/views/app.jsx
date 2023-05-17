@@ -48,16 +48,20 @@ const Controls = () => {
 
     return (
         <div className={`${classNameModule}-controls`}>
-            {['', 'mask', 'bg-dark', 'bg-light'].map((t) => (
-                <button
-                    key={t}
-                    data-view-type={t}
-                    onClick={onButtonClick}
-                    className={classNames([{ 'is-active': t === viewType }])}
-                >
-                    {t.toUpperCase() || 'OUTPUT'}
-                </button>
-            ))}
+            {['output', 'mask', 'bg-dark', 'bg-light', 'bg-streaming'].map(
+                (t) => (
+                    <button
+                        key={t}
+                        data-view-type={t}
+                        onClick={onButtonClick}
+                        className={classNames([
+                            { 'is-active': t === viewType },
+                        ])}
+                    >
+                        {t.toUpperCase()}
+                    </button>
+                )
+            )}
         </div>
     );
 };

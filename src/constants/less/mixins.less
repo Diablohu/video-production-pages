@@ -75,6 +75,12 @@
     hyphens: auto;
 }
 
+.mod-output( @rules ) {
+    html[data-view-type='output'] & {
+        @rules();
+    }
+}
+
 .mod-mask( @rules ) {
     html[data-view-type='mask'] & {
         @rules();

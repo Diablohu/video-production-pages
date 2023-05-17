@@ -64,6 +64,7 @@ export default {
                 'best-small-airplanes-202301',
                 require('@views/best-small-airplanes-202301').default,
             ],
+            ['procedures-b78x', require('@views/procedures-b78x').default],
         ].map(([path, component]) => ({
             path,
             component,
