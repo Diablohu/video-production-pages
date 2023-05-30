@@ -65,6 +65,10 @@ export default {
                 require('@views/best-small-airplanes-202301').default,
             ],
             ['procedures-b78x', require('@views/procedures-b78x').default],
+            [
+                'procedures-fenix-a320-remote-mcdu',
+                require('@views/procedures-fenix-a320-remote-mcdu').default,
+            ],
         ].map(([path, component]) => ({
             path,
             component,
