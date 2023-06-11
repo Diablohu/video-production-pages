@@ -27,8 +27,8 @@ const CU = {
 };
 const SP = {
     2: '惊喜<br />AN-225',
-    8: '惊喜',
-    11: '惊喜',
+    7: '惊喜',
+    11: '惊喜<br />沙丘联动',
 };
 const LL = {
     2: ['DHC-4 驯鹿', 'ORBX', require('./imgs/dhc-4.jpg')],
