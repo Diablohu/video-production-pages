@@ -13,24 +13,25 @@ const changes = [
     {
         title: '翻新! 波音 787-10 梦想客机',
         // infos: [],
-        img: require('./imgs/787.jpg'),
+        img: require('./imgs/Boeing 787-10 B78X.mp4_20230620_040145.545.png'),
         backgroundStyles: {
-            backgroundPosition: `100% 50%`,
+            backgroundPosition: `25% 50%`,
         },
     },
     {
         title: '翻新! 波音 747-8 洲际版',
         // infos: [],
-        img: require('./imgs/747.jpg'),
+        img: require('./imgs/Boeing747-8i B748.mkv_20230620_035641.800.png'),
         backgroundStyles: {
-            backgroundPosition: `10% 0%`,
+            backgroundPosition: `55% 50%`,
         },
     },
     {
-        title: '佳明 G3000/G5000 更新',
-        img: require('./imgs/g3000.png'),
+        title: '佳明航电优化',
+        img: require('./imgs/2023-06-17 (2).mp4_20230620_040510.792.png'),
         backgroundStyles: {
-            backgroundPosition: `40% 50%`,
+            backgroundPosition: `87.5% 20%`,
+            backgroundSize: '300% auto',
         },
     },
 ];
