@@ -57,6 +57,10 @@ export default {
                 require('@views/update-202303-su12-notable').default,
             ],
             [
+                'update-202306-aau2',
+                require('@views/update-202306-aau2').default,
+            ],
+            [
                 'update-202306-aau2-notable',
                 require('@views/update-202306-aau2-notable').default,
             ],
