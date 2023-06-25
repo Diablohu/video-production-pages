@@ -34,7 +34,7 @@ const LL = {
     2: ['DHC-4 驯鹿', 'ORBX', require('./imgs/dhc-4.jpg')],
     // 4: 'LL_09',
     6: ['Laté.631', 'BlueMesh', require('./imgs/latécoère-631.png')],
-    7: 'LL_10',
+    7: ['Boeing 307', 'Aeroplane H.', require('./imgs/boeing-307.jpg')],
     8: 'LL_11',
     9: 'LL_12',
     10: 'LL_13',
@@ -43,7 +43,7 @@ const LL = {
 const FF = {
     2: ['AN-225', 'iniBuilds', require('./imgs/an-225.jpg')],
     3: ['AN-2', 'AT Sim.', require('./imgs/an-2.jpg')],
-    6: 'FF_06',
+    6: ['Ford 4AT', 'Aeroplane H.', require('./imgs/ford-4at.png')],
     7: 'FF_07',
     8: 'FF_08',
     9: 'FF_09',
