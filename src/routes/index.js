@@ -35,18 +35,13 @@ export default {
 
     childRoutes: [
         ...[
-            [
-                '2022-high-quality-3rd-party-planes',
-                require('@views/2022-high-quality-3rd-party-planes').default,
-            ],
-            [
-                '2022-official-planes-example',
-                require('@views/2022-official-planes-example').default,
-            ],
+            // FULL YEAR PLAN =================================================
             [
                 '2023-full-year-plan',
                 require('@views/2023-full-year-plan').default,
             ],
+
+            // UPDATES & PATCHES ==============================================
             ['update-aau1', require('@views/update-aau1').default],
             [
                 'update-202303-su12',
@@ -64,14 +59,32 @@ export default {
                 'update-202306-aau2-notable',
                 require('@views/update-202306-aau2-notable').default,
             ],
+
+            // MONTHLY FREE MODS ==============================================
             [
-                'best-small-airplanes-202301',
-                require('@views/best-small-airplanes-202301').default,
+                'monthly-free-mods-202306',
+                require('@views/monthly-free-mods-202306').default,
             ],
+
+            // PROCEDURES =====================================================
             ['procedures-b78x', require('@views/procedures-b78x').default],
             [
                 'procedures-fenix-a320-remote-mcdu',
                 require('@views/procedures-fenix-a320-remote-mcdu').default,
+            ],
+
+            // MISC ===========================================================
+            [
+                '2022-high-quality-3rd-party-planes',
+                require('@views/2022-high-quality-3rd-party-planes').default,
+            ],
+            [
+                '2022-official-planes-example',
+                require('@views/2022-official-planes-example').default,
+            ],
+            [
+                'best-small-airplanes-202301',
+                require('@views/best-small-airplanes-202301').default,
             ],
         ].map(([path, component]) => ({
             path,

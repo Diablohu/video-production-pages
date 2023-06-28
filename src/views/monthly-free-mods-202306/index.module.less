@@ -1,0 +1,67 @@
+@import '~vars.less';
+
+.component {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 30px;
+    padding: 300px 150px 150px 150px;
+    overflow: hidden;
+}
+
+.component-item {
+    @skew: -5deg;
+
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    transform: skew(@skew);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
+    &::before,
+    & > img,
+    & > .wrapper {
+        position: absolute;
+        display: block;
+    }
+
+    &::before,
+    & > .wrapper {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    &::before {
+        content: '';
+        z-index: 5;
+        box-shadow: inset 0 0 10px 2px fade(#000, 25%);
+    }
+
+    & > img {
+        top: 0;
+        left: -25px;
+        width: calc(100% + 50px);
+        height: 100%;
+        z-index: 1;
+        transform: skew((0 - @skew));
+        object-fit: cover;
+    }
+
+    & > .wrapper {
+        z-index: 2;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        & > * {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+        }
+    }
+}
