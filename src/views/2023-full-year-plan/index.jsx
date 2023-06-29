@@ -165,7 +165,7 @@ const FullYearPlan2023 = extend({
             <span
                 className="current-month"
                 style={{
-                    gridColumn: `${3 + new Date().getMonth()} / span 1`,
+                    gridColumn: `${4 + new Date().getMonth()} / span 1`,
                 }}
             />
 
