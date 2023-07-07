@@ -1,6 +1,9 @@
 @import '~vars.less';
 
 .component {
+    --combine-border-width: 2px;
+    --combine-line-width: 20px;
+
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -85,6 +88,7 @@
 
     .free-update,
     .paid-update {
+        position: relative;
         & > span {
             border: 1px solid currentColor;
             width: calc(100% - 15px);
@@ -106,6 +110,44 @@
                 left: 5px;
                 right: 5px;
                 z-index: 0;
+            }
+        }
+        &.is-combine {
+            &::before {
+                content: '';
+                position: absolute;
+                flex: none;
+                top: 0px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                border: var(--combine-border-width) solid Goldenrod;
+                // background: fade(Goldenrod, 50%);
+                background: fade(mix(Goldenrod, #000), 75%);
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                background: Goldenrod;
+                left: 50%;
+                margin-left: calc(1px - 1px - var(--combine-line-width) / 2);
+                width: var(--combine-line-width);
+            }
+        }
+    }
+    .free-update {
+        &.is-combine {
+            @offset-y: 14px;
+            &::before {
+                top: @offset-y;
+                bottom: @offset-y;
+                left: 0px;
+                right: 0px;
+            }
+            &::after {
+                @height: 22px;
+                bottom: (@offset-y - @height);
+                height: @height;
             }
         }
     }
@@ -144,6 +186,27 @@
                 }
                 &::after {
                     flex: none;
+                }
+            }
+        }
+        &.is-combine {
+            height: calc(100% - 10px);
+            &::before {
+                top: 0px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+            }
+            &::after {
+                @height: 15px;
+                top: (0px - @height);
+                height: @height;
+            }
+            & > span.has-content {
+                padding-top: 0;
+                padding-bottom: 0px;
+                & > span {
+                    bottom: 5px;
                 }
             }
         }
@@ -186,9 +249,42 @@
         .free-update > span::after {
             background-color: DarkOliveGreen;
         }
+        & > [data-index='5'] {
+            &::before {
+                border-left-width: 0px;
+            }
+            // transform: translate(500%, 6px);
+            // margin-left: -5px;
+        }
+        & > [data-index='4'] {
+            &::before {
+                border-right-width: 0px;
+            }
+            &::after {
+                display: none;
+            }
+            // transform: translate(-100%, 6px);
+            // margin-left: 5px;
+        }
     }
     & > .ll {
         grid-row: 6 / span 1;
+        & > [data-index='0'] {
+            &::before {
+                border-left-width: 0px;
+            }
+            transform: translate(500%, 6px);
+        }
+        & > [data-index='5'] {
+            &::before {
+                border-right-width: 0px;
+            }
+            &::after {
+                display: none;
+            }
+            transform: translate(-100%, 6px);
+            // margin-left: 5px;
+        }
     }
     & > .ff {
         grid-row: 7 / span 1;

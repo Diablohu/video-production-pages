@@ -8,7 +8,7 @@ import styles from './index.module.less';
 
 const SU = {
     3: 'SU_12',
-    8: 'SU_13',
+    9: 'SU_13',
 };
 const AAU = {
     1: 'AAU_01',
@@ -22,32 +22,33 @@ const WU = {
     10: 'WU_15',
 };
 const CU = {
-    6: ['CU_02 & 03', '法国 & 美国德州', ''],
+    5: ['CU_02', '法国', true, ''],
+    6: ['CU_03', '美国德州', true, ''],
     8: 'CU_04',
 };
 const SP = {
     2: '惊喜<br />AN-225',
-    7: '惊喜',
+    7: '惊喜<br />美国庆烟花',
     11: '惊喜<br />沙丘联动',
 };
 const LL = {
     2: ['DHC-4 驯鹿', 'ORBX', require('./imgs/dhc-4.jpg')],
     // 4: 'LL_09',
-    6: ['Laté.631', 'BlueMesh', require('./imgs/latécoère-631.png')],
-    7: ['Boeing 307', 'Aeroplane H.', require('./imgs/boeing-307.jpg')],
-    8: 'LL_11',
-    9: 'LL_12',
-    10: 'LL_13',
-    11: 'LL_14',
+    6: ['Laté.631', 'BlueMesh', true, require('./imgs/latécoère-631.png')],
+    1: ['Boeing 307', 'Aeroplane H.', true, require('./imgs/boeing-307.jpg')],
+    7: 'LL_11',
+    8: 'LL_12',
+    9: 'LL_13',
+    10: 'LL_14',
 };
 const FF = {
     2: ['AN-225', 'iniBuilds', require('./imgs/an-225.jpg')],
     3: ['AN-2', 'AT Sim.', require('./imgs/an-2.jpg')],
     6: ['Ford 4AT', 'Aeroplane H.', require('./imgs/ford-4at.png')],
-    7: 'FF_07',
-    8: 'FF_08',
-    9: 'FF_09',
-    12: 'FF_10',
+    // 7: 'FF_07',
+    // 8: 'FF_08',
+    // 9: 'FF_09',
+    12: 'FF_07',
 };
 const ES = {
     4: ['ATR-42/72', 'S&H Sim.', require('./imgs/atr-42.jpg')],
@@ -165,12 +166,12 @@ const FullYearPlan2023 = extend({
             <span
                 className="current-month"
                 style={{
-                    gridColumn: `${4 + new Date().getMonth()} / span 1`,
+                    gridColumn: `${3 + new Date().getMonth()} / span 1`,
                 }}
             />
 
             <div className="info">
-                官方已预告内容 | Diablohu | 2023/05/04 | fly-dbh.com
+                官方已预告内容 | Diablohu | 2023/07/07 | fly-dbh.com
             </div>
         </div>
     );
@@ -185,8 +186,18 @@ const Group = ({ className, classNameCell, arr, mask }) => (
         {[...Array(12).keys()].map((i) => {
             const hasContent = arr[i + 1];
             const hasImg = Array.isArray(arr[i + 1]);
+            const isCombine = hasContent && arr[i + 1][2] === true;
             return (
-                <div className={classNameCell} key={i}>
+                <div
+                    className={classNames([
+                        classNameCell,
+                        {
+                            'is-combine': isCombine,
+                        },
+                    ])}
+                    data-index={i}
+                    key={i}
+                >
                     {hasContent ? (
                         <span
                             className={classNames({
@@ -212,6 +223,7 @@ const Group = ({ className, classNameCell, arr, mask }) => (
                                     __html: hasImg
                                         ? arr[i + 1]
                                               .slice(0, arr[i + 1].length - 1)
+                                              .filter((v) => v !== true)
                                               .map((s, i) =>
                                                   !i
                                                       ? `<strong>${s}</strong>`
