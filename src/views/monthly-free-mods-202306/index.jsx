@@ -67,9 +67,11 @@ const ThePage = extend({
 })(({ className, params: { type } }) => {
     return (
         <div className={classNames([className])}>
-            {mods.map((mod, index) => (
-                <Mod {...mod} key={index} />
-            ))}
+            <div className="wrapper">
+                {mods.map((mod, index) => (
+                    <Mod {...mod} key={index} />
+                ))}
+            </div>
         </div>
     );
 });

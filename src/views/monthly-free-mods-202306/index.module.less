@@ -10,6 +10,7 @@
     gap: 30px;
     padding: 300px 150px 150px 150px;
     overflow: hidden;
+    align-items: stretch;
 
     &::before {
         content: '';
@@ -24,6 +25,21 @@
         filter: invert();
     }
 
+    & > .wrapper {
+        position: relative;
+        transform: skew(var(--logo-skew));
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 30px;
+        flex: 1;
+
+        & > .list {
+            display: inherit;
+            flex-flow: column nowrap;
+            gap: inherit;
+        }
+    }
+
     .mod-mask({
         &::before{
             display: none;
@@ -32,14 +48,11 @@
 }
 
 .component-item {
-    @skew: -11deg;
-
     position: relative;
     flex: 1;
     overflow: hidden;
     border: 2px solid #fff;
     border-radius: 15px;
-    transform: skew(@skew);
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     background: #fff;
 
@@ -69,7 +82,7 @@
         width: calc(100% + 150px);
         height: 100%;
         z-index: 1;
-        transform: skew((0 - @skew));
+        transform: skew(calc(1deg - 1deg - var(--logo-skew)));
         background: no-repeat 50% 50%;
         background-size: cover;
         filter: saturate(1.25);
