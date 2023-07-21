@@ -18,7 +18,7 @@ const AAU = {
 const WU = {
     2: ['WU_12', '新西兰', ''],
     4: ['WU_13', '大洋洲 ', ''],
-    7: ['WU_14', '捷克', ''],
+    7: ['WU_14', '中欧', ''],
     10: 'WU_15',
 };
 const CU = {
@@ -28,7 +28,7 @@ const CU = {
 };
 const SP = {
     2: '惊喜<br />AN-225',
-    7: '惊喜<br />美国庆烟花',
+    9: '惊喜',
     11: '惊喜<br />沙丘联动',
 };
 const LL = {
@@ -36,19 +36,19 @@ const LL = {
     // 4: 'LL_09',
     6: ['Laté.631', 'BlueMesh', true, require('./imgs/latécoère-631.png')],
     1: ['Boeing 307', 'Aeroplane H.', true, require('./imgs/boeing-307.jpg')],
-    7: 'LL_11',
+    7: ['AE45/145', 'Aeroplane H.', require('./imgs/ae45.jpg')],
     8: 'LL_12',
-    9: 'LL_13',
-    10: 'LL_14',
+    10: 'LL_13',
+    11: 'LL_14',
 };
 const FF = {
     2: ['AN-225', 'iniBuilds', require('./imgs/an-225.jpg')],
     3: ['AN-2', 'AT Sim.', require('./imgs/an-2.jpg')],
     6: ['Ford 4AT', 'Aeroplane H.', require('./imgs/ford-4at.png')],
     // 7: 'FF_07',
-    // 8: 'FF_08',
-    // 9: 'FF_09',
-    12: 'FF_07',
+    8: 'FF_07',
+    9: 'FF_08',
+    12: 'FF_9',
 };
 const ES = {
     4: ['ATR-42/72', 'S&H Sim.', require('./imgs/atr-42.jpg')],
@@ -171,7 +171,7 @@ const FullYearPlan2023 = extend({
             />
 
             <div className="info">
-                官方已预告内容 | Diablohu | 2023/07/07 | fly-dbh.com
+                官方已预告内容 | Diablohu | 2023/07/22 | fly-dbh.com
             </div>
         </div>
     );
