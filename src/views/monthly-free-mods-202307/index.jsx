@@ -53,9 +53,9 @@ const mods = [
         },
     },
     {
-        category: '城市',
-        title: <>马来西亚主要城市建筑群</>,
-        author: 'KerStudio',
+        category: '着陆挑战 + 航空器',
+        title: <>红牛“正中靶心”</>,
+        author: '微软 / ASOBO / 红牛',
         release: 'flightsim.to',
         img: require('./imgs/KJFK.png'),
         imgStyle: {
