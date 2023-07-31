@@ -11,7 +11,7 @@ const mods = [
             category: '飞行员形象',
             title: '人类最好的朋友',
             author: 'Got Friends',
-            release: 'flightsim.to',
+            release: 'got-friends.com',
             img: require('./imgs/ScrapyardMonster-RGB.png'),
             imgStyle: {
                 backgroundSize: `auto 120%`,
@@ -35,10 +35,10 @@ const mods = [
         title: '波音787-8 “梦想客机”',
         author: 'Kuro くろりん',
         release: 'flightsim.to',
-        img: require('./imgs/C172-3.png'),
+        img: require('./imgs/b788.jpg'),
         imgStyle: {
             backgroundSize: `auto 150%`,
-            backgroundPosition: `45% 40%`,
+            backgroundPosition: `55% 100%`,
         },
     },
     {
@@ -56,11 +56,11 @@ const mods = [
         category: '着陆挑战 + 航空器',
         title: <>红牛“正中靶心”</>,
         author: '微软 / ASOBO / 红牛',
-        release: 'flightsim.to',
-        img: require('./imgs/KJFK.png'),
+        release: '游戏内市场',
+        img: require('./imgs/redbull.jpg'),
         imgStyle: {
-            backgroundSize: `auto 175%`,
-            backgroundPosition: `70% 60%`,
+            backgroundSize: `auto 100%`,
+            backgroundPosition: `20% 60%`,
         },
     },
 ];
