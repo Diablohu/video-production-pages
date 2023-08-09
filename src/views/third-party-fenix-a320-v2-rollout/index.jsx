@@ -17,6 +17,7 @@ const schedule = [
             '部分屏幕和仪表重做',
             '代码运行效率优化',
         ],
+        updated: true,
     },
     {
         time: '23年9月',
