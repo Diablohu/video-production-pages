@@ -77,6 +77,12 @@ export default {
                 require('@views/procedures-fenix-a320-remote-mcdu').default,
             ],
 
+            // THIRD-PARTY ====================================================
+            [
+                'third-party-fenix-a320-v2-rollout',
+                require('@views/third-party-fenix-a320-v2-rollout').default,
+            ],
+
             // MISC ===========================================================
             [
                 '2022-high-quality-3rd-party-planes',
