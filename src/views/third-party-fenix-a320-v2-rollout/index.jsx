@@ -1,4 +1,5 @@
 import { extend } from 'koot';
+import classNames from 'classnames';
 
 import styles from './index.module.less';
 
@@ -23,12 +24,7 @@ const schedule = [
         time: '23年9月',
         title: 'V2 Block 2',
         price: '免费更新',
-        list: [
-            'IAE 发动机版本',
-            '视效更新',
-            '电子平板v2 (EFB)',
-            '更多的航电优化',
-        ],
+        list: ['IAE 发动机', '视效更新', '电子平板v2 (EFB)', '更多的航电优化'],
     },
     {
         time: '23年底',
@@ -51,7 +47,25 @@ const ThirdPartyFenixA320V2Rollout = extend({
 })(({ className }) => {
     return (
         <div className={className}>
-            <p>ThirdPartyFenixA320V2Rollout!</p>
+            {schedule.map(({ time, title, price, list, updated }, index) => (
+                <div
+                    className={classNames([
+                        'item',
+                        {
+                            'is-updated': updated,
+                        },
+                    ])}
+                >
+                    <div className="time">{time}</div>
+                    <div className="title">{title}</div>
+                    <div className="price">{price}</div>
+                    <div className="list">
+                        {list.map((item, index) => (
+                            <div className="item">{item}</div>
+                        ))}
+                    </div>
+                </div>
+            ))}
         </div>
     );
 });
