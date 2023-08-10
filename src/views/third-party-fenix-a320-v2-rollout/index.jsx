@@ -47,6 +47,8 @@ const ThirdPartyFenixA320V2Rollout = extend({
 })(({ className }) => {
     return (
         <div className={className}>
+            <div className="logo">{/* TODO: */}</div>
+            <div className="info">{/* TODO: */}</div>
             {schedule.map(({ time, title, price, list, updated }, index) => (
                 <div
                     className={classNames([

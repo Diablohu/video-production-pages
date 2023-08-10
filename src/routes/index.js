@@ -59,6 +59,10 @@ export default {
                 'update-202306-aau2-notable',
                 require('@views/update-202306-aau2-notable').default,
             ],
+            [
+                'update-202309-su13',
+                require('@views/update-202309-su13').default,
+            ],
 
             // MONTHLY FREE MODS ==============================================
             [

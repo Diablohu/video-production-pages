@@ -1,0 +1,102 @@
+@import '~vars.less';
+
+.component {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 4fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    padding: 200px 50px 125px 50px;
+    overflow: hidden;
+
+    & > .changes {
+        border: 1px solid #fff;
+        border-radius: var(--border-radius);
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        background: rgba(0, 0, 0, 0.3333);
+        display: flex;
+        flex-flow: row nowrap;
+        .mod-mask({
+            background: rgba(255, 255, 255, 0.3333);
+        });
+        & > .contents {
+            flex: 1;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            padding: 1.5em 1em 0 2em;
+            font-size: 0.945vw;
+            line-height: 1.45;
+            font-weight: 400;
+            .mod-mask({text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5) ;});
+            & > strong {
+                display: block;
+                font-size: 1.25em;
+                line-height: 1.2;
+                font-style: italic;
+                font-weight: 900;
+                & ~ strong {
+                    margin-top: 1.5em;
+                }
+            }
+            & + .contents {
+                border-left: inherit;
+            }
+            ul {
+                margin-left: 0;
+                padding-left: 1.5em;
+            }
+            & > ul {
+                & > li {
+                    margin-top: 0.25em;
+                }
+            }
+        }
+    }
+
+    & > .releases {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: inherit;
+        & > * {
+            flex: 1;
+            font-size: 1vw !important;
+            text-shadow:
+                0 2px 5px rgba(0, 0, 0, 0.5),
+                0 1px 3px rgba(0, 0, 0, 1),
+                0 1px 3px rgba(0, 0, 0, 1),
+                0 1px 5px rgba(0, 0, 0, 1);
+        }
+        & > :nth-child(1) {
+            background-position: 50% 14%;
+        }
+        & > :nth-child(2) {
+            background-position: 50% 75%;
+        }
+        & > :nth-child(3) {
+            background-position: 50% 45%;
+        }
+    }
+
+    & > .info {
+        grid-column: 1 / span 3;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .update-aircraft {
+        strong {
+            order: 2;
+        }
+    }
+}
+
+.component.is-mask-mode {
+}
