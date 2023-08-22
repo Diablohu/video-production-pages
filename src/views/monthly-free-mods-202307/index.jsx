@@ -12,10 +12,10 @@ const mods = [
             title: '人类最好的朋友',
             author: 'Got Friends',
             release: 'got-friends.com',
-            img: require('./imgs/ScrapyardMonster-RGB.png'),
+            img: require('./imgs/best_friends.png'),
             imgStyle: {
                 backgroundSize: `auto 120%`,
-                backgroundPosition: `30% 50%`,
+                backgroundPosition: `60% 70%`,
             },
         },
         {
@@ -23,9 +23,9 @@ const mods = [
             title: 'Otto Pilot',
             author: 'bagolu',
             release: 'flightsim.to',
-            img: require('./imgs/C172-3.png'),
+            img: require('./imgs/otto_pilot.png'),
             imgStyle: {
-                backgroundSize: `auto 150%`,
+                backgroundSize: `auto 250%`,
                 backgroundPosition: `45% 40%`,
             },
         },
@@ -33,12 +33,12 @@ const mods = [
     {
         category: '航空器',
         title: '波音787-8 “梦想客机”',
-        author: 'Kuro くろりん',
+        author: 'Kurorin くろりん',
         release: 'flightsim.to',
-        img: require('./imgs/b788.jpg'),
+        img: require('./imgs/b788.png'),
         imgStyle: {
-            backgroundSize: `auto 150%`,
-            backgroundPosition: `55% 100%`,
+            backgroundSize: `auto 125%`,
+            backgroundPosition: `35% 50%`,
         },
     },
     {
@@ -46,10 +46,10 @@ const mods = [
         title: '科威特城 & 国际机场',
         author: 'YAG',
         release: 'flightsim.to',
-        img: require('./imgs/ZSLS.png'),
+        img: require('./imgs/kuwait.png'),
         imgStyle: {
             backgroundSize: `auto 150%`,
-            backgroundPosition: `35% 50%`,
+            backgroundPosition: `55% 50%`,
         },
     },
     {
@@ -57,10 +57,10 @@ const mods = [
         title: <>红牛“正中靶心”</>,
         author: '微软 / ASOBO / 红牛',
         release: '游戏内市场',
-        img: require('./imgs/redbull.jpg'),
+        img: require('./imgs/redbull.png'),
         imgStyle: {
-            backgroundSize: `auto 100%`,
-            backgroundPosition: `20% 60%`,
+            backgroundSize: `auto 120%`,
+            backgroundPosition: `70% 80%`,
         },
     },
 ];

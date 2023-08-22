@@ -29,6 +29,7 @@ const AAU1 = extend({
                 <div className="contents">
                     <strong>综合改进</strong>
                     <ul>
+                        <li>“较暗的地平线”现在不明显了</li>
                         <li>
                             优化动态暂停
                             <br />
@@ -40,7 +41,8 @@ const AAU1 = extend({
                             现在当超过 16MB 时仍会正常记录
                         </li>
                         <li>
-                            修正当使用飞行控制器时，屏幕上出现的不正常的“白点”和“白框”
+                            为解决当使用飞行控制器时屏幕上出现的不正常的“白点”和“白框”的问题，添加2个新的选项，其默认设置将会还原为
+                            AAU_02 版本之前的行为
                         </li>
                     </ul>
                     <strong>航电改进: G1000 / G3000 / G5000</strong>
@@ -188,7 +190,7 @@ const AAU1 = extend({
                 ))}
             </div> */}
             <FooterInfo className="info">
-                基于 SU13 公测版已实装改动 | Diablohu | 2023/08/10 | fly-dbh.com
+                基于 SU13 公测版已实装改动 | Diablohu | 2023/08/23 | fly-dbh.com
             </FooterInfo>
         </div>
     );
