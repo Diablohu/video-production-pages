@@ -24,7 +24,7 @@ const WU = {
 const CU = {
     5: ['CU_02', '法国', true, ''],
     6: ['CU_03', '美国德州', true, ''],
-    8: 'CU_04',
+    8: ['CU_04', '西欧', true, ''],
 };
 const SP = {
     2: '惊喜<br />AN-225',
@@ -37,18 +37,16 @@ const LL = {
     6: ['Laté.631', 'BlueMesh', true, require('./imgs/latécoère-631.png')],
     1: ['Boeing 307', 'Aeroplane H.', true, require('./imgs/boeing-307.jpg')],
     7: ['AE45/145', 'Aeroplane H.', require('./imgs/ae45.jpg')],
-    8: 'LL_12',
-    10: 'LL_13',
-    11: 'LL_14',
+    8: ['Do-X', 'O.Messer', require('./imgs/do-x.jpg')],
+    9: 'LL_13',
+    10: 'LL_14',
 };
 const FF = {
     2: ['AN-225', 'iniBuilds', require('./imgs/an-225.jpg')],
     3: ['AN-2', 'AT Sim.', require('./imgs/an-2.jpg')],
     6: ['Ford 4AT', 'Aeroplane H.', require('./imgs/ford-4at.png')],
-    // 7: 'FF_07',
-    8: 'FF_07',
-    9: 'FF_08',
-    12: 'FF_9',
+    11: 'FF_07',
+    12: 'FF_08',
 };
 const ES = {
     4: ['ATR-42/72', 'S&H Sim.', require('./imgs/atr-42.jpg')],
@@ -227,7 +225,7 @@ const Group = ({ className, classNameCell, arr, mask }) => (
                                               .map((s, i) =>
                                                   !i
                                                       ? `<strong>${s}</strong>`
-                                                      : s
+                                                      : s,
                                               )
                                               .join('<br/>')
                                         : arr[i + 1],
