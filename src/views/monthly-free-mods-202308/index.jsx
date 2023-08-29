@@ -11,21 +11,21 @@ const mods = [
         title: '多人模式模型匹配 (M3)',
         author: 'Dannymalloy',
         release: 'flightsim.to',
-        img: require('./imgs/best_friends.png'),
+        img: require('./imgs/f35s.png'),
         imgStyle: {
-            backgroundSize: `auto 120%`,
-            backgroundPosition: `60% 70%`,
+            backgroundSize: `auto 110%`,
+            backgroundPosition: `45% 100%`,
         },
     },
     {
-        category: '其他',
-        title: 'Jayshrike 世界航母',
+        category: '世界',
+        title: '航母 ✅移动 ✅肉球 ✅阻拦索 ✅弹射',
         author: 'Jayshrike',
         release: 'flightsim.to',
-        img: require('./imgs/b788.png'),
+        img: require('./imgs/carrier.jpg'),
         imgStyle: {
-            backgroundSize: `auto 125%`,
-            backgroundPosition: `35% 50%`,
+            backgroundSize: `auto 100%`,
+            backgroundPosition: `50% 50%`,
         },
     },
     {
@@ -33,10 +33,10 @@ const mods = [
         title: '伦敦盖特威克机场',
         author: 'mkvy',
         release: 'flightsim.to',
-        img: require('./imgs/kuwait.png'),
+        img: require('./imgs/egkk.png'),
         imgStyle: {
-            backgroundSize: `auto 150%`,
-            backgroundPosition: `55% 50%`,
+            backgroundSize: `auto 125%`,
+            backgroundPosition: `60% 50%`,
         },
     },
 ];
@@ -65,7 +65,7 @@ const List = ({ mods }) => {
                     <List mods={mod} key={index} />
                 ) : (
                     <Mod {...mod} key={index} />
-                ),
+                )
             )}
         </div>
     );
