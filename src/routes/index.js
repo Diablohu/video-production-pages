@@ -73,6 +73,10 @@ export default {
                 'monthly-free-mods-202307',
                 require('@views/monthly-free-mods-202307').default,
             ],
+            [
+                'monthly-free-mods-202308',
+                require('@views/monthly-free-mods-202308').default,
+            ],
 
             // PROCEDURES =====================================================
             ['procedures-b78x', require('@views/procedures-b78x').default],
