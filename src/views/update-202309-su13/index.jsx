@@ -159,15 +159,16 @@ const AAU1 = extend({
                                     摄影测量:
                                     WU10（美国2）、CU01（德国）、WU11（加拿大）
                                 </li>
-                                <li>大量的地标景观</li>
+                                <li>优化地标景观</li>
+                                <li>优化LoD</li>
                             </ul>
                         </li>
                         <li>
                             其他航空器的质量更新
                             <ul>
                                 <li>Airbus A310</li>
-                                <li>莱特飞行器</li>
-                                <li>圣路易精神号</li>
+                                <li>莱特飞行器: 添加韩语和土耳其语</li>
+                                <li>圣路易精神号: 添加韩语和土耳其语</li>
                                 <li>Grumman G-21 "Goose"</li>
                                 <il>Hughes H-4 "Hercules"</il>
                             </ul>
