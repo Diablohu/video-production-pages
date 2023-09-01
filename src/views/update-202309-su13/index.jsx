@@ -127,6 +127,10 @@ const AAU1 = extend({
                     <ul>
                         <li>优化气象雷达的电力消耗</li>
                         <li>优化 HDG 旋钮的点按逻辑</li>
+                        <li>
+                            <strong>Longitude</strong> 略微降低默认的巡航速度
+                        </li>
+                        <li>以及其他 G3000 / G5000 的改进</li>
                     </ul>
                     <strong>其他改进</strong>
                     <ul>
