@@ -79,6 +79,7 @@ export default {
             ],
 
             // PROCEDURES =====================================================
+            ['procedures-atr', require('@views/procedures-atr').default],
             ['procedures-b78x', require('@views/procedures-b78x').default],
             [
                 'procedures-fenix-a320-remote-mcdu',
