@@ -63,6 +63,10 @@ export default {
                 'update-202309-su13',
                 require('@views/update-202309-su13').default,
             ],
+            [
+                'update-202309-su13-notable',
+                require('@views/update-202309-su13-notable').default,
+            ],
 
             // MONTHLY FREE MODS ==============================================
             [
