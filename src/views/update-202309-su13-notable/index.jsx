@@ -76,7 +76,6 @@ const SU12NotebleChanges = extend({
                     title="塞斯纳奖状CJ4"
                     infos={[
                         'SimBrief 飞行计划导入',
-                        '航电内检查单',
                         'FIX INFO 打点画线',
                         '内饰灯光',
                     ]}
@@ -129,12 +128,12 @@ const SU12NotebleChanges = extend({
                         backgroundPosition: '40% 43%',
                     }}
                 />
-                <h2>航电 & AP改进</h2>
+                <h2>佳明航电改进</h2>
                 <TheCell
                     infos={[
                         '修复舱外视角导航',
                         '优化 VOR / LOC 截获',
-                        '优化佳明航电细节',
+                        '细节优化',
                     ]}
                     img={require('./imgs/WXR.png')}
                     style={{
