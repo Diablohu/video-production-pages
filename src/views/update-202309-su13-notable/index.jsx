@@ -76,7 +76,7 @@ const SU12NotebleChanges = extend({
                     title="塞斯纳奖状CJ4"
                     infos={[
                         'SimBrief 飞行计划导入',
-                        '配载导入与设定',
+                        '航电内检查单',
                         'FIX INFO 打点画线',
                         '内饰灯光',
                     ]}
