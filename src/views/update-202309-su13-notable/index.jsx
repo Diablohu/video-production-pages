@@ -87,6 +87,16 @@ const SU12NotebleChanges = extend({
                     }}
                 />
                 <TheCell
+                    title="塞斯纳奖状经度"
+                    infos={['航向同步', '不再“顶表飞”', '气象雷达更多细节功能']}
+                    img={require('./imgs/C700.png')}
+                    style={{
+                        gridColumn: 'span 2',
+                        backgroundSize: 'auto 300%',
+                        backgroundPosition: '50% 80%',
+                    }}
+                />
+                <TheCell
                     title="休斯H-4“大力神”"
                     infos={[
                         '拖船',
@@ -101,7 +111,7 @@ const SU12NotebleChanges = extend({
                         backgroundPosition: '0% 50%',
                     }}
                 />
-                <TheCell
+                {/* <TheCell
                     title="声光细节优化"
                     infos={['空客A310', '莱特飞行器', '圣路易精神号', '……']}
                     img={require('./imgs/A310.png')}
@@ -110,7 +120,7 @@ const SU12NotebleChanges = extend({
                         backgroundSize: 'auto 300%',
                         backgroundPosition: '35% 57.5%',
                     }}
-                />
+                /> */}
             </div>
 
             <div className="grid right">
