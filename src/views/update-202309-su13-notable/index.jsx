@@ -171,7 +171,7 @@ const SU12NotebleChanges = extend({
                     className="sdk"
                 >
                     <strong>开发工具</strong>
-                    <span>世界枢纽</span>
+                    {/* <span>世界枢纽</span> */}
                     <span>
                         SimBrief
                         <br />
@@ -190,7 +190,7 @@ const SU12NotebleChanges = extend({
                 </TheCell>
             </div>
 
-            <FooterInfo className="info" date="2023/09/30" />
+            <FooterInfo className="info" date="2023/09/28" />
         </div>
     );
 });
