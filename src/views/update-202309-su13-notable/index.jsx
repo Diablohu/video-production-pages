@@ -184,7 +184,7 @@ const SU12NotebleChanges = extend({
                         开发框架
                     </span>
                     <span>
-                        螺旋桨
+                        活塞发动机
                         <br />
                         参数优化
                     </span>

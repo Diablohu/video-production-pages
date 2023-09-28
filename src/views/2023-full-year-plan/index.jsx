@@ -9,27 +9,26 @@ import styles from './index.module.less';
 const SU = {
     3: 'SU_12',
     9: 'SU_13',
+    12: 'SU_14',
 };
 const AAU = {
     1: 'AAU_01',
     6: 'AAU_02',
-    12: 'AAU_03',
 };
 const WU = {
     2: ['WU_12', '新西兰', ''],
     4: ['WU_13', '大洋洲 ', ''],
-    7: ['WU_14', '中欧', ''],
-    10: 'WU_15',
+    7: ['WU_14', '中东欧', ''],
+    10: ['WU_15', '北欧', ''],
 };
 const CU = {
     5: ['CU_02', '法国', true, ''],
     6: ['CU_03', '美国德州', true, ''],
-    8: ['CU_04', '西欧', true, ''],
+    8: ['CU_04', '西欧', ''],
 };
 const SP = {
     2: '惊喜<br />AN-225',
-    9: '惊喜',
-    11: '惊喜<br />沙丘联动',
+    11: '惊喜',
 };
 const LL = {
     2: ['DHC-4 驯鹿', 'ORBX', require('./imgs/dhc-4.jpg')],
@@ -38,15 +37,16 @@ const LL = {
     1: ['Boeing 307', 'Aeroplane H.', true, require('./imgs/boeing-307.jpg')],
     7: ['AE45/145', 'Aeroplane H.', require('./imgs/ae45.jpg')],
     8: ['Do-X', 'O.Messer', require('./imgs/do-x.jpg')],
-    9: 'LL_13',
-    10: 'LL_14',
+    10: ['SAAB B 17', 'iniBuilds', require('./imgs/saab17.jpg')],
+    11: 'LL_14',
 };
 const FF = {
     2: ['AN-225', 'iniBuilds', require('./imgs/an-225.jpg')],
     3: ['AN-2', 'AT Sim.', require('./imgs/an-2.jpg')],
     6: ['Ford 4AT', 'Aeroplane H.', require('./imgs/ford-4at.png')],
-    11: 'FF_07',
-    12: 'FF_08',
+    10: ['三菱MU-2', 'iniBuilds', require('./imgs/mu-2.jpg')],
+    11: 'FF_08',
+    12: 'FF_09',
 };
 const ES = {
     4: ['ATR-42/72', 'S&H Sim.', require('./imgs/atr-42.jpg')],
@@ -164,12 +164,12 @@ const FullYearPlan2023 = extend({
             <span
                 className="current-month"
                 style={{
-                    gridColumn: `${3 + new Date().getMonth()} / span 1`,
+                    gridColumn: `${4 + new Date().getMonth()} / span 1`,
                 }}
             />
 
             <div className="info">
-                官方已预告内容 | Diablohu | 2023/07/22 | fly-dbh.com
+                官方已预告内容 | Diablohu | 2023/09/28 | fly-dbh.com
             </div>
         </div>
     );
