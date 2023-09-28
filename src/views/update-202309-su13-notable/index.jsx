@@ -131,6 +131,7 @@ const SU12NotebleChanges = extend({
                         '优化“动态暂停”：锁定速度',
                         '优化“飞行日志”：更大容量',
                         '“地平线”不再明显',
+                        '[PC] 尝试修复长程飞行掉帧现象',
                     ]}
                     img={require('./imgs/white-border.png')}
                     style={{
@@ -183,7 +184,7 @@ const SU12NotebleChanges = extend({
                         开发框架
                     </span>
                     <span>
-                        活塞螺旋桨
+                        螺旋桨
                         <br />
                         参数优化
                     </span>
