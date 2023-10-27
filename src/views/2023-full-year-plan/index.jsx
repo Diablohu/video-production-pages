@@ -19,7 +19,7 @@ const WU = {
     2: ['WU_12', '新西兰', ''],
     4: ['WU_13', '大洋洲 ', ''],
     7: ['WU_14', '中东欧', ''],
-    10: ['WU_15', '北欧', ''],
+    11: ['WU_15', '北欧', ''],
 };
 const CU = {
     5: ['CU_02', '法国', true, ''],
@@ -37,16 +37,15 @@ const LL = {
     1: ['Boeing 307', 'Aeroplane H.', true, require('./imgs/boeing-307.jpg')],
     7: ['AE45/145', 'Aeroplane H.', require('./imgs/ae45.jpg')],
     8: ['Do-X', 'O.Messer', require('./imgs/do-x.jpg')],
-    10: ['SAAB B 17', 'iniBuilds', require('./imgs/saab17.jpg')],
-    11: 'LL_14',
+    11: ['SAAB B 17', 'iniBuilds', require('./imgs/saab17.jpg')],
+    12: 'LL_14',
 };
 const FF = {
     2: ['AN-225', 'iniBuilds', require('./imgs/an-225.jpg')],
     3: ['AN-2', 'AT Sim.', require('./imgs/an-2.jpg')],
     6: ['Ford 4AT', 'Aeroplane H.', require('./imgs/ford-4at.png')],
-    10: ['三菱MU-2', 'iniBuilds', require('./imgs/mu-2.jpg')],
-    11: 'FF_08',
-    12: 'FF_09',
+    11: ['三菱MU-2', 'iniBuilds', require('./imgs/mu-2.jpg')],
+    12: 'FF_08',
 };
 const ES = {
     4: ['ATR-42/72', 'S&H Sim.', require('./imgs/atr-42.jpg')],
@@ -169,7 +168,7 @@ const FullYearPlan2023 = extend({
             />
 
             <div className="info">
-                官方已预告内容 | Diablohu | 2023/09/28 | fly-dbh.com
+                官方已预告内容 | Diablohu | 2023/10/27 | fly-dbh.com
             </div>
         </div>
     );
