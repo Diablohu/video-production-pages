@@ -13,6 +13,7 @@
 
     & > .changes {
         --border-color: #fff;
+        --background-color: rgba(0, 0, 0, 0.3333);
         --header-height: 40px;
 
         flex: 1;
@@ -20,7 +21,7 @@
         border-radius: var(--border-radius);
         grid-column: 1 / span 1;
         grid-row: 1 / span 1;
-        background: rgba(0, 0, 0, 0.3333);
+        background: var(--background-color);
         display: flex;
         flex-flow: row nowrap;
         position: relative;
@@ -28,7 +29,7 @@
 
         .mod-mask({
             --border-color: #fff !important;
-            background: rgba(255, 255, 255, 0.3333);
+            --background-color: rgba(255, 255, 255, 0.3333) !important;
         });
 
         &.implemented {
@@ -38,6 +39,7 @@
         &.planned {
             // border-color: var(--color-epic);
             --border-color: #f44;
+            --background-color: rgba(128, 32, 32, 0.3333);
             padding-top: var(--header-height);
             &::before {
                 content: '计划改动，暂未实装';

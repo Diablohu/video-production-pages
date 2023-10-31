@@ -27,7 +27,7 @@ const AAU1 = extend({
         >
             <div className="changes implemented">
                 <div className="contents">
-                    <strong>系统改进: ATC</strong>
+                    <strong>系统改进: 空中交通管制 ATC</strong>
                     <ul>
                         <li>
                             新增一个辅助选项，可指定 ATC
