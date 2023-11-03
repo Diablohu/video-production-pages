@@ -40,6 +40,10 @@ export default {
                 '2023-full-year-plan',
                 require('@views/2023-full-year-plan').default,
             ],
+            [
+                '2024-full-year-plan',
+                require('@views/2024-full-year-plan').default,
+            ],
 
             // UPDATES & PATCHES ==============================================
             ['update-aau1', require('@views/update-aau1').default],

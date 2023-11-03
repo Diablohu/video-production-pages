@@ -1,0 +1,417 @@
+@import '~vars.less';
+
+.component {
+    --combine-border-width: 2px;
+    --combine-line-width: 20px;
+    --combine-line-base-height: 15px;
+    --combine-line-offset-y: 0px;
+
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 10vh 10vh 10vh 50px 12.5vh 12.5vh 12.5vh 1fr;
+
+    font-size: 1vw;
+    font-weight: 600;
+
+    & > .update {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        grid-column: 1 / span 2;
+        padding-left: 4vw;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 20px;
+            right: 20px;
+            border-right: 1px solid currentColor;
+        }
+    }
+
+    & > .title-free,
+    & > .title-paid {
+        grid-column: 15 / span 1;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5vw;
+        line-height: 1.75em;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 20px;
+            right: 20px;
+            border-left: 1px solid currentColor;
+        }
+    }
+
+    & > .title-free {
+        grid-row: 3 / span 2;
+    }
+    & > .title-paid {
+        grid-row: 6 / span 3;
+    }
+
+    & > .months,
+    & > .free-updates,
+    & > .paid-updates {
+        grid-column: 3 / span 12;
+        display: flex;
+        flex-flow: row nowrap;
+        & > * {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    & > .months {
+        grid-row: 5 / span 1;
+        .month > span {
+            background: Goldenrod;
+            padding: 8px 10px;
+            border-radius: 100px;
+        }
+    }
+
+    .free-update,
+    .paid-update {
+        position: relative;
+        & > span {
+            border: 1px solid currentColor;
+            width: calc(100% - 15px);
+            padding: 0.5em 0;
+            position: relative;
+            // background: rgba(0, 0, 0, 1);
+            background: rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            & > span {
+                position: relative;
+                z-index: 5;
+            }
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 5px;
+                bottom: 5px;
+                left: 5px;
+                right: 5px;
+                z-index: 0;
+            }
+        }
+        &.is-combine {
+            &::before {
+                content: '';
+                position: absolute;
+                flex: none;
+                top: 0px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                border: var(--combine-border-width) solid Goldenrod;
+                // background: fade(Goldenrod, 50%);
+                background: fade(mix(Goldenrod, #000), 75%);
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                background: Goldenrod;
+                left: 50%;
+                margin-left: calc(1px - 1px - var(--combine-line-width) / 2);
+                width: var(--combine-line-width);
+            }
+        }
+    }
+    .free-update {
+        &.is-combine {
+            @offset-y: 14px;
+            &::before {
+                top: @offset-y;
+                bottom: @offset-y;
+                left: 0px;
+                right: 0px;
+            }
+            &::after {
+                @height: 22px;
+                bottom: (@offset-y - @height);
+                height: @height;
+            }
+        }
+    }
+    .paid-update {
+        & > span {
+            &.has-image {
+                height: calc(100% - 15px);
+                display: flex;
+                flex-flow: column nowrap;
+                & > .img {
+                    flex: 10;
+                    display: block;
+                    width: 100%;
+                    top: -9px;
+                    position: relative;
+                    overflow: hidden;
+                    & > img {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                & > span {
+                    flex: 1;
+                    font-weight: normal;
+                    font-size: 0.8vw;
+                    line-height: 1.2;
+                    strong {
+                        font-weight: bolder;
+                        font-size: 1vw;
+                    }
+                }
+                &::after {
+                    flex: none;
+                }
+            }
+        }
+        &.is-combine {
+            height: calc(100% - 10px);
+            &::before {
+                top: 0px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+            }
+            &::after {
+                top: calc(
+                    1px - 1px - var(--combine-line-base-height) -
+                        var(--combine-line-offset-y)
+                );
+                height: calc(
+                    var(--combine-line-base-height) +
+                        var(--combine-line-offset-y)
+                );
+            }
+            & > span.has-content {
+                &.has-image {
+                    padding-top: 0;
+                }
+                padding-bottom: 0px;
+                & > span {
+                    bottom: 5px;
+                }
+            }
+        }
+    }
+
+    & > .sp {
+        grid-row: 2 / span 1;
+        .free-update > span::after {
+            background-color: Tomato;
+        }
+    }
+    & > .su,
+    & > .aau {
+        grid-row: 3 / span 1;
+    }
+    & > .su {
+        grid-row: 3 / span 1;
+        .free-update > span::after {
+            background-color: DodgerBlue;
+        }
+    }
+    & > .aau {
+        grid-row: 3 / span 1;
+        .free-update > span::after {
+            background-color: MediumBlue;
+        }
+    }
+    & > .wu,
+    & > .cu {
+        grid-row: 4 / span 1;
+    }
+    & > .wu {
+        grid-row: 4 / span 1;
+        .free-update > span::after {
+            background-color: MediumSeaGreen;
+        }
+    }
+    & > .cu {
+        grid-row: 4 / span 1;
+        .free-update > span::after {
+            background-color: DarkOliveGreen;
+        }
+        & > [data-index='5'] {
+            &::before {
+                border-left-width: 0px;
+            }
+            // transform: translate(500%, 6px);
+            // margin-left: -5px;
+        }
+        & > [data-index='4'] {
+            &::before {
+                border-right-width: 0px;
+            }
+            &::after {
+                display: none;
+            }
+            // transform: translate(-100%, 6px);
+            // margin-left: 5px;
+        }
+    }
+    & > .ll {
+        grid-row: 6 / span 1;
+        & > [data-index='4'] {
+            &::before {
+                border-left-width: 0px;
+            }
+            transform: translate(100%, 6px);
+        }
+        & > [data-index='5'] {
+            &::before {
+                border-right-width: 0px;
+            }
+            &::after {
+                display: none;
+            }
+            transform: translate(-100%, 6px);
+            // margin-left: 5px;
+        }
+    }
+    & > .ff {
+        --combine-line-offset-y: 155px;
+        grid-row: 7 / span 1;
+        & > [data-index='11'] {
+            &::before {
+                border-right-width: 0px;
+            }
+            transform: translate(0%, 6px);
+        }
+        & > [data-index='12'] {
+            &::before {
+                border-left-width: 0px;
+            }
+            &::after {
+                display: none;
+            }
+            transform: translate(0%, 6px);
+            // margin-left: 5px;
+        }
+    }
+    & > .es {
+        grid-row: 8 / span 1;
+    }
+
+    & > .current-month {
+        grid-row: 2 / span 7;
+        position: relative;
+        color: #0a0;
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background: currentColor;
+        }
+        &::before {
+            top: 0;
+            bottom: -10px;
+            left: -2px;
+            width: 4px;
+        }
+        &::after {
+            @size: 30px;
+            content: '✔';
+            color: #fff;
+            width: @size;
+            height: @size;
+            line-height: @size;
+            text-align: center;
+            background: #0a0;
+            top: 42.75%;
+            left: (0 - @size / 2);
+            border-radius: 50%;
+        }
+    }
+
+    & > .info {
+        grid-column: 3 / span 12;
+        grid-row: 9 / span 1;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: 4vh;
+        font-size: 0.8vw;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+    }
+
+    .mod-mask({
+        & > .months .month > span {
+            background: currentColor !important;
+        }
+        .free-update,
+        .paid-update {
+            & > span {
+                background: rgba(255, 255, 255, 0.25);
+            }
+            &.is-combine {
+                &::before {
+                    border-color: white;
+                    // background: fade(Goldenrod, 50%);
+                    background: fade(#fff, 75%);
+                }
+                &::after {
+                    background: #fff;
+                }
+            }
+        }
+
+        & > .free-updates {
+            .free-update > span::after {
+                background-color: currentColor !important;
+            }
+        }
+        & > .paid-updates {
+            .paid-update {
+                & > span {
+                    &.has-content {
+                        & > .img {
+                            background: #fff;
+                            &>img{
+                                opacity: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        & > .current-month {
+            color: #fff;
+            &::after {
+                color: #fff;
+                background: #fff;
+            }
+        }
+        & > .info {
+            opacity: 0.33333;
+        }
+    });
+}
