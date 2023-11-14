@@ -38,8 +38,8 @@ const SU12NotebleChanges = extend({
                     infos={['iniBuilds']}
                     img={require('./imgs/a20n.jpg')}
                     style={{
-                        backgroundSize: 'auto 150%',
-                        backgroundPosition: '60% 100%',
+                        backgroundSize: 'auto 120%',
+                        backgroundPosition: '90% 80%',
                     }}
                 />
                 <TheCell
@@ -80,19 +80,19 @@ const SU12NotebleChanges = extend({
                 <TheCell
                     title="环境景观"
                     infos={['改进天空渲染', '改进冰雪覆盖']}
-                    img={require('./imgs/sr22.webp')}
+                    img={require('./imgs/environment.png')}
                     style={{
-                        backgroundSize: 'auto 225%',
-                        backgroundPosition: '40% 80%',
+                        backgroundSize: 'auto 200%',
+                        backgroundPosition: '60% 70%',
                     }}
                 />
                 <TheCell
                     title="游戏性"
                     infos={['改进多人模式', '优化长途航班帧率']}
-                    img={require('./imgs/sr22.webp')}
+                    img={require('./imgs/multiplayer.jpg')}
                     style={{
-                        backgroundSize: 'auto 225%',
-                        backgroundPosition: '40% 80%',
+                        backgroundSize: 'auto 150%',
+                        backgroundPosition: '0% 70%',
                     }}
                 />
             </div>
