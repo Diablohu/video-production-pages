@@ -70,11 +70,11 @@ const SU12NotebleChanges = extend({
                         '新辅助选项：使用预先设定的跑道',
                         '修复非英语版客户端的发音',
                     ]}
-                    img={require('./imgs/sr22.webp')}
+                    img={require('./imgs/atc.png')}
                     style={{
                         gridRow: 'span 2',
                         backgroundSize: 'auto 275%',
-                        backgroundPosition: '40% 43%',
+                        backgroundPosition: '85% 70%',
                     }}
                 />
                 <TheCell
