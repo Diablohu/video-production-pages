@@ -66,15 +66,15 @@ const AAU1 = extend({
                         </li>
                         <li>修复非英语版本客户端的 ATC 发音问题</li>
                     </ul>
+                    <strong>系统改进: 环境 & 景观</strong>
+                    <ul>
+                        <li>调整天空颜色，变得更真实</li>
+                        <li>改进实时天气中雪与冰的覆盖精度</li>
+                    </ul>
                     <strong>系统改进: 游戏性</strong>
                     <ul>
                         <li>修复多处多人模式中无法看到其他玩家的问题</li>
                         <li>优化长途航班性能</li>
-                    </ul>
-                    <strong>系统改进: 环境 & 景观</strong>
-                    <ul>
-                        <li>调整臭氧层的颜色值，天空颜色变得更真实</li>
-                        <li>改进实时天气中雪与冰的覆盖精度</li>
                     </ul>
                 </div>
                 <div className="contents">
@@ -131,12 +131,6 @@ const AAU1 = extend({
                     </ul>
                     <strong>系统改进: 环境 & 景观</strong>
                     <ul>
-                        <li>
-                            改进摄影测量
-                            <ul>
-                                <li>WU_14 (加拿大)</li>
-                            </ul>
-                        </li>
                         <li>
                             改进地标和机场地景
                             <ul>
