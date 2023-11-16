@@ -99,37 +99,34 @@ const SU12NotebleChanges = extend({
 
             <div className="grid bottom">
                 <TheCell
-                    title="航空器质量更新"
-                    infos={['优化景观模型']}
-                    img={require('./imgs/sr22.webp')}
+                    title="航空器质量改进"
+                    infos={['波音大客机 / "雷诺竞赛" / "40周年纪念版"']}
+                    img={require('./imgs/aircraft.png')}
                     style={{
                         // backgroundSize: '',
-                        backgroundPosition: '40% 32.5%',
+                        backgroundPosition: '0% 50%',
                     }}
                 />
                 <TheCell
-                    img={require('./imgs/sr22.webp')}
+                    img={require('./imgs/sdk.jpg')}
                     style={{
                         gridColumn: 'span 2',
+                        backgroundPosition: '0% 70%',
                     }}
                     className="sdk"
                 >
                     <strong>开发工具</strong>
                     {/* <span>世界枢纽</span> */}
                     <span>
-                        SimBrief
+                        G1000 航电
                         <br />
-                        开发框架
+                        框架改进
                     </span>
+                    <span>滑板型起落架改进</span>
                     <span>
-                        波音 EFB
+                        飞机编辑器
                         <br />
-                        开发框架
-                    </span>
-                    <span>
-                        活塞发动机
-                        <br />
-                        参数优化
+                        专家模式
                     </span>
                 </TheCell>
             </div>
