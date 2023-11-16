@@ -88,7 +88,10 @@ const SU12NotebleChanges = extend({
                 />
                 <TheCell
                     title="游戏性"
-                    infos={['改进多人模式', '优化长途航班帧率']}
+                    infos={[
+                        '改进多人模式，确保玩家之间可见',
+                        '优化长途航班帧率',
+                    ]}
                     img={require('./imgs/multiplayer.jpg')}
                     style={{
                         backgroundSize: 'auto 150%',
