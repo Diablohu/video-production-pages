@@ -158,7 +158,7 @@ const AAU1 = extend({
                 ))}
             </div> */}
             <FooterInfo className="info">
-                基于 SU14 公测版已实装改动 | Diablohu | 2023/11/03 | fly-dbh.com
+                基于 SU14 公测版已实装改动 | Diablohu | 2023/11/17 | fly-dbh.com
             </FooterInfo>
         </div>
     );
