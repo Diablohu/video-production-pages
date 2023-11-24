@@ -97,6 +97,10 @@ export default {
                 'monthly-free-mods-202309',
                 require('@views/monthly-free-mods-202309').default,
             ],
+            [
+                'monthly-free-mods-202311',
+                require('@views/monthly-free-mods-202311').default,
+            ],
 
             // PROCEDURES =====================================================
             ['procedures-atr', require('@views/procedures-atr').default],
