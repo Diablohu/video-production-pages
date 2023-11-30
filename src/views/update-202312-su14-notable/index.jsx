@@ -43,7 +43,7 @@ const SU12NotebleChanges = extend({
                     }}
                 />
                 <TheCell
-                    title="西锐 SR22T G6"
+                    title="西锐 SR22T G6 GTS"
                     infos={['WorkingTitle']}
                     img={require('./imgs/sr22.webp')}
                     style={{
