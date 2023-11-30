@@ -43,7 +43,7 @@ const SU12NotebleChanges = extend({
                     }}
                 />
                 <TheCell
-                    title="西瑞 SR22T G6"
+                    title="西锐 SR22T G6"
                     infos={['WorkingTitle']}
                     img={require('./imgs/sr22.webp')}
                     style={{
@@ -67,7 +67,7 @@ const SU12NotebleChanges = extend({
                         '改进雷达引导',
                         '改进高度变化指令',
                         '改进用词',
-                        '新辅助选项：使用预先设定的跑道',
+                        '新辅助选项：强制使用预选定的跑道',
                         '修复非英语版客户端的发音',
                     ]}
                     img={require('./imgs/atc.png')}
