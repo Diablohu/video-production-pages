@@ -145,7 +145,7 @@ const FullYearPlan2023 = extend({
                         <span>
                             {i > 11 - monthOffset ? (
                                 <>
-                                    {i === monthOffset ? '24年' : ''}
+                                    {i === 12 - monthOffset ? '24年' : ''}
                                     {i - (11 - monthOffset)}
                                 </>
                             ) : (
@@ -275,7 +275,12 @@ const Item = ({ item, classNameCell, mask, index }) => {
 
 const FuturePlan = ({ type, children }) => {
     return (
-        <div className={`future ${type}`}>
+        <div
+            className={`future ${type}`}
+            style={{
+                gridColumnStart: `${12 - monthOffset + 4}`,
+            }}
+        >
             <div className="wrapper">{children}</div>
         </div>
     );
