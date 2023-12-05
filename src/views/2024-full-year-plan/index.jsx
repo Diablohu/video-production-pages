@@ -6,12 +6,14 @@ import styles from './index.module.less';
 
 // ============================================================================
 
-const monthOffset = 1;
+const monthOffset = 6;
 
 const SU = {
     3: 'SU_12',
     9: 'SU_13',
     12: 'SU_14',
+    // 15: 'SU_15',
+    // 18: 'SU_15',
 };
 const AAU = {
     6: 'AAU_02',
@@ -21,7 +23,7 @@ const WU = {
     4: ['WU_13', '大洋洲 ', ''],
     7: ['WU_14', '中东欧', ''],
     11: ['WU_15', '北欧', ''],
-    13: ['WU_16', '', ''],
+    13: ['WU_16', '加勒比', ''],
 };
 const CU = {
     5: ['CU_02', '法国', true, ''],
@@ -31,7 +33,7 @@ const CU = {
 };
 const SP = {
     2: '惊喜<br />AN-225',
-    11: '惊喜',
+    // 11: '惊喜',
 };
 const LL = {
     2: ['DHC-4 驯鹿', 'ORBX', require('./imgs/dhc-4.jpg')],
@@ -48,7 +50,7 @@ const FF = {
     3: ['AN-2', 'AT Sim.', require('./imgs/an-2.jpg')],
     6: ['Ford 4AT', 'Aeroplane H.', require('./imgs/ford-4at.png')],
     11: ['三菱MU-2', 'iniBuilds', require('./imgs/mu-2.jpg')],
-    12: ['FF_08', '', true, ''],
+    12: ['塞斯纳207', 'Carenado', true, require('./imgs/cessna-207.png')],
     13: ['FF_09', '', true, ''],
 };
 const ES = {
@@ -143,12 +145,14 @@ const FullYearPlan2023 = extend({
                         <span>
                             {i > 11 - monthOffset ? (
                                 <>
-                                    2024年
-                                    <br />
+                                    {i === monthOffset ? '24年' : ''}
                                     {i - (11 - monthOffset)}
                                 </>
                             ) : (
-                                i + 1 + monthOffset
+                                <>
+                                    {i === 0 ? '23年' : ''}
+                                    {i + 1 + monthOffset}
+                                </>
                             )}
                             月
                         </span>
@@ -179,13 +183,19 @@ const FullYearPlan2023 = extend({
                 className="current-month"
                 style={{
                     gridColumn: `${
-                        4 + new Date().getMonth() - monthOffset
+                        3 + new Date().getMonth() - monthOffset
                     } / span 1`,
                 }}
             />
 
+            <FuturePlan type="sp">《沙丘》联动DLC</FuturePlan>
+            <FuturePlan type="su">２次系统更新</FuturePlan>
+            <FuturePlan type="wu">３次世界更新，３次城市更新</FuturePlan>
+            <FuturePlan type="ll">６款当地传奇</FuturePlan>
+            <FuturePlan type="ff">３款著名航空器</FuturePlan>
+
             <div className="info">
-                官方已预告内容 | Diablohu | 2023/11/03 | fly-dbh.com
+                官方已预告内容 | Diablohu | 2023/12/05 | fly-dbh.com
             </div>
         </div>
     );
@@ -259,6 +269,14 @@ const Item = ({ item, classNameCell, mask, index }) => {
                     ></span>
                 </span>
             ) : null}
+        </div>
+    );
+};
+
+const FuturePlan = ({ type, children }) => {
+    return (
+        <div className={`future ${type}`}>
+            <div className="wrapper">{children}</div>
         </div>
     );
 };
