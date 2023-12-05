@@ -103,18 +103,18 @@ const SU12NotebleChanges = extend({
             <div className="grid bottom">
                 <TheCell
                     title="航空器质量改进"
-                    infos={['波音大客机 / "雷诺竞赛" / "40周年纪念版"']}
-                    img={require('./imgs/aircraft.png')}
+                    infos={['波音大客机 / Bell-407 / "雷诺竞赛"']}
+                    img={require('./imgs/aircraft.jpg')}
                     style={{
-                        // backgroundSize: '',
-                        backgroundPosition: '0% 50%',
+                        backgroundSize: '110% auto',
+                        backgroundPosition: '0% 62.5%',
                     }}
                 />
                 <TheCell
-                    img={require('./imgs/sdk.jpg')}
+                    img={require('./imgs/sdk.png')}
                     style={{
                         gridColumn: 'span 2',
-                        backgroundPosition: '0% 70%',
+                        backgroundPosition: '0% 50%',
                     }}
                     className="sdk"
                 >
@@ -123,9 +123,13 @@ const SU12NotebleChanges = extend({
                     <span>
                         G1000 航电
                         <br />
-                        框架改进
+                        更多功能
                     </span>
-                    <span>滑板型起落架改进</span>
+                    <span>
+                        滑板型
+                        <br />
+                        起落架改进
+                    </span>
                     <span>
                         飞机编辑器
                         <br />
@@ -134,7 +138,7 @@ const SU12NotebleChanges = extend({
                 </TheCell>
             </div>
 
-            <FooterInfo className="info" date="2023/12/01" />
+            <FooterInfo className="info" date="2023/12/05" />
         </div>
     );
 });
