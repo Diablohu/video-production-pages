@@ -6,7 +6,7 @@ import styles from './index.module.less';
 
 // ============================================================================
 
-const monthOffset = 6;
+const monthOffset = 7;
 
 const SU = {
     3: 'SU_12',
@@ -50,8 +50,8 @@ const FF = {
     3: ['AN-2', 'AT Sim.', require('./imgs/an-2.jpg')],
     6: ['Ford 4AT', 'Aeroplane H.', require('./imgs/ford-4at.png')],
     11: ['三菱MU-2', 'iniBuilds', require('./imgs/mu-2.jpg')],
-    12: ['塞斯纳207', 'Carenado', true, require('./imgs/cessna-207.png')],
-    13: ['FF_09', '', true, ''],
+    12: ['塞斯纳207', 'Carenado', require('./imgs/cessna-207.png')],
+    // 13: ['FF_09', '', true, ''],
 };
 const ES = {
     4: ['ATR-42/72', 'S&H Sim.', require('./imgs/atr-42.jpg')],
@@ -183,7 +183,7 @@ const FullYearPlan2023 = extend({
                 className="current-month"
                 style={{
                     gridColumn: `${
-                        3 + new Date().getMonth() - monthOffset
+                        -3 + new Date().getMonth() - monthOffset
                     } / span 1`,
                 }}
             />
