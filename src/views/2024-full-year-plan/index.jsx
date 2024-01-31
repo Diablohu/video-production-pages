@@ -6,13 +6,13 @@ import styles from './index.module.less';
 
 // ============================================================================
 
-const monthOffset = 7;
+const monthOffset = 10;
 
 const SU = {
     3: 'SU_12',
     9: 'SU_13',
     12: 'SU_14',
-    // 15: 'SU_15',
+    15: 'SU_15',
     // 18: 'SU_15',
 };
 const AAU = {
@@ -29,7 +29,8 @@ const CU = {
     5: ['CU_02', '法国', true, ''],
     6: ['CU_03', '美国德州', true, ''],
     8: ['CU_04', '西欧', ''],
-    12: ['CU_05', '', ''],
+    12: ['CU_05', '欧洲', ''],
+    16: ['CU_06', '', ''],
 };
 const SP = {
     2: '惊喜<br />AN-225',
@@ -37,13 +38,17 @@ const SP = {
 };
 const LL = {
     2: ['DHC-4 驯鹿', 'ORBX', require('./imgs/dhc-4.jpg')],
-    // 4: 'LL_09',
     6: ['Laté.631', 'BlueMesh', true, require('./imgs/latécoère-631.png')],
     5: ['Boeing 307', 'Aeroplane H.', true, require('./imgs/boeing-307.jpg')],
     7: ['AE45/145', 'Aeroplane H.', require('./imgs/ae45.jpg')],
     8: ['Do-X', 'O.Messer', require('./imgs/do-x.jpg')],
     11: ['SAAB B 17', 'iniBuilds', require('./imgs/saab17.jpg')],
-    13: ['LL_14', '', ''],
+    13: [
+        'Bell 47J',
+        'iniBuilds',
+        require('./imgs/MSFS_Bell47J_Screenshot_01-scaled.jpg'),
+    ],
+    16: 'LL_15',
 };
 const FF = {
     2: ['AN-225', 'iniBuilds', require('./imgs/an-225.jpg')],
@@ -189,13 +194,21 @@ const FullYearPlan2023 = extend({
             />
 
             <FuturePlan type="sp">《沙丘》联动DLC</FuturePlan>
-            <FuturePlan type="su">２次系统更新</FuturePlan>
-            <FuturePlan type="wu">３次世界更新，３次城市更新</FuturePlan>
-            <FuturePlan type="ll">６款当地传奇</FuturePlan>
-            <FuturePlan type="ff">３款著名航空器</FuturePlan>
+            <FuturePlan type="su" startOffset={2}>
+                １次系统更新
+            </FuturePlan>
+            <FuturePlan type="wu" startOffset={3}>
+                ２次世界更新，３次城市更新
+            </FuturePlan>
+            <FuturePlan type="ll" startOffset={3}>
+                ６款当地传奇
+            </FuturePlan>
+            <FuturePlan type="ff" startOffset={3}>
+                ３款著名航空器
+            </FuturePlan>
 
             <div className="info">
-                官方已预告内容 | Diablohu | 2023/12/05 | fly-dbh.com
+                官方已预告内容 | Diablohu | 2024/02/01 | fly-dbh.com
             </div>
         </div>
     );
@@ -273,12 +286,12 @@ const Item = ({ item, classNameCell, mask, index }) => {
     );
 };
 
-const FuturePlan = ({ type, children }) => {
+const FuturePlan = ({ type, startOffset = 0, children }) => {
     return (
         <div
             className={`future ${type}`}
             style={{
-                gridColumnStart: `${12 - monthOffset + 4}`,
+                gridColumnStart: `${12 - monthOffset + 4 + startOffset}`,
             }}
         >
             <div className="wrapper">{children}</div>
