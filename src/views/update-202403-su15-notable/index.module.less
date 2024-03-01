@@ -9,8 +9,8 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 0.33333fr;
-    gap: 20px 20px;
+    grid-template-rows: 1fr 1fr 0.425fr;
+    gap: 20px 60px;
     padding: 200px 50px 75px 50px;
     overflow: hidden;
 
@@ -66,25 +66,16 @@
 
     & > .grid {
         display: inherit;
-        gap: inherit;
+        gap: 20px 20px;
 
         &.left,
+        &.mid,
         &.right {
             .component-cell {
                 font-size: 1vw;
                 strong {
                     font-size: unit(5/3, em);
                 }
-            }
-        }
-
-        &.left {
-            grid-column: span 3;
-            grid-row: span 3;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: var(--title-height) 1fr;
-
-            .component-cell {
                 &::before {
                     background: linear-gradient(
                         to top,
@@ -99,43 +90,50 @@
             }
         }
 
+        &.left {
+            grid-column: span 3;
+            grid-row: span 2;
+            grid-template-columns: 1fr;
+            grid-template-rows: var(--title-height) 1fr 1fr;
+        }
+
         &.mid {
             grid-column: span 4;
             grid-row: span 2;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: var(--title-height) 1fr;
+            grid-template-columns: 1fr;
+            grid-template-rows: var(--title-height) 1.75fr 1fr;
         }
 
         &.right {
             grid-column: span 3;
             grid-row: span 2;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: var(--title-height) 1fr 1fr;
-            .component-cell:nth-child(2) {
-                &::before {
-                    background: linear-gradient(
-                        to top,
-                        rgba(0, 0, 0, 0.85) 17.5%,
-                        rgba(0, 0, 0, 0) 100%
-                    );
-                    width: 100%;
-                    height: 20em;
-                    bottom: -10px;
-                    left: 0;
-                }
-            }
+            grid-template-columns: 1fr;
+            grid-template-rows: var(--title-height) 1.75fr 1fr;
+            // .component-cell:nth-child(2) {
+            //     &::before {
+            //         background: linear-gradient(
+            //             to top,
+            //             rgba(0, 0, 0, 0.85) 17.5%,
+            //             rgba(0, 0, 0, 0) 100%
+            //         );
+            //         width: 100%;
+            //         height: 20em;
+            //         bottom: -10px;
+            //         left: 0;
+            //     }
+            // }
         }
 
         &.bottom {
-            // grid-column: span 10;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-column: span 10;
+            grid-template-columns: inherit;
             .component-cell {
                 padding-top: 0;
                 padding-bottom: 0;
                 justify-content: center;
-                strong {
-                    margin-bottom: 0;
-                }
+                // strong {
+                //     margin-bottom: 0;
+                // }
 
                 &.sdk {
                     flex-flow: row nowrap;

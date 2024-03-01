@@ -28,27 +28,27 @@ const SU12NotebleChanges = extend({
             <div className="grid left">
                 <h2
                     style={{
-                        gridColumn: 'span 2',
+                        gridColumn: 'span 1',
                     }}
                 >
                     航空器 & 航电
                 </h2>
                 <TheCell
-                    title="空客 A320 NEO"
+                    title="空客 A320 NEO (V2)"
                     infos={['iniBuilds']}
                     img={require('./imgs/a20n.jpg')}
                     style={{
-                        backgroundSize: 'auto 120%',
-                        backgroundPosition: '90% 80%',
+                        backgroundSize: '110% auto',
+                        backgroundPosition: '50% calc(100% + 65px)',
                     }}
                 />
                 <TheCell
-                    title="西锐 SR22T G6 GTS"
-                    infos={['WorkingTitle']}
-                    img={require('./imgs/sr22.webp')}
+                    title="佳明 G3X Touch"
+                    infos={['WorkingTitle', '初期适配：VL-3 / Xcub / NXCub']}
+                    img={require('./imgs/g3x.png')}
                     style={{
-                        backgroundSize: 'auto 125%',
-                        backgroundPosition: '40% 30%',
+                        backgroundSize: '115% auto',
+                        backgroundPosition: '25% 100%',
                     }}
                 />
             </div>
@@ -56,56 +56,61 @@ const SU12NotebleChanges = extend({
             <div className="grid mid">
                 <h2
                     style={{
-                        gridColumn: 'span 2',
+                        gridColumn: 'span 1',
                     }}
                 >
                     游戏引擎 & 系统
                 </h2>
+                <TheCell
+                    title="改进帧率与稳定性"
+                    infos={['重写内存寻址策略', '重写玻璃仪表渲染逻辑']}
+                    img={require('./imgs/b789-cockpit.jpg')}
+                    style={{
+                        backgroundSize: '125% auto',
+                        backgroundPosition: '50% 90%',
+                    }}
+                />
+                <TheCell
+                    title="改进实时交通"
+                    infos={[
+                        '重构数据结构',
+                        '支持航司与涂装匹配（需第三方接入）',
+                    ]}
+                    img={require('./imgs/gate.jpg')}
+                    style={{
+                        backgroundSize: '175% auto',
+                        backgroundPosition: '20% 50%',
+                    }}
+                />
             </div>
 
             <div className="grid right">
                 <h2
                     style={{
-                        gridColumn: 'span 2',
+                        gridColumn: 'span 1',
                     }}
                 >
                     模拟系统
                 </h2>
                 <TheCell
-                    title="ATC"
+                    title="全新地面交互模型"
                     infos={[
-                        '改进雷达引导',
-                        '改进高度变化指令',
-                        '改进用词',
-                        '新辅助选项：强制使用预选定的跑道',
-                        '修复非英语版客户端的发音',
+                        '所有起落架不再视为都处同一个平面',
+                        '初期适配：塞斯纳172 / Cabri G2',
                     ]}
-                    img={require('./imgs/atc.png')}
+                    img={require('./imgs/c172-ground.jpg')}
                     style={{
-                        gridRow: 'span 2',
-                        backgroundSize: 'auto 275%',
-                        backgroundPosition: '85% 70%',
+                        backgroundSize: 'auto 125%',
+                        backgroundPosition: '5% 100%',
                     }}
                 />
                 <TheCell
-                    title="环境景观"
-                    infos={['改进天空渲染', '改进冰雪覆盖']}
-                    img={require('./imgs/environment.png')}
+                    title="支持双旋翼直升机"
+                    infos={['需第三方接入']}
+                    img={require('./imgs/ch47.jpg')}
                     style={{
-                        backgroundSize: 'auto 200%',
-                        backgroundPosition: '60% 70%',
-                    }}
-                />
-                <TheCell
-                    title="游戏性"
-                    infos={[
-                        '改进多人模式，确保玩家之间可见',
-                        '优化长途航班帧率',
-                    ]}
-                    img={require('./imgs/multiplayer.jpg')}
-                    style={{
-                        backgroundSize: 'auto 150%',
-                        backgroundPosition: '0% 70%',
+                        backgroundSize: '100% auto',
+                        backgroundPosition: '10% 50%',
                     }}
                 />
             </div>
@@ -113,37 +118,56 @@ const SU12NotebleChanges = extend({
             <div className="grid bottom">
                 <TheCell
                     title="航空器质量改进"
-                    infos={['波音大客机 / Bell-407 / "雷诺竞赛"']}
-                    img={require('./imgs/aircraft.jpg')}
+                    infos={['A310 / PC-2 / 奖状经度']}
+                    img={require('./imgs/a310.png')}
                     style={{
+                        gridColumn: 'span 3',
+                        marginRight: '30px',
+                        backgroundSize: '175% auto',
+                        backgroundPosition: '55% 75%',
+                    }}
+                />
+                <TheCell
+                    title="环境景观"
+                    infos={['改进水面结冰']}
+                    img={require('./imgs/ice.jpg')}
+                    style={{
+                        gridColumn: 'span 2',
+                        marginLeft: '10px',
                         backgroundSize: '110% auto',
-                        backgroundPosition: '0% 62.5%',
+                        backgroundPosition: '0% 40%',
+                    }}
+                />
+                <TheCell
+                    title="云游戏版"
+                    infos={['支持触控与陀螺仪']}
+                    img={require('./imgs/camp.jpg')}
+                    style={{
+                        gridColumn: 'span 2',
+                        marginRight: '10px',
+                        backgroundSize: '115% auto',
+                        backgroundPosition: '20% 55%',
                     }}
                 />
                 <TheCell
                     img={require('./imgs/sdk.png')}
                     style={{
-                        gridColumn: 'span 2',
+                        gridColumn: 'span 3',
+                        marginLeft: '30px',
                         backgroundPosition: '0% 50%',
                     }}
                     className="sdk"
                 >
                     <strong>开发工具</strong>
-                    {/* <span>世界枢纽</span> */}
                     <span>
-                        G1000 航电
+                        世界枢纽
                         <br />
-                        更多功能
+                        封测中
                     </span>
                     <span>
-                        滑板型
+                        直升机
                         <br />
-                        起落架改进
-                    </span>
-                    <span>
-                        飞机编辑器
-                        <br />
-                        专家模式
+                        支持起落架
                     </span>
                 </TheCell>
             </div>
