@@ -79,6 +79,10 @@ export default {
                 'update-202312-su14-notable',
                 require('@views/update-202312-su14-notable').default,
             ],
+            [
+                'update-202403-su15-notable',
+                require('@views/update-202403-su15-notable').default,
+            ],
 
             // MONTHLY FREE MODS ==============================================
             [

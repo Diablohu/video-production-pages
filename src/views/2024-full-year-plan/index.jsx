@@ -24,6 +24,7 @@ const WU = {
     7: ['WU_14', '中东欧', ''],
     11: ['WU_15', '北欧', ''],
     13: ['WU_16', '加勒比', ''],
+    17: ['WU_17', '', ''],
 };
 const CU = {
     5: ['CU_02', '法国', true, ''],
@@ -34,7 +35,7 @@ const CU = {
 };
 const SP = {
     2: '惊喜<br />AN-225',
-    // 11: '惊喜',
+    14: ' 《沙丘》　联动扩展',
 };
 const LL = {
     2: ['DHC-4 驯鹿', 'ORBX', require('./imgs/dhc-4.jpg')],
@@ -49,6 +50,7 @@ const LL = {
         require('./imgs/MSFS_Bell47J_Screenshot_01-scaled.jpg'),
     ],
     16: 'LL_15',
+    17: 'LL_16',
 };
 const FF = {
     2: ['AN-225', 'iniBuilds', require('./imgs/an-225.jpg')],
@@ -193,22 +195,22 @@ const FullYearPlan2023 = extend({
                 }}
             />
 
-            <FuturePlan type="sp">《沙丘》联动DLC</FuturePlan>
-            <FuturePlan type="su" startOffset={2}>
+            {/* <FuturePlan type="sp">《沙丘》联动DLC</FuturePlan> */}
+            <FuturePlan type="su" startOffset={4}>
                 １次系统更新
             </FuturePlan>
-            <FuturePlan type="wu" startOffset={3}>
-                ２次世界更新，３次城市更新
+            <FuturePlan type="wu" startOffset={4}>
+                １次世界更新，３次城市更新
             </FuturePlan>
-            <FuturePlan type="ll" startOffset={3}>
-                ６款当地传奇
+            <FuturePlan type="ll" startOffset={4}>
+                ５款当地传奇
             </FuturePlan>
-            <FuturePlan type="ff" startOffset={3}>
+            <FuturePlan type="ff" startOffset={4}>
                 ３款著名航空器
             </FuturePlan>
 
             <div className="info">
-                官方已预告内容 | Diablohu | 2024/02/01 | fly-dbh.com
+                官方已预告内容 | Diablohu | 2024/03/01 | fly-dbh.com
             </div>
         </div>
     );
