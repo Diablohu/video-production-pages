@@ -96,7 +96,7 @@ const SU12NotebleChanges = extend({
                     title="全新地面交互模型"
                     infos={[
                         '所有起落架不再视为都处同一个平面',
-                        '初期适配：塞斯纳172 / Cabri G2',
+                        '初期适配：A320 NEO / 塞斯纳172 / Cabri G2',
                     ]}
                     img={require('./imgs/c172-ground.jpg')}
                     style={{
@@ -172,7 +172,7 @@ const SU12NotebleChanges = extend({
                 </TheCell>
             </div>
 
-            <FooterInfo className="info" date="2024/03/01" />
+            <FooterInfo className="info" date="2024/03/14" />
         </div>
     );
 });

@@ -31,7 +31,7 @@ const CU = {
     6: ['CU_03', '美国德州', true, ''],
     8: ['CU_04', '西欧', ''],
     12: ['CU_05', '欧洲', ''],
-    16: ['CU_06', '', ''],
+    16: ['CU_06', '德国西南', ''],
 };
 const SP = {
     2: '惊喜<br />AN-225',
@@ -49,7 +49,7 @@ const LL = {
         'iniBuilds',
         require('./imgs/MSFS_Bell47J_Screenshot_01-scaled.jpg'),
     ],
-    16: 'LL_15',
+    16: ['Do-31', 'iniBuilds', require('./imgs/do31.jpg')],
     17: 'LL_16',
 };
 const FF = {
@@ -210,7 +210,7 @@ const FullYearPlan2023 = extend({
             </FuturePlan>
 
             <div className="info">
-                官方已预告内容 | Diablohu | 2024/03/01 | fly-dbh.com
+                官方已预告内容 | Diablohu | 2024/03/14 | fly-dbh.com
             </div>
         </div>
     );
