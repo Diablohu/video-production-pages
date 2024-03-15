@@ -165,9 +165,9 @@ const SU12NotebleChanges = extend({
                         封测中
                     </span>
                     <span>
-                        直升机
+                        WASM模块
                         <br />
-                        支持起落架
+                        新内存管理机制
                     </span>
                 </TheCell>
             </div>
