@@ -44,7 +44,7 @@ const SU12NotebleChanges = extend({
                 />
                 <TheCell
                     title="佳明 G3X Touch"
-                    infos={['WorkingTitle', '初期适配：VL-3 / Xcub / NXCub']}
+                    infos={['WorkingTitle', '初期适配：VL-3 / XCub / NXCub']}
                     img={require('./imgs/g3x.png')}
                     style={{
                         backgroundSize: '115% auto',
@@ -62,7 +62,7 @@ const SU12NotebleChanges = extend({
                     游戏引擎 & 系统
                 </h2>
                 <TheCell
-                    title="改进帧率与稳定性"
+                    title="大幅改进帧率与稳定性"
                     infos={['重写内存寻址策略', '重写玻璃仪表渲染逻辑']}
                     img={require('./imgs/b789-cockpit.jpg')}
                     style={{
@@ -76,10 +76,10 @@ const SU12NotebleChanges = extend({
                         '重构数据结构',
                         '支持航司与涂装匹配（需第三方接入）',
                     ]}
-                    img={require('./imgs/gate.jpg')}
+                    img={require('./imgs/egll.png')}
                     style={{
                         backgroundSize: '175% auto',
-                        backgroundPosition: '20% 50%',
+                        backgroundPosition: '35% 40%',
                     }}
                 />
             </div>
@@ -95,13 +95,13 @@ const SU12NotebleChanges = extend({
                 <TheCell
                     title="全新地面交互模型"
                     infos={[
-                        '所有起落架不再视为都处同一个平面',
+                        '不再将起落架都视为同一个平面',
                         '初期适配：A320 NEO / 塞斯纳172 / Cabri G2',
                     ]}
-                    img={require('./imgs/c172-ground.jpg')}
+                    img={require('./imgs/c172gears.png')}
                     style={{
-                        backgroundSize: 'auto 125%',
-                        backgroundPosition: '5% 100%',
+                        backgroundSize: 'auto 100%',
+                        backgroundPosition: '50% 100%',
                     }}
                 />
                 <TheCell
