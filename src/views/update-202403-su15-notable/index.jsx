@@ -172,7 +172,7 @@ const SU12NotebleChanges = extend({
                 </TheCell>
             </div>
 
-            <FooterInfo className="info" date="2024/03/14" />
+            <FooterInfo className="info" date="2024/03/22" />
         </div>
     );
 });
