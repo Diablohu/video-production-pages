@@ -118,7 +118,7 @@ const SU12NotebleChanges = extend({
             <div className="grid bottom">
                 <TheCell
                     title="航空器质量改进"
-                    infos={['A310 / PC-6 / 奖状经度']}
+                    infos={['A310 / SR22T / 奖状经度']}
                     img={require('./imgs/a310.png')}
                     style={{
                         gridColumn: 'span 3',
