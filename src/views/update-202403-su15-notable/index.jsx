@@ -118,13 +118,13 @@ const SU12NotebleChanges = extend({
             <div className="grid bottom">
                 <TheCell
                     title="航空器质量改进"
-                    infos={['A310 / SR22T / 奖状经度']}
-                    img={require('./imgs/a310.png')}
+                    infos={['波音747-8 / 奖状经度 / SR22T']}
+                    img={require('./imgs/c700.png')}
                     style={{
                         gridColumn: 'span 3',
                         marginRight: '30px',
-                        backgroundSize: '175% auto',
-                        backgroundPosition: '55% 75%',
+                        backgroundSize: '160% auto',
+                        backgroundPosition: '30% 77.5%',
                     }}
                 />
                 <TheCell
@@ -172,7 +172,7 @@ const SU12NotebleChanges = extend({
                 </TheCell>
             </div>
 
-            <FooterInfo className="info" date="2024/03/22" />
+            <FooterInfo className="info" date="2024/04/04" />
         </div>
     );
 });

@@ -12,7 +12,7 @@ const SU = {
     3: 'SU_12',
     9: 'SU_13',
     12: 'SU_14',
-    15: 'SU_15',
+    16: 'SU_15',
     // 18: 'SU_15',
 };
 const AAU = {
@@ -35,7 +35,7 @@ const CU = {
 };
 const SP = {
     2: '惊喜<br />AN-225',
-    14: ' 《沙丘》　联动扩展',
+    14: '《沙丘》　联动扩展',
 };
 const LL = {
     2: ['DHC-4 驯鹿', 'ORBX', require('./imgs/dhc-4.jpg')],
@@ -210,7 +210,7 @@ const FullYearPlan2023 = extend({
             </FuturePlan>
 
             <div className="info">
-                官方已预告内容 | Diablohu | 2024/03/14 | fly-dbh.com
+                官方已预告内容 | Diablohu | 2024/04/04 | fly-dbh.com
             </div>
         </div>
     );
