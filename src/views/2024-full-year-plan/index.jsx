@@ -6,13 +6,13 @@ import styles from './index.module.less';
 
 // ============================================================================
 
-const monthOffset = 10;
+const monthOffset = 12;
 
 const SU = {
     3: 'SU_12',
     9: 'SU_13',
     12: 'SU_14',
-    16: 'SU_15',
+    17: 'SU_15',
     // 18: 'SU_15',
 };
 const AAU = {
@@ -24,7 +24,7 @@ const WU = {
     7: ['WU_14', '中东欧', ''],
     11: ['WU_15', '北欧', ''],
     13: ['WU_16', '加勒比', ''],
-    17: ['WU_17', '', ''],
+    // 17: ['WU_17', '', ''],
 };
 const CU = {
     5: ['CU_02', '法国', true, ''],
@@ -32,10 +32,13 @@ const CU = {
     8: ['CU_04', '西欧', ''],
     12: ['CU_05', '欧洲', ''],
     16: ['CU_06', '德国西南', ''],
+    17: ['CU_07', '欧洲II', ''],
 };
 const SP = {
     2: '惊喜<br />AN-225',
     14: '《沙丘》　联动扩展',
+    18: '惊喜',
+    19: '惊喜',
 };
 const LL = {
     2: ['DHC-4 驯鹿', 'ORBX', require('./imgs/dhc-4.jpg')],
@@ -50,7 +53,7 @@ const LL = {
         require('./imgs/MSFS_Bell47J_Screenshot_01-scaled.jpg'),
     ],
     16: ['Do-31', 'iniBuilds', require('./imgs/do31.jpg')],
-    17: 'LL_16',
+    17: ['Short SC.7', 'iniBuilds', require('./imgs/sc7.jpg')],
 };
 const FF = {
     2: ['AN-225', 'iniBuilds', require('./imgs/an-225.jpg')],
@@ -190,27 +193,27 @@ const FullYearPlan2023 = extend({
                 className="current-month"
                 style={{
                     gridColumn: `${
-                        -3 + new Date().getMonth() - monthOffset
+                        -2 + new Date().getMonth() - monthOffset
                     } / span 1`,
                 }}
             />
 
             {/* <FuturePlan type="sp">《沙丘》联动DLC</FuturePlan> */}
-            <FuturePlan type="su" startOffset={4}>
+            {/* <FuturePlan type="su" startOffset={4}>
                 １次系统更新
-            </FuturePlan>
+            </FuturePlan> */}
             <FuturePlan type="wu" startOffset={4}>
-                １次世界更新，３次城市更新
+                ３次世界更新，１次城市更新
             </FuturePlan>
             <FuturePlan type="ll" startOffset={4}>
-                ５款当地传奇
+                ４款当地传奇
             </FuturePlan>
             <FuturePlan type="ff" startOffset={4}>
-                ３款著名航空器
+                ４款著名航空器
             </FuturePlan>
 
             <div className="info">
-                官方已预告内容 | Diablohu | 2024/04/04 | fly-dbh.com
+                官方已预告内容 | Diablohu | 2024/04/25 | fly-dbh.com
             </div>
         </div>
     );
