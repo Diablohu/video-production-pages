@@ -35,7 +35,7 @@ const SU12NotebleChanges = extend({
                 </h2>
                 <TheCell
                     title="空客 A320 NEO (V2)"
-                    infos={['iniBuilds']}
+                    infos={['iniBuilds 开发']}
                     img={require('./imgs/a20n.jpg')}
                     style={{
                         backgroundSize: '110% auto',
@@ -44,7 +44,10 @@ const SU12NotebleChanges = extend({
                 />
                 <TheCell
                     title="佳明 G3X Touch"
-                    infos={['WorkingTitle', '初期适配：VL-3 / XCub / NXCub']}
+                    infos={[
+                        'WorkingTitle 开发',
+                        '初期适配：VL-3 / XCub / NXCub',
+                    ]}
                     img={require('./imgs/g3x.png')}
                     style={{
                         backgroundSize: '115% auto',
@@ -59,7 +62,7 @@ const SU12NotebleChanges = extend({
                         gridColumn: 'span 1',
                     }}
                 >
-                    游戏引擎 & 系统
+                    游戏系统
                 </h2>
                 <TheCell
                     title="大幅改进帧率与稳定性"
@@ -117,8 +120,9 @@ const SU12NotebleChanges = extend({
 
             <div className="grid bottom">
                 <TheCell
+                    className="mid"
                     title="航空器质量改进"
-                    infos={['波音747-8 / 奖状经度 / SR22T']}
+                    infos={['747-8 / 奖状经度 / SR22T / ...']}
                     img={require('./imgs/c700.png')}
                     style={{
                         gridColumn: 'span 3',
@@ -127,28 +131,35 @@ const SU12NotebleChanges = extend({
                         backgroundPosition: '30% 77.5%',
                     }}
                 />
-                <TheCell
-                    title="环境景观"
-                    infos={['改进水面结冰']}
-                    img={require('./imgs/ice.jpg')}
-                    style={{
-                        gridColumn: 'span 2',
-                        marginLeft: '10px',
-                        backgroundSize: '110% auto',
-                        backgroundPosition: '0% 40%',
-                    }}
-                />
-                <TheCell
-                    title="云游戏版"
-                    infos={['支持触控与陀螺仪']}
-                    img={require('./imgs/camp.jpg')}
-                    style={{
-                        gridColumn: 'span 2',
-                        marginRight: '10px',
-                        backgroundSize: '115% auto',
-                        backgroundPosition: '20% 55%',
-                    }}
-                />
+                <div className="grid bottom-mid">
+                    <TheCell
+                        title="环境景观"
+                        infos={['改进水面结冰']}
+                        img={require('./imgs/ice.jpg')}
+                        style={{
+                            backgroundSize: '110% auto',
+                            backgroundPosition: '0% 40%',
+                        }}
+                    />
+                    <TheCell
+                        title="PC DX12"
+                        infos={['修正机场地面渲染']}
+                        img={require('./imgs/airport-2.jpg')}
+                        style={{
+                            backgroundSize: '125% auto',
+                            backgroundPosition: '80% 50%',
+                        }}
+                    />
+                    <TheCell
+                        title="云游戏版"
+                        infos={['支持触控与陀螺仪']}
+                        img={require('./imgs/xbox-controller.webp')}
+                        style={{
+                            backgroundSize: '133% auto',
+                            backgroundPosition: '100% 40%',
+                        }}
+                    />
+                </div>
                 <TheCell
                     img={require('./imgs/sdk.png')}
                     style={{
@@ -172,7 +183,7 @@ const SU12NotebleChanges = extend({
                 </TheCell>
             </div>
 
-            <FooterInfo className="info" date="2024/04/25" />
+            <FooterInfo className="info" date="2024/05/08" />
         </div>
     );
 });

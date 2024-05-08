@@ -23,6 +23,7 @@
             font-style: normal;
             font-size: unit(5/3, em);
             margin-bottom: 0.25em;
+            margin-left: -3px;
             // -webkit-text-fill-color: transparent;
             // background: linear-gradient(
             //     180deg,
@@ -34,6 +35,9 @@
             // -webkit-background-clip: text !important;
             transform: skew(var(--logo-skew)) scale(0.875, 1);
             transform-origin: 0 100%;
+        }
+        span {
+            font-style: normal;
         }
 
         &::before {
@@ -155,6 +159,24 @@
                         .mod-mask({
                             background: transparent;
                         });
+                    }
+                }
+            }
+            .bottom-mid {
+                display: inherit;
+                gap: inherit;
+                grid-column: span 4;
+                grid-template-columns: 1fr 1fr 1fr;
+                margin: 0 10px;
+                .component-cell {
+                    padding: 0;
+                    text-align: center;
+                    align-items: center;
+                    strong {
+                        transform-origin: 50% 100%;
+                    }
+                    &::before {
+                        background: rgba(0, 0, 0, 0.3333);
                     }
                 }
             }
