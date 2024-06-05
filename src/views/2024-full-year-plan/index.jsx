@@ -33,8 +33,8 @@ const CU = {
     12: ['CU_05', '欧洲', ''],
     16: ['CU_06', '德国西南', ''],
     17: ['CU_07', '欧洲II', ''],
-    18: ['CU_08', ''],
-    19: ['CU_09', '', true, ''],
+    18: ['CU_08', '拉斯维加斯', ''],
+    19: ['CU_09', '美国东北', true, ''],
 };
 const SP = {
     2: '惊喜<br />AN-225',
@@ -66,7 +66,8 @@ const FF = {
     6: ['Ford 4AT', 'Aeroplane H.', require('./imgs/ford-4at.png')],
     11: ['三菱MU-2', 'iniBuilds', require('./imgs/mu-2.jpg')],
     12: ['塞斯纳207', 'Carenado', require('./imgs/cessna-207.png')],
-    18: ['FF_10', ''],
+    18: ['C47D', 'Aeroplane H.', require('./imgs/c47d.png')],
+    19: ['波音707', 'Aeroplane H.', require('./imgs/b707.png')],
 };
 const ES = {
     4: ['ATR-42/72', 'S&H Sim.', require('./imgs/atr-42.jpg')],
@@ -204,21 +205,21 @@ const FullYearPlan2023 = extend({
             />
 
             {/* <FuturePlan type="sp">《沙丘》联动DLC</FuturePlan> */}
-            {/* <FuturePlan type="su" startOffset={4}>
-                １次系统更新
-            </FuturePlan> */}
+            <FuturePlan type="su" startOffset={6}>
+                １次系统更新（小型）
+            </FuturePlan>
             <FuturePlan type="wu" startOffset={6}>
-                １次城市更新
+                ３次世界更新
             </FuturePlan>
             <FuturePlan type="ll" startOffset={6}>
                 １款当地传奇
             </FuturePlan>
             <FuturePlan type="ff" startOffset={6}>
-                ３款著名航空器
+                ２款著名航空器
             </FuturePlan>
 
             <div className="info">
-                官方已预告内容 | Diablohu | 2024/05/24 | fly-dbh.com
+                官方已预告内容 | Diablohu | 2024/06/06 | fly-dbh.com
             </div>
         </div>
     );
