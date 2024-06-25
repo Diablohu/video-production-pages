@@ -1,0 +1,61 @@
+import { useEffect, useState } from 'react';
+import { extend } from 'koot';
+import classNames from 'classnames';
+
+import styles from './page.module.less';
+
+// ============================================================================
+
+interface ComponentProps {
+    customProps?: string;
+}
+
+type ViewType = 'output' | 'mask' | 'bg-dark' | 'bg-light' | 'bg-streaming';
+
+// Functional Component =======================================================
+
+const Page = extend<ComponentProps>({
+    styles,
+})(({ className, children }): JSX.Element => {
+    const [viewType, setViewType] = useState<ViewType>();
+
+    /** 使用 MutationObserver，监控 HTML 标签的 className 变化 */
+    useEffect(() => {
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes') {
+                    const { target } = mutation;
+                    if ((target as HTMLHtmlElement).tagName === 'HTML') {
+                        const viewType = (
+                            target as HTMLHtmlElement
+                        ).getAttribute('data-view-type') as ViewType;
+                        setViewType(viewType);
+                    }
+                }
+            });
+        });
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['data-view-type'],
+        });
+        return () => {
+            setViewType(undefined);
+            observer.disconnect();
+        };
+    }, []);
+
+    return (
+        <div
+            className={classNames([
+                className,
+                {
+                    [`is-view-${viewType}`]: !!viewType && viewType,
+                },
+            ])}
+        >
+            {children}
+        </div>
+    );
+});
+
+export default Page;

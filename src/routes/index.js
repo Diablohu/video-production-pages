@@ -35,6 +35,12 @@ export default {
 
     childRoutes: [
         ...[
+            // MSFS 2024 ONLY =================================================
+            [
+                'msfs-2024-default-aircrafts',
+                require('@views/msfs-2024/default-aircrafts').default,
+            ],
+
             // FULL YEAR PLAN =================================================
             [
                 '2023-full-year-plan',
