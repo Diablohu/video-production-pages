@@ -2,4 +2,21 @@
 
 .component {
     position: relative;
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    border: 50px solid transparent;
+    border-top-width: 200px;
+    border-bottom-width: 115px;
+    .component-body {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .component-footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        transform: translateY(100%);
+    }
 }

@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react';
 import { extend } from 'koot';
 import classNames from 'classnames';
+import dayjs from 'dayjs';
+
+import FooterInfo from '@components/footer-info';
 
 import styles from './page.module.less';
 
 // ============================================================================
 
 interface ComponentProps {
-    customProps?: string;
+    updateDate?: string | boolean;
+    classNameBody?: string;
 }
 
 type ViewType = 'output' | 'mask' | 'bg-dark' | 'bg-light' | 'bg-streaming';
@@ -16,7 +20,13 @@ type ViewType = 'output' | 'mask' | 'bg-dark' | 'bg-light' | 'bg-streaming';
 
 const Page = extend<ComponentProps>({
     styles,
-})(({ className, children }): JSX.Element => {
+})(({
+    className,
+    'data-class-name': classNameModule,
+    classNameBody,
+    children,
+    updateDate,
+}): JSX.Element => {
     const [viewType, setViewType] = useState<ViewType>();
 
     /** 使用 MutationObserver，监控 HTML 标签的 className 变化 */
@@ -53,7 +63,24 @@ const Page = extend<ComponentProps>({
                 },
             ])}
         >
-            {children}
+            <article
+                className={classNames([
+                    `${classNameModule}-body`,
+                    classNameBody,
+                ])}
+            >
+                {children}
+            </article>
+            {!updateDate ? null : (
+                <FooterInfo
+                    className={`${classNameModule}-footer`}
+                    date={
+                        updateDate === true
+                            ? dayjs().add(8, 'hour').format('YYYY-MM-DD')
+                            : updateDate
+                    }
+                />
+            )}
         </div>
     );
 });
