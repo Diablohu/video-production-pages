@@ -56,9 +56,9 @@ const LL = {
     ],
     16: ['Do-31', 'iniBuilds', require('./imgs/do31.jpg')],
     17: ['Short SC.7', 'iniBuilds', require('./imgs/sc7.jpg')],
-    18: ['LL_17', ''],
-    19: ['LL_18', '', true, ''],
-    20: ['LL_19', '', true, ''],
+    19: ['C-46 Commando', '', require('./imgs/sc7.jpg')],
+    20: ['LL_18', ''],
+    21: ['LL_19', ''],
 };
 const FF = {
     2: ['AN-225', 'iniBuilds', require('./imgs/an-225.jpg')],
