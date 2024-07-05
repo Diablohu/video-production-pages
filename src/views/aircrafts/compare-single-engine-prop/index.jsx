@@ -16,7 +16,7 @@ const aircraftsMilitary = [];
 
 // Functional Component =======================================================
 
-const ThisPage = extend({
+const MSFS2024DefaultAircrafts = extend({
     styles,
 })(({ className, params: { type } }) => {
     return (
@@ -26,7 +26,7 @@ const ThisPage = extend({
     );
 });
 
-export default ThisPage;
+export default MSFS2024DefaultAircrafts;
 
 // Functional Component =======================================================
 

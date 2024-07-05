@@ -126,6 +126,12 @@ export default {
                 require('@views/third-party-fenix-a320-v2-rollout').default,
             ],
 
+            // COMPARISON =====================================================
+            [
+                'aircrafts-compare-single-engine-prop',
+                require('@views/aircrafts/compare-single-engine-prop').default,
+            ],
+
             // MISC ===========================================================
             [
                 '2022-high-quality-3rd-party-planes',
