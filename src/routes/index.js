@@ -128,8 +128,8 @@ export default {
 
             // COMPARISON =====================================================
             [
-                'aircrafts-compare-single-engine-prop',
-                require('@views/aircrafts/compare-single-engine-prop').default,
+                'aircrafts-compare-single-piston-prop',
+                require('@/views/aircrafts/compare-single-piston-prop').default,
             ],
 
             // MISC ===========================================================
