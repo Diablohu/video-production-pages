@@ -1,0 +1,114 @@
+@import '~vars.less';
+
+.component {
+    --title-height: 45px;
+    --gap: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: var(--gap) calc(var(--gap) * 3);
+    overflow: hidden;
+
+    .group {
+        display: flex;
+        flex-flow: column nowrap;
+        .title {
+            text-align: center;
+        }
+        .grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 11fr 11fr 7fr;
+            gap: var(--gap);
+            .cell {
+                grid-column: span 2;
+            }
+        }
+
+        &:nth-child(2) {
+            .grid {
+                grid-template-rows: 1fr 1fr 1fr;
+            }
+        }
+
+        &:nth-child(3) {
+            .grid {
+                grid-template-rows: 1fr 1fr 1fr;
+                .grid {
+                    .component-cell {
+                        padding: 0;
+                        // &::before {
+                        //     background: linear-gradient(
+                        //         to right,
+                        //         rgba(0, 0, 0, 0.65) 17.5%,
+                        //         rgba(0, 0, 0, 0) 100%
+                        //     );
+                        //     width: 17em;
+                        //     height: 100%;
+                        //     bottom: 0;
+                        //     left: -10px;
+                        // }
+                        strong {
+                            position: absolute;
+                            top: 0;
+                            left: 15px;
+                            height: 100%;
+                            display: flex;
+                            flex-flow: column nowrap;
+                            font-size: unit(4/3, em);
+                            justify-content: center;
+                        }
+                        small {
+                            display: block;
+                            line-height: 1em;
+                            font-weight: normal;
+                            font-size: unit(3/4, em);
+                            margin-bottom: 0.1em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .component-cell {
+        padding: 0 0 25px 35px;
+        line-height: 1.5em;
+        letter-spacing: 0.1em;
+
+        strong {
+            font-style: normal;
+            font-size: unit(5/3, em);
+            margin-bottom: 0.25em;
+            margin-left: -3px;
+            // -webkit-text-fill-color: transparent;
+            // background: linear-gradient(
+            //     180deg,
+            //     #fff 0,
+            //     #fff 14%,
+            //     #9035ff 77%,
+            //     #9035ff
+            // );
+            // -webkit-background-clip: text !important;
+            transform: skew(var(--logo-skew)) scale(0.875, 1);
+            transform-origin: 0 100%;
+        }
+        span {
+            font-style: normal;
+        }
+
+        // &::before {
+        //     background: linear-gradient(
+        //         to right,
+        //         rgba(0, 0, 0, 0.65) 17.5%,
+        //         rgba(0, 0, 0, 0) 100%
+        //     );
+        //     width: 17em;
+        //     height: 100%;
+        //     bottom: 0;
+        //     left: -10px;
+        // }
+    }
+}

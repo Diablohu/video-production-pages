@@ -40,6 +40,10 @@ export default {
                 'msfs-2024-default-aircrafts',
                 require('@views/msfs-2024/default-aircrafts').default,
             ],
+            [
+                'msfs-2024-improvements',
+                require('@views/msfs-2024/improvements').default,
+            ],
 
             // FULL YEAR PLAN =================================================
             [

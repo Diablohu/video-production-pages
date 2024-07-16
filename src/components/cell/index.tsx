@@ -13,6 +13,7 @@ interface ComponentProps {
     mask?: boolean;
     textSize?: 'lg' | 'md' | 'sm';
     style?: CSSProperties;
+    bgMaskOrientation?: 'horizontal' | 'vertical';
 }
 
 // Functional Component =======================================================
@@ -28,6 +29,7 @@ const Cell = extend<ComponentProps>({
     textSize,
     style = {},
     children,
+    bgMaskOrientation = 'vertical',
 }) => {
     return (
         <div
@@ -36,6 +38,8 @@ const Cell = extend<ComponentProps>({
                 {
                     'is-mask': mask === true,
                     [`mod-text-size-${textSize}`]: !!textSize,
+                    [`mod-bg-mask-orientation-${bgMaskOrientation}`]:
+                        !!bgMaskOrientation,
                 },
             ])}
             style={{
