@@ -76,7 +76,8 @@ const Page = extend<ComponentProps>({
                     className={`${classNameModule}-footer`}
                     date={
                         updateDate === true
-                            ? dayjs().add(8, 'hour').format('YYYY-MM-DD')
+                            ? dayjs() /*.add(8, 'hour')*/
+                                  .format('YYYY-MM-DD')
                             : updateDate
                     }
                 />
