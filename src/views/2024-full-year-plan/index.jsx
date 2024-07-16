@@ -39,8 +39,8 @@ const CU = {
 const SP = {
     2: '惊喜<br />AN-225',
     14: '《沙丘》　联动扩展',
-    18: '惊喜',
-    19: '惊喜',
+    // 18: '惊喜',
+    // 19: '惊喜',
 };
 const LL = {
     2: ['DHC-4 驯鹿', 'ORBX', require('./imgs/dhc-4.jpg')],
@@ -56,9 +56,8 @@ const LL = {
     ],
     16: ['Do-31', 'iniBuilds', require('./imgs/do31.jpg')],
     17: ['Short SC.7', 'iniBuilds', require('./imgs/sc7.jpg')],
-    19: ['C-46 Commando', '', require('./imgs/sc7.jpg')],
-    20: ['LL_18', ''],
-    21: ['LL_19', ''],
+    19: ['C46', 'Aeroplane H.', require('./imgs/sc7.jpg')],
+    // 21: ['LL_19', ''],
 };
 const FF = {
     2: ['AN-225', 'iniBuilds', require('./imgs/an-225.jpg')],
@@ -67,7 +66,7 @@ const FF = {
     11: ['三菱MU-2', 'iniBuilds', require('./imgs/mu-2.jpg')],
     12: ['塞斯纳207', 'Carenado', require('./imgs/cessna-207.png')],
     18: ['C47D', 'Aeroplane H.', require('./imgs/c47d.png')],
-    19: ['波音707', 'Aeroplane H.', require('./imgs/b707.png')],
+    // 21: ['波音707', 'Aeroplane H.', require('./imgs/b707.png')],
 };
 const ES = {
     4: ['ATR-42/72', 'S&H Sim.', require('./imgs/atr-42.jpg')],
@@ -219,7 +218,7 @@ const FullYearPlan2023 = extend({
             </FuturePlan>
 
             <div className="info">
-                官方已预告内容 | Diablohu | 2024/06/06 | fly-dbh.com
+                官方已预告内容 | Diablohu | 2024/07/16 | fly-dbh.com
             </div>
         </div>
     );
