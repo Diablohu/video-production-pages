@@ -70,6 +70,9 @@ const cellGroupLeft = {
             backgroundPosition: '55% 37%',
             columnSpan: 1,
             bgMaskOrientation: 'horizontal',
+            style: {
+                '--mask-max-width': '50%',
+            },
         },
         {
             title: '飞行竞速',
@@ -79,6 +82,9 @@ const cellGroupLeft = {
             backgroundPosition: '30% 50%',
             columnSpan: 1,
             bgMaskOrientation: 'horizontal',
+            style: {
+                '--mask-max-width': '50%',
+            },
         },
     ],
 };
@@ -99,6 +105,9 @@ const cellGroupMid = {
             backgroundSize: 'auto 250%',
             backgroundPosition: '5% 30%',
             bgMaskOrientation: 'horizontal',
+            style: {
+                '--mask-min-width': '90%',
+            },
         },
         {
             title: '升级物理模拟',
@@ -130,7 +139,7 @@ const cellGroupRight = {
     cells: [
         {
             title: '翻新画面渲染',
-            infos: ['光线追踪投影', '改进大气散射', '改进漫反射', '支持极光'],
+            infos: ['光线追踪投影', '改进大气散射', '改进漫反射', '渲染极光'],
             img: require('./imgs/dubai.jpg'),
             backgroundSize: 'auto 175%',
             backgroundPosition: '50% 40%',
@@ -175,6 +184,10 @@ const cellGroupRight = {
                     backgroundSize: 'auto 250%',
                     backgroundPosition: '0% 30%',
                     bgMaskOrientation: 'horizontal',
+                    style: {
+                        '--mask-min-width': '80%',
+                        '--mask-max-width': '80%',
+                    },
                 },
                 {
                     title: (
@@ -187,6 +200,10 @@ const cellGroupRight = {
                     backgroundSize: 'auto 1300%',
                     backgroundPosition: '17% 55%',
                     bgMaskOrientation: 'horizontal',
+                    style: {
+                        '--mask-min-width': '80%',
+                        '--mask-max-width': '80%',
+                    },
                 },
                 {
                     title: (
@@ -198,6 +215,10 @@ const cellGroupRight = {
                     backgroundSize: 'auto 500%',
                     backgroundPosition: '50% 45%',
                     bgMaskOrientation: 'horizontal',
+                    style: {
+                        '--mask-min-width': '80%',
+                        '--mask-max-width': '80%',
+                    },
                 },
             ],
             columnSpan: 1,
@@ -243,14 +264,6 @@ const ThisPage = extend({
                                     <ThisCell
                                         key={index}
                                         className="cell"
-                                        style={{
-                                            gridRow: cell.rowSpan
-                                                ? `span ${cell.rowSpan}`
-                                                : undefined,
-                                            gridColumn: cell.columnSpan
-                                                ? `span ${cell.columnSpan}`
-                                                : undefined,
-                                        }}
                                         {...cell}
                                     />
                                 ),
@@ -269,6 +282,8 @@ export default ThisPage;
 
 const ThisCell = ({
     className,
+    rowSpan,
+    columnSpan,
     backgroundSize,
     backgroundPosition,
     style = {},
@@ -278,10 +293,13 @@ const ThisCell = ({
         <Cell
             className={classNames([`${classNameModule}-cell`, className])}
             style={{
+                gridRow: rowSpan ? `span ${rowSpan}` : undefined,
+                gridColumn: columnSpan ? `span ${columnSpan}` : undefined,
                 backgroundSize,
                 backgroundPosition,
                 ...style,
             }}
+            infoCell
             {...props}
         />
     );
