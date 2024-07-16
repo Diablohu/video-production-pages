@@ -19,7 +19,8 @@
 
     @color-texture-1: darken(@color-home-cover-background, 5%);
     @color-texture-2: @color-home-cover-background;
-    background: radial-gradient(@color-texture-1 15%, transparent 16%) 0 0,
+    background:
+        radial-gradient(@color-texture-1 15%, transparent 16%) 0 0,
         radial-gradient(@color-texture-1 15%, transparent 16%) 8px 8px,
         radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
         radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
@@ -30,11 +31,18 @@
         text-align: center;
     }
 
-    .title {
-        font-size: unit(30 / @base-font-size, em);
-        line-height: 0.7em;
-        letter-spacing: 0.2em;
-        text-shadow: 0 0 0.1em @theme-lightblue-900;
+    .section {
+        margin: 4em auto;
+        .title {
+            .title-style();
+            font-size: unit(30 / @base-font-size, em);
+            text-shadow: 0 0 0.1em @theme-lightblue-900;
+            letter-spacing: 0.1em;
+            transform-origin: 50% 50%;
+        }
+        .body {
+            margin: 1em auto 0 auto;
+        }
     }
 
     .link {

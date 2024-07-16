@@ -119,6 +119,10 @@ export default {
                 'procedures-fenix-a320-remote-mcdu',
                 require('@views/procedures-fenix-a320-remote-mcdu').default,
             ],
+            [
+                'procedures-diamond-da42-vi',
+                require('@views/procedures/diamond-da42-vi').default,
+            ],
 
             // THIRD-PARTY ====================================================
             [
@@ -129,7 +133,7 @@ export default {
             // COMPARISON =====================================================
             [
                 'aircrafts-compare-single-piston-prop',
-                require('@/views/aircrafts/compare-single-piston-prop').default,
+                require('@views/aircrafts/compare-single-piston-prop').default,
             ],
 
             // MISC ===========================================================
