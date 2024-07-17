@@ -75,11 +75,11 @@ const cellGroupLeft = {
             },
         },
         {
-            title: '飞行竞速',
-            infos: ['多人对抗', '整合雷诺竞赛'],
-            img: require('./imgs/racing.jpg'),
-            backgroundSize: 'auto 135%',
-            backgroundPosition: '30% 50%',
+            title: '改进按键绑定',
+            infos: ['针对机型配置', '预设方案可共享'],
+            img: require('./imgs/binding.png'),
+            backgroundSize: 'auto 200%',
+            backgroundPosition: '55% 70%',
             columnSpan: 1,
             bgMaskOrientation: 'horizontal',
             style: {

@@ -56,7 +56,7 @@ const LL = {
     ],
     16: ['Do-31', 'iniBuilds', require('./imgs/do31.jpg')],
     17: ['Short SC.7', 'iniBuilds', require('./imgs/sc7.jpg')],
-    19: ['C46', 'Aeroplane H.', require('./imgs/sc7.jpg')],
+    19: ['C46', 'Aeroplane H.', require('./imgs/c46.webp')],
     // 21: ['LL_19', ''],
 };
 const FF = {
@@ -211,10 +211,10 @@ const FullYearPlan2023 = extend({
                 ３次世界更新
             </FuturePlan>
             <FuturePlan type="ll" startOffset={6}>
-                １款当地传奇
+                ３款当地传奇
             </FuturePlan>
             <FuturePlan type="ff" startOffset={6}>
-                ２款著名航空器
+                ３款著名航空器
             </FuturePlan>
 
             <div className="info">
