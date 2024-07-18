@@ -1,11 +1,91 @@
 @import '~vars.less';
 
 .component {
-    --title-height: 45px;
-
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 0.425fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-flow: column;
     gap: 20px 60px;
     overflow: hidden;
+}
+
+.component-aircraft {
+    --img-width: 125px;
+    --img-position: 50% 50%;
+    --img-size: cover;
+
+    &::before {
+        display: none;
+    }
+    dl {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0 0 0 var(--img-width);
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+
+        dt,
+        dd {
+            padding: 0;
+            line-height: 1;
+            font-style: normal;
+            position: relative;
+            z-index: 100;
+        }
+        dt {
+            .title-style();
+            font-style: normal;
+            font-size: unit(11/7, em);
+            margin-bottom: 0.25em;
+            margin-left: -3px;
+            transform: skew(var(--logo-skew)) scale(0.95, 1);
+            transform-origin: 0 100%;
+            line-height: 1;
+            margin: 0.15em 0 0.15em 0;
+        }
+        dd {
+            margin: 0.25em 0;
+        }
+
+        & > .img,
+        & > .img-blur {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+        }
+        & > .img {
+            z-index: 2;
+            width: calc(var(--img-width) + 50px);
+            mask-image: linear-gradient(
+                to right,
+                #fff 50px,
+                rgba(255, 255, 255, 0)
+            );
+            & > .picture {
+                position: absolute;
+                display: block;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: transparent no-repeat;
+                background-position: var(--img-position);
+                background-size: var(--img-size);
+            }
+        }
+        & > .img-blur {
+            z-index: 1;
+            width: 100%;
+            background: rgba(0, 0, 0, 1) no-repeat 50% 50%;
+            background-size: cover;
+            filter: blur(20px);
+            opacity: 0.35;
+        }
+    }
 }
