@@ -18,6 +18,25 @@
         height: var(--height);
         top: calc(var(--height) * -1 - var(--gap) * 1.5);
         left: 0;
+        .mod-mask({
+            display: none;
+        });
+    }
+}
+
+.component-infos {
+    display: grid;
+    gap: var(--gap) calc(var(--gap) * 3);
+
+    .group {
+        display: flex;
+        flex-flow: column nowrap;
+
+        .grid {
+            flex: 1;
+            display: grid;
+            gap: var(--gap);
+        }
     }
 }
 

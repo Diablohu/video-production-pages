@@ -1,0 +1,22 @@
+@import '~vars.less';
+
+.component {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    .group {
+        &[data-title=~'全新玩法：飞行员生涯'] {
+            grid-column: span 2;
+            .grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+            }
+        }
+        &[data-title=~'更多体验'] {
+            .grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+            }
+        }
+    }
+}

@@ -6,8 +6,8 @@ import styles from './index.module.less';
 
 // ============================================================================
 
-interface ComponentProps {
-    title: string;
+export interface CellProps {
+    title: string | JSX.Element;
     infos?: string[];
     img?: string;
     mask?: boolean;
@@ -20,7 +20,7 @@ interface ComponentProps {
 
 // Functional Component =======================================================
 
-const Cell = extend<ComponentProps>({
+const Cell = extend<CellProps>({
     styles,
 })(({
     className,
@@ -34,6 +34,7 @@ const Cell = extend<ComponentProps>({
     bgMaskOrientation = 'vertical',
     infoCell = false,
     lightBorder = true,
+    ...props
 }) => {
     return (
         <div
@@ -52,6 +53,7 @@ const Cell = extend<ComponentProps>({
                 backgroundImage: !img ? undefined : `url(${img})`,
                 ...style,
             }}
+            {...props}
         >
             {children ?? (
                 <>

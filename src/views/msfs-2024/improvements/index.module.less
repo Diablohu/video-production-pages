@@ -1,37 +1,30 @@
 @import '~vars.less';
 
 .component {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    gap: var(--gap) calc(var(--gap) * 3);
 
     .group {
-        display: flex;
-        flex-flow: column nowrap;
         .grid {
-            flex: 1;
-            display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 11fr 11fr 7fr;
-            gap: var(--gap);
             .cell {
                 grid-column: span 2;
             }
         }
 
-        &:nth-child(2) {
+        &[data-title=~'飞行体验'] {
             .grid {
                 grid-template-rows: 1fr 1fr 1fr;
             }
         }
 
-        &:nth-child(3) {
+        &[data-title=~'世界环境'] {
             .grid {
                 grid-template-columns: 5fr 4fr;
                 grid-template-rows: 1fr 1fr 1fr;
                 .grid {
-                    .component-cell {
+                    .cell {
                         padding: 0;
                         // &::before {
                         //     background: linear-gradient(

@@ -1,41 +1,12 @@
 import { extend } from 'koot';
-import classNames from 'classnames';
 
-import Cell from '@components/cell';
-import Page, { TitleCell } from '../';
+import Page, { type CellGroupType } from '../';
 
-import styles, { wrapper as classNameModule } from './index.module.less';
+import styles from './index.module.less';
 
 // ============================================================================
 
-/**
- * 信息单元格
- * @typedef {Object} Cell *
- *
- * @property {string} title 标题
- * @property {Array<string>} [developers] 开发者
- * @property {Array<string>} [infos] 细节信息
- * @property {string} [img] 配图
- * @property {number} [rowSpan=3] 行列数
- * @property {number} [columnSpan=2] 跨列数
- * @property {string} [backgroundSize] CSS Style: background-size
- * @property {string} [backgroundPosition] CSS Style: background-position
- * @property {string} [bgMaskOrientation]
- * @property {Array<Cell>} [cells]
- *
- */
-
-/**
- * 信息组
- * @typedef {Object} CellGroup *
- *
- * @property {string} title 标题
- * @property {Array<Cell>} cells
- *
- */
-
-/** @type {Array<CellGroup>} */
-const cellGroupLeft = {
+const cellGroupLeft: CellGroupType = {
     title: '系统功能',
     cells: [
         {
@@ -88,8 +59,7 @@ const cellGroupLeft = {
     ],
 };
 
-/** @type {Array<CellGroup>} */
-const cellGroupMid = {
+const cellGroupMid: CellGroupType = {
     title: '飞行体验',
     cells: [
         {
@@ -132,8 +102,7 @@ const cellGroupMid = {
     ],
 };
 
-/** @type {Array<CellGroup>} */
-const cellGroupRight = {
+const cellGroupRight: CellGroupType = {
     title: '世界环境',
     cells: [
         {
@@ -172,6 +141,7 @@ const cellGroupRight = {
             bgMaskOrientation: 'horizontal',
         },
         {
+            title: '',
             cells: [
                 {
                     title: (
@@ -229,77 +199,14 @@ const cellGroupRight = {
 
 const ThisPage = extend({
     styles,
-})(({ className, params: { type } }) => {
+})(({ className }) => {
     return (
-        <Page updateDate={true} classNameBody={classNames(className)}>
-            {[cellGroupLeft, cellGroupMid, cellGroupRight].map(
-                (group, index) => (
-                    <div key={index} className="group">
-                        <TitleCell className="title">{group.title}</TitleCell>
-                        <div className="grid">
-                            {group.cells.map((cell, index) =>
-                                Array.isArray(cell.cells) ? (
-                                    <div
-                                        key={index}
-                                        className="grid"
-                                        style={{
-                                            gridRow: cell.rowSpan
-                                                ? `span ${cell.rowSpan}`
-                                                : undefined,
-                                            gridColumn: cell.columnSpan
-                                                ? `span ${cell.columnSpan}`
-                                                : undefined,
-                                        }}
-                                    >
-                                        {cell.cells.map((cell, index) => (
-                                            <ThisCell
-                                                key={index}
-                                                className="cell"
-                                                {...cell}
-                                            />
-                                        ))}
-                                    </div>
-                                ) : (
-                                    <ThisCell
-                                        key={index}
-                                        className="cell"
-                                        {...cell}
-                                    />
-                                ),
-                            )}
-                        </div>
-                    </div>
-                ),
-            )}
-        </Page>
+        <Page
+            updateDate={true}
+            classNameBody={className}
+            infos={[cellGroupLeft, cellGroupMid, cellGroupRight]}
+        ></Page>
     );
 });
 
 export default ThisPage;
-
-// Functional Component =======================================================
-
-const ThisCell = ({
-    className,
-    rowSpan,
-    columnSpan,
-    backgroundSize,
-    backgroundPosition,
-    style = {},
-    ...props
-}) => {
-    return (
-        <Cell
-            className={classNames([`${classNameModule}-cell`, className])}
-            style={{
-                gridRow: rowSpan ? `span ${rowSpan}` : undefined,
-                gridColumn: columnSpan ? `span ${columnSpan}` : undefined,
-                backgroundSize,
-                backgroundPosition,
-                ...style,
-            }}
-            infoCell
-            {...props}
-        />
-    );
-};
