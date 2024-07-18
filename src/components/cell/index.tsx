@@ -14,6 +14,7 @@ interface ComponentProps {
     textSize?: 'lg' | 'md' | 'sm';
     bgMaskOrientation?: 'horizontal' | 'vertical';
     infoCell?: boolean;
+    lightBorder?: boolean;
     style?: CSSProperties;
 }
 
@@ -32,6 +33,7 @@ const Cell = extend<ComponentProps>({
     children,
     bgMaskOrientation = 'vertical',
     infoCell = false,
+    lightBorder = true,
 }) => {
     return (
         <div
@@ -43,6 +45,7 @@ const Cell = extend<ComponentProps>({
                     [`mod-bg-mask-orientation-${bgMaskOrientation}`]:
                         !!bgMaskOrientation,
                     [`mod-infocell`]: !!infoCell,
+                    [`mod-light-border`]: !!lightBorder,
                 },
             ])}
             style={{

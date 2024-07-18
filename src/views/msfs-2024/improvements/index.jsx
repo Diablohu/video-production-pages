@@ -1,9 +1,8 @@
-import { useMemo, useEffect } from 'react';
 import { extend } from 'koot';
 import classNames from 'classnames';
 
-import Page from '@views/page';
 import Cell from '@components/cell';
+import Page, { TitleCell } from '../';
 
 import styles, { wrapper as classNameModule } from './index.module.less';
 
@@ -48,7 +47,7 @@ const cellGroupLeft = {
             bgMaskOrientation: 'horizontal',
         },
         {
-            title: '飞行计划与航图工具',
+            title: '飞行计划与航图',
             developers: ['WorkingTitle'],
             infos: [
                 '燃油规划',
@@ -58,13 +57,13 @@ const cellGroupLeft = {
             ],
             img: require('./imgs/planner-lido-chard.png'),
             backgroundSize: 'auto 170%',
-            backgroundPosition: '0% 40%',
+            backgroundPosition: '10% 40%',
             bgMaskOrientation: 'horizontal',
         },
         {
             title: '回放工具',
             developers: ['Fabio'],
-            infos: ['实时回放', '生成僚机……'],
+            infos: ['实时回放', '生成僚机'],
             img: require('./imgs/replay.jpg'),
             backgroundSize: 'auto 800%',
             backgroundPosition: '55% 37%',
@@ -79,7 +78,7 @@ const cellGroupLeft = {
             infos: ['针对机型配置', '预设方案可共享'],
             img: require('./imgs/binding.png'),
             backgroundSize: 'auto 200%',
-            backgroundPosition: '55% 70%',
+            backgroundPosition: '55.5% 70%',
             columnSpan: 1,
             bgMaskOrientation: 'horizontal',
             style: {
@@ -106,7 +105,7 @@ const cellGroupMid = {
             backgroundPosition: '5% 30%',
             bgMaskOrientation: 'horizontal',
             style: {
-                '--mask-min-width': '90%',
+                '--mask-min-width': '100%',
             },
         },
         {
@@ -159,7 +158,7 @@ const cellGroupRight = {
             // backgroundPosition: '30% 70%',
             img: require('./imgs/autumn.jpg'),
             backgroundSize: 'auto 175%',
-            backgroundPosition: '0% 70%',
+            backgroundPosition: '5% 70%',
             bgMaskOrientation: 'horizontal',
         },
         {
@@ -168,7 +167,7 @@ const cellGroupRight = {
             infos: ['直升机机坪', '滑翔机机库', '油井平台', '低空障碍'],
             img: require('./imgs/oilrig.jpg'),
             backgroundSize: 'auto 220%',
-            backgroundPosition: '44% 58%',
+            backgroundPosition: '42% 58%',
             columnSpan: 1,
             bgMaskOrientation: 'horizontal',
         },
@@ -182,7 +181,7 @@ const cellGroupRight = {
                     ),
                     img: require('./imgs/cirrus.jpg'),
                     backgroundSize: 'auto 250%',
-                    backgroundPosition: '0% 30%',
+                    backgroundPosition: '30% 30%',
                     bgMaskOrientation: 'horizontal',
                     style: {
                         '--mask-min-width': '80%',
@@ -236,7 +235,7 @@ const ThisPage = extend({
             {[cellGroupLeft, cellGroupMid, cellGroupRight].map(
                 (group, index) => (
                     <div key={index} className="group">
-                        <h2 className="title">{group.title}</h2>
+                        <TitleCell className="title">{group.title}</TitleCell>
                         <div className="grid">
                             {group.cells.map((cell, index) =>
                                 Array.isArray(cell.cells) ? (

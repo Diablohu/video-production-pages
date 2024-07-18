@@ -126,4 +126,23 @@
             letter-spacing: 0.075em;
         }
     }
+
+    &.mod-light-border {
+        &::after {
+            --offset: 0px;
+            content: '';
+            position: absolute;
+            top: var(--offset);
+            bottom: var(--offset);
+            left: var(--offset);
+            right: var(--offset);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: inherit;
+            z-index: 100;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.25);
+            .mod-mask({
+                display: none;
+            });
+        }
+    }
 }
