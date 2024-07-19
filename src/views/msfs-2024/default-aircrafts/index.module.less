@@ -23,12 +23,13 @@
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-auto-flow: column;
+            gap: 20px;
         }
     }
 }
 
 .component-aircraft {
-    --img-width: 75px;
+    --img-width: 85px;
     --img-position: 50% 50%;
     --img-size: cover;
 
@@ -105,6 +106,10 @@
             filter: blur(20px);
             opacity: 0.35;
         }
+
+        .mod-mask({
+            display: none;
+        });
     }
 
     &.is-type-jet-airliner,
@@ -142,7 +147,17 @@
     }
     &.is-type-light-sport {
         &::after {
-            border-color: fade(#096, 50%);
+            border-color: fade(#6fa, 75%);
+        }
+    }
+    &.is-type-glider {
+        &::after {
+            border-color: fade(#ccc, 75%);
+        }
+    }
+    &.is-type-military {
+        &::after {
+            border-color: fade(#555, 75%);
         }
     }
 }

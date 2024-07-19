@@ -24,7 +24,9 @@ interface AircraftType {
         | 'military'
         | 'private-jet'
         | 'evtol'
-        | 'light-sport';
+        | 'light-sport'
+        | 'airship'
+        | 'hot-air-balloon';
     developers: string[];
     img: string;
     style?: Record<string, string>;
@@ -39,10 +41,12 @@ const typeName: Record<AircraftType['type'], string> = {
     helicopter: '直升机',
     gyrocopter: '旋翼机',
     glider: '滑翔机',
-    military: '军用',
+    military: '军事战机',
     'private-jet': '私人喷气机',
     evtol: '电动垂直起降',
     'light-sport': '轻型运动',
+    airship: '飞艇',
+    'hot-air-balloon': '热气球',
 };
 
 const aircrafts: AircraftType[] = [
@@ -79,7 +83,7 @@ const aircrafts: AircraftType[] = [
         img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
     },
     {
-        name: '西锐 SF50 Vision Jet',
+        name: '西锐 SF50 Vision Jet G2',
         code: '',
         type: 'private-jet',
         developers: ['FlightFX'],
@@ -135,6 +139,27 @@ const aircrafts: AircraftType[] = [
         img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
     },
     {
+        name: '西科斯基 S-64 "空中吊车"',
+        code: '',
+        type: 'helicopter',
+        developers: ['BlackBird'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: '罗宾逊 R66',
+        code: '',
+        type: 'helicopter',
+        developers: ['Carenado'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: '麦格尼 M24 "猎户座"',
+        code: '',
+        type: 'gyrocopter',
+        developers: ['BlueMesh'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
         name: 'Joby S4',
         code: '',
         type: 'evtol',
@@ -160,6 +185,34 @@ const aircrafts: AircraftType[] = [
         code: '',
         type: 'light-sport',
         developers: ['iniBuilds'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: 'Stemme S12-G',
+        code: '',
+        type: 'glider',
+        developers: ['GotFriends'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: '费尔柴尔德 A-10 雷电II',
+        code: '',
+        type: 'military',
+        developers: ['DC Designs'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: '飞艇工业 天舟600',
+        code: '',
+        type: 'airship',
+        developers: ['？'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: '？？？',
+        code: '',
+        type: 'hot-air-balloon',
+        developers: ['？'],
         img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
     },
 ];
@@ -230,7 +283,7 @@ const Aircraft: FC<AircraftType> = ({
                 )}
                 <dt className="name">{name}</dt>
                 <dd>
-                    {typeName[type]} / {developers.join(', ')}
+                    {typeName[type]} / {developers.join(' + ')}
                 </dd>
             </dl>
         </Cell>
