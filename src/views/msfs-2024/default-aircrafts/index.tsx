@@ -3,7 +3,7 @@ import { extend } from 'koot';
 import classNames from 'classnames';
 
 import Cell from '@components/cell';
-import Page from '../';
+import Page, { TitleCell } from '../';
 
 import styles, { wrapper as classNameModule } from './index.module.less';
 
@@ -23,7 +23,8 @@ interface AircraftType {
         | 'glider'
         | 'military'
         | 'private-jet'
-        | 'vtol-taxi';
+        | 'evtol'
+        | 'light-sport';
     developers: string[];
     img: string;
     style?: Record<string, string>;
@@ -40,7 +41,8 @@ const typeName: Record<AircraftType['type'], string> = {
     glider: '滑翔机',
     military: '军用',
     'private-jet': '私人喷气机',
-    'vtol-taxi': '垂直起降城市出租',
+    evtol: '电动垂直起降',
+    'light-sport': '轻型运动',
 };
 
 const aircrafts: AircraftType[] = [
@@ -87,7 +89,77 @@ const aircrafts: AircraftType[] = [
         name: '德哈维兰 DHC-6 "双水獭"',
         code: '',
         type: 'turbo-prop',
-        developers: ['Aerosoft', 'S&H'],
+        developers: ['Aerosoft', 'iniBuilds', 'S&H'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: '皮拉图斯 PC-12 NGx',
+        code: '',
+        type: 'turbo-prop',
+        developers: ['Carenado', 'WorkingTitle'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: 'Canadair CL-415',
+        code: '',
+        type: 'turbo-prop',
+        developers: ['ASOBO'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: 'DracoX',
+        code: '',
+        type: 'turbo-prop',
+        developers: ['GotFriends'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: '塞斯纳188 农业车',
+        code: '',
+        type: 'piston-prop',
+        developers: ['Carenado'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: 'Edgley EA-7 Optica',
+        code: '',
+        type: 'piston-prop',
+        developers: ['GotFriends'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: '空客 H125',
+        code: '',
+        type: 'helicopter',
+        developers: ['ASOBO'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: 'Joby S4',
+        code: '',
+        type: 'evtol',
+        developers: ['FlightFX'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: 'Jeston ONE',
+        code: '',
+        type: 'evtol',
+        developers: ['FlightFX'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: 'MXS-R 红牛版',
+        code: '',
+        type: 'light-sport',
+        developers: ['iniBuilds'],
+        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+    },
+    {
+        name: 'Zivko Edge 540 红牛版',
+        code: '',
+        type: 'light-sport',
+        developers: ['iniBuilds'],
         img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
     },
 ];
@@ -99,12 +171,21 @@ const ThisPage = extend({
 })(({ className }) => {
     return (
         <Page updateDate={true} classNameBody={classNames(className)}>
-            {aircrafts.map((aircraft) => (
-                <Aircraft
-                    key={`${aircraft.code}_${aircraft.name}`}
-                    {...aircraft}
-                />
-            ))}
+            <div className="aircrafts">
+                <TitleCell>全新航空器</TitleCell>
+                <div className="cells">
+                    {aircrafts.map((aircraft) => (
+                        <Aircraft
+                            key={`${aircraft.code}_${aircraft.name}`}
+                            {...aircraft}
+                        />
+                    ))}
+                </div>
+            </div>
+            <div className="avionics">
+                <TitleCell>全新航电系统</TitleCell>
+                <div className="cells"></div>
+            </div>
         </Page>
     );
 });
@@ -122,7 +203,12 @@ const Aircraft: FC<AircraftType> = ({
     style,
 }) => {
     return (
-        <Cell className={classNames([`${classNameModule}-aircraft`])}>
+        <Cell
+            className={classNames([
+                `${classNameModule}-aircraft`,
+                `is-type-${type}`,
+            ])}
+        >
             <dl style={style}>
                 {img && (
                     <>
