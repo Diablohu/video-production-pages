@@ -3,6 +3,7 @@
 .component {
     --mask-min-width: 0;
     --mask-max-width: none;
+    --mask-gradient-angle: 75deg;
 
     position: relative;
 
@@ -80,7 +81,7 @@
     &.mod-bg-mask-orientation-horizontal {
         &::before {
             background: linear-gradient(
-                75deg,
+                var(--mask-gradient-angle),
                 rgba(0, 0, 0, 0.7) 17.5%,
                 ease-in-out,
                 rgba(0, 0, 0, 0) 100%

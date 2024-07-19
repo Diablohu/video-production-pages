@@ -15,7 +15,7 @@ export interface CellProps {
     bgMaskOrientation?: 'horizontal' | 'vertical';
     infoCell?: boolean;
     lightBorder?: boolean;
-    style?: CSSProperties;
+    style?: CSSProperties & Record<string, string>;
 }
 
 // Functional Component =======================================================

@@ -3,7 +3,7 @@ import { extend } from 'koot';
 import classNames from 'classnames';
 
 import Cell from '@components/cell';
-import Page, { TitleCell } from '../';
+import Page, { TitleCell, InfoCell } from '../';
 
 import styles, { wrapper as classNameModule } from './index.module.less';
 
@@ -58,7 +58,7 @@ const aircrafts: AircraftType[] = [
         img: require('./imgs/b38m.jpg'),
         style: {
             '--img-size': 'auto 110%',
-            '--img-position': '75% 55%',
+            '--img-position': '67% 55%',
         },
     },
     {
@@ -66,49 +66,77 @@ const aircrafts: AircraftType[] = [
         code: 'A332/A333',
         type: 'jet-airliner',
         developers: ['iniBuilds'],
-        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+        img: require('./imgs/a330.jpg'),
+        style: {
+            '--img-size': 'auto 250%',
+            '--img-position': '28% 60%',
+        },
     },
     {
-        name: '空客大白鲸 XL',
+        name: '空客 大白鲸 XL',
         code: '',
         type: 'cargo',
         developers: ['iniBuilds'],
-        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+        img: require('./imgs/beluga-xl.jpg'),
+        style: {
+            '--img-size': 'auto 300%',
+            '--img-position': '90% 40%',
+        },
     },
     {
         name: '空客 A400M',
         code: '',
         type: 'military-cargo',
         developers: ['iniBuilds'],
-        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+        img: require('./imgs/a400m.webp'),
+        style: {
+            '--img-size': 'auto 300%',
+            '--img-position': '60% 52%',
+        },
     },
     {
         name: '西锐 SF50 Vision Jet G2',
         code: '',
         type: 'private-jet',
         developers: ['FlightFX'],
-        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+        img: require('./imgs/sf50.jpg'),
+        style: {
+            '--img-size': 'auto 175%',
+            '--img-position': '55% 48%',
+        },
     },
     {
         name: '德哈维兰 DHC-6 "双水獭"',
         code: '',
         type: 'turbo-prop',
         developers: ['Aerosoft', 'iniBuilds', 'S&H'],
-        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+        img: require('./imgs/dhc6.jpg'),
+        style: {
+            '--img-size': 'auto 275%',
+            '--img-position': '30% 55%',
+        },
     },
     {
         name: '皮拉图斯 PC-12 NGx',
         code: '',
         type: 'turbo-prop',
         developers: ['Carenado', 'WorkingTitle'],
-        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+        img: require('./imgs/pc-12-ngx.jpg'),
+        style: {
+            '--img-size': 'auto 200%',
+            '--img-position': '20% 48%',
+        },
     },
     {
         name: 'Canadair CL-415',
         code: '',
         type: 'turbo-prop',
         developers: ['ASOBO'],
-        img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
+        img: require('./imgs/cl415.jpg'),
+        style: {
+            '--img-size': 'auto 250%',
+            '--img-position': '80% 55%',
+        },
     },
     {
         name: 'DracoX',
@@ -118,7 +146,7 @@ const aircrafts: AircraftType[] = [
         img: 'https://cdn.koot.dev/msfs-2024/aircrafts/boeing-737-max-8.jpg',
     },
     {
-        name: '塞斯纳188 农业车',
+        name: '塞斯纳 188 农业车',
         code: '',
         type: 'piston-prop',
         developers: ['Carenado'],
@@ -237,7 +265,65 @@ const ThisPage = extend({
             </div>
             <div className="avionics">
                 <TitleCell>全新航电系统</TitleCell>
-                <div className="cells"></div>
+                <div className="cells">
+                    <InfoCell
+                        className="cell"
+                        title={
+                            <>
+                                霍尼韦尔
+                                <br />
+                                Primus Epic 2.0
+                            </>
+                        }
+                        infos={['WorkingTitle']}
+                        img={require('./imgs/honeywell-primus-epic-2.jpg')}
+                        infoCell
+                        bgMaskOrientation="horizontal"
+                        style={{
+                            '--mask-min-width': '120%',
+                            '--mask-gradient-angle': '15deg',
+                            backgroundSize: 'auto 140%',
+                            backgroundPosition: '45% 90%',
+                        }}
+                    />
+                    <InfoCell
+                        className="cell"
+                        title={<>LXNAV ADI</>}
+                        infos={['GotFriends']}
+                        img={require('./imgs/lxnav-adi.jpg')}
+                        infoCell
+                        // bgMaskOrientation="horizontal"
+                        style={{
+                            // '--mask-min-width': '50%',
+                            // '--mask-gradient-angle': '15deg',
+                            backgroundSize: 'auto 500%',
+                            backgroundPosition: '65% 62%',
+                        }}
+                    />
+                    <div className="sub">
+                        <TitleCell>机库继承</TitleCell>
+                        <div className="cells">
+                            <InfoCell
+                                className="cell"
+                                title={
+                                    <>
+                                        <small>MSFS 2020</small>
+                                        第一方产品免费继承
+                                    </>
+                                }
+                                img={require('./imgs/b748.png')}
+                                infoCell
+                                bgMaskOrientation="horizontal"
+                                style={{
+                                    // '--mask-min-width': '50%',
+                                    // '--mask-gradient-angle': '15deg',
+                                    backgroundSize: 'auto 500%',
+                                    backgroundPosition: '65% 70%',
+                                }}
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>
         </Page>
     );
