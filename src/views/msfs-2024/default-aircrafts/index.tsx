@@ -69,7 +69,7 @@ const aircrafts: AircraftType[] = [
         img: require('./imgs/a330.jpg'),
         style: {
             '--img-size': 'auto 250%',
-            '--img-position': '28% 60%',
+            '--img-position': '25% 60%',
         },
     },
     {
@@ -80,7 +80,7 @@ const aircrafts: AircraftType[] = [
         img: require('./imgs/beluga-xl.jpg'),
         style: {
             '--img-size': 'auto 300%',
-            '--img-position': '90% 40%',
+            '--img-position': '85% 40%',
         },
     },
     {

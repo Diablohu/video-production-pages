@@ -42,26 +42,29 @@ const Controls = () => {
 
     const onButtonClick = useCallback((evt) => {
         setViewType(
-            evt.nativeEvent.target.getAttribute('data-view-type') || ''
+            evt.nativeEvent.target.getAttribute('data-view-type') || '',
         );
     }, []);
 
     return (
         <div className={`${classNameModule}-controls`}>
-            {['output', 'mask', 'bg-dark', 'bg-light', 'bg-streaming'].map(
-                (t) => (
-                    <button
-                        key={t}
-                        data-view-type={t}
-                        onClick={onButtonClick}
-                        className={classNames([
-                            { 'is-active': t === viewType },
-                        ])}
-                    >
-                        {t.toUpperCase()}
-                    </button>
-                )
-            )}
+            {[
+                'output',
+                'mask',
+                'bg-dark',
+                'bg-light',
+                'bg-streaming',
+                'watermark',
+            ].map((t) => (
+                <button
+                    key={t}
+                    data-view-type={t}
+                    onClick={onButtonClick}
+                    className={classNames([{ 'is-active': t === viewType }])}
+                >
+                    {t.toUpperCase()}
+                </button>
+            ))}
         </div>
     );
 };
