@@ -24,6 +24,7 @@ export interface TierType {
      * 按年订阅价格，单位：美元
      */
     pricePerYear: number;
+    platform: Array<'xbox' | 'pc' | 'cloud'>;
 
     consoleMultiPlayer: boolean;
     limitedConsoleGames: boolean;
@@ -44,6 +45,7 @@ const ThisPage = extend({
             <Column>
                 <Cell></Cell>
                 <Cell></Cell>
+                <Cell>平台</Cell>
                 <Cell>
                     游戏机
                     <br />
