@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: 4fr 1fr;
     grid-template-rows: 1fr;
-    gap: 20px 60px;
+    gap: unit(100 * 20px / 1080px, vh) unit(100 * 60px / 1920px, vw);
 
     & > .aircrafts,
     & > .avionics {
@@ -13,7 +13,7 @@
         .cells {
             flex: 1;
             display: grid;
-            gap: 20px 60px;
+            gap: unit(100 * 20px / 1080px, vh) unit(100 * 60px / 1920px, vw);
             overflow: hidden;
             .sub {
                 display: flex;
@@ -27,7 +27,7 @@
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-auto-flow: column;
-            gap: 20px;
+            gap: unit(100 * 20px / 1920px, vw);
         }
     }
 
@@ -35,12 +35,12 @@
         & > .cells {
             grid-template-rows: 3/8fr 3/8fr 2/8fr;
             .cell {
-                padding-left: 30px;
-                padding-bottom: 20px;
+                padding-left: unit(100 * 30px / 1920px, vw);
+                padding-bottom: unit(100 * 20px / 1080px, vh);
                 strong {
                     top: 0;
                     font-size: unit(4.5/3, em);
-                    margin-bottom: 5px;
+                    margin-bottom: unit(100 * 5px / 1080px, vh);
                 }
                 small {
                     display: block;
@@ -54,7 +54,7 @@
     }
 
     .component-aircraft {
-        --img-width: 85px;
+        --img-width: unit(100 * 85px / 1920px, vw);
         --img-position: 50% 50%;
         --img-size: cover;
 
@@ -91,7 +91,7 @@
                 font-style: normal;
                 font-size: unit(10/7, em);
                 margin-bottom: 0.25em;
-                margin-left: -3px;
+                margin-left: unit(100 * -3px / 1080px, vh);
                 transform: skew(var(--logo-skew)) scale(0.95, 1);
                 transform-origin: 0 100%;
                 line-height: 1;
@@ -110,10 +110,10 @@
             }
             & > .img {
                 z-index: 2;
-                width: calc(var(--img-width) + 20px);
+                width: calc(var(--img-width) + unit(100 * 20px / 1920px, vw));
                 mask-image: linear-gradient(
                     to right,
-                    #fff calc(100% - 50px),
+                    #fff calc(100% - unit(100 * 50px / 1920px, vw)),
                     rgba(255, 255, 255, 0)
                 );
                 & > .picture {
@@ -133,7 +133,7 @@
                 width: 100%;
                 background: rgba(0, 0, 0, 1) no-repeat 50% 50%;
                 background-size: cover;
-                filter: blur(20px);
+                filter: blur(unit(100 * 20px / 1920px, vw));
                 opacity: 0.5;
             }
 

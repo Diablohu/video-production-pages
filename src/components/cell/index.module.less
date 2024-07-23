@@ -16,11 +16,13 @@
     border-radius: var(--border-radius);
     overflow: hidden;
     color: #fff;
-    padding: 15px 15px 10px 15px;
+    padding: unit(100 * 15px / 1920px, vw) unit(100 * 15px / 1920px, vw)
+        unit(100 * 10px / 1920px, vw) unit(100 * 15px / 1920px, vw);
     font-size: 0.9vw;
     line-height: 1.3em;
     font-style: italic;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 unit(100 * 2px / 1920px, vw) unit(100 * 5px / 1920px, vw)
+        rgba(0, 0, 0, 0.5);
     font-weight: 400;
 
     background: no-repeat 50% 50%;
@@ -90,26 +92,29 @@
             max-width: var(--mask-max-width);
             height: 100%;
             bottom: 0;
-            left: -10px;
+            left: unit(100 * -10px / 1920px, vw);
         }
     }
 
     &.mod-infocell {
         --mask-min-width: 80%;
 
-        padding: 0 0 25px 35px;
+        padding: 0 0 unit(100 * 25px / 1920px, vw) unit(100 * 35px / 1920px, vw);
         line-height: 1.5em;
         letter-spacing: 0.1em;
         text-shadow:
-            0 2px 5px rgba(0, 0, 0, 0.25),
-            0 2px 5px rgba(0, 0, 0, 0.5),
-            0 1px 3px rgba(0, 0, 0, 0.75);
+            0 unit(100 * 2px / 1920px, vw) unit(100 * 5px / 1920px, vw)
+                rgba(0, 0, 0, 0.25),
+            0 unit(100 * 2px / 1920px, vw) unit(100 * 5px / 1920px, vw)
+                rgba(0, 0, 0, 0.5),
+            0 unit(100 * 1px / 1920px, vw) unit(100 * 3px / 1920px, vw)
+                rgba(0, 0, 0, 0.75);
 
         strong {
             font-style: normal;
             font-size: unit(5/3, em);
             margin-bottom: 0.25em;
-            margin-left: -3px;
+            margin-left: unit(100 * -3px / 1920px, vw);
             // -webkit-text-fill-color: transparent;
             // background: linear-gradient(
             //     180deg,
@@ -137,10 +142,11 @@
             bottom: var(--offset);
             left: var(--offset);
             right: var(--offset);
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            border: unit(100 * 2px / 1920px, vw) solid rgba(255, 255, 255, 0.1);
             border-radius: inherit;
             z-index: 100;
-            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.25);
+            box-shadow: inset 0 0 unit(100 * 20px / 1920px, vw)
+                rgba(0, 0, 0, 0.25);
             .mod-mask({
                 display: none;
             });
