@@ -157,6 +157,7 @@ export default {
                 'best-small-airplanes-202301',
                 require('@views/best-small-airplanes-202301').default,
             ],
+            ['game-pass-tiers', require('@views/game-pass-tiers').default],
         ].map(([path, component]) => ({
             path,
             component,
