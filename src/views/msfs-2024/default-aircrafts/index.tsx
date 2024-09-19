@@ -161,7 +161,7 @@ const aircrafts: AircraftType[] = [
         },
     },
     {
-        name: '萨博 430B',
+        name: '萨博 340B',
         type: 'midsized-liner',
         img: require('./imgs/340b.jpg'),
         style: {
@@ -249,6 +249,17 @@ const aircrafts: AircraftType[] = [
         },
     },
     {
+        name: '多尼尔 海星',
+        code: '',
+        type: 'turbo-prop',
+        img: require('./imgs/seastar.jpg'),
+        style: {
+            '--img-size': 'auto 130%',
+            '--img-position': '100% 40%',
+        },
+        isDeluxe: true,
+    },
+    {
         name: 'DracoX',
         code: '',
         type: 'turbo-prop',
@@ -323,17 +334,6 @@ const aircrafts: AircraftType[] = [
         style: {
             '--img-size': 'auto 130%',
             '--img-position': '100% 20%',
-        },
-        isDeluxe: true,
-    },
-    {
-        name: '多尼尔 海星',
-        code: '',
-        type: 'piston-prop',
-        img: require('./imgs/seastar.jpg'),
-        style: {
-            '--img-size': 'auto 130%',
-            '--img-position': '100% 40%',
         },
         isDeluxe: true,
     },
