@@ -9,33 +9,38 @@ import styles, { wrapper as classNameModule } from './index.module.less';
 
 // ============================================================================
 
-interface AircraftType {
+type AircraftTypes =
+    | 'jetliner'
+    | 'military-cargo'
+    | 'midsized-liner'
+    | 'turbo-prop'
+    | 'piston-prop'
+    | 'helicopter'
+    | 'gyrocopter'
+    | 'glider'
+    | 'military'
+    | 'private-jet'
+    | 'evtol'
+    | 'light-sport'
+    | 'airship'
+    | 'hot-air-balloon'
+    | 'powered-paragliding';
+type AircraftType = {
     name: string;
-    code: string;
-    type:
-        | 'jet-airliner'
-        | 'cargo'
-        | 'military-cargo'
-        | 'turbo-prop'
-        | 'piston-prop'
-        | 'helicopter'
-        | 'gyrocopter'
-        | 'glider'
-        | 'military'
-        | 'private-jet'
-        | 'evtol'
-        | 'light-sport'
-        | 'airship'
-        | 'hot-air-balloon';
-    developers: string[];
-    img: string;
+    code?: string;
+    type?: AircraftTypes;
+    description?: string;
+    developers?: string[];
+    img?: string;
     style?: Record<string, string>;
-}
+    isDeluxe?: boolean;
+    isPremiumDeluxe?: boolean;
+};
 
-const typeName: Record<AircraftType['type'], string> = {
-    'jet-airliner': '喷气客机',
-    cargo: '大型货机',
-    'military-cargo': '军用货机',
+const typeName: Record<AircraftTypes, string> = {
+    jetliner: '大型喷气客机 / 货机',
+    'military-cargo': '大型军用运输机',
+    'midsized-liner': '中型涡桨客机 / 货机',
     'turbo-prop': '涡轮螺旋桨',
     'piston-prop': '活塞螺旋桨',
     helicopter: '直升机',
@@ -47,24 +52,24 @@ const typeName: Record<AircraftType['type'], string> = {
     'light-sport': '轻型运动',
     airship: '飞艇',
     'hot-air-balloon': '热气球',
+    'powered-paragliding': '动力滑翔伞',
 };
 
 const aircrafts: AircraftType[] = [
     {
-        name: '波音 737 MAX-8',
-        code: 'B38M',
-        type: 'jet-airliner',
-        developers: ['ASOBO'],
-        img: require('./imgs/b38m.jpg'),
+        name: '空客 A321LR',
+        code: 'A321',
+        type: 'jetliner',
+        img: require('./imgs/a321lr.jpg'),
         style: {
-            '--img-size': 'auto 110%',
-            '--img-position': '67% 55%',
+            '--img-size': 'auto 400%',
+            '--img-position': '0% 42.5%',
         },
     },
     {
-        name: '空客 A330-200 / -300',
+        name: '空客 A330-200/-300/-300P2F',
         code: 'A332/A333',
-        type: 'jet-airliner',
+        type: 'jetliner',
         developers: ['iniBuilds'],
         img: require('./imgs/a330.jpg'),
         style: {
@@ -73,9 +78,9 @@ const aircrafts: AircraftType[] = [
         },
     },
     {
-        name: '空客 大白鲸 XL',
+        name: '空客 A330-743L 大白鲸XL',
         code: '',
-        type: 'cargo',
+        type: 'jetliner',
         developers: ['iniBuilds'],
         img: require('./imgs/beluga-xl.jpg'),
         style: {
@@ -84,7 +89,48 @@ const aircrafts: AircraftType[] = [
         },
     },
     {
-        name: '空客 A400M',
+        name: '波音 737 MAX 8',
+        code: 'B38M',
+        type: 'jetliner',
+        developers: ['ASOBO'],
+        img: require('./imgs/b38m.jpg'),
+        style: {
+            '--img-size': 'auto 110%',
+            '--img-position': '67% 55%',
+        },
+    },
+    {
+        name: '波音 747-400 超级灭火机',
+        type: 'jetliner',
+        img: require('./imgs/b744-supertanker.jpg'),
+        style: {
+            '--img-size': 'auto 300%',
+            '--img-position': '95% 25%',
+        },
+        isPremiumDeluxe: true,
+    },
+    {
+        name: '波音 747-400 LCE 梦想运输机',
+        type: 'jetliner',
+        img: require('./imgs/b744-dreamlifter.jpg'),
+        style: {
+            '--img-size': 'auto 140%',
+            '--img-position': '100% 20%',
+        },
+        isPremiumDeluxe: true,
+    },
+    {
+        name: '波音 747-8F',
+        type: 'jetliner',
+        img: require('./imgs/b748.jpg'),
+        style: {
+            '--img-size': 'auto 100%',
+            '--img-position': '100% 0%',
+        },
+    },
+
+    {
+        name: '空客 A400M 星图',
         code: '',
         type: 'military-cargo',
         developers: ['iniBuilds'],
@@ -95,7 +141,38 @@ const aircrafts: AircraftType[] = [
         },
     },
     {
-        name: '西锐 SF50 Vision Jet G2',
+        name: '波音 C-17 环球霸王III',
+        type: 'military-cargo',
+        img: require('./imgs/c17.jpg'),
+        style: {
+            '--img-size': 'auto 100%',
+            '--img-position': '100% 0%',
+        },
+        isPremiumDeluxe: true,
+    },
+
+    {
+        name: 'Heart Aerospace ES-30',
+        type: 'midsized-liner',
+        img: require('./imgs/es30.jpg'),
+        style: {
+            '--img-size': 'auto 150%',
+            '--img-position': '100% 55%',
+        },
+    },
+    {
+        name: '萨博 430B',
+        type: 'midsized-liner',
+        img: require('./imgs/340b.jpg'),
+        style: {
+            '--img-size': 'auto 125%',
+            '--img-position': '0% 20%',
+        },
+        isPremiumDeluxe: true,
+    },
+
+    {
+        name: '西锐 SF50 VisionJet',
         code: '',
         type: 'private-jet',
         developers: ['FlightFX'],
@@ -106,29 +183,51 @@ const aircrafts: AircraftType[] = [
         },
     },
     {
-        name: '德哈维兰 DHC-6 "双水獭"',
+        name: '皮拉图斯 PC-24',
+        code: '',
+        type: 'private-jet',
+        img: require('./imgs/pc24.jpg'),
+        style: {
+            '--img-size': 'auto 120%',
+            '--img-position': '50% 20%',
+        },
+        isPremiumDeluxe: true,
+    },
+
+    {
+        name: '空中拖拉机 AT-802',
         code: '',
         type: 'turbo-prop',
-        developers: ['Aerosoft', 'iniBuilds', 'S&H'],
-        img: require('./imgs/dhc6.jpg'),
+        img: require('./imgs/at802.jpg'),
         style: {
-            '--img-size': 'auto 275%',
-            '--img-position': '30% 55%',
+            '--img-size': 'auto 150%',
+            '--img-position': '90% 30%',
         },
     },
     {
-        name: '皮拉图斯 PC-12 NGx',
+        name: '比奇 C90 GTX 空中国王',
         code: '',
         type: 'turbo-prop',
-        developers: ['Carenado', 'WorkingTitle'],
-        img: require('./imgs/pc-12-ngx.jpg'),
+        img: require('./imgs/c90.jpg'),
         style: {
-            '--img-size': 'auto 200%',
-            '--img-position': '20% 48%',
+            '--img-size': 'auto 120%',
+            '--img-position': '90% 30%',
         },
+        isPremiumDeluxe: true,
     },
     {
-        name: 'Canadair CL-415',
+        name: '塞斯纳 408 天空信使',
+        code: '',
+        type: 'turbo-prop',
+        img: require('./imgs/c408.jpg'),
+        style: {
+            '--img-size': 'auto 120%',
+            '--img-position': '25% 30%',
+        },
+        isDeluxe: true,
+    },
+    {
+        name: '德哈维兰 CL-415',
         code: '',
         type: 'turbo-prop',
         developers: ['ASOBO'],
@@ -136,6 +235,17 @@ const aircrafts: AircraftType[] = [
         style: {
             '--img-size': 'auto 250%',
             '--img-position': '80% 55%',
+        },
+    },
+    {
+        name: '德哈维兰 DHC-6 双水獭',
+        code: '',
+        type: 'turbo-prop',
+        developers: ['Aerosoft', 'iniBuilds', 'S&H'],
+        img: require('./imgs/dhc6.jpg'),
+        style: {
+            '--img-size': 'auto 275%',
+            '--img-position': '30% 55%',
         },
     },
     {
@@ -150,18 +260,19 @@ const aircrafts: AircraftType[] = [
         },
     },
     {
-        name: '塞斯纳 188 农业车',
+        name: '皮拉图斯 PC-12 NGx',
         code: '',
-        type: 'piston-prop',
-        developers: ['Carenado'],
-        img: require('./imgs/c188.jpg'),
+        type: 'turbo-prop',
+        developers: ['Carenado', 'WorkingTitle'],
+        img: require('./imgs/pc-12-ngx.jpg'),
         style: {
-            '--img-size': 'auto 150%',
-            '--img-position': '0% 50%',
+            '--img-size': 'auto 200%',
+            '--img-position': '20% 48%',
         },
     },
+
     {
-        name: 'Edgley EA-7 Optica',
+        name: 'AeroElvira Optica',
         code: '',
         type: 'piston-prop',
         developers: ['GotFriends'],
@@ -172,7 +283,63 @@ const aircrafts: AircraftType[] = [
         },
     },
     {
-        name: '空客 H125',
+        name: 'Albatross G111/HU16',
+        code: '',
+        type: 'piston-prop',
+        img: require('./imgs/g111.jpg'),
+        style: {
+            '--img-size': 'auto 130%',
+            '--img-position': '100% 90%',
+        },
+        isDeluxe: true,
+    },
+    {
+        name: '塞斯纳 188 农业车',
+        code: '',
+        type: 'piston-prop',
+        developers: ['Carenado'],
+        img: require('./imgs/c188.jpg'),
+        style: {
+            '--img-size': 'auto 150%',
+            '--img-position': '0% 50%',
+        },
+        isDeluxe: true,
+    },
+    {
+        name: '塞斯纳 400 Corvalis TT',
+        code: '',
+        type: 'piston-prop',
+        img: require('./imgs/c400.jpg'),
+        style: {
+            '--img-size': 'auto 130%',
+            '--img-position': '20% 20%',
+        },
+    },
+    {
+        name: '塞斯纳 404 泰坦',
+        code: '',
+        type: 'piston-prop',
+        img: require('./imgs/c404.jpg'),
+        style: {
+            '--img-size': 'auto 130%',
+            '--img-position': '100% 20%',
+        },
+        isDeluxe: true,
+    },
+    {
+        name: '多尼尔 海星',
+        code: '',
+        type: 'piston-prop',
+        img: require('./imgs/seastar.jpg'),
+        style: {
+            '--img-size': 'auto 130%',
+            '--img-position': '100% 40%',
+        },
+        isDeluxe: true,
+    },
+
+    {
+        name: '空客直升机 H125',
         code: '',
         type: 'helicopter',
         developers: ['ASOBO'],
@@ -183,7 +350,29 @@ const aircrafts: AircraftType[] = [
         },
     },
     {
-        name: '埃里克森 S-64 "空中吊车"',
+        name: '空客直升机 H225',
+        code: '',
+        type: 'helicopter',
+        img: require('./imgs/h225.jpg'),
+        style: {
+            '--img-size': 'auto 110%',
+            '--img-position': '100% 80%',
+        },
+        isPremiumDeluxe: true,
+    },
+    {
+        name: '波音 CH47D 支奴干',
+        code: '',
+        type: 'helicopter',
+        img: require('./imgs/ch47d.jpg'),
+        style: {
+            '--img-size': 'auto 150%',
+            '--img-position': '50% 50%',
+        },
+        isPremiumDeluxe: true,
+    },
+    {
+        name: '埃里克森 S-64F 空中吊车',
         code: '',
         type: 'helicopter',
         developers: ['BlackBird'],
@@ -204,8 +393,9 @@ const aircrafts: AircraftType[] = [
             '--img-position': '20% 75%',
         },
     },
+
     {
-        name: '麦格尼 M24 "猎户座"',
+        name: '麦格尼 M-24 猎户座',
         code: '',
         type: 'gyrocopter',
         developers: ['BlueMesh'],
@@ -213,6 +403,28 @@ const aircrafts: AircraftType[] = [
         style: {
             '--img-size': 'auto 150%',
             '--img-position': '45% 27.5%',
+        },
+    },
+
+    {
+        name: 'Archer 午夜',
+        code: '',
+        type: 'evtol',
+        img: require('./imgs/midnight.jpg'),
+        style: {
+            '--img-size': 'auto 200%',
+            '--img-position': '50% 50%',
+        },
+    },
+    {
+        name: 'Jeston One',
+        code: '',
+        type: 'evtol',
+        developers: ['FlightFX'],
+        img: require('./imgs/jetson-one.jpg'),
+        style: {
+            '--img-size': 'auto 180%',
+            '--img-position': '70% 55%',
         },
     },
     {
@@ -226,19 +438,19 @@ const aircrafts: AircraftType[] = [
             '--img-position': '45% 75%',
         },
     },
+
     {
-        name: 'Jeston ONE',
+        name: 'CGS Hawk Arrow II',
         code: '',
-        type: 'evtol',
-        developers: ['FlightFX'],
-        img: require('./imgs/jetson-one.jpg'),
+        type: 'light-sport',
+        img: require('./imgs/hawk-arrow-ii.jpg'),
         style: {
-            '--img-size': 'auto 180%',
-            '--img-position': '70% 55%',
+            '--img-size': 'auto 200%',
+            '--img-position': '40% 80%',
         },
     },
     {
-        name: 'MXS-R',
+        name: 'MX MXS-R',
         code: '',
         type: 'light-sport',
         developers: ['iniBuilds'],
@@ -260,6 +472,29 @@ const aircrafts: AircraftType[] = [
         },
     },
     {
+        name: 'Zlin Savage Norden',
+        code: '',
+        type: 'light-sport',
+        img: require('./imgs/savage-norden.jpg'),
+        style: {
+            '--img-size': 'auto 200%',
+            '--img-position': '40% 40%',
+        },
+        isPremiumDeluxe: true,
+    },
+
+    {
+        name: '蝙蝠 金牛座M',
+        code: '',
+        type: 'glider',
+        img: require('./imgs/taurus-m.jpg'),
+        style: {
+            '--img-size': 'auto 200%',
+            '--img-position': '100% 40%',
+        },
+        isPremiumDeluxe: true,
+    },
+    {
         name: 'Stemme S12-G',
         code: '',
         type: 'glider',
@@ -270,6 +505,7 @@ const aircrafts: AircraftType[] = [
             '--img-position': '95% 70%',
         },
     },
+
     {
         name: '费尔柴尔德 A-10 雷电II',
         code: '',
@@ -281,26 +517,55 @@ const aircrafts: AircraftType[] = [
             '--img-position': '40% 70%',
         },
     },
+
     {
         name: '飞艇工业 天舟600',
         code: '',
         type: 'airship',
-        developers: ['？'],
         img: require('./imgs/skyship600.jpg'),
         style: {
             '--img-size': 'auto 150%',
             '--img-position': '95% 40%',
         },
     },
+
     {
-        name: '？？？',
+        name: '标准热气球',
         code: '',
         type: 'hot-air-balloon',
-        developers: ['？'],
         img: require('./imgs/hot-air-balloon.jpg'),
         style: {
             '--img-size': 'auto 125%',
             '--img-position': '95% 20%',
+        },
+    },
+    {
+        name: 'FlyDoo 热气球',
+        type: 'hot-air-balloon',
+        img: require('./imgs/flydoo.jpg'),
+        style: {
+            '--img-size': 'auto 200%',
+            '--img-position': '20% 40%',
+        },
+    },
+
+    {
+        name: 'Powrachute Sky Rascal',
+        type: 'powered-paragliding',
+        img: require('./imgs/sky-rascal.jpg'),
+        style: {
+            '--img-size': 'auto 100%',
+            '--img-position': '100% 40%',
+        },
+    },
+
+    {
+        name: '雷诺竞赛飞机（标准版）',
+        description: 'L39信天翁、P51野马、T6德州佬',
+        img: require('./imgs/p51.jpg'),
+        style: {
+            '--img-size': 'auto 175%',
+            '--img-position': '70% 40%',
         },
     },
 ];
@@ -397,16 +662,23 @@ const Aircraft: FC<AircraftType> = ({
     name,
     code,
     type,
+    description,
     developers = [],
-    img,
+    img = '',
     style,
+
+    isDeluxe = false,
+    isPremiumDeluxe = false,
 }) => {
     return (
         <Cell
-            className={classNames([
-                `${classNameModule}-aircraft`,
-                `is-type-${type}`,
-            ])}
+            className={classNames(
+                [`${classNameModule}-aircraft`, `is-type-${type}`],
+                {
+                    'mod-is-deluxe': isDeluxe,
+                    'mod-is-premium-deluxe': isPremiumDeluxe,
+                },
+            )}
         >
             <dl style={style}>
                 {img && (
@@ -428,8 +700,11 @@ const Aircraft: FC<AircraftType> = ({
                     </>
                 )}
                 <dt className="name">{name}</dt>
-                <dd>
+                {/* <dd>
                     {typeName[type]} / {developers.join(' + ')}
+                </dd> */}
+                <dd>
+                    {type && type in typeName ? typeName[type] : description}
                 </dd>
             </dl>
         </Cell>

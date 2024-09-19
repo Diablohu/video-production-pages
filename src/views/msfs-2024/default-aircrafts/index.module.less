@@ -2,7 +2,7 @@
 
 .component {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 5fr 1fr;
     grid-template-rows: 1fr;
     gap: unit(100 * 20px / 1080px, vh) unit(100 * 60px / 1920px, vw);
 
@@ -24,10 +24,10 @@
 
     & > .aircrafts {
         & > .cells {
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-auto-flow: column;
-            gap: unit(100 * 20px / 1920px, vw);
+            gap: unit(100 * 10px / 1920px, vw);
         }
     }
 
@@ -39,8 +39,8 @@
                 padding-bottom: unit(100 * 20px / 1080px, vh);
                 strong {
                     top: 0;
-                    font-size: unit(4.5/3, em);
-                    margin-bottom: unit(100 * 5px / 1080px, vh);
+                    font-size: unit(4/3, em);
+                    margin-bottom: unit(0 * 5px / 1080px, vh);
                 }
                 small {
                     display: block;
@@ -54,7 +54,7 @@
     }
 
     .component-aircraft {
-        --img-width: unit(100 * 85px / 1920px, vw);
+        --img-width: unit(90 * 85px / 1920px, vw);
         --img-position: 50% 50%;
         --img-size: cover;
 
@@ -89,8 +89,8 @@
             dt {
                 .title-style();
                 font-style: normal;
-                font-size: unit(10/7, em);
-                margin-bottom: 0.25em;
+                font-size: unit(7.5/7, em);
+                margin-bottom: 0;
                 margin-left: unit(100 * -3px / 1080px, vh);
                 transform: skew(var(--logo-skew)) scale(0.95, 1);
                 transform-origin: 0 100%;
@@ -98,7 +98,8 @@
                 margin: 0.15em 0 0.15em 0;
             }
             dd {
-                margin: 0.25em 0;
+                margin: 0.1em 0;
+                font-size: unit(6/7, em);
             }
 
             & > .img,
@@ -145,11 +146,15 @@
             });
         }
 
-        &.is-type-jet-airliner,
-        &.is-type-cargo,
+        &.is-type-jetliner,
         &.is-type-military-cargo {
             &::after {
                 border-color: fade(#fc0, 75%);
+            }
+        }
+        &.is-type-midsized-liner {
+            &::after {
+                border-color: fade(rgb(225, 255, 0), 75%);
             }
         }
         &.is-type-private-jet {
@@ -192,6 +197,32 @@
             &::after {
                 border-color: fade(#555, 75%);
             }
+        }
+
+        &.mod-is-deluxe,
+        &.mod-is-premium-deluxe {
+            & > dl {
+                &::before {
+                    content: '123';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    font-size: 12px;
+                    font-style: normal;
+                    line-height: 1;
+                    padding: 4px 8px 4px 6px;
+                    border-radius: 10px 0 0 0;
+                    z-index: 100;
+                }
+            }
+        }
+        &.mod-is-deluxe > dl::before {
+            content: '豪华版';
+            background: fade(red, 75%);
+        }
+        &.mod-is-premium-deluxe > dl::before {
+            content: '高级豪华版';
+            background: fade(#daa520, 75%);
         }
     }
 }

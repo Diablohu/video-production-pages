@@ -11,7 +11,7 @@ const cellGroupLeft: CellGroupType = {
     cells: [
         {
             title: '全新客户端',
-            infos: ['更多素材云端串流', 'CPU多线程优化', '默认使用 DirectX12'],
+            infos: ['云端串流', 'CPU多线程优化', '默认 DirectX 12'],
             img: require('./imgs/a330-takeoff.jpg'),
             backgroundSize: 'auto 175%',
             backgroundPosition: '15% 30%',
@@ -65,10 +65,10 @@ const cellGroupMid: CellGroupType = {
         {
             title: '改进 CFD 气动模型',
             infos: [
-                '更真实的尾流',
-                '气流影响植被等物体',
-                '更细致的刚性面与柔性面模拟',
-                '第三方可自由控制受力面几何形状',
+                '真实尾流',
+                '气流影响植被',
+                '刚性面、柔性面模拟',
+                '第三方定制受力面几何形状',
             ],
             img: require('./imgs/grass.jpg'),
             backgroundSize: 'auto 250%',
@@ -88,12 +88,7 @@ const cellGroupMid: CellGroupType = {
         },
         {
             title: '所有内置航空器……',
-            infos: [
-                '利用改进的 CFD 气动模型',
-                '故障、损伤、污渍',
-                '有绕机检查流程',
-                '可控制飞行员形象自由走动',
-            ],
+            infos: ['绕机检查', '故障、损伤、污渍', '可控飞行员形象自由走动'],
             img: require('./imgs/zin.jpg'),
             backgroundSize: 'auto 275%',
             backgroundPosition: '30% 80.5%',
@@ -116,7 +111,7 @@ const cellGroupRight: CellGroupType = {
         {
             title: '翻新全球地形',
             infos: [
-                '根据卫星图生成3D地形',
+                '3D地形',
                 '3D植被、农田、砂石点缀',
                 '更大面积的 TIN 覆盖',
                 '根据地域的植被种类',
