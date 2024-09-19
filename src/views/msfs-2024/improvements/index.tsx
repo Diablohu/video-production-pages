@@ -63,7 +63,7 @@ const cellGroupMid: CellGroupType = {
     title: '飞行体验',
     cells: [
         {
-            title: '改进 CFD 气动模型',
+            title: '气动模型（CFD）',
             infos: [
                 '真实尾流',
                 '气流影响植被',
@@ -80,7 +80,7 @@ const cellGroupMid: CellGroupType = {
         },
         {
             title: '升级物理模拟',
-            infos: ['布料和绳索模拟', '水波影响航空器和船只'],
+            infos: ['布料和绳索模拟', '水波影响航空器和船只', '车辙', '尘土'],
             img: require('./imgs/hotairballoon.jpg'),
             backgroundSize: 'auto 175%',
             backgroundPosition: '0% 55%',
