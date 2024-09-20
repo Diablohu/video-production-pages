@@ -47,7 +47,7 @@ const typeName: Record<AircraftTypes, string> = {
     gyrocopter: '旋翼机',
     glider: '滑翔机',
     military: '军事战机',
-    'private-jet': '私人喷气机',
+    'private-jet': '商务 / 私人喷气机',
     evtol: '电动垂直起降',
     'light-sport': '轻型运动',
     airship: '飞艇',
@@ -114,8 +114,8 @@ const aircrafts: AircraftType[] = [
         type: 'jetliner',
         img: require('./imgs/b744-dreamlifter.jpg'),
         style: {
-            '--img-size': 'auto 140%',
-            '--img-position': '100% 20%',
+            '--img-size': 'auto 250%',
+            '--img-position': '95% 45%',
         },
         isPremiumDeluxe: true,
     },
@@ -189,7 +189,7 @@ const aircrafts: AircraftType[] = [
         img: require('./imgs/pc24.jpg'),
         style: {
             '--img-size': 'auto 120%',
-            '--img-position': '50% 20%',
+            '--img-position': '50% 5%',
         },
         isPremiumDeluxe: true,
     },
@@ -622,28 +622,29 @@ const ThisPage = extend({
                             // '--mask-min-width': '50%',
                             // '--mask-gradient-angle': '15deg',
                             backgroundSize: 'auto 500%',
-                            backgroundPosition: '65% 62%',
+                            backgroundPosition: '66% 62%',
                         }}
                     />
                     <div className="sub">
-                        <TitleCell>机库继承</TitleCell>
+                        <TitleCell>第一方航空器</TitleCell>
                         <div className="cells">
                             <InfoCell
                                 className="cell"
-                                title={
-                                    <>
-                                        <small>MSFS 2020</small>
-                                        第一方产品免费继承
-                                    </>
-                                }
-                                img={require('./imgs/b748.png')}
+                                title="标配……"
+                                infos={[
+                                    'EFB',
+                                    '绕机检查',
+                                    '故障、损伤、污渍',
+                                    '客机客舱与乘客',
+                                ]}
+                                img={require('./imgs/cabin.webp')}
                                 infoCell
                                 bgMaskOrientation="horizontal"
                                 style={{
                                     // '--mask-min-width': '50%',
                                     // '--mask-gradient-angle': '15deg',
-                                    backgroundSize: 'auto 500%',
-                                    backgroundPosition: '65% 70%',
+                                    backgroundSize: 'auto 100%',
+                                    backgroundPosition: '35% 70%',
                                 }}
                             />
                         </div>

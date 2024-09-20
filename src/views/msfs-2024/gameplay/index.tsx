@@ -12,7 +12,13 @@ const cellGroupCareer: CellGroupType = {
     cells: [
         {
             title: '飞行员生涯',
-            infos: ['机型认证', '分支选择：水平翼、直升机', '灾害场景'],
+            infos: [
+                '定制形象',
+                '赚钱养飞机',
+                '机型认证',
+                '分支选择：水平翼、直升机',
+                '全球随机任务',
+            ],
             rowSpan: 2,
             columnSpan: 2,
             img: require('./imgs/vip-charter.jpg'),
@@ -24,9 +30,9 @@ const cellGroupCareer: CellGroupType = {
             title: '航司管理',
             infos: [],
             columnSpan: 2,
-            img: require('./imgs/a330.jpg'),
-            backgroundSize: '100% auto',
-            backgroundPosition: '50% 60%',
+            img: require('./imgs/office.webp'),
+            backgroundSize: '150% auto',
+            backgroundPosition: '50% 47%',
             bgMaskOrientation: 'horizontal',
         },
         // {
@@ -45,8 +51,8 @@ const cellGroupOther: CellGroupType = {
     title: '更多体验',
     cells: [
         {
-            title: '每周排行榜',
-            infos: ['低空挑战', '着陆挑战'],
+            title: '挑战联赛',
+            infos: ['低空挑战', '着陆挑战', '玩法与排行定期刷新'],
             img: require('./imgs/challenge.jpg'),
             backgroundSize: 'auto 250%',
             backgroundPosition: '45% 50%',

@@ -33,7 +33,7 @@
 
     & > .avionics {
         & > .cells {
-            grid-template-rows: 3/8fr 3/8fr 2/8fr;
+            grid-template-rows: 1fr 1fr 1.5fr;
             .cell {
                 padding-left: unit(100 * 30px / 1920px, vw);
                 padding-bottom: unit(100 * 20px / 1080px, vh);
@@ -42,12 +42,21 @@
                     font-size: unit(4/3, em);
                     margin-bottom: unit(0 * 5px / 1080px, vh);
                 }
-                small {
-                    display: block;
-                    line-height: 1em;
-                    font-weight: normal;
-                    font-size: unit(3/4, em);
-                    margin-bottom: 0.1em;
+                // small {
+                //     display: block;
+                //     line-height: 1em;
+                //     font-weight: normal;
+                //     font-size: unit(3/4, em);
+                //     margin-bottom: 0.1em;
+                // }
+            }
+        }
+        .sub {
+            & > .cells {
+                .cell {
+                    strong {
+                        margin-bottom: unit(600px / 1080px, vh);
+                    }
                 }
             }
         }
