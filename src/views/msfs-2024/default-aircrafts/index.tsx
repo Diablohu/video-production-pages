@@ -60,6 +60,7 @@ const aircrafts: AircraftType[] = [
         name: '空客 A321LR',
         code: 'A321',
         type: 'jetliner',
+        developers: ['iniBuilds'],
         img: require('./imgs/a321lr.jpg'),
         style: {
             '--img-size': 'auto 400%',
@@ -560,7 +561,7 @@ const aircrafts: AircraftType[] = [
     },
 
     {
-        name: '雷诺竞赛飞机（标准版）',
+        name: '雷诺竞赛飞机',
         description: 'L39信天翁、P51野马、T6德州佬',
         img: require('./imgs/p51.jpg'),
         style: {

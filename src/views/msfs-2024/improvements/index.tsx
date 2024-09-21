@@ -11,7 +11,7 @@ const cellGroupLeft: CellGroupType = {
     cells: [
         {
             title: '全新客户端',
-            infos: ['云端串流', 'CPU多线程优化', '默认 DirectX 12'],
+            infos: ['云端串流', 'CPU 多线程优化', 'DirectX 12'],
             img: require('./imgs/a330-takeoff.jpg'),
             backgroundSize: 'auto 175%',
             backgroundPosition: '15% 30%',
@@ -75,7 +75,11 @@ const cellGroupMid: CellGroupType = {
         },
         {
             title: '升级物理模拟',
-            infos: ['布料和绳索模拟', '水波影响航空器和船只', '车辙'],
+            infos: [
+                '布料 & 绳索',
+                '水波影响航空器和船只',
+                '草地与雪地的轮胎印',
+            ],
             img: require('./imgs/snow.jpg'),
             backgroundSize: 'auto 250%',
             backgroundPosition: '50% 55%',
@@ -97,7 +101,7 @@ const cellGroupRight: CellGroupType = {
     cells: [
         {
             title: '翻新画面渲染',
-            infos: ['光线追踪投影', '改进大气散射', '改进漫反射', '渲染极光'],
+            infos: ['光线追踪投影', '改进大气散射', '改进漫反射', '极光'],
             img: require('./imgs/dubai.jpg'),
             backgroundSize: 'auto 175%',
             backgroundPosition: '50% 40%',
@@ -105,7 +109,7 @@ const cellGroupRight: CellGroupType = {
         },
         {
             title: '翻新全球地形',
-            infos: ['3D地形', '3D植被、农田、砂石点缀', '四季与地域变化'],
+            infos: ['3D地形 & 砂石点缀', '3D植被 & 农田', '四季 & 地域变化'],
             // img: require('./imgs/yosemite.jpg'),
             // backgroundSize: 'auto 185%',
             // backgroundPosition: '30% 70%',
