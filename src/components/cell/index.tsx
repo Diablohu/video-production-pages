@@ -1,4 +1,8 @@
-import type { CSSProperties } from 'react';
+import {
+    type DetailedHTMLProps,
+    type HTMLAttributes,
+    type CSSProperties,
+} from 'react';
 import { extend } from 'koot';
 import classNames from 'classnames';
 
@@ -6,9 +10,12 @@ import styles from './index.module.less';
 
 // ============================================================================
 
-export interface CellProps {
+export type CellProps = {
+    /** 标题 */
     title: string | JSX.Element;
+    /** 细节信息 */
     infos?: string[];
+    /** 配图 */
     img?: string;
     mask?: boolean;
     textSize?: 'lg' | 'md' | 'sm';
@@ -16,7 +23,12 @@ export interface CellProps {
     infoCell?: boolean;
     lightBorder?: boolean;
     style?: CSSProperties & Record<string, string>;
-}
+} & Partial<
+    Omit<
+        DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
+        'title'
+    >
+>;
 
 // Functional Component =======================================================
 

@@ -106,6 +106,10 @@ const cellGroupRight: CellGroupType = {
             backgroundSize: 'auto 175%',
             backgroundPosition: '50% 40%',
             bgMaskOrientation: 'horizontal',
+            style: {
+                gridRow: '1 / span 3',
+                gridColumn: '1 / span 2',
+            },
         },
         {
             title: '翻新全球地形',
@@ -115,8 +119,14 @@ const cellGroupRight: CellGroupType = {
             // backgroundPosition: '30% 70%',
             img: require('./imgs/autumn.jpg'),
             backgroundSize: 'auto 175%',
-            backgroundPosition: '5% 70%',
+            backgroundPosition: '60% 70%',
             bgMaskOrientation: 'horizontal',
+            style: {
+                '--mask-min-width': '80%',
+                '--mask-max-width': '80%',
+                gridRow: '4 / span 3',
+                gridColumn: '1 / span 1',
+            },
         },
         {
             title: '扩展全球数据',
@@ -125,60 +135,93 @@ const cellGroupRight: CellGroupType = {
             img: require('./imgs/oilrig.jpg'),
             backgroundSize: 'auto 220%',
             backgroundPosition: '42% 58%',
+            rowSpan: 3,
             columnSpan: 1,
             bgMaskOrientation: 'horizontal',
+            style: {
+                gridRow: '7 / span 3',
+                gridColumn: '1 / span 1',
+            },
         },
         {
-            title: '',
-            cells: [
-                {
-                    title: (
-                        <>
-                            <small>新的云层</small>高空卷云
-                        </>
-                    ),
-                    img: require('./imgs/cirrus.jpg'),
-                    backgroundSize: 'auto 250%',
-                    backgroundPosition: '30% 30%',
-                    bgMaskOrientation: 'horizontal',
-                    style: {
-                        '--mask-min-width': '80%',
-                        '--mask-max-width': '80%',
-                    },
-                },
-                {
-                    title: (
-                        <>
-                            <small>空中和水面</small>实时交通
-                        </>
-                    ),
-                    developers: ['GAIST', 'AIG'],
-                    img: require('./imgs/miami.jpg'),
-                    backgroundSize: 'auto 1300%',
-                    backgroundPosition: '17% 55%',
-                    bgMaskOrientation: 'horizontal',
-                    style: {
-                        '--mask-min-width': '80%',
-                        '--mask-max-width': '80%',
-                    },
-                },
-                {
-                    title: (
-                        <>
-                            <small>更多</small>动物群
-                        </>
-                    ),
-                    img: require('./imgs/animal.jpg'),
-                    backgroundSize: 'auto 500%',
-                    backgroundPosition: '50% 45%',
-                    bgMaskOrientation: 'horizontal',
-                    style: {
-                        '--mask-min-width': '80%',
-                        '--mask-max-width': '80%',
-                    },
-                },
-            ],
+            title: (
+                <>
+                    <small>24小时</small>气象回溯
+                </>
+            ),
+            // img: require('./imgs/yosemite.jpg'),
+            // backgroundSize: 'auto 185%',
+            // backgroundPosition: '30% 70%',
+            img: require('./imgs/Fuji_MSFS_2024.png'),
+            // className: 'small-cell',
+            backgroundSize: 'auto 100%',
+            backgroundPosition: '15% 70%',
+            bgMaskOrientation: 'vertical',
+            style: {
+                gridRow: '4 / span 2',
+                gridColumn: '2 / span 1',
+                paddingLeft: '20px',
+                paddingBottom: '10px',
+            },
+        },
+        {
+            title: (
+                <>
+                    <small>新的云层</small>高空卷云
+                </>
+            ),
+            rowSpan: 2,
             columnSpan: 1,
+            img: require('./imgs/cirrusclouds-1726680805016.png'),
+            // className: 'small-cell',
+            backgroundSize: 'auto 150%',
+            backgroundPosition: '50% 90%',
+            bgMaskOrientation: 'vertical',
+            style: {
+                '--mask-min-width': '80%',
+                '--mask-max-width': '80%',
+                gridRow: '6 / span 2',
+                gridColumn: '2 / span 1',
+                paddingLeft: '20px',
+                paddingBottom: '10px',
+            },
+        },
+        {
+            title: (
+                <>
+                    <small>空中和水面</small>实时交通
+                </>
+            ),
+            developers: ['GAIST', 'AIG'],
+            img: require('./imgs/miami.jpg'),
+            className: 'small-cell',
+            backgroundSize: 'auto 1300%',
+            backgroundPosition: '17% 55%',
+            bgMaskOrientation: 'horizontal',
+            style: {
+                '--mask-min-width': '80%',
+                '--mask-max-width': '80%',
+                gridRow: '8 / span 1',
+                gridColumn: '2 / span 1',
+            },
+        },
+        {
+            title: (
+                <>
+                    <small>更多</small>动物群
+                </>
+            ),
+            img: require('./imgs/animal.jpg'),
+            className: 'small-cell',
+            backgroundSize: 'auto 500%',
+            backgroundPosition: '50% 45%',
+            bgMaskOrientation: 'horizontal',
+            style: {
+                '--mask-min-width': '80%',
+                '--mask-max-width': '80%',
+                gridRow: '9 / span 1',
+                gridColumn: '2 / span 1',
+            },
         },
     ],
 };

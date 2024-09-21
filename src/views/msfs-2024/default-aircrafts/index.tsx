@@ -579,7 +579,11 @@ const ThisPage = extend({
     return (
         <Page updateDate={true} classNameBody={classNames(className)}>
             <div className="aircrafts">
-                <TitleCell>全新航空器</TitleCell>
+                <TitleCell>
+                    <span>
+                        <u>* 全新 *</u> 航空器
+                    </span>
+                </TitleCell>
                 <div className="cells">
                     {aircrafts.map((aircraft) => (
                         <Aircraft
@@ -590,7 +594,11 @@ const ThisPage = extend({
                 </div>
             </div>
             <div className="avionics">
-                <TitleCell>全新航电系统</TitleCell>
+                <TitleCell>
+                    <span>
+                        <u>* 全新 *</u> 航电系统
+                    </span>
+                </TitleCell>
                 <div className="cells">
                     <InfoCell
                         className="cell"

@@ -15,15 +15,9 @@ import styles, { wrapper as classNameModule } from './index.module.less';
 // ============================================================================
 
 /** 信息单元格 */
-export interface CellType {
-    /** 标题 */
-    title: CellProps['title'];
+export type CellType = {
     /** 开发者 */
     developers?: string[];
-    /** 细节信息 */
-    infos?: string[];
-    /** 配图 */
-    img?: string;
     /** 行列数 */
     rowSpan?: number;
     /** 跨列数 */
@@ -32,10 +26,11 @@ export interface CellType {
     backgroundSize?: string;
     /** CSS Style: background-position */
     backgroundPosition?: string;
-    bgMaskOrientation?: CellProps['bgMaskOrientation'];
     cells?: CellType[];
-    style?: Record<string, string>;
-}
+} & Pick<
+    CellProps,
+    'title' | 'infos' | 'img' | 'bgMaskOrientation' | 'className' | 'style'
+>;
 
 /** 信息组 */
 export interface CellGroupType {
@@ -85,6 +80,7 @@ const MSFS2024Page = extend<{
                                         key={index}
                                         className="grid"
                                         style={{
+                                            ...cell.style,
                                             gridRow: cell.rowSpan
                                                 ? `span ${cell.rowSpan}`
                                                 : undefined,

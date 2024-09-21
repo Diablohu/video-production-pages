@@ -22,38 +22,41 @@
         &[data-title=~'世界环境'] {
             .grid {
                 grid-template-columns: 5fr 4fr;
-                grid-template-rows: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                strong small {
+                    display: block;
+                    line-height: 1em;
+                    font-weight: normal;
+                    font-size: unit(3/4, em);
+                    margin-bottom: 0.1em;
+                }
+                .small-cell {
+                    padding: 0;
+                    // &::before {
+                    //     background: linear-gradient(
+                    //         to right,
+                    //         rgba(0, 0, 0, 0.65) 17.5%,
+                    //         rgba(0, 0, 0, 0) 100%
+                    //     );
+                    //     width: 80%;
+                    //     height: 100%;
+                    //     bottom: 0;
+                    //     left: -10px;
+                    // }
+                    strong {
+                        position: absolute;
+                        top: 0;
+                        left: 15px;
+                        height: 100%;
+                        display: flex;
+                        flex-flow: column nowrap;
+                        font-size: unit(4/3, em);
+                        justify-content: center;
+                    }
+                }
                 .grid {
+                    grid-template-rows: 1fr 1fr;
                     .cell {
-                        padding: 0;
-                        // &::before {
-                        //     background: linear-gradient(
-                        //         to right,
-                        //         rgba(0, 0, 0, 0.65) 17.5%,
-                        //         rgba(0, 0, 0, 0) 100%
-                        //     );
-                        //     width: 80%;
-                        //     height: 100%;
-                        //     bottom: 0;
-                        //     left: -10px;
-                        // }
-                        strong {
-                            position: absolute;
-                            top: 0;
-                            left: 15px;
-                            height: 100%;
-                            display: flex;
-                            flex-flow: column nowrap;
-                            font-size: unit(4/3, em);
-                            justify-content: center;
-                        }
-                        small {
-                            display: block;
-                            line-height: 1em;
-                            font-weight: normal;
-                            font-size: unit(3/4, em);
-                            margin-bottom: 0.1em;
-                        }
                     }
                 }
             }
