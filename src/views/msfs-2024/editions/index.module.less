@@ -1,6 +1,8 @@
 @import '~vars.less';
 
 .component {
+    --text-shadow-color: rgba(0, 0, 0, 0.5);
+
     position: relative;
     width: 100%;
     display: flex;
@@ -8,8 +10,8 @@
     align-items: center;
     font-size: unit(100 * 25px / 1920px, vw);
     line-height: 1.5;
-    text-shadow: 0 unit(100 * 2px / 1920px, vw) unit(100 * 5px / 1920px, vw)
-        rgba(0, 0, 0, 0.5);
+    text-shadow: 0 unit(100 * 1.5px / 1920px, vw) unit(100 * 3px / 1920px, vw)
+        var(--text-shadow-color);
     font-weight: 400;
 
     .edition {
@@ -21,6 +23,7 @@
         position: relative;
         z-index: 2;
 
+        &::before,
         &::after {
             content: '';
             position: absolute;
@@ -28,10 +31,19 @@
             bottom: 0;
             left: 0.25em;
             right: 0.25em;
+            border-radius: 1em;
+        }
+
+        &::before {
             background-color: var(--color);
             opacity: 0.35;
-            border-radius: 1em;
             z-index: -1;
+        }
+
+        &::after {
+            background-color: fade(#000, 25%);
+            z-index: -2;
+            backdrop-filter: blur(1.5em) saturate(150%);
         }
 
         h2 {
@@ -138,10 +150,9 @@
     }
 
     .mod-mask({
-        text-shadow: 0 unit(100 * 2px / 1920px, vw) unit(100 * 5px / 1920px, vw)
-            rgba(255, 255, 255, 0.5);
+        --text-shadow-color: rgba(255, 255, 255, 0.5);
         .edition {
-            &::after {
+            &::before {
                 background-color: #fff;
             }
             h3 {
