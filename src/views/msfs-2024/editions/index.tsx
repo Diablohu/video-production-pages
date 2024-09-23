@@ -84,9 +84,9 @@ const Editions = extend<ComponentProps>({
                         <br />
                         约￥{edition.priceRMB} 人民币
                         {edition.gamepass ? (
-                            <div className="gamepass">Game Pass 畅玩</div>
+                            <small className="gamepass">Game Pass 畅玩</small>
                         ) : null}
-                        {edition.physical && <div>有限量实体版</div>}
+                        {edition.physical && <small>有限量实体版</small>}
                     </div>
                     <div className="info aircrafts">
                         <span>
