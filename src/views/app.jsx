@@ -46,6 +46,18 @@ const Controls = () => {
         );
     }, []);
 
+    const onBgImgSelectChange = useCallback((evt) => {
+        const src = evt.nativeEvent.target.value;
+        if (src) {
+            document.documentElement.style.setProperty(
+                '--background-image',
+                `url(${src})`,
+            );
+        } else {
+            document.documentElement.style.removeProperty('--background-image');
+        }
+    }, []);
+
     return (
         <div className={`${classNameModule}-controls`}>
             {[
@@ -65,6 +77,22 @@ const Controls = () => {
                     {t.toUpperCase()}
                 </button>
             ))}
+            <label>
+                BG
+                <select onChange={onBgImgSelectChange}>
+                    <option value="">--</option>
+                    {[
+                        [
+                            'MSFS 2024 Cover',
+                            require('../assets/msfs2024/cover.jpg'),
+                        ],
+                    ].map(([name, src]) => (
+                        <option key={name} value={src}>
+                            {name}
+                        </option>
+                    ))}
+                </select>
+            </label>
         </div>
     );
 };

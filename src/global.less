@@ -45,6 +45,12 @@ html {
             'Hiragino Kaku Gothic ProN', Meiryo, Roboto, sans-serif;
     }
 
+    --background-image: none;
+    --border-radius: 10px;
+    --color-uncommon: #1eff00;
+    --color-epic: #a335ee;
+    --color-legendary: #ff8000;
+
     box-sizing: border-box;
     // color: @color-base;
     color: #fff;
@@ -52,24 +58,20 @@ html {
     text-decoration-skip-ink: auto;
     text-underline-position: under;
     background: #000 no-repeat 50% 50%;
+    background-image: var(--background-image);
     background-size: cover;
 
-    --border-radius: 10px;
-    --color-uncommon: #1eff00;
-    --color-epic: #a335ee;
-    --color-legendary: #ff8000;
-
     &[data-view-type='bg-light'] {
-        background-image: url(./assets/bg-light.png);
+        --background-image: url(./assets/bg-light.png);
     }
     &[data-view-type='bg-dark'] {
-        background-image: url(./assets/bg-dark-4.png);
+        --background-image: url(./assets/bg-dark-4.png);
     }
     &[data-view-type='bg-streaming'] {
-        background-image: url(./assets/bg-streaming.png);
+        --background-image: url(./assets/bg-streaming.png);
     }
     &[data-view-type='watermark'] {
-        background-image: url(./assets/bg-stunning-sky.jpg);
+        --background-image: url(./assets/bg-stunning-sky.jpg);
         body {
             &::before {
                 content: '';
@@ -80,7 +82,7 @@ html {
                 height: 100%;
                 overflow: hidden;
                 z-index: 99999999;
-                background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='150px' width='250px'><text transform='translate(20, 150) rotate(-30)' fill='rgb(255,255,255)' font-size='40'>fly-dbh.com</text></svg>");
+                --background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='150px' width='250px'><text transform='translate(20, 150) rotate(-30)' fill='rgb(255,255,255)' font-size='40'>fly-dbh.com</text></svg>");
                 pointer-events: none;
                 opacity: 0.05;
                 mix-blend-mode: lighten;

@@ -37,6 +37,10 @@ export default {
         ...[
             // MSFS 2024 ONLY =================================================
             [
+                'msfs-2024-editions',
+                require('@views/msfs-2024/editions').default,
+            ],
+            [
                 'msfs-2024-default-aircrafts',
                 require('@views/msfs-2024/default-aircrafts').default,
             ],
