@@ -48,9 +48,11 @@ const editions = [
         aircraftsVsPreviousTier: 30,
         aircraftsNote: (
             <>
-                此30款为过去4年间
+                此 30 款为过去 4 年微软第一方出品的
                 <br />
-                微软第一方出品的所有航空器
+                所有航空器（AN-225、ATR 等）
+                <br />
+                均可单独购买
             </>
         ),
         airports: 160,
@@ -98,7 +100,7 @@ const Editions = extend<ComponentProps>({
                         </span>
                         {edition.aircraftsVs2020equivalent && (
                             <small className="vs-2020">
-                                含 2020 同级别所有航空器
+                                含 2020 同级别产品的所有航空器
                                 <br />
                                 对比 2020 同级别：+{' '}
                                 {edition.aircraftsVs2020equivalent} 全新
