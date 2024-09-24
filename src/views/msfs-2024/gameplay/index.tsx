@@ -18,6 +18,7 @@ const cellGroupCareer: CellGroupType = {
                 '机型认证',
                 '分支选择：水平翼、直升机',
                 '全球随机任务',
+                '多样场景：山火、风暴……',
             ],
             rowSpan: 2,
             columnSpan: 2,
