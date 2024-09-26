@@ -86,13 +86,20 @@ const Editions = extend<ComponentProps>({
                     <h2>{edition.nameZh}</h2>
                     <h3>{edition.name.toUpperCase()}</h3>
                     <div className="info price">
-                        　${edition.price} 美元（约￥{edition.priceRMB}）
+                        ${edition.price} 美元
+                        <br />
+                        约￥{edition.priceRMB} 人民币
+                        {edition.gamepass ? (
+                            <small className="gamepass">Game Pass 畅玩</small>
+                        ) : null}
+                        {edition.physical && <small>有限量实体版</small>}
+                        {/* 　${edition.price} 美元（约￥{edition.priceRMB}）
                         <br />
                         STEAM 国区：￥{edition.priceSteamRMB}
                         {edition.gamepass ? (
                             <small className="gamepass">Game Pass 畅玩</small>
                         ) : null}
-                        {edition.physical && <small>有限量实体版</small>}
+                        {edition.physical && <small>有限量实体版</small>} */}
                     </div>
                     <div className="info aircrafts">
                         <span>
