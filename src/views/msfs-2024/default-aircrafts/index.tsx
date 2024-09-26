@@ -365,6 +365,7 @@ const aircrafts: AircraftType[] = [
         name: '波音 CH47D 支奴干',
         code: '',
         type: 'helicopter',
+        developers: ['Millitech'],
         img: require('./imgs/ch47d.jpg'),
         style: {
             '--img-size': 'auto 150%',

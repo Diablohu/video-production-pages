@@ -86,11 +86,11 @@ const cellGroupMid: CellGroupType = {
             bgMaskOrientation: 'horizontal',
         },
         {
-            title: '自由行走',
+            title: '机外自由行走',
             infos: ['绕机检查', '拍照'],
             img: require('./imgs/walkaround.webp'),
             backgroundSize: 'auto 200%',
-            backgroundPosition: '35% 65%',
+            backgroundPosition: '25% 65%',
             bgMaskOrientation: 'horizontal',
         },
     ],
@@ -146,7 +146,7 @@ const cellGroupRight: CellGroupType = {
         {
             title: (
                 <>
-                    <small>24小时</small>气象回溯
+                    <small>24小时</small>世界回溯
                 </>
             ),
             // img: require('./imgs/yosemite.jpg'),

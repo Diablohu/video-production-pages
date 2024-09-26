@@ -13,6 +13,7 @@ const editions = [
         nameZh: '标准版',
         price: 70,
         priceRMB: 490,
+        priceSteamRMB: 238,
         gamepass: true,
         aircrafts: 70,
         aircraftsVs2020equivalent: 30,
@@ -23,6 +24,7 @@ const editions = [
         nameZh: '豪华版',
         price: 100,
         priceRMB: 700,
+        priceSteamRMB: 336,
         aircrafts: 80,
         aircraftsVsPreviousTier: 10,
         aircraftsVs2020equivalent: 35,
@@ -33,6 +35,7 @@ const editions = [
         nameZh: '高级豪华版',
         price: 130,
         priceRMB: 910,
+        priceSteamRMB: 438,
         aircrafts: 95,
         aircraftsVsPreviousTier: 15,
         aircraftsVs2020equivalent: 45,
@@ -44,6 +47,7 @@ const editions = [
         nameZh: '飞行员领航版',
         price: 200,
         priceRMB: 1400,
+        priceSteamRMB: 678,
         aircrafts: 125,
         aircraftsVsPreviousTier: 30,
         aircraftsNote: (
@@ -82,9 +86,9 @@ const Editions = extend<ComponentProps>({
                     <h2>{edition.nameZh}</h2>
                     <h3>{edition.name.toUpperCase()}</h3>
                     <div className="info price">
-                        ${edition.price} 美元
+                        　${edition.price} 美元（约￥{edition.priceRMB}）
                         <br />
-                        约￥{edition.priceRMB} 人民币
+                        STEAM 国区：￥{edition.priceSteamRMB}
                         {edition.gamepass ? (
                             <small className="gamepass">Game Pass 畅玩</small>
                         ) : null}
