@@ -1,5 +1,6 @@
-import React from 'react';
 import { extend } from 'koot';
+
+import Page from '../';
 
 import styles from './index.module.less';
 
@@ -113,20 +114,11 @@ const pcSpecs2020 = [
 
 const PcSpecs = extend<ComponentProps>({
     styles,
-})(({
-    className,
-    children,
-    customProps,
-    'data-class-name': classNameModule,
-}): JSX.Element => {
+})(({ className }): JSX.Element => {
     return (
-        <div
-            className={className}
-            data-custom-props={customProps}
-            data-class-name={classNameModule}
-        >
+        <Page updateDate={true} classNameBody={className}>
             {Presets.LOW}
-        </div>
+        </Page>
     );
 });
 
