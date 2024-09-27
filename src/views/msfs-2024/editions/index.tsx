@@ -1,5 +1,4 @@
 import { extend } from 'koot';
-import classNames from 'classnames';
 
 import Page from '../';
 

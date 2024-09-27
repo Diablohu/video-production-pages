@@ -53,7 +53,7 @@ const cellGroupOther: CellGroupType = {
     cells: [
         {
             title: '挑战联赛',
-            infos: ['低空挑战', '着陆挑战', '玩法与排行定期更新'],
+            infos: ['低空挑战', '着陆挑战', '赛季：玩法与排行定期更新'],
             img: require('./imgs/challenge.jpg'),
             backgroundSize: 'auto 250%',
             backgroundPosition: '45% 50%',

@@ -41,6 +41,10 @@ export default {
                 require('@views/msfs-2024/editions').default,
             ],
             [
+                'msfs-2024-pc-specs',
+                require('@views/msfs-2024/pc-specs').default,
+            ],
+            [
                 'msfs-2024-default-aircrafts',
                 require('@views/msfs-2024/default-aircrafts').default,
             ],
