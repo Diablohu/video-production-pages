@@ -11,7 +11,7 @@ const cellGroupLeft: CellGroupType = {
     cells: [
         {
             title: '全新客户端',
-            infos: ['云端串流', 'CPU 多线程优化', 'DirectX 12'],
+            infos: ['云端串流', 'CPU 多线程优化', '内存占用优化', 'DirectX 12'],
             img: require('./imgs/a330-takeoff.jpg'),
             backgroundSize: 'auto 175%',
             backgroundPosition: '15% 30%',
@@ -146,7 +146,7 @@ const cellGroupRight: CellGroupType = {
         {
             title: (
                 <>
-                    <small>24小时</small>世界回溯
+                    <small>24小时</small>世界数据回溯
                 </>
             ),
             // img: require('./imgs/yosemite.jpg'),
@@ -154,8 +154,8 @@ const cellGroupRight: CellGroupType = {
             // backgroundPosition: '30% 70%',
             img: require('./imgs/Fuji_MSFS_2024.png'),
             // className: 'small-cell',
-            backgroundSize: 'auto 100%',
-            backgroundPosition: '15% 70%',
+            backgroundSize: 'auto 120%',
+            backgroundPosition: '35% 90%',
             bgMaskOrientation: 'vertical',
             style: {
                 gridRow: '4 / span 2',

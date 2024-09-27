@@ -64,9 +64,10 @@ const cellGroupOther: CellGroupType = {
             title: '空中竞速',
             infos: ['多人对抗', '整合雷诺竞赛'],
             img: require('./imgs/racing.jpg'),
-            backgroundSize: 'auto 200%',
-            backgroundPosition: '67% 33%',
+            backgroundSize: 'auto 250%',
+            backgroundPosition: '55% 33%',
             // bgMaskOrientation: 'horizontal',
+            columnSpan: 2,
         },
         {
             title: '环球摄影',
@@ -78,12 +79,12 @@ const cellGroupOther: CellGroupType = {
         },
         {
             title: '玩法继承',
-            infos: ['前作模式全部保留', '自由飞行、郊野之行……'],
+            infos: ['前作模式全部保留'],
             img: require('./imgs/earth.jpg'),
             backgroundSize: '150% auto',
             backgroundPosition: '0% 30%',
             bgMaskOrientation: 'horizontal',
-            columnSpan: 2,
+            // columnSpan: 2,
         },
     ],
 };
