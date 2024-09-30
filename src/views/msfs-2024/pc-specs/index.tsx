@@ -1,5 +1,6 @@
 import { type FC } from 'react';
 import { extend } from 'koot';
+import classNames from 'classnames';
 
 import Page from '../';
 
@@ -19,16 +20,16 @@ enum Specs {
     IDEAL = '理想配置',
 }
 enum Presets {
-    LOW = '低',
-    MEDIUM = '中',
-    HIGH = '高',
-    ULTRA = '超高',
+    LOW = '低（LOW）',
+    MEDIUM = '中（MEDIUM）',
+    HIGH = '高（HIGH）',
+    ULTRA = '超高（ULTRA）',
 }
 
 type SpecType = {
     tier: Specs;
     target?: {
-        resolution: [number, number];
+        resolution: [number, number, string?];
         scaling?: number;
         framerate: number;
         preset: Presets;
@@ -42,6 +43,20 @@ type SpecType = {
     ramNotes?: string[];
     storage: number;
     xboxEquivalent?: string;
+};
+
+const rowNames: Record<keyof SpecType, string> = {
+    tier: '级别',
+    target: '性能目标',
+    os: '操作系统',
+    directX: 'DirectX 版本',
+    cpu: 'CPU',
+    gpu: 'GPU',
+    vram: '显存',
+    ram: '内存',
+    ramNotes: '内存备注',
+    storage: '存储空间',
+    xboxEquivalent: '相当于 XBOX',
 };
 
 const pcSpecs: SpecType[] = [
@@ -59,8 +74,9 @@ const pcSpecs: SpecType[] = [
         gpu: ['Radeon RX 5700', 'GeForce GTX 970'],
         vram: 4,
         ram: 16,
+        ramNotes: [],
         storage: 50,
-        xboxEquivalent: 'XBOX Series S',
+        // xboxEquivalent: 'XBOX Series S',
     },
     {
         tier: Specs.RECOMMENDED,
@@ -77,12 +93,12 @@ const pcSpecs: SpecType[] = [
         ram: 32,
         ramNotes: ['可有少量后台程序'],
         storage: 50,
-        xboxEquivalent: 'XBOX Series X',
+        // xboxEquivalent: 'XBOX Series X',
     },
     {
         tier: Specs.IDEAL,
         target: {
-            resolution: [2560, 1440],
+            resolution: [3840, 2160, '4K'],
             framerate: 40,
             preset: Presets.ULTRA,
         },
@@ -122,7 +138,7 @@ const pcSpecs2020: SpecType[] = [
         tier: Specs.IDEAL,
         os: 'Windows 10 1909',
         directX: 'DX12',
-        cpu: ['AMD Ryzen 7 Pro 2700X', 'Intel i7-9800X'],
+        cpu: ['AMD Ryzen 7 Pro 2700X', 'Intel Core i7-9800X'],
         gpu: ['Radeon VII', 'GeForce RTX 2080'],
         vram: 8,
         ram: 32,
@@ -156,5 +172,75 @@ const SpecsTable: FC<{
     title: string;
     omit?: Array<keyof SpecType>;
 }> = ({ specs, title, omit = [] }) => {
-    return <div className={`${classNameModule}-spec-table`}></div>;
+    return (
+        <div className={`${classNameModule}-spec-table`} data-title={title}>
+            <div className="highlight"></div>
+            <div className="header row">
+                <div className="cell title">MSFS {title}</div>
+                {specs.map(({ tier }) => (
+                    <div
+                        key={tier}
+                        className={classNames(['cell'])}
+                        data-tier={tier}
+                    >
+                        {tier}
+                    </div>
+                ))}
+            </div>
+            {(
+                Object.keys(specs[0]).filter(
+                    (key) =>
+                        !omit.includes(key as keyof SpecType) &&
+                        key !== 'tier' &&
+                        key !== 'ramNotes' &&
+                        key !== 'os',
+                ) as Array<keyof SpecType>
+            ).map((key) => (
+                <div key={key} className="row">
+                    <div className="cell title">{rowNames[key]}</div>
+                    {specs.map((spec) => (
+                        <div
+                            key={spec.tier}
+                            className="cell"
+                            data-tier={spec.tier}
+                        >
+                            {Array.isArray(spec[key]) ? (
+                                <>
+                                    {spec[key].map((item, index) => (
+                                        <p key={index}>{item}</p>
+                                    ))}
+                                </>
+                            ) : key === 'target' ? (
+                                <>
+                                    <p>
+                                        {spec.target?.resolution[0]} x{' '}
+                                        {spec.target?.resolution[1]}
+                                        {spec.target?.resolution[2]
+                                            ? ` (${spec.target?.resolution[2]})`
+                                            : null}
+                                        {spec.target?.scaling
+                                            ? ` @ ${spec.target?.scaling * 100}%`
+                                            : null}
+                                    </p>
+                                    <p>{spec.target?.framerate} FPS</p>
+                                    <p>{spec.target?.preset}画质预设</p>
+                                </>
+                            ) : key === 'ram' ? (
+                                <>
+                                    <p>{spec[key]} GB</p>
+                                    {spec.ramNotes ? (
+                                        <small>{spec.ramNotes}</small>
+                                    ) : null}
+                                </>
+                            ) : ['ram', 'vram', 'storage'].includes(key) ? (
+                                `${spec[key]} GB`
+                            ) : (
+                                spec[key]
+                            )}
+                        </div>
+                    ))}
+                </div>
+            ))}
+        </div>
+    );
 };

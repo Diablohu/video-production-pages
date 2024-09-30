@@ -1,5 +1,151 @@
 @import '~vars.less';
 
 .component {
+    @highlight-color-base: #d6b13f;
+    @highlight-color-opacity: percentage(1 / 2);
+    @2024-color-base: #071e7b;
+
+    --specs-table-bg-opacity: 0.35;
+    --border-width: unit(2px / 1080px * 100, vh);
+    --border-color: fade(#fff, 25%);
+    --background-color: fade(#000, 25%);
+    --background-color-2024: fade(@2024-color-base, 75%);
+    --highlight-color: fade(@highlight-color-base, @highlight-color-opacity);
+    --text-shadow-color: rgba(0, 0, 0, 0.5);
+
+    font-size: unit(100 * 18.5px / 1920px, vw);
+    line-height: 1.2;
+    text-shadow: 0 unit(100 * 1.5px / 1920px, vw) unit(100 * 3px / 1920px, vw)
+        var(--text-shadow-color);
     position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    .component-spec-table {
+        position: relative;
+        width: percentage(2 / 3);
+        display: flex;
+        flex-flow: column nowrap;
+        // flex: 1;
+        z-index: 2;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-radius: 1em;
+        }
+
+        &::before {
+            background-color: var(--background-color);
+            opacity: var(--specs-table-bg-opacity);
+            z-index: -1;
+        }
+
+        &::after {
+            background-color: fade(#000, 25%);
+            z-index: -2;
+            backdrop-filter: blur(1.5em) saturate(150%);
+        }
+
+        .row {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            z-index: 5;
+
+            .cell {
+                flex: 1;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                border: 0 solid var(--border-color);
+                padding: 0.475em 0;
+                p,
+                small {
+                    display: block;
+                    margin: 0;
+                }
+            }
+
+            & + .row .cell {
+                border-top-width: var(--border-width);
+            }
+        }
+
+        .header .title {
+            .title-style();
+            text-align: center;
+            padding: 0;
+            transform-origin: 50% 50%;
+        }
+
+        .highlight {
+            --offset-x: unit(10px / 1080px * 100, vh);
+            --offset-y: unit(-10px / 1080px * 100, vh);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 25%;
+            z-index: 2;
+            &::after {
+                content: '';
+                position: absolute;
+                top: var(--offset-y);
+                bottom: var(--offset-y);
+                left: var(--offset-x);
+                right: var(--offset-x);
+                border: var(--border-width) solid var(--highlight-color);
+                border-radius: 1em;
+                background-color: var(--highlight-color);
+            }
+        }
+
+        &[data-title='2024'] {
+            --background-color: var(--background-color-2024);
+            .highlight {
+                left: 50%;
+            }
+            // left: percentage(0.25 / 3);
+        }
+        &[data-title='2020'] {
+            .highlight {
+                left: 75%;
+            }
+            .cell {
+                color: fade(#fff, 50%);
+                &:nth-child(4) {
+                    color: inherit;
+                }
+            }
+            // left: percentage(-0.25 / 3);
+        }
+    }
+
+    .mod-output({
+        --highlight-color: fade(@highlight-color-base, 100%);
+        --border-color: fade(#fff, 100%);
+        --background-color-2024: fade(@2024-color-base, 100%);
+        --specs-table-bg-opacity: 1;
+        .component-spec-table {
+            &[data-title='2020'] {
+                .cell {
+                    color: inherit;
+                }
+            }
+        }
+    });
+    .mod-mask({
+        --text-shadow-color: rgba(255, 255, 255, 0.5);
+        --highlight-color: fade(#fff, @highlight-color-opacity);
+        --background-color-2024: fade(#fff, 50%);
+    });
 }

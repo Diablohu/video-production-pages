@@ -2,6 +2,7 @@
 
 .component {
     --text-shadow-color: rgba(0, 0, 0, 0.5);
+    --border-opacity: 0.35;
 
     position: relative;
     width: 100%;
@@ -109,7 +110,8 @@
                         left: 0.25em;
                         right: 0.25em;
                         height: unit(100 * 2px / 1920px, vw);
-                        background: fade(#fff, 35%);
+                        background: #fff;
+                        opacity: var(--border-opacity);
                     }
                 }
 
@@ -175,6 +177,12 @@
     }
 
     .mod-output({
+        --border-opacity: 1;
+        .block {
+            &::before {
+                opacity: 1;
+            }
+        }
         .release {
             p {
                 &.platform {
