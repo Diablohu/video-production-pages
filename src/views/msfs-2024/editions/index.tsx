@@ -140,6 +140,7 @@ const Editions = extend<ComponentProps>({
                         'XBOX Sereis X|S',
                         'XBOX 云游戏',
                         'Game Pass',
+                        'PC 版支持 VR',
                     ].join('　 | 　')}
                 </p>
             </div>

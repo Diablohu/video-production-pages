@@ -111,7 +111,7 @@ const aircrafts: AircraftType[] = [
         isPremiumDeluxe: true,
     },
     {
-        name: '波音 747-400 LCE 梦想运输机',
+        name: '波音 747-400 LCF 梦想运输机',
         type: 'jetliner',
         img: require('./imgs/b744-dreamlifter.jpg'),
         style: {
