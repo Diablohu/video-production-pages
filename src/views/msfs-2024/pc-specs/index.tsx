@@ -104,7 +104,7 @@ const pcSpecs: SpecType[] = [
         },
         os: 'Windows 10 最新版本',
         directX: 'DX12',
-        cpu: ['AMD Ryzen 9 7900X', 'Intel i7-14700K'],
+        cpu: ['AMD Ryzen 9 7900X', 'Intel Core i7-14700K'],
         gpu: ['Radeon RX 7900 XT', 'GeForce RTX 4080'],
         vram: 12,
         ram: 64,
