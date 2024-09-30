@@ -6,20 +6,16 @@
     position: relative;
     width: 100%;
     display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: center;
     font-size: unit(100 * 25px / 1920px, vw);
     line-height: 1.5;
     text-shadow: 0 unit(100 * 1.5px / 1920px, vw) unit(100 * 3px / 1920px, vw)
         var(--text-shadow-color);
     font-weight: 400;
 
-    .edition {
-        --color: #000;
-
-        flex: 1;
-        text-align: center;
-        padding-top: 1em;
+    .block {
+        --primary-color: #000;
         position: relative;
         z-index: 2;
 
@@ -35,7 +31,7 @@
         }
 
         &::before {
-            background-color: var(--color);
+            background-color: var(--primary-color);
             opacity: 0.35;
             z-index: -1;
         }
@@ -45,121 +41,170 @@
             z-index: -2;
             backdrop-filter: blur(1.5em) saturate(150%);
         }
+    }
 
-        h2 {
-            font-size: unit(100 * 35px / 1920px, vw);
-            line-height: 1.5;
-            margin: 0;
-        }
+    .editions {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
 
-        h3 {
-            font-size: unit(100 * 20px / 1920px, vw);
-            line-height: 1.5;
-            margin: 0.75em auto;
-            padding: 0.15em 0;
-            position: relative;
-            z-index: 2;
-            letter-spacing: 0.15em;
-            &::before,
-            &::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 1em;
-                right: 1em;
+        .edition {
+            flex: 1;
+            text-align: center;
+            padding-top: 1em;
+
+            h2 {
+                font-size: unit(100 * 35px / 1920px, vw);
+                line-height: 1.5;
+                margin: 0;
             }
-            &::before {
-                z-index: -2;
-                background-color: var(--color);
-            }
-            &::after {
-                z-index: -1;
-                background: radial-gradient(
-                    circle,
-                    fade(#fff, 0%) 0%,
-                    fade(#fff, 25%) 50%,
-                    fade(#fff, 100%) 100%
-                );
-                mix-blend-mode: soft-light;
-            }
-        }
 
-        .info {
-            --line-count: 1;
-
-            height: calc(var(--line-count) * 1.5em + 2em);
-            position: relative;
-
-            & + .info {
-                padding-top: 1em;
-                &::before {
+            h3 {
+                font-size: unit(100 * 20px / 1920px, vw);
+                line-height: 1.5;
+                margin: 0.75em auto;
+                padding: 0.15em 0;
+                position: relative;
+                z-index: 2;
+                letter-spacing: 0.15em;
+                &::before,
+                &::after {
                     content: '';
                     position: absolute;
                     top: 0;
-                    left: 0.25em;
-                    right: 0.25em;
-                    height: unit(100 * 2px / 1920px, vw);
-                    background: fade(#fff, 35%);
+                    bottom: 0;
+                    left: 1em;
+                    right: 1em;
+                }
+                &::before {
+                    z-index: -2;
+                    background-color: var(--primary-color);
+                }
+                &::after {
+                    z-index: -1;
+                    background: radial-gradient(
+                        circle,
+                        fade(#fff, 0%) 0%,
+                        fade(#fff, 25%) 50%,
+                        fade(#fff, 100%) 100%
+                    );
+                    mix-blend-mode: soft-light;
                 }
             }
 
-            span {
-                display: block;
-            }
-            small {
-                font-size: unit(100 * 20px / 1920px, vw);
-                display: block;
-                line-height: 1.25;
-                padding-top: 0.5em;
-            }
+            .info {
+                --line-count: 1;
 
-            &.price {
-                --line-count: 2.2;
+                height: calc(var(--line-count) * 1.5em + 2em);
+                position: relative;
+
+                & + .info {
+                    padding-top: 1em;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0.25em;
+                        right: 0.25em;
+                        height: unit(100 * 2px / 1920px, vw);
+                        background: fade(#fff, 35%);
+                    }
+                }
+
+                span {
+                    display: block;
+                }
                 small {
-                    padding-top: 0.25em;
+                    font-size: unit(100 * 20px / 1920px, vw);
+                    display: block;
+                    line-height: 1.25;
+                    padding-top: 0.5em;
+                }
+
+                &.price {
+                    --line-count: 2.2;
+                    small {
+                        padding-top: 0.25em;
+                    }
+                }
+                &.aircrafts {
+                    --line-count: 3.2;
+                    // .vs-2020 {
+                    //     padding-top: 0.25em;
+                    // }
+                }
+                &.airports {
+                    // height: unit(1 * 1.5 + 2, em);
                 }
             }
-            &.aircrafts {
-                --line-count: 3.2;
-                // .vs-2020 {
-                //     padding-top: 0.25em;
-                // }
-            }
-            &.airports {
-                // height: unit(1 * 1.5 + 2, em);
-            }
-        }
 
-        &[data-edition='Standard'] {
-            --color: #071e7b;
-        }
-        &[data-edition='Deluxe'] {
-            --color: #929ca6;
-        }
-        &[data-edition='Premium Deluxe'] {
-            --color: #d6b13f;
-        }
-        &[data-edition='Aviator'] {
-            --color: #e0e1e0;
-            h3 {
-                color: #000;
-                text-shadow: none;
+            &[data-edition='Standard'] {
+                --primary-color: #071e7b;
+            }
+            &[data-edition='Deluxe'] {
+                --primary-color: #929ca6;
+            }
+            &[data-edition='Premium Deluxe'] {
+                --primary-color: #d6b13f;
+            }
+            &[data-edition='Aviator'] {
+                --primary-color: #e0e1e0;
+                h3 {
+                    color: #000;
+                    text-shadow: none;
+                }
             }
         }
     }
 
+    .release {
+        margin-top: 1em;
+        text-align: center;
+        padding: 1em 0;
+        p {
+            margin: 0;
+            &.platform {
+                font-size: unit(100 * 20px / 1920px, vw);
+                line-height: 1.25;
+                margin-top: 0.25em;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .mod-output({
+        .release {
+            p {
+                &.platform {
+                    opacity: 1;
+                }
+            }
+        }
+    });
     .mod-mask({
         --text-shadow-color: rgba(255, 255, 255, 0.5);
-        .edition {
+        .block {
             &::before {
                 background-color: #fff;
             }
-            h3 {
-                color: transparent;
-                &::before,
-                &::after {
-                    background: #fff;
+        }
+        .editions {
+            .edition {
+                h3 {
+                    color: transparent;
+                    &::before,
+                    &::after {
+                        background: #fff;
+                    }
+                }
+            }
+        }
+        .release {
+            p {
+                &.platform {
+                    opacity: 0.5;
                 }
             }
         }

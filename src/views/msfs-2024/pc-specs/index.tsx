@@ -1,8 +1,9 @@
+import { type FC } from 'react';
 import { extend } from 'koot';
 
 import Page from '../';
 
-import styles from './index.module.less';
+import styles, { wrapper as classNameModule } from './index.module.less';
 
 // ============================================================================
 
@@ -24,7 +25,26 @@ enum Presets {
     ULTRA = '超高',
 }
 
-const pcSpecs = [
+type SpecType = {
+    tier: Specs;
+    target?: {
+        resolution: [number, number];
+        scaling?: number;
+        framerate: number;
+        preset: Presets;
+    };
+    os?: string;
+    directX?: string;
+    cpu: string[];
+    gpu: string[];
+    vram: number;
+    ram: number;
+    ramNotes?: string[];
+    storage: number;
+    xboxEquivalent?: string;
+};
+
+const pcSpecs: SpecType[] = [
     {
         tier: Specs.MINIMUN,
         target: {
@@ -77,7 +97,7 @@ const pcSpecs = [
     },
 ];
 
-const pcSpecs2020 = [
+const pcSpecs2020: SpecType[] = [
     {
         tier: Specs.MINIMUN,
         os: 'Windows 10 1909',
@@ -117,9 +137,24 @@ const PcSpecs = extend<ComponentProps>({
 })(({ className }): JSX.Element => {
     return (
         <Page updateDate={true} classNameBody={className}>
-            {Presets.LOW}
+            <SpecsTable specs={pcSpecs} title="2024" />
+            <SpecsTable
+                specs={pcSpecs2020}
+                title="2020"
+                omit={['target', 'os', 'ramNotes', 'directX']}
+            />
         </Page>
     );
 });
 
 export default PcSpecs;
+
+// ============================================================================
+
+const SpecsTable: FC<{
+    specs: SpecType[];
+    title: string;
+    omit?: Array<keyof SpecType>;
+}> = ({ specs, title, omit = [] }) => {
+    return <div className={`${classNameModule}-spec-table`}></div>;
+};

@@ -76,57 +76,73 @@ const Editions = extend<ComponentProps>({
 })(({ className }): JSX.Element => {
     return (
         <Page updateDate={true} classNameBody={className}>
-            {editions.map((edition) => (
-                <div
-                    key={edition.name}
-                    className="edition"
-                    data-edition={edition.name}
-                >
-                    <h2>{edition.nameZh}</h2>
-                    <h3>{edition.name.toUpperCase()}</h3>
-                    <div className="info price">
-                        ${edition.price} 美元
-                        <br />
-                        约￥{edition.priceRMB} 人民币
-                        {edition.gamepass ? (
-                            <small className="gamepass">Game Pass 畅玩</small>
-                        ) : null}
-                        {edition.physical && <small>有限量实体版</small>}
-                        {/* 　${edition.price} 美元（约￥{edition.priceRMB}）
+            <div className="editions">
+                {editions.map((edition) => (
+                    <div
+                        key={edition.name}
+                        className="edition block"
+                        data-edition={edition.name}
+                    >
+                        <h2>{edition.nameZh}</h2>
+                        <h3>{edition.name.toUpperCase()}</h3>
+                        <div className="info price">
+                            ${edition.price} 美元
+                            <br />
+                            约￥{edition.priceRMB} 人民币
+                            {edition.gamepass ? (
+                                <small className="gamepass">
+                                    Game Pass 畅玩
+                                </small>
+                            ) : null}
+                            {edition.physical && <small>有限量实体版</small>}
+                            {/* 　${edition.price} 美元（约￥{edition.priceRMB}）
                         <br />
                         STEAM 国区：￥{edition.priceSteamRMB}
                         {edition.gamepass ? (
                             <small className="gamepass">Game Pass 畅玩</small>
                         ) : null}
                         {edition.physical && <small>有限量实体版</small>} */}
+                        </div>
+                        <div className="info aircrafts">
+                            <span>
+                                {edition.aircrafts}
+                                {edition.aircraftsVsPreviousTier
+                                    ? `（+${edition.aircraftsVsPreviousTier}）`
+                                    : ' '}
+                                航空器
+                            </span>
+                            {edition.aircraftsVs2020equivalent && (
+                                <small className="vs-2020">
+                                    含 2020 同级别产品的所有航空器
+                                    <br />
+                                    对比 2020 同级别：+{' '}
+                                    {edition.aircraftsVs2020equivalent} 全新
+                                </small>
+                            )}
+                            {edition.aircraftsNote && (
+                                <small className="note">
+                                    {edition.aircraftsNote}
+                                </small>
+                            )}
+                        </div>
+                        <div className="info airports">
+                            <span>{edition.airports} 手工机场</span>
+                        </div>
                     </div>
-                    <div className="info aircrafts">
-                        <span>
-                            {edition.aircrafts}
-                            {edition.aircraftsVsPreviousTier
-                                ? `（+${edition.aircraftsVsPreviousTier}）`
-                                : ' '}
-                            航空器
-                        </span>
-                        {edition.aircraftsVs2020equivalent && (
-                            <small className="vs-2020">
-                                含 2020 同级别产品的所有航空器
-                                <br />
-                                对比 2020 同级别：+{' '}
-                                {edition.aircraftsVs2020equivalent} 全新
-                            </small>
-                        )}
-                        {edition.aircraftsNote && (
-                            <small className="note">
-                                {edition.aircraftsNote}
-                            </small>
-                        )}
-                    </div>
-                    <div className="info airports">
-                        <span>{edition.airports} 手工机场</span>
-                    </div>
-                </div>
-            ))}
+                ))}
+            </div>
+            <div className="release block">
+                <p className="date">2024年11月19日</p>
+                <p className="platform">
+                    {[
+                        'PC STEAM',
+                        'PC 微软商店',
+                        'XBOX Sereis X|S',
+                        'XBOX 云游戏',
+                        'Game Pass',
+                    ].join('　 | 　')}
+                </p>
+            </div>
         </Page>
     );
 });
