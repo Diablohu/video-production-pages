@@ -1,5 +1,6 @@
 import { extend } from 'koot';
 
+import GlossyContainer from '@components/glossy-container';
 import Page from '../';
 
 import styles from './index.module.less';
@@ -78,9 +79,9 @@ const Editions = extend<ComponentProps>({
         <Page updateDate={true} classNameBody={className}>
             <div className="editions">
                 {editions.map((edition) => (
-                    <div
+                    <GlossyContainer
                         key={edition.name}
-                        className="edition block"
+                        className="edition glossy-block"
                         data-edition={edition.name}
                     >
                         <h2>{edition.nameZh}</h2>
@@ -128,10 +129,10 @@ const Editions = extend<ComponentProps>({
                         <div className="info airports">
                             <span>{edition.airports} 手工机场</span>
                         </div>
-                    </div>
+                    </GlossyContainer>
                 ))}
             </div>
-            <div className="release block">
+            <GlossyContainer className="release glossy-block">
                 <p className="date">2024年11月19日</p>
                 <p className="platform">
                     {[
@@ -143,7 +144,7 @@ const Editions = extend<ComponentProps>({
                         'PC 版支持 VR',
                     ].join('　 | 　')}
                 </p>
-            </div>
+            </GlossyContainer>
         </Page>
     );
 });

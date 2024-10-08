@@ -2,6 +2,7 @@ import { type FC } from 'react';
 import { extend } from 'koot';
 import classNames from 'classnames';
 
+import GlossyContainer from '@components/glossy-container';
 import Page from '../';
 
 import styles, { wrapper as classNameModule } from './index.module.less';
@@ -173,7 +174,10 @@ const SpecsTable: FC<{
     omit?: Array<keyof SpecType>;
 }> = ({ specs, title, omit = [] }) => {
     return (
-        <div className={`${classNameModule}-spec-table`} data-title={title}>
+        <GlossyContainer
+            className={`${classNameModule}-spec-table`}
+            data-title={title}
+        >
             <div className="highlight"></div>
             <div className="header row">
                 <div className="cell title">MSFS {title}</div>
@@ -241,6 +245,6 @@ const SpecsTable: FC<{
                     ))}
                 </div>
             ))}
-        </div>
+        </GlossyContainer>
     );
 };

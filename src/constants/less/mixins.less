@@ -87,6 +87,12 @@
     }
 }
 
+.mod-backdrop-mask( @rules ) {
+    html[data-view-type='backdrop-mask'] & {
+        @rules();
+    }
+}
+
 .mod-bg-dark( @rules ) {
     html[data-view-type='bg-dark'] & {
         @rules();

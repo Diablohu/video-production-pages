@@ -63,6 +63,7 @@ const Controls = () => {
             {[
                 'output',
                 'mask',
+                'backdrop-mask',
                 'bg-dark',
                 'bg-light',
                 'bg-streaming',

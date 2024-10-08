@@ -1,0 +1,68 @@
+@import '~vars.less';
+
+.component {
+    --glossy-color: #000;
+    --glossy-opacity: 0.35;
+    --glossy-mask-color: fade(#000, 25%);
+    --glossy-blur: 1.5em;
+    --glossy-saturate: 150%;
+    --glossy-offset-top: 0;
+    --glossy-offset-bottom: 0;
+    --glossy-offset-left: 0;
+    --glossy-offset-right: 0;
+    --glossy-border-radius: 1em;
+
+    --glossy-backdrop-filter: blur(var(--glossy-blur))
+        saturate(var(--glossy-saturate));
+
+    position: relative;
+    z-index: 1;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: var(--glossy-offset-top);
+        bottom: var(--glossy-offset-bottom);
+        left: var(--glossy-offset-left);
+        right: var(--glossy-offset-right);
+        border-radius: var(--glossy-border-radius);
+    }
+
+    &::before {
+        background-color: var(--glossy-color);
+        opacity: var(--glossy-opacity);
+        z-index: -1;
+    }
+
+    &::after {
+        background-color: var(--glossy-mask-color);
+        z-index: -2;
+        backdrop-filter: var(--glossy-backdrop-filter);
+    }
+
+    .mod-output({
+        // --glossy-opacity: 1;
+        &::before {;
+            opacity: 1;
+        }
+    });
+
+    .mod-mask({
+        // --glossy-color: #fff;
+        &::before {
+            background-color: #fff;
+        }
+    });
+
+    .mod-backdrop-mask({
+        // --glossy-color: #fff;
+        &::before {
+            background-color: #fff;
+            opacity: 1;
+        }
+        & > * {
+            visibility: hidden;
+        }
+    });
+}
