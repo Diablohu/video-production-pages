@@ -91,15 +91,17 @@ const cellGroupMid: CellGroupType = {
             backgroundPosition: '0% 65%',
             bgMaskOrientation: 'horizontal',
             columnSpan: 1,
+            className: 'mod-small',
         },
         {
-            title: '通用 EFB',
+            title: 'EFB',
             // infos: ['绕机检查'],
             img: require('./imgs/xcub-efb.png'),
             backgroundSize: 'auto 275%',
             backgroundPosition: '65% 45%',
             bgMaskOrientation: 'horizontal',
             columnSpan: 1,
+            className: 'mod-small',
         },
         {
             title: '直升机 AP',
@@ -109,6 +111,7 @@ const cellGroupMid: CellGroupType = {
             backgroundPosition: '0% 15%',
             bgMaskOrientation: 'horizontal',
             columnSpan: 1,
+            className: 'mod-small',
         },
         {
             title: '雨刷',
@@ -118,6 +121,7 @@ const cellGroupMid: CellGroupType = {
             backgroundPosition: '100% 25%',
             bgMaskOrientation: 'horizontal',
             columnSpan: 1,
+            className: 'mod-small',
         },
     ],
 };

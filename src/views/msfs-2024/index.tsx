@@ -74,7 +74,7 @@ const MSFS2024Page = extend<{
                     <div key={index} className="group" data-title={group.title}>
                         <TitleCell className="title">{group.title}</TitleCell>
                         <div className="grid">
-                            {group.cells.map((cell, index) =>
+                            {group.cells.map(({ className, ...cell }, index) =>
                                 Array.isArray(cell.cells) ? (
                                     <div
                                         key={index}
@@ -89,18 +89,26 @@ const MSFS2024Page = extend<{
                                                 : undefined,
                                         }}
                                     >
-                                        {cell.cells.map((cell, index) => (
-                                            <InfoCell
-                                                key={index}
-                                                className="cell"
-                                                {...cell}
-                                            />
-                                        ))}
+                                        {cell.cells.map(
+                                            ({ className, ...cell }, index) => (
+                                                <InfoCell
+                                                    key={index}
+                                                    className={classNames([
+                                                        'cell',
+                                                        className,
+                                                    ])}
+                                                    {...cell}
+                                                />
+                                            ),
+                                        )}
                                     </div>
                                 ) : (
                                     <InfoCell
                                         key={index}
-                                        className="cell"
+                                        className={classNames([
+                                            'cell',
+                                            className,
+                                        ])}
                                         {...cell}
                                     />
                                 ),
