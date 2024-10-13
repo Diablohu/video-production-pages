@@ -64,10 +64,15 @@ const cellGroupMid: CellGroupType = {
     cells: [
         {
             title: '升级气流模拟（CFD）',
-            infos: ['真实尾流', '气流影响植被', '扬尘', '第三方定制受力面'],
-            img: require('./imgs/grass.jpg'),
-            backgroundSize: 'auto 250%',
-            backgroundPosition: '17.5% 30%',
+            infos: [
+                '真实尾流',
+                '气流影响植被',
+                '扬尘、飞雪、吹水……',
+                '第三方定制受力面',
+            ],
+            img: require('./imgs/technical-alpha-water.png'),
+            backgroundSize: 'auto 450%',
+            backgroundPosition: '50% 51.5%',
             bgMaskOrientation: 'horizontal',
             rowSpan: 2,
             style: {
@@ -76,10 +81,10 @@ const cellGroupMid: CellGroupType = {
         },
         {
             title: '升级物理模拟',
-            infos: ['布料 & 绳索', '3D水波', '草地与雪地上轮胎印'],
-            img: require('./imgs/snow.jpg'),
+            infos: ['布料 & 绳索', '3D水波', '飞溅泥土', '草地与雪地上轮胎印'],
+            img: require('./imgs/technical-alpha-dirt.png'),
             backgroundSize: 'auto 250%',
-            backgroundPosition: '52.5% 45%',
+            backgroundPosition: '40% 45%',
             bgMaskOrientation: 'horizontal',
             rowSpan: 2,
         },

@@ -14,10 +14,8 @@ const cellGroupCareer: CellGroupType = {
             title: '飞行员生涯',
             infos: [
                 '定制形象',
-                '赚钱养飞机',
-                '机型认证',
                 '分支选择：水平翼、直升机',
-                '全球随机任务',
+                '机型认证：私照、商照、仪表飞行、……',
                 '多样场景：山火、风暴……',
             ],
             rowSpan: 2,
@@ -71,7 +69,7 @@ const cellGroupOther: CellGroupType = {
         },
         {
             title: '环球摄影',
-            infos: ['落地拍摄', '空中拍摄'],
+            infos: ['考验地理知识'],
             img: require('./imgs/hot-airballoon.jpg'),
             backgroundSize: 'auto 170%',
             backgroundPosition: '20% 100%',
