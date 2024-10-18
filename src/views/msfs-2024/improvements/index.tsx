@@ -67,8 +67,8 @@ const cellGroupMid: CellGroupType = {
             infos: [
                 '真实尾流',
                 '气流影响植被',
+                '直升机涡环',
                 '扬尘、飞雪、吹水……',
-                '第三方定制受力面',
             ],
             img: require('./imgs/technical-alpha-water.png'),
             backgroundSize: 'auto 450%',
