@@ -55,7 +55,7 @@ const cellGroupLeft: CellGroupType = {
             infos: ['针对机型配置', '方案可共享'],
             img: require('./imgs/binding.png'),
             backgroundSize: 'auto 250%',
-            backgroundPosition: '60% 75%',
+            backgroundPosition: '61.5% 75%',
             bgMaskOrientation: 'horizontal',
             // rowSpan: 2,
             columnSpan: 1,
