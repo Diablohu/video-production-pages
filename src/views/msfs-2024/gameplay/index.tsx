@@ -71,8 +71,8 @@ const cellGroupOther: CellGroupType = {
             title: '环球摄影',
             infos: ['考验地理知识'],
             img: require('./imgs/hot-airballoon.jpg'),
-            backgroundSize: 'auto 200%',
-            backgroundPosition: '25% 100%',
+            backgroundSize: 'auto 220%',
+            backgroundPosition: '30% 100%',
             // bgMaskOrientation: 'horizontal',
         },
         {

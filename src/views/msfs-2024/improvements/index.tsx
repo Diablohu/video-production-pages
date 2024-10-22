@@ -27,7 +27,7 @@ const cellGroupLeft: CellGroupType = {
                 '路线规划 & 进离场',
                 '信息查询',
                 'LIDO 航图',
-                '提供网页版，适配移动端',
+                '外部访问',
             ],
             img: require('./imgs/planner-lido-chard.png'),
             backgroundSize: 'auto 170%',
@@ -41,8 +41,8 @@ const cellGroupLeft: CellGroupType = {
             developers: ['Fabio'],
             infos: ['实时回放', '生成僚机'],
             img: require('./imgs/replay.jpg'),
-            backgroundSize: 'auto 800%',
-            backgroundPosition: '59% 37%',
+            backgroundSize: 'auto 1000%',
+            backgroundPosition: '58% 37.5%',
             bgMaskOrientation: 'horizontal',
             // rowSpan: 2,
             columnSpan: 1,
@@ -52,7 +52,7 @@ const cellGroupLeft: CellGroupType = {
         },
         {
             title: '按键绑定',
-            infos: ['针对机型配置', '方案可共享'],
+            infos: ['针对机型', '方案共享'],
             img: require('./imgs/binding.png'),
             backgroundSize: 'auto 250%',
             backgroundPosition: '61.5% 75%',
@@ -199,8 +199,8 @@ const cellGroupRight: CellGroupType = {
             // backgroundPosition: '30% 70%',
             img: require('./imgs/Fuji_MSFS_2024.png'),
             // className: 'small-cell',
-            backgroundSize: 'auto 120%',
-            backgroundPosition: '35% 90%',
+            backgroundSize: 'auto 140%',
+            backgroundPosition: '40% 100%',
             bgMaskOrientation: 'vertical',
             style: {
                 gridRow: '4 / span 2',
@@ -212,7 +212,8 @@ const cellGroupRight: CellGroupType = {
         {
             title: (
                 <>
-                    <small>新的云层</small>高空卷云
+                    {/* <small>新的云层</small> */}
+                    高空卷云
                 </>
             ),
             rowSpan: 2,
@@ -223,8 +224,8 @@ const cellGroupRight: CellGroupType = {
             backgroundPosition: '50% 90%',
             bgMaskOrientation: 'vertical',
             style: {
-                '--mask-min-width': '80%',
-                '--mask-max-width': '80%',
+                '--mask-min-width': '100%',
+                '--mask-max-width': '100%',
                 gridRow: '6 / span 2',
                 gridColumn: '2 / span 1',
                 paddingLeft: '20px',
