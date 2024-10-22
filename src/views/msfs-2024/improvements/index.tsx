@@ -11,7 +11,12 @@ const cellGroupLeft: CellGroupType = {
     cells: [
         {
             title: '全新客户端',
-            infos: ['云端串流', 'CPU 多线程优化', '内存占用优化', 'DirectX 12'],
+            infos: [
+                '云端串流',
+                '优化 CPU 线程调度',
+                '优化内存占用',
+                'DirectX 12',
+            ],
             img: require('./imgs/a330-takeoff.jpg'),
             backgroundSize: 'auto 175%',
             backgroundPosition: '15% 30%',
