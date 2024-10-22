@@ -87,6 +87,38 @@ const Controls = () => {
                             'MSFS 2024 Cover',
                             require('../assets/msfs2024/cover.jpg'),
                         ],
+                        [
+                            'MSFS 2024 Tech Alpha 1',
+                            require('../assets/background-images/msfs2024/1.png'),
+                        ],
+                        [
+                            'MSFS 2024 Tech Alpha 2',
+                            require('../assets/background-images/msfs2024/2.png'),
+                        ],
+                        [
+                            'MSFS 2024 Tech Alpha 3',
+                            require('../assets/background-images/msfs2024/3.png'),
+                        ],
+                        [
+                            'MSFS 2024 Tech Alpha 4',
+                            require('../assets/background-images/msfs2024/4.png'),
+                        ],
+                        [
+                            'MSFS 2024 Tech Alpha 5',
+                            require('../assets/background-images/msfs2024/5.png'),
+                        ],
+                        [
+                            'MSFS 2024 Tech Alpha 6',
+                            require('../assets/background-images/msfs2024/6.png'),
+                        ],
+                        [
+                            'MSFS 2024 Tech Alpha 7',
+                            require('../assets/background-images/msfs2024/7.png'),
+                        ],
+                        [
+                            'MSFS 2024 Tech Alpha 8',
+                            require('../assets/background-images/msfs2024/8.png'),
+                        ],
                     ].map(([name, src]) => (
                         <option key={name} value={src}>
                             {name}
