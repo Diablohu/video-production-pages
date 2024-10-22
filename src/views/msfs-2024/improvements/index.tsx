@@ -129,7 +129,7 @@ const cellGroupMid: CellGroupType = {
             className: 'mod-small',
         },
         {
-            title: 'VGDS',
+            title: 'VDGS',
             // infos: ['绕机检查'],
             img: require('./imgs/vdgs.jpg'),
             backgroundSize: 'auto 300%',
