@@ -37,6 +37,7 @@ export interface CellGroupType {
     /** 标题 */
     title: CellType['title'];
     cells: CellType[];
+    name?: string;
 }
 
 // Functional Component =======================================================
@@ -71,7 +72,12 @@ const MSFS2024Page = extend<{
         >
             {Array.isArray(infos) &&
                 infos.map((group, index) => (
-                    <div key={index} className="group" data-title={group.title}>
+                    <div
+                        key={index}
+                        className="group"
+                        data-title={group.title}
+                        data-name={group.name}
+                    >
                         <TitleCell className="title">{group.title}</TitleCell>
                         <div className="grid">
                             {group.cells.map(({ className, ...cell }, index) =>

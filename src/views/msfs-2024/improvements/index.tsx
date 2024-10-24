@@ -7,6 +7,7 @@ import styles from './index.module.less';
 // ============================================================================
 
 const cellGroupLeft: CellGroupType = {
+    name: 'systems',
     title: '系统功能',
     cells: [
         {
@@ -72,7 +73,8 @@ const cellGroupLeft: CellGroupType = {
 };
 
 const cellGroupMid: CellGroupType = {
-    title: '飞行体验',
+    name: 'experience',
+    title: '飞行体验 (内置航空器先行实装)',
     cells: [
         {
             title: '升级气流模拟（CFD）',
@@ -147,6 +149,7 @@ const cellGroupMid: CellGroupType = {
 };
 
 const cellGroupRight: CellGroupType = {
+    name: 'environment',
     title: '世界环境',
     cells: [
         {

@@ -46,6 +46,8 @@ html {
     }
 
     --background-image: none;
+    --background-mask-opacity: 0;
+    --background-mask-backdrop-blur: 0;
     --border-radius: 10px;
     --color-uncommon: #1eff00;
     --color-epic: #a335ee;
@@ -102,6 +104,8 @@ body {
     line-height: calc(2px + 2ex + 2px);
     min-height: 100vh;
     min-height: -webkit-fill-available;
+    background: ~'rgb(0 0 0 / var(--background-mask-opacity))';
+    backdrop-filter: blur(var(--background-mask-backdrop-blur));
 }
 
 :first-child {

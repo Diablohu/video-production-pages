@@ -48,14 +48,33 @@ const Controls = () => {
 
     const onBgImgSelectChange = useCallback((evt) => {
         const src = evt.nativeEvent.target.value;
-        if (src) {
-            document.documentElement.style.setProperty(
-                '--background-image',
-                `url(${src})`,
-            );
-        } else {
-            document.documentElement.style.removeProperty('--background-image');
-        }
+        const maskOpacity =
+            evt.nativeEvent.target.selectedOptions[0].dataset.maskOpacity;
+        const backdropBlur =
+            evt.nativeEvent.target.selectedOptions[0].dataset.backdropBlur;
+        [
+            {
+                enabled: !!src,
+                name: '--background-image',
+                value: `url(${src})`,
+            },
+            {
+                enabled: !!maskOpacity,
+                name: '--background-mask-opacity',
+                value: maskOpacity,
+            },
+            {
+                enabled: !!backdropBlur,
+                name: '--background-mask-backdrop-blur',
+                value: `${backdropBlur}px`,
+            },
+        ].forEach(({ enabled, name, value }) => {
+            if (enabled) {
+                document.documentElement.style.setProperty(name, value);
+            } else {
+                document.documentElement.style.removeProperty(name);
+            }
+        });
     }, []);
 
     return (
@@ -83,10 +102,12 @@ const Controls = () => {
                 <select onChange={onBgImgSelectChange}>
                     <option value="">--</option>
                     {[
-                        [
-                            'MSFS 2024 Cover',
-                            require('../assets/msfs2024/cover.jpg'),
-                        ],
+                        {
+                            name: 'MSFS 2024 Cover',
+                            src: require('../assets/msfs2024/cover.jpg'),
+                            maskOpacity: 0.5,
+                            backdropBlur: 10,
+                        },
                         [
                             'MSFS 2024 Tech Alpha 1',
                             require('../assets/background-images/msfs2024/1.png'),
@@ -99,14 +120,18 @@ const Controls = () => {
                             'MSFS 2024 Tech Alpha 3',
                             require('../assets/background-images/msfs2024/3.png'),
                         ],
-                        [
-                            'MSFS 2024 Tech Alpha 4',
-                            require('../assets/background-images/msfs2024/4.png'),
-                        ],
-                        [
-                            'MSFS 2024 Tech Alpha 5',
-                            require('../assets/background-images/msfs2024/5.png'),
-                        ],
+                        {
+                            name: 'MSFS 2024 Tech Alpha 4',
+                            src: require('../assets/background-images/msfs2024/4.png'),
+                            maskOpacity: 0.25,
+                            backdropBlur: 5,
+                        },
+                        {
+                            name: 'MSFS 2024 Tech Alpha 5',
+                            src: require('../assets/background-images/msfs2024/5.png'),
+                            maskOpacity: 0.5,
+                            // backdropBlur: 10,
+                        },
                         [
                             'MSFS 2024 Tech Alpha 6',
                             require('../assets/background-images/msfs2024/6.png'),
@@ -119,9 +144,14 @@ const Controls = () => {
                             'MSFS 2024 Tech Alpha 8',
                             require('../assets/background-images/msfs2024/8.png'),
                         ],
-                    ].map(([name, src]) => (
-                        <option key={name} value={src}>
-                            {name}
+                    ].map((item) => (
+                        <option
+                            key={Array.isArray(item) ? item[0] : item?.name}
+                            value={Array.isArray(item) ? item[1] : item?.src}
+                            data-mask-opacity={item?.maskOpacity}
+                            data-backdrop-blur={item?.backdropBlur}
+                        >
+                            {Array.isArray(item) ? item[0] : item?.name}
                         </option>
                     ))}
                 </select>
