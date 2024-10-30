@@ -20,7 +20,11 @@ const cellGroupCareer: CellGroupType = {
         },
         {
             title: '可选升级',
-            infos: ['利用全新技术', '开发商决定费用', '第一方机型免费升级'],
+            infos: [
+                '利用全新技术',
+                '开发商决定费用',
+                '第一方机型与机场免费升级',
+            ],
             img: require('./imgs/an-225.jpg'),
             backgroundSize: '175% auto',
             backgroundPosition: '22.5% 65%',
