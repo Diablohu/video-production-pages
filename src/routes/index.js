@@ -56,6 +56,10 @@ export default {
                 'msfs-2024-improvements',
                 require('@views/msfs-2024/improvements').default,
             ],
+            [
+                'msfs-2024-marketplace',
+                require('@views/msfs-2024/marketplace').default,
+            ],
 
             // FULL YEAR PLAN =================================================
             [

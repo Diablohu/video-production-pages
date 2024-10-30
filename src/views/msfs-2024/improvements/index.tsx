@@ -33,7 +33,7 @@ const cellGroupLeft: CellGroupType = {
                 '路线规划 & 进离场',
                 '信息查询',
                 'LIDO 航图',
-                '外部访问',
+                '允许外部访问',
             ],
             img: require('./imgs/planner-lido-chard.png'),
             backgroundSize: 'auto 170%',
@@ -74,7 +74,7 @@ const cellGroupLeft: CellGroupType = {
 
 const cellGroupMid: CellGroupType = {
     name: 'experience',
-    title: '飞行体验 (内置航空器先行实装)',
+    title: '飞行体验 (内置机型先行实装)',
     cells: [
         {
             title: '升级气流模拟（CFD）',
@@ -220,7 +220,7 @@ const cellGroupRight: CellGroupType = {
         {
             title: (
                 <>
-                    {/* <small>新的云层</small> */}
+                    <small>新的云层</small>
                     高空卷云
                 </>
             ),

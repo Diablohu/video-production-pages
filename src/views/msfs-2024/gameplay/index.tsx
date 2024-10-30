@@ -14,9 +14,9 @@ const cellGroupCareer: CellGroupType = {
             title: '飞行员生涯',
             infos: [
                 '定制形象',
-                '分支选择：水平翼、直升机',
-                '机型认证：私照、商照、仪表飞行、……',
-                '多样场景：山火、风暴……',
+                '分支选择：水平翼、旋翼',
+                '资质认证：私照、商照、仪表飞行……',
+                '多样场景：山火、风暴、野外救援……',
             ],
             rowSpan: 2,
             columnSpan: 2,
@@ -54,9 +54,9 @@ const cellGroupOther: CellGroupType = {
             infos: ['低空挑战', '着陆挑战', '赛季：玩法与排行定期更新'],
             img: require('./imgs/challenge.jpg'),
             backgroundSize: 'auto 250%',
-            backgroundPosition: '45% 50%',
+            backgroundPosition: '35% 50%',
             columnSpan: 2,
-            // bgMaskOrientation: 'horizontal',
+            bgMaskOrientation: 'horizontal',
         },
         {
             title: '空中竞速',
@@ -64,7 +64,7 @@ const cellGroupOther: CellGroupType = {
             img: require('./imgs/racing.jpg'),
             backgroundSize: 'auto 250%',
             backgroundPosition: '55% 33%',
-            // bgMaskOrientation: 'horizontal',
+            bgMaskOrientation: 'horizontal',
             columnSpan: 2,
         },
         {
@@ -73,7 +73,7 @@ const cellGroupOther: CellGroupType = {
             img: require('./imgs/hot-airballoon.jpg'),
             backgroundSize: 'auto 220%',
             backgroundPosition: '30% 100%',
-            // bgMaskOrientation: 'horizontal',
+            bgMaskOrientation: 'horizontal',
         },
         {
             title: '玩法继承',

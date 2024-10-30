@@ -1,0 +1,47 @@
+@import '~vars.less';
+
+.component {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: unit(100 * 90px / 1920px, vw);
+    padding: 50px 75px;
+
+    .group {
+        .cell {
+            strong {
+                font-size: 2.5em;
+            }
+            span {
+                font-size: 1.4em;
+                line-height: 1.5em;
+            }
+        }
+        &[data-title=~'旧版插件'] {
+            grid-column: span 1;
+            .grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+                // .cell {
+                //     strong {
+                //         font-size: 3em;
+                //     }
+                //     span {
+                //         font-size: 1.6em;
+                //         line-height: 1.6em;
+                //     }
+                // }
+            }
+        }
+        &[data-title=~'内置市场'] {
+            grid-column: span 2;
+            .grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                grid-auto-flow: column;
+                // strong {
+                //     line-height: 1em;
+                // }
+            }
+        }
+    }
+}

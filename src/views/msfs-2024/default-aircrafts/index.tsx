@@ -19,7 +19,7 @@ const ThisPage = extend({
             <div className="aircrafts">
                 <TitleCell>
                     <span>
-                        <u>* 全新 *</u> 航空器 ({aircrafts.length})
+                        <u>* 全新 *</u> 机型 ({aircrafts.length})
                     </span>
                 </TitleCell>
                 <div className="cells">
@@ -73,7 +73,7 @@ const ThisPage = extend({
                         }}
                     />
                     <div className="sub">
-                        <TitleCell>第一方航空器</TitleCell>
+                        <TitleCell>内置机型</TitleCell>
                         <div className="cells">
                             <InfoCell
                                 className="cell"
