@@ -1,4 +1,4 @@
-import { StrictMode, useState, useEffect, useCallback } from 'react';
+import { StrictMode, useState, useEffect, useCallback, useRef } from 'react';
 import { extend } from 'koot';
 import classNames from 'classnames';
 
@@ -34,7 +34,9 @@ const Main = (props) => <main {...props} />;
 // ============================================================================
 
 const Controls = () => {
-    const [viewType, setViewType] = useState('bg-dark');
+    const BGSelectRef = useRef(null);
+
+    const [viewType, setViewType] = useState('');
 
     useEffect(() => {
         document.documentElement.setAttribute('data-view-type', viewType);
@@ -46,12 +48,10 @@ const Controls = () => {
         );
     }, []);
 
-    const onBgImgSelectChange = useCallback((evt) => {
-        const src = evt.nativeEvent.target.value;
-        const maskOpacity =
-            evt.nativeEvent.target.selectedOptions[0].dataset.maskOpacity;
-        const backdropBlur =
-            evt.nativeEvent.target.selectedOptions[0].dataset.backdropBlur;
+    const updateBgFromSelect = useCallback((select = BGSelectRef.current) => {
+        const src = select.value;
+        const maskOpacity = select.selectedOptions[0].dataset.maskOpacity;
+        const backdropBlur = select.selectedOptions[0].dataset.backdropBlur;
         [
             {
                 enabled: !!src,
@@ -77,17 +77,26 @@ const Controls = () => {
         });
     }, []);
 
+    const onBgImgSelectChange = useCallback(
+        (evt) => {
+            updateBgFromSelect(evt.nativeEvent.target);
+        },
+        [updateBgFromSelect],
+    );
+
+    // 默认选择第一张背景图
+    useEffect(() => {
+        const select = BGSelectRef.current;
+        if (select) {
+            select.selectedIndex = 0;
+            select.dispatchEvent(new Event('change'));
+            updateBgFromSelect(select);
+        }
+    }, [updateBgFromSelect]);
+
     return (
         <div className={`${classNameModule}-controls`}>
-            {[
-                'output',
-                'mask',
-                'backdrop-mask',
-                'bg-dark',
-                'bg-light',
-                'bg-streaming',
-                'watermark',
-            ].map((t) => (
+            {['output', 'mask', 'backdrop-mask', 'watermark'].map((t) => (
                 <button
                     key={t}
                     data-view-type={t}
@@ -99,9 +108,16 @@ const Controls = () => {
             ))}
             <label>
                 BG
-                <select onChange={onBgImgSelectChange}>
-                    <option value="">--</option>
+                <select onChange={onBgImgSelectChange} ref={BGSelectRef}>
                     {[
+                        {
+                            name: 'Dark 4',
+                            src: require('../assets/bg-dark-4.png'),
+                        },
+                        {
+                            name: 'Light',
+                            src: require('../assets/bg-light.png'),
+                        },
                         {
                             name: 'MSFS 2024 Cover',
                             src: require('../assets/msfs2024/cover.jpg'),

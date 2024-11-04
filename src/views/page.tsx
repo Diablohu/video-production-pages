@@ -14,7 +14,7 @@ interface ComponentProps {
     classNameBody?: string;
 }
 
-type ViewType = 'output' | 'mask' | 'bg-dark' | 'bg-light' | 'bg-streaming';
+export type ViewType = 'output' | 'mask' | 'backdrop-mask' | 'watermark';
 
 // Functional Component =======================================================
 

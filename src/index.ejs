@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html<%- inject.htmlLang %>>
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
 
@@ -22,15 +22,18 @@
 
     <%- inject.metas %>
     <%- inject.styles %>
-</head>
+  </head>
 
-<body class="koot-system">
+  <body class="koot-system">
     <div id="root"><%- inject.react %></div>
-    <script type="text/javascript"><%- content('critical.js') %></script>
+    <div class="root-bg"></div>
+    <script type="text/javascript">
+      <%- content('critical.js') %>
+    </script>
     <%- inject.svgIconPack %>
     <%- inject.scripts %>
-</body>
+  </body>
 
-</html>
+  </html>
 
-<%- inject.performanceInfos %>
+  <%- inject.performanceInfos %>
