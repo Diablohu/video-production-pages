@@ -50,8 +50,8 @@ const Controls = () => {
 
     const updateBgFromSelect = useCallback((select = BGSelectRef.current) => {
         const src = select.value;
-        const maskOpacity = select.selectedOptions[0].dataset.maskOpacity;
-        const backdropBlur = select.selectedOptions[0].dataset.backdropBlur;
+        const opacity = select.selectedOptions[0].dataset.opacity;
+        const blur = select.selectedOptions[0].dataset.blur;
         [
             {
                 enabled: !!src,
@@ -59,14 +59,14 @@ const Controls = () => {
                 value: `url(${src})`,
             },
             {
-                enabled: !!maskOpacity,
-                name: '--background-mask-opacity',
-                value: maskOpacity,
+                enabled: !!opacity,
+                name: '--background-opacity',
+                value: opacity,
             },
             {
-                enabled: !!backdropBlur,
-                name: '--background-mask-backdrop-blur',
-                value: `${backdropBlur}px`,
+                enabled: !!blur,
+                name: '--background-blur',
+                value: `${blur}px`,
             },
         ].forEach(({ enabled, name, value }) => {
             if (enabled) {
@@ -121,8 +121,8 @@ const Controls = () => {
                         {
                             name: 'MSFS 2024 Cover',
                             src: require('../assets/msfs2024/cover.jpg'),
-                            maskOpacity: 0.5,
-                            backdropBlur: 10,
+                            opacity: 0.5,
+                            blur: 10,
                         },
                         [
                             'MSFS 2024 Tech Alpha 1',
@@ -139,14 +139,14 @@ const Controls = () => {
                         {
                             name: 'MSFS 2024 Tech Alpha 4',
                             src: require('../assets/background-images/msfs2024/4.png'),
-                            maskOpacity: 0.25,
-                            backdropBlur: 5,
+                            opacity: 0.25,
+                            blur: 5,
                         },
                         {
                             name: 'MSFS 2024 Tech Alpha 5',
                             src: require('../assets/background-images/msfs2024/5.png'),
-                            maskOpacity: 0.5,
-                            // backdropBlur: 10,
+                            opacity: 0.5,
+                            // blur: 10,
                         },
                         [
                             'MSFS 2024 Tech Alpha 6',
@@ -164,8 +164,8 @@ const Controls = () => {
                         <option
                             key={Array.isArray(item) ? item[0] : item?.name}
                             value={Array.isArray(item) ? item[1] : item?.src}
-                            data-mask-opacity={item?.maskOpacity}
-                            data-backdrop-blur={item?.backdropBlur}
+                            data-opacity={item?.opacity}
+                            data-blur={item?.blur}
                         >
                             {Array.isArray(item) ? item[0] : item?.name}
                         </option>

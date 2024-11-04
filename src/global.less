@@ -46,8 +46,8 @@ html {
     }
 
     --background-image: none;
-    --background-mask-opacity: 0;
-    --background-mask-backdrop-blur: 0;
+    --background-opacity: 0;
+    --background-blur: 0;
     --border-radius: 10px;
     --color-uncommon: #1eff00;
     --color-epic: #a335ee;
@@ -118,7 +118,7 @@ body {
         background: #000 no-repeat 50% 50%;
         background-image: var(--background-image);
         background-size: cover;
-        filter: blur(var(--background-mask-backdrop-blur));
+        filter: blur(var(--background-blur));
         &::before {
             content: '';
             position: absolute;
@@ -126,7 +126,7 @@ body {
             left: 0;
             width: 100%;
             height: 100%;
-            background: ~'rgb(0 0 0 / var(--background-mask-opacity))';
+            background: ~'rgb(0 0 0 / var(--background-opacity))';
         }
     }
 }
