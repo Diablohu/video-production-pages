@@ -27,7 +27,7 @@ const cellGroupLeft: CellGroupType = {
         },
         {
             title: <>通用 EFB</>,
-            developers: ['WorkingTitle'],
+            developers: ['ASOBO', 'WorkingTitle'],
             infos: [
                 '设定配载 & 燃油',
                 '路线规划 & 进离场',
