@@ -402,7 +402,7 @@ const aircrafts: AircraftType[] = [
         },
     },
     {
-        name: 'Jeston One',
+        name: 'Jetson One',
         code: '',
         type: AircraftTypes.EVTOL,
         developers: [DEVELOPERS.FLIGHTFX],
