@@ -12,7 +12,7 @@ const cellGroupCareer: CellGroupType = {
     cells: [
         {
             title: '自动兼容',
-            infos: ['社区目录机制保留', '内置市场自动继承', '仅极个别例外'],
+            infos: ['社区目录机制保留', '内置市场自动继承', '仅个别例外'],
             img: require('./imgs/fbw-a20n.png'),
             backgroundSize: 'auto 200%',
             backgroundPosition: '65% 85%',

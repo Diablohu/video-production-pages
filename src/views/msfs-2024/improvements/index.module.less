@@ -1,12 +1,12 @@
 @import '~vars.less';
 
 .component {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
 
     .group {
         .grid {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             grid-template-rows: 11fr 11fr 7fr;
             .cell {
                 grid-column: span 2;
@@ -24,21 +24,34 @@
 
         &[data-name='systems'] {
             .grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 grid-template-rows: 9fr 11fr 7fr;
             }
         }
 
         &[data-name='experience'] {
             .grid {
-                // grid-template-columns: 5fr 4fr;
-                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-                .cell.mod-small {
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+                .cell.mod-small,
+                .cell.mod-tiny {
+                    // --mask-max-width: 50%;
                     padding-top: 0;
                     padding-bottom: 0;
                     justify-content: center;
+                    &::before {
+                        opacity: 0.66;
+                    }
                     strong {
                         margin-bottom: 0;
+                    }
+                }
+                .cell.mod-tiny {
+                    padding-left: 0;
+                    align-items: flex-start;
+                    strong {
+                        width: percentage(1 / 0.875);
+                        text-align: center;
                     }
                 }
             }
@@ -47,7 +60,7 @@
         &[data-name='environment'] {
             .grid {
                 grid-template-columns: 5fr 4fr;
-                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: repeat(9, 1fr);
                 strong small {
                     display: block;
                     line-height: 1em;
@@ -80,7 +93,7 @@
                     }
                 }
                 .grid {
-                    grid-template-rows: 1fr 1fr;
+                    grid-template-rows: repeat(2, 1fr);
                     .cell {
                     }
                 }
