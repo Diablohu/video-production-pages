@@ -1,0 +1,103 @@
+@import '~vars.less';
+
+.component {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+
+    .group {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 11fr 11fr 7fr;
+            .cell {
+                grid-column: span 2;
+                strong {
+                    font-size: 1.75em;
+                    line-height: 1.2em;
+                    font-weight: 900;
+                }
+                span {
+                    font-size: 1.3em;
+                    line-height: 1.35em;
+                }
+            }
+        }
+
+        &[data-name='marketplace'] {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 4fr 4fr 4fr 3fr;
+            }
+        }
+
+        &[data-name='experience'] {
+            .grid {
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+                .cell.mod-small,
+                .cell.mod-tiny {
+                    // --mask-max-width: 50%;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    justify-content: center;
+                    &::before {
+                        opacity: 0.66;
+                    }
+                    strong {
+                        margin-bottom: 0;
+                    }
+                }
+                .cell.mod-tiny {
+                    padding-left: 0;
+                    align-items: flex-start;
+                    strong {
+                        width: percentage(1 / 0.875);
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        &[data-name='environment'] {
+            .grid {
+                grid-template-columns: 5fr 4fr;
+                grid-template-rows: repeat(9, 1fr);
+                strong small {
+                    display: block;
+                    line-height: 1em;
+                    font-weight: normal;
+                    font-size: unit(3/4, em);
+                    margin-bottom: 0.1em;
+                }
+                .small-cell {
+                    padding: 0;
+                    // &::before {
+                    //     background: linear-gradient(
+                    //         to right,
+                    //         rgba(0, 0, 0, 0.65) 17.5%,
+                    //         rgba(0, 0, 0, 0) 100%
+                    //     );
+                    //     width: 80%;
+                    //     height: 100%;
+                    //     bottom: 0;
+                    //     left: -10px;
+                    // }
+                    strong {
+                        position: absolute;
+                        top: 0;
+                        left: 15px;
+                        height: 100%;
+                        display: flex;
+                        flex-flow: column nowrap;
+                        font-size: unit(4/3, em);
+                        justify-content: center;
+                    }
+                }
+                .grid {
+                    grid-template-rows: repeat(2, 1fr);
+                    .cell {
+                    }
+                }
+            }
+        }
+    }
+}

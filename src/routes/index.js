@@ -60,6 +60,10 @@ export default {
                 'msfs-2024-marketplace',
                 require('@views/msfs-2024/marketplace').default,
             ],
+            [
+                'msfs-2024-update-202502-su01',
+                require('@views/msfs-2024/updates/202502-su01').default,
+            ],
 
             // FULL YEAR PLAN =================================================
             [
