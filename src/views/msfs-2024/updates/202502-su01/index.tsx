@@ -12,7 +12,7 @@ const cellGroupLeft: CellGroupType = {
     cells: [
         {
             title: '正式开放',
-            infos: ['DirectX 12'],
+            infos: ['旧版插件自动继承', '新版插件可选升级'],
             img: require('./imgs/a330-takeoff.jpg'),
             backgroundSize: 'auto 175%',
             backgroundPosition: '15% 30%',
@@ -21,285 +21,193 @@ const cellGroupLeft: CellGroupType = {
             columnSpan: 2,
         },
         {
-            title: <>通用 EFB</>,
-            developers: ['ASOBO', 'WorkingTitle'],
-            infos: ['允许外部访问'],
-            img: require('./imgs/planner-lido-chard.png'),
-            backgroundSize: 'auto 170%',
-            backgroundPosition: '12.75% 40%',
+            title: <>租赁</>,
+            infos: ['购买时补差价'],
+            img: require('./imgs/a330-takeoff.jpg'),
+            backgroundSize: 'auto 175%',
+            backgroundPosition: '15% 30%',
             bgMaskOrientation: 'horizontal',
-            // rowSpan: 4,
-            columnSpan: 1,
+            style: {
+                '--mask-min-width': '100%',
+                '--mask-height-horizontal': '300%',
+            },
         },
         {
-            title: <>通用 EFB</>,
-            developers: ['ASOBO', 'WorkingTitle'],
-            infos: ['允许外部访问'],
-            img: require('./imgs/planner-lido-chard.png'),
-            backgroundSize: 'auto 170%',
-            backgroundPosition: '12.75% 40%',
+            title: <>赠与</>,
+            infos: ['为好友购买'],
+            img: require('./imgs/a330-takeoff.jpg'),
+            backgroundSize: 'auto 175%',
+            backgroundPosition: '15% 30%',
             bgMaskOrientation: 'horizontal',
-            // rowSpan: 4,
-            columnSpan: 1,
+            style: {
+                '--mask-min-width': '100%',
+                '--mask-height-horizontal': '300%',
+            },
         },
         {
-            title: <>通用 EFB</>,
-            developers: ['ASOBO', 'WorkingTitle'],
-            infos: ['允许外部访问'],
-            img: require('./imgs/planner-lido-chard.png'),
-            backgroundSize: 'auto 170%',
-            backgroundPosition: '12.75% 40%',
+            title: <>全新打分机制</>,
+            infos: ['音画质量 & 拟真度'],
+            img: require('./imgs/a330-takeoff.jpg'),
+            backgroundSize: 'auto 175%',
+            backgroundPosition: '15% 30%',
             bgMaskOrientation: 'horizontal',
-            // rowSpan: 4,
-            columnSpan: 1,
+            style: {
+                '--mask-min-width': '100%',
+                '--mask-height-horizontal': '300%',
+            },
         },
         {
-            title: <>通用 EFB</>,
-            developers: ['ASOBO', 'WorkingTitle'],
-            infos: ['允许外部访问'],
-            img: require('./imgs/planner-lido-chard.png'),
-            backgroundSize: 'auto 170%',
-            backgroundPosition: '12.75% 40%',
+            title: <>高级版本附加内容</>,
+            infos: ['零售：可直接购买'],
+            img: require('./imgs/a330-takeoff.jpg'),
+            backgroundSize: 'auto 175%',
+            backgroundPosition: '15% 30%',
             bgMaskOrientation: 'horizontal',
-            // rowSpan: 4,
-            columnSpan: 1,
+            style: {
+                '--mask-min-width': '100%',
+                '--mask-height-horizontal': '300%',
+            },
         },
         {
             title: '我的储藏库',
             infos: ['开关插件无需重启'],
-            img: require('./imgs/replay.jpg'),
-            backgroundSize: 'auto 1000%',
-            backgroundPosition: '58% 37.5%',
+            img: require('./imgs/a330-takeoff.jpg'),
+            backgroundSize: 'auto 175%',
+            backgroundPosition: '15% 30%',
             bgMaskOrientation: 'horizontal',
-            // rowSpan: 2,
-            columnSpan: 2,
             style: {
-                '--mask-max-width': '50%',
+                '--mask-min-width': '100%',
+                '--mask-height-horizontal': '300%',
+            },
+        },
+        {
+            title: '插件平台',
+            infos: ['优化2020兼容环境'],
+            img: require('./imgs/a330-takeoff.jpg'),
+            backgroundSize: 'auto 175%',
+            backgroundPosition: '15% 30%',
+            bgMaskOrientation: 'horizontal',
+            style: {
+                '--mask-min-width': '100%',
+                '--mask-height-horizontal': '300%',
             },
         },
     ],
 };
 
-const cellGroupMid: CellGroupType = {
-    name: 'experience',
-    title: '飞行体验修正',
+const cellGroupAircrafts: CellGroupType = {
+    name: 'aircrafts',
+    title: '机型 / 航电',
     cells: [
         {
-            title: '升级气流模拟（CFD）',
-            infos: [
-                '真实尾流',
-                '直升机涡环',
-                '气流影响植被',
-                '扬尘、飞雪、吹水……',
-            ],
-            // img: require('./imgs/technical-alpha-c172-ground-dirt-3.png'),
-            // backgroundSize: 'auto 150%',
-            // backgroundPosition: '60% 55%',
+            title: '旋翼机',
+            infos: ['修复：平台周围地效突变'],
             img: require('./imgs/helicopter-smoke.jpg'),
             backgroundSize: 'auto 250%',
             backgroundPosition: '30% 75%',
             bgMaskOrientation: 'horizontal',
-            columnSpan: 6,
-            rowSpan: 2,
             style: {
                 '--mask-min-width': '100%',
             },
         },
         {
-            title: '升级物理模拟',
-            infos: [
-                '增强地面物理',
-                '飞溅泥土',
-                '留下轮胎印',
-                '布料 & 绳索 & 3D水体',
-            ],
-            img: require('./imgs/hotairballoon.jpg'),
-            backgroundSize: 'auto 165%',
-            backgroundPosition: '0% 65%',
+            title: (
+                <>
+                    <small>PC-21 NGx / PC-24</small>Primus Epic 2
+                </>
+            ),
+            infos: ['部分设置可自动保存', 'MFD可查看航图', '超多交互修正'],
+            img: require('./imgs/helicopter-smoke.jpg'),
+            backgroundSize: 'auto 250%',
+            backgroundPosition: '30% 75%',
             bgMaskOrientation: 'horizontal',
-            columnSpan: 6,
-            rowSpan: 2,
+            style: {
+                '--mask-min-width': '100%',
+            },
+        },
+    ],
+};
+
+const cellGroupAircrafts2: CellGroupType = {
+    name: 'aircrafts-2',
+    cells: [
+        {
+            title: '佳明 G1000',
+            infos: ['修复：MFD“圆点”'],
+            img: require('./imgs/helicopter-smoke.jpg'),
+            backgroundSize: 'auto 250%',
+            backgroundPosition: '30% 75%',
+            bgMaskOrientation: 'horizontal',
+            style: {
+                '--mask-min-width': '100%',
+                '--mask-height-horizontal': '200%',
+            },
         },
         {
-            title: '绕机检查',
-            // infos: ['绕机检查'],
-            img: require('./imgs/a330-walkaround.jpg'),
-            backgroundSize: 'auto 175%',
-            backgroundPosition: '0% 70%',
+            title: '波音 737 MAX-8',
+            infos: ['更正减推力起飞逻辑', '更正爬升推力逻辑'],
+            img: require('./imgs/helicopter-smoke.jpg'),
+            backgroundSize: 'auto 250%',
+            backgroundPosition: '30% 75%',
             bgMaskOrientation: 'horizontal',
-            columnSpan: 3,
-            className: 'mod-small',
+            style: {
+                '--mask-min-width': '100%',
+                '--mask-height-horizontal': '200%',
+            },
         },
         {
-            title: '直升机 AP',
-            // infos: ['绕机检查'],
-            img: require('./imgs/h225.png'),
-            backgroundSize: 'auto 175%',
-            backgroundPosition: '0% 15%',
+            title: '空客大型机',
+            infos: ['修复：结束飞行时崩溃'],
+            img: require('./imgs/helicopter-smoke.jpg'),
+            backgroundSize: 'auto 250%',
+            backgroundPosition: '30% 75%',
             bgMaskOrientation: 'horizontal',
-            columnSpan: 3,
-            className: 'mod-small',
-        },
-        {
-            title: '雨刷',
-            // infos: [],
-            img: require('./imgs/wiper.jpg'),
-            backgroundSize: 'auto 175%',
-            backgroundPosition: '100% 25%',
-            bgMaskOrientation: 'horizontal',
-            columnSpan: 2,
-            className: 'mod-tiny',
-        },
-        {
-            title: '机型配置',
-            // infos: [],
-            img: require('./imgs/dhc6-float.jpg'),
-            backgroundSize: 'auto 700%',
-            backgroundPosition: '40% 32.5%',
-            bgMaskOrientation: 'horizontal',
-            columnSpan: 2,
-            className: 'mod-tiny',
-        },
-        {
-            title: 'VDGS',
-            // infos: ['绕机检查'],
-            img: require('./imgs/vdgs.jpg'),
-            backgroundSize: 'auto 300%',
-            backgroundPosition: '95% 87%',
-            bgMaskOrientation: 'horizontal',
-            columnSpan: 2,
-            className: 'mod-tiny',
+            style: {
+                '--mask-min-width': '100%',
+                '--mask-height-horizontal': '200%',
+            },
         },
     ],
 };
 
 const cellGroupRight: CellGroupType = {
-    name: 'environment',
-    title: '其他修正',
+    name: 'other',
+    title: '更多优化',
     cells: [
         {
-            title: '翻新画面渲染',
-            infos: ['光线追踪投影', '改进大气散射', '改进漫反射', '极光'],
+            title: 'EFB',
+            infos: ['航图支持滚轮缩放'],
             img: require('./imgs/dubai.jpg'),
             backgroundSize: 'auto 175%',
             backgroundPosition: '50% 40%',
             bgMaskOrientation: 'horizontal',
             style: {
-                gridRow: '1 / span 3',
-                gridColumn: '1 / span 2',
+                '--mask-min-width': '100%',
+                '--mask-height-horizontal': '300%',
             },
         },
         {
-            title: '翻新全球地形',
-            infos: ['3D地形 & 点缀', '3D植被 & 农田', '四季 & 地域变化'],
-            // img: require('./imgs/yosemite.jpg'),
-            // backgroundSize: 'auto 185%',
-            // backgroundPosition: '30% 70%',
-            img: require('./imgs/autumn.jpg'),
+            title: '飞行员生涯',
+            infos: ['修复：本地午夜报错'],
+            img: require('./imgs/dubai.jpg'),
             backgroundSize: 'auto 175%',
-            backgroundPosition: '60% 70%',
+            backgroundPosition: '50% 40%',
             bgMaskOrientation: 'horizontal',
-            style: {
-                '--mask-min-width': '80%',
-                '--mask-max-width': '80%',
-                gridRow: '4 / span 3',
-                gridColumn: '1 / span 1',
-            },
-        },
-        {
-            title: '扩展全球数据',
-            developers: ['ORBX', 'PuffinFlight'],
-            infos: ['直升机机坪', '滑翔机机库', '油井平台', '低空障碍'],
-            img: require('./imgs/oilrig.jpg'),
-            backgroundSize: 'auto 220%',
-            backgroundPosition: '42% 58%',
-            rowSpan: 3,
-            columnSpan: 1,
-            bgMaskOrientation: 'horizontal',
-            style: {
-                gridRow: '7 / span 3',
-                gridColumn: '1 / span 1',
-            },
-        },
-        {
-            title: (
-                <>
-                    <small>24小时</small>世界数据回溯
-                </>
-            ),
-            // img: require('./imgs/yosemite.jpg'),
-            // backgroundSize: 'auto 185%',
-            // backgroundPosition: '30% 70%',
-            img: require('./imgs/Fuji_MSFS_2024.png'),
-            // className: 'small-cell',
-            backgroundSize: 'auto 140%',
-            backgroundPosition: '40% 100%',
-            bgMaskOrientation: 'vertical',
-            style: {
-                gridRow: '4 / span 2',
-                gridColumn: '2 / span 1',
-                paddingLeft: '20px',
-                paddingBottom: '10px',
-            },
-        },
-        {
-            title: (
-                <>
-                    <small>新的云层</small>
-                    高空卷云
-                </>
-            ),
-            rowSpan: 2,
-            columnSpan: 1,
-            img: require('./imgs/cirrusclouds-1726680805016.png'),
-            // className: 'small-cell',
-            backgroundSize: 'auto 150%',
-            backgroundPosition: '50% 90%',
-            bgMaskOrientation: 'vertical',
             style: {
                 '--mask-min-width': '100%',
-                '--mask-max-width': '100%',
-                gridRow: '6 / span 2',
-                gridColumn: '2 / span 1',
-                paddingLeft: '20px',
-                paddingBottom: '10px',
+                '--mask-height-horizontal': '300%',
             },
         },
         {
-            title: (
-                <>
-                    <small>空中和水面</small>实时交通
-                </>
-            ),
-            developers: ['GAIST', 'AIG'],
-            img: require('./imgs/miami.jpg'),
-            className: 'small-cell',
-            backgroundSize: 'auto 1300%',
-            backgroundPosition: '17% 55%',
+            title: '自由飞行',
+            infos: ['不再强制真实气象'],
+            img: require('./imgs/dubai.jpg'),
+            backgroundSize: 'auto 175%',
+            backgroundPosition: '50% 40%',
             bgMaskOrientation: 'horizontal',
             style: {
-                '--mask-min-width': '80%',
-                '--mask-max-width': '80%',
-                gridRow: '8 / span 1',
-                gridColumn: '2 / span 1',
-            },
-        },
-        {
-            title: (
-                <>
-                    <small>更多</small>动物群
-                </>
-            ),
-            img: require('./imgs/animal.jpg'),
-            className: 'small-cell',
-            backgroundSize: 'auto 500%',
-            backgroundPosition: '50% 45%',
-            bgMaskOrientation: 'horizontal',
-            style: {
-                '--mask-min-width': '80%',
-                '--mask-max-width': '80%',
-                gridRow: '9 / span 1',
-                gridColumn: '2 / span 1',
+                '--mask-min-width': '100%',
+                '--mask-height-horizontal': '300%',
             },
         },
     ],
@@ -314,7 +222,12 @@ const ThisPage = extend({
         <Page
             updateDate={true}
             classNameBody={className}
-            infos={[cellGroupLeft, cellGroupMid, cellGroupRight]}
+            infos={[
+                cellGroupLeft,
+                cellGroupAircrafts,
+                cellGroupAircrafts2,
+                cellGroupRight,
+            ]}
         ></Page>
     );
 });

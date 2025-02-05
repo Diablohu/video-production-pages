@@ -35,7 +35,7 @@ export type CellType = {
 /** 信息组 */
 export interface CellGroupType {
     /** 标题 */
-    title: CellType['title'];
+    title?: CellType['title'];
     cells: CellType[];
     name?: string;
 }
@@ -71,32 +71,62 @@ const MSFS2024Page = extend<{
             {...props}
         >
             {Array.isArray(infos) &&
-                infos.map((group, index) => (
-                    <div
-                        key={index}
-                        className="group"
-                        data-title={group.title}
-                        data-name={group.name}
-                    >
-                        <TitleCell className="title">{group.title}</TitleCell>
-                        <div className="grid">
-                            {group.cells.map(({ className, ...cell }, index) =>
-                                Array.isArray(cell.cells) ? (
-                                    <div
-                                        key={index}
-                                        className="grid"
-                                        style={{
-                                            ...cell.style,
-                                            gridRow: cell.rowSpan
-                                                ? `span ${cell.rowSpan}`
-                                                : undefined,
-                                            gridColumn: cell.columnSpan
-                                                ? `span ${cell.columnSpan}`
-                                                : undefined,
-                                        }}
-                                    >
-                                        {cell.cells.map(
-                                            ({ className, ...cell }, index) => (
+                infos.map((group, index) => {
+                    const hasTitle = Boolean(group.title);
+                    const hasCells = Array.isArray(group.cells);
+                    return (
+                        <div
+                            key={index}
+                            className="group"
+                            data-title={group.title}
+                            data-name={group.name}
+                        >
+                            {hasTitle && (
+                                <TitleCell className="title">
+                                    {group.title}
+                                </TitleCell>
+                            )}
+                            {hasCells && (
+                                <div className="grid">
+                                    {group.cells.map(
+                                        ({ className, ...cell }, index) =>
+                                            Array.isArray(cell.cells) ? (
+                                                <div
+                                                    key={index}
+                                                    className="grid"
+                                                    style={{
+                                                        ...cell.style,
+                                                        gridRow: cell.rowSpan
+                                                            ? `span ${cell.rowSpan}`
+                                                            : undefined,
+                                                        gridColumn:
+                                                            cell.columnSpan
+                                                                ? `span ${cell.columnSpan}`
+                                                                : undefined,
+                                                    }}
+                                                >
+                                                    {cell.cells.map(
+                                                        (
+                                                            {
+                                                                className,
+                                                                ...cell
+                                                            },
+                                                            index,
+                                                        ) => (
+                                                            <InfoCell
+                                                                key={index}
+                                                                className={classNames(
+                                                                    [
+                                                                        'cell',
+                                                                        className,
+                                                                    ],
+                                                                )}
+                                                                {...cell}
+                                                            />
+                                                        ),
+                                                    )}
+                                                </div>
+                                            ) : (
                                                 <InfoCell
                                                     key={index}
                                                     className={classNames([
@@ -106,22 +136,12 @@ const MSFS2024Page = extend<{
                                                     {...cell}
                                                 />
                                             ),
-                                        )}
-                                    </div>
-                                ) : (
-                                    <InfoCell
-                                        key={index}
-                                        className={classNames([
-                                            'cell',
-                                            className,
-                                        ])}
-                                        {...cell}
-                                    />
-                                ),
+                                    )}
+                                </div>
                             )}
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             {children}
         </Page>
     );

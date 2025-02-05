@@ -4,6 +4,8 @@
     --mask-min-width: 0;
     --mask-max-width: none;
     --mask-gradient-angle: 75deg;
+    --mask-height-vertical: 10vh;
+    --mask-height-horizontal: 100%;
 
     position: relative;
 
@@ -58,7 +60,7 @@
             rgba(0, 0, 0, 0) 100%
         );
         width: 100%;
-        height: 10vh;
+        height: var(--mask-height-vertical);
         bottom: 0;
         left: 0;
         z-index: 1;
@@ -93,7 +95,7 @@
             );
             width: 17em;
             max-width: var(--mask-max-width);
-            height: 100%;
+            height: var(--mask-height-horizontal);
             bottom: 0;
             left: unit(100 * -10px / 1920px, vw);
         }
