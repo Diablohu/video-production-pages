@@ -104,17 +104,6 @@ const cellGroupAircrafts: CellGroupType = {
     title: '机型 / 航电',
     cells: [
         {
-            title: '旋翼机',
-            infos: ['修复：平台周围地效突变'],
-            img: require('./imgs/helicopter-smoke.jpg'),
-            backgroundSize: 'auto 250%',
-            backgroundPosition: '30% 75%',
-            bgMaskOrientation: 'horizontal',
-            style: {
-                '--mask-min-width': '100%',
-            },
-        },
-        {
             title: (
                 <>
                     <small>PC-21 NGx / PC-24</small>Primus Epic 2
@@ -127,6 +116,18 @@ const cellGroupAircrafts: CellGroupType = {
             bgMaskOrientation: 'horizontal',
             style: {
                 '--mask-min-width': '100%',
+            },
+        },
+        {
+            title: '旋翼机',
+            infos: ['修复：平台周围地效突变'],
+            img: require('./imgs/2025-02-06-02-06-12.png'),
+            backgroundSize: 'auto 250%',
+            backgroundPosition: '60% 60%',
+            // bgMaskOrientation: 'horizontal',
+            style: {
+                // '--mask-min-width': '100%',
+                '--mask-height-vertical': '85%',
             },
         },
     ],
@@ -180,14 +181,14 @@ const cellGroupRight: CellGroupType = {
     cells: [
         {
             title: 'EFB',
-            infos: ['航图支持滚轮缩放'],
-            img: require('./imgs/dubai.jpg'),
-            backgroundSize: 'auto 175%',
+            infos: ['支持滚轮缩放航图'],
+            img: require('./imgs/20250206021031_1.jpg'),
+            backgroundSize: '150% auto',
             backgroundPosition: '50% 40%',
             bgMaskOrientation: 'horizontal',
             style: {
                 '--mask-min-width': '100%',
-                '--mask-height-horizontal': '300%',
+                '--mask-height-horizontal': '500%',
             },
         },
         {
