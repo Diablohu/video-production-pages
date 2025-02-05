@@ -17,7 +17,7 @@ const cellGroupLeft: CellGroupType = {
             columnSpan: 2,
             img: require('./imgs/20241126031220_1.jpg'),
             backgroundSize: 'auto 175%',
-            backgroundPosition: '10% 25%',
+            backgroundPosition: '10% 26%',
             // bgMaskOrientation: 'horizontal',
             style: {
                 // '--mask-min-width': '100%',
