@@ -120,7 +120,7 @@ const cellGroupAircrafts: CellGroupType = {
         },
         {
             title: '旋翼机',
-            infos: ['修复：平台周围地效突变'],
+            infos: ['修复：平台周围地效突变', '修复：飞行开始时无故弹跳'],
             img: require('./imgs/2025-02-06-02-06-12.png'),
             backgroundSize: 'auto 250%',
             backgroundPosition: '60% 60%',
