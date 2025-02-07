@@ -1,6 +1,8 @@
 @import '~vars.less';
 
 .component {
+    --font-size: 0.9vw;
+
     --mask-min-width: 0;
     --mask-max-width: none;
     --mask-gradient-angle: 75deg;
@@ -20,7 +22,7 @@
     color: #fff;
     padding: unit(100 * 15px / 1920px, vw) unit(100 * 15px / 1920px, vw)
         unit(100 * 10px / 1920px, vw) unit(100 * 15px / 1920px, vw);
-    font-size: 0.9vw;
+    font-size: var(--font-size);
     line-height: 1.3em;
     font-style: italic;
     text-shadow: 0 unit(100 * 2px / 1920px, vw) unit(100 * 5px / 1920px, vw)
@@ -80,10 +82,6 @@
             display: none
         }
     });
-
-    &.mod-text-size-lg {
-        font-size: 1.2vw;
-    }
 
     &.mod-bg-mask-orientation-horizontal {
         &::before {
@@ -156,5 +154,35 @@
                 display: none;
             });
         }
+    }
+}
+
+// ============================================================================
+//
+// Modify: Text Size
+//
+// ============================================================================
+.component.mod-text-size-sm {
+    --font-size: 0.8vw;
+}
+.component.mod-text-size-lg {
+    --font-size: 1.2vw;
+}
+
+// ============================================================================
+//
+// Modify: Type
+//
+// ============================================================================
+.component.mod-type-center {
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    & > * {
+        text-align: center;
+    }
+    & > span {
+        padding-left: 0.75em;
+        padding-right: 0.75em;
     }
 }

@@ -20,6 +20,7 @@ export type CellProps = {
     mask?: boolean;
     textSize?: 'lg' | 'md' | 'sm';
     bgMaskOrientation?: 'horizontal' | 'vertical';
+    type?: 'info' | 'center';
     infoCell?: boolean;
     lightBorder?: boolean;
     style?: CSSProperties & Record<string, string>;
@@ -44,6 +45,7 @@ const Cell = extend<CellProps>({
     style = {},
     children,
     bgMaskOrientation = 'vertical',
+    type,
     infoCell = false,
     lightBorder = true,
     ...props
@@ -57,8 +59,9 @@ const Cell = extend<CellProps>({
                     [`mod-text-size-${textSize}`]: !!textSize,
                     [`mod-bg-mask-orientation-${bgMaskOrientation}`]:
                         !!bgMaskOrientation,
-                    [`mod-infocell`]: !!infoCell,
+                    [`mod-infocell`]: !!infoCell || type === 'info',
                     [`mod-light-border`]: !!lightBorder,
+                    [`mod-type-center`]: type === 'center',
                 },
             ])}
             style={{

@@ -27,10 +27,7 @@ export type CellType = {
     /** CSS Style: background-position */
     backgroundPosition?: string;
     cells?: CellType[];
-} & Pick<
-    CellProps,
-    'title' | 'infos' | 'img' | 'bgMaskOrientation' | 'className' | 'style'
->;
+} & Partial<CellProps>;
 
 /** 信息组 */
 export interface CellGroupType {
@@ -165,13 +162,13 @@ export const TitleCell: FC<
 // ============================================================================
 
 export const InfoCell: FC<
-    CellProps & {
+    Partial<CellProps> & {
         className?: string;
         rowSpan?: number;
         columnSpan?: number;
         backgroundSize?: string;
         backgroundPosition?: string;
-        title: CellType['title'];
+        title?: CellType['title'];
     }
 > = ({
     className,
