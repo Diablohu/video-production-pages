@@ -181,7 +181,7 @@ const cellGroupRight: CellGroupType = {
     cells: [
         {
             title: 'EFB',
-            infos: ['支持滚轮缩放航图'],
+            infos: ['支持滚轮缩放航图', '可查询跑道磁航向'],
             img: require('./imgs/20250206021031_1.jpg'),
             backgroundSize: '150% auto',
             backgroundPosition: '50% 40%',
@@ -191,7 +191,7 @@ const cellGroupRight: CellGroupType = {
             style: {
                 // '--mask-min-width': '100%',
                 // '--mask-height-horizontal': '500%',
-                '--mask-height-vertical': '250%',
+                '--mask-height-vertical': '550%',
             },
         },
         {
@@ -210,7 +210,7 @@ const cellGroupRight: CellGroupType = {
         },
         {
             title: '自由飞行',
-            infos: ['24小时内时间不再强制真实气象'],
+            infos: ['自选时间解绑真实气象', '自定气象自动保存'],
             img: require('./imgs/2025-01-02-05-00-44.png'),
             backgroundSize: '150% auto',
             backgroundPosition: '50% 65%',
@@ -224,7 +224,7 @@ const cellGroupRight: CellGroupType = {
         },
         {
             title: '画面渲染',
-            infos: ['修复：地面材质模糊'],
+            infos: ['修复：地面材质模糊', '修复：建筑上“峭壁”'],
             img: require('./imgs/2025-02-04-04-34-29.png'),
             backgroundSize: '150% auto',
             backgroundPosition: '50% 50%',
