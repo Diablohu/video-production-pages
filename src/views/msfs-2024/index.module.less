@@ -2,28 +2,117 @@
 
 :root .component {
     --side-margin: 150px;
+    --logo-height: 130px;
+    --logo-img-ratio: calc(1280 / 440);
+    --logo-slice-y: 88px;
     --title-cell-height: unit(100 * 40px / 1080px, vh);
     --gap: unit(100 * 20px / 1920px, vw);
 
     border-left-width: var(--side-margin);
     border-right-width: var(--side-margin);
 
-    &::before {
-        --height: 130px;
-        content: '';
+    // &::before,
+    // &::after {
+    //     content: '';
+    //     position: absolute;
+    //     background: url(../../assets/msfs2024/logo-mono.png) no-repeat 50%
+    //         percentage(280 / 720);
+    //     background-size: calc(var(--logo-height) * var(--logo-img-ratio)) auto;
+    //     width: 100%;
+    //     height: var(--logo-height);
+    //     top: calc(var(--logo-height) * -1 - var(--gap) * 1.5);
+    //     left: 0;
+    //     overflow: hidden;
+    //     .mod-mask({
+    //         display: none;
+    //     });
+    //     .mod-backdrop-mask({
+    //         display: none;
+    //     });
+    // }
+    // &::before {
+    //     height: var(--logo-slice-y);
+    // }
+    // &::after {
+    //     display: none;
+    // }
+}
+
+.component-logo {
+    --logo-width: calc(var(--logo-height) * var(--logo-img-ratio));
+
+    position: absolute;
+    width: var(--logo-width);
+    height: var(--logo-height);
+    top: calc(var(--logo-height) * -1 - var(--gap) * 1.5);
+    left: 50%;
+    overflow: hidden;
+    margin-left: calc(var(--logo-width) * -0.5);
+    .mod-mask({
+        display: none;
+    });
+    .mod-backdrop-mask({
+        display: none;
+    });
+
+    & > .top,
+    & > .bottom {
         position: absolute;
-        background: url(../../assets/msfs2024/logo-mono.png) no-repeat 50% 50%;
-        background-size: auto percentage(1 / 0.612);
-        width: 100%;
-        height: var(--height);
-        top: calc(var(--height) * -1 - var(--gap) * 1.5);
         left: 0;
-        .mod-mask({
-            display: none;
-        });
-        .mod-backdrop-mask({
-            display: none;
-        });
+        width: 100%;
+        overflow: hidden;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: var(--logo-height);
+            background: url(../../assets/msfs2024/logo-mono.png) no-repeat 50%
+                50%;
+            background-size: var(--logo-width) auto;
+        }
+    }
+
+    & > .top {
+        height: var(--logo-slice-y);
+        &::before {
+            top: 0;
+        }
+    }
+    & > .bottom {
+        top: var(--logo-slice-y);
+        height: calc(var(--logo-height) - var(--logo-slice-y));
+        text-align: right;
+        padding-right: 25px;
+        & > em {
+            .title-style();
+            font-style: normal;
+            transform: skew(var(--logo-skew)) scale(0.6666, 1);
+            transform-origin: 100% 50%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-end;
+            align-items: baseline;
+            height: 100%;
+            font-size: 52px;
+            margin-top: -10px;
+            color: #ffd400;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            & > small {
+                display: block;
+                padding-right: 0.33333em;
+                font-size: 0.55em;
+            }
+        }
+        &::before {
+            bottom: 0;
+        }
+        &:not(:empty) {
+            &::before {
+                margin-left: -196px;
+            }
+        }
     }
 }
 

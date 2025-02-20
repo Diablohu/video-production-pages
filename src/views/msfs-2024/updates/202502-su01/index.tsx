@@ -299,6 +299,11 @@ const ThisPage = extend({
                 cellGroupAircrafts2,
                 cellGroupRight,
             ]}
+            subtitle={
+                <>
+                    <small>Sim Update</small> 01
+                </>
+            }
         ></Page>
     );
 });

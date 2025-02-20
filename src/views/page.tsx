@@ -12,6 +12,7 @@ import styles from './page.module.less';
 interface ComponentProps {
     updateDate?: string | boolean;
     classNameBody?: string;
+    prepend?: React.ReactNode;
 }
 
 export type ViewType = 'output' | 'mask' | 'backdrop-mask' | 'watermark';
@@ -26,6 +27,7 @@ const Page = extend<ComponentProps>({
     classNameBody,
     children,
     updateDate,
+    prepend,
 }): JSX.Element => {
     const [viewType, setViewType] = useState<ViewType>();
 
@@ -63,6 +65,7 @@ const Page = extend<ComponentProps>({
                 },
             ])}
         >
+            {prepend}
             <article
                 className={classNames([
                     `${classNameModule}-body`,

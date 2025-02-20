@@ -41,6 +41,7 @@ export interface CellGroupType {
 
 const MSFS2024Page = extend<{
     classNameBody?: string;
+    subtitle?: string;
     infos?: CellGroupType[];
     infosClassName?: string;
 }>({
@@ -49,6 +50,7 @@ const MSFS2024Page = extend<{
     className,
     classNameBody,
     children,
+    subtitle = '',
     infos,
     infosClassName,
     ...props
@@ -65,6 +67,14 @@ const MSFS2024Page = extend<{
                     infosClassName,
                 },
             ])}
+            prepend={
+                <div className={`${classNameModule}-logo`}>
+                    <span className="top"></span>
+                    <span className="bottom">
+                        {Boolean(subtitle) && <em>{subtitle}</em>}
+                    </span>
+                </div>
+            }
             {...props}
         >
             {Array.isArray(infos) &&
