@@ -114,6 +114,7 @@ const cellGroupAircrafts: CellGroupType = {
             backgroundSize: 'auto 175%',
             backgroundPosition: '50% 55%',
             bgMaskOrientation: 'horizontal',
+            rowSpan: 2,
             style: {
                 '--mask-min-width': '100%',
             },
@@ -123,11 +124,23 @@ const cellGroupAircrafts: CellGroupType = {
             infos: ['修复：平台周围地效突变', '修复：飞行开始时无故弹跳'],
             img: require('./imgs/2025-02-06-02-06-12.png'),
             backgroundSize: 'auto 250%',
-            backgroundPosition: '60% 60%',
+            backgroundPosition: '40% 60%',
             // bgMaskOrientation: 'horizontal',
             style: {
                 // '--mask-min-width': '100%',
-                '--mask-height-vertical': '85%',
+                '--mask-height-vertical': '250%',
+            },
+        },
+        {
+            title: '空客大型机',
+            infos: ['修复：结束飞行崩溃'],
+            img: require('./imgs/20241217220519_1.jpg'),
+            backgroundSize: '150% auto',
+            backgroundPosition: '0% 70%',
+            // bgMaskOrientation: 'horizontal',
+            style: {
+                // '--mask-min-width': '100%',
+                '--mask-height-vertical': '100%',
             },
         },
     ],
@@ -136,19 +149,19 @@ const cellGroupAircrafts: CellGroupType = {
 const cellGroupAircrafts2: CellGroupType = {
     name: 'aircrafts-2',
     cells: [
-        {
-            title: '空客大型机',
-            infos: ['修复：结束飞行崩溃'],
-            img: require('./imgs/20241217220519_1.jpg'),
-            backgroundSize: 'auto 175%',
-            backgroundPosition: '45% 95%',
-            textSize: 'sm',
-            // bgMaskOrientation: 'horizontal',
-            // style: {
-            //     '--mask-min-width': '100%',
-            //     '--mask-height-horizontal': '200%',
-            // },
-        },
+        // {
+        //     title: '空客大型机',
+        //     infos: ['修复：结束飞行崩溃'],
+        //     img: require('./imgs/20241217220519_1.jpg'),
+        //     backgroundSize: 'auto 175%',
+        //     backgroundPosition: '45% 95%',
+        //     textSize: 'sm',
+        //     // bgMaskOrientation: 'horizontal',
+        //     // style: {
+        //     //     '--mask-min-width': '100%',
+        //     //     '--mask-height-horizontal': '200%',
+        //     // },
+        // },
         {
             title: '波音 737 MAX-8',
             infos: ['更正：减推力起飞', '更正：爬升推力'],
@@ -167,7 +180,7 @@ const cellGroupAircrafts2: CellGroupType = {
             infos: ['修复：MFD“圆点”'],
             img: require('./imgs/20241129235137_1.jpg'),
             backgroundSize: 'auto 250%',
-            backgroundPosition: '40% 85%',
+            backgroundPosition: '42% 90%',
             textSize: 'sm',
             // bgMaskOrientation: 'horizontal',
             // style: {
@@ -176,17 +189,32 @@ const cellGroupAircrafts2: CellGroupType = {
             // },
         },
         {
-            title: '西锐 VisionJet',
-            infos: ['实装：电子检查单'],
-            img: require('./imgs/2025-02-04-04-31-10.png'),
-            backgroundSize: 'auto 200%',
-            backgroundPosition: '45% 70%',
+            title: 'PC-12 NGx',
+            infos: ['实装：机舱加压'],
+            img: require('./imgs/20241221001654_1.jpg'),
+            backgroundSize: 'auto 400%',
+            backgroundPosition: '50% 68%',
             textSize: 'sm',
             // bgMaskOrientation: 'horizontal',
-            // style: {
-            //     '--mask-min-width': '100%',
-            //     '--mask-height-horizontal': '200%',
-            // },
+            style: {
+                // '--mask-min-width': '100%',
+                // '--mask-height-horizontal': '200%',
+                '--mask-opacity': '0.7',
+            },
+        },
+        {
+            title: 'SF50 VisionJet',
+            infos: ['实装：电子检查单'],
+            img: require('./imgs/2025-02-04-04-24-47.png'),
+            backgroundSize: 'auto 175%',
+            backgroundPosition: '22% 90%',
+            textSize: 'sm',
+            // bgMaskOrientation: 'horizontal',
+            style: {
+                // '--mask-min-width': '100%',
+                // '--mask-height-horizontal': '200%',
+                '--mask-opacity': '0.5',
+            },
         },
     ],
 };
@@ -240,7 +268,7 @@ const cellGroupRight: CellGroupType = {
         },
         {
             title: '画面渲染',
-            infos: ['修复：地面材质模糊', '修复：建筑上“峭壁”'],
+            infos: ['修复：地面材质模糊', '修复：建筑“峭壁”材质'],
             img: require('./imgs/2025-02-04-04-34-29.png'),
             backgroundSize: '150% auto',
             backgroundPosition: '50% 50%',

@@ -8,6 +8,7 @@
     --mask-gradient-angle: 75deg;
     --mask-height-vertical: 10vh;
     --mask-height-horizontal: 100%;
+    --mask-opacity: 1;
 
     position: relative;
 
@@ -62,12 +63,12 @@
             rgba(0, 0, 0, 0) 100%
         );
         width: 100%;
+        min-width: var(--mask-min-width);
         height: var(--mask-height-vertical);
         bottom: 0;
         left: 0;
         z-index: 1;
-
-        min-width: var(--mask-min-width);
+        opacity: var(--mask-opacity);
     }
 
     &.is-mask {
