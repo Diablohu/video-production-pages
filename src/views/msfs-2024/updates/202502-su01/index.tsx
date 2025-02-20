@@ -163,11 +163,11 @@ const cellGroupAircrafts2: CellGroupType = {
         //     // },
         // },
         {
-            title: '波音 737 MAX-8',
-            infos: ['更正：减推力起飞', '更正：爬升推力'],
-            img: require('./imgs/2025-01-03-02-23-13.png'),
-            backgroundSize: 'auto 800%',
-            backgroundPosition: '33% 48%',
+            title: '佳明 G1000',
+            infos: ['修复：MFD“圆点”'],
+            img: require('./imgs/20241129235137_1.jpg'),
+            backgroundSize: 'auto 250%',
+            backgroundPosition: '42% 90%',
             textSize: 'sm',
             // bgMaskOrientation: 'horizontal',
             // style: {
@@ -176,11 +176,11 @@ const cellGroupAircrafts2: CellGroupType = {
             // },
         },
         {
-            title: '佳明 G1000',
-            infos: ['修复：MFD“圆点”'],
-            img: require('./imgs/20241129235137_1.jpg'),
-            backgroundSize: 'auto 250%',
-            backgroundPosition: '42% 90%',
+            title: '波音 737 MAX-8',
+            infos: ['更正：减推力起飞', '更正：爬升推力'],
+            img: require('./imgs/2025-01-03-02-23-13.png'),
+            backgroundSize: 'auto 800%',
+            backgroundPosition: '33% 48%',
             textSize: 'sm',
             // bgMaskOrientation: 'horizontal',
             // style: {
