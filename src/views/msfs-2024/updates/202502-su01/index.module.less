@@ -85,8 +85,11 @@
             grid-row: 3 / span 1;
             margin-bottom: calc(var(--gap) * -3);
             .grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(4, 1fr);
                 .cell {
+                    padding-left: 0;
+                    padding-right: 0;
+                    align-items: center;
                     // padding: 0;
                     &::before {
                         background: linear-gradient(
@@ -99,16 +102,17 @@
                         bottom: 0;
                         left: 0;
                     }
-                    // strong {
-                    //     position: absolute;
-                    //     top: 0;
-                    //     left: 15px;
-                    //     height: 100%;
-                    //     display: flex;
-                    //     flex-flow: column nowrap;
-                    //     font-size: unit(4/3, em);
-                    //     justify-content: center;
-                    // }
+                    strong {
+                        transform-origin: 50% 50%;
+                        // position: absolute;
+                        // top: 0;
+                        // left: 15px;
+                        // height: 100%;
+                        // display: flex;
+                        // flex-flow: column nowrap;
+                        // font-size: unit(4/3, em);
+                        // justify-content: center;
+                    }
                 }
             }
         }

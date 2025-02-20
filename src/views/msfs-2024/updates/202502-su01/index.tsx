@@ -109,7 +109,7 @@ const cellGroupAircrafts: CellGroupType = {
                     <small>PC-21 NGx / PC-24</small>Primus Epic 2
                 </>
             ),
-            infos: ['部分设置可自动保存', 'MFD可查看航图', '超多交互修正'],
+            infos: ['部分设置可自动保存', '实装：MFD查看航图', '多项交互修正'],
             img: require('./imgs/20250203012746_1.jpg'),
             backgroundSize: 'auto 175%',
             backgroundPosition: '50% 55%',
@@ -138,10 +138,11 @@ const cellGroupAircrafts2: CellGroupType = {
     cells: [
         {
             title: '空客大型机',
-            infos: ['修复：结束飞行时崩溃'],
+            infos: ['修复：结束飞行崩溃'],
             img: require('./imgs/20241217220519_1.jpg'),
             backgroundSize: 'auto 175%',
             backgroundPosition: '45% 95%',
+            textSize: 'sm',
             // bgMaskOrientation: 'horizontal',
             // style: {
             //     '--mask-min-width': '100%',
@@ -150,10 +151,11 @@ const cellGroupAircrafts2: CellGroupType = {
         },
         {
             title: '波音 737 MAX-8',
-            infos: ['更正减推力起飞逻辑', '更正爬升推力逻辑'],
+            infos: ['更正：减推力起飞', '更正：爬升推力'],
             img: require('./imgs/2025-01-03-02-23-13.png'),
             backgroundSize: 'auto 800%',
             backgroundPosition: '33% 48%',
+            textSize: 'sm',
             // bgMaskOrientation: 'horizontal',
             // style: {
             //     '--mask-min-width': '100%',
@@ -166,6 +168,20 @@ const cellGroupAircrafts2: CellGroupType = {
             img: require('./imgs/20241129235137_1.jpg'),
             backgroundSize: 'auto 250%',
             backgroundPosition: '40% 85%',
+            textSize: 'sm',
+            // bgMaskOrientation: 'horizontal',
+            // style: {
+            //     '--mask-min-width': '100%',
+            //     '--mask-height-horizontal': '200%',
+            // },
+        },
+        {
+            title: '西锐 VisionJet',
+            infos: ['实装：电子检查单'],
+            img: require('./imgs/2025-02-04-04-31-10.png'),
+            backgroundSize: 'auto 200%',
+            backgroundPosition: '45% 70%',
+            textSize: 'sm',
             // bgMaskOrientation: 'horizontal',
             // style: {
             //     '--mask-min-width': '100%',
