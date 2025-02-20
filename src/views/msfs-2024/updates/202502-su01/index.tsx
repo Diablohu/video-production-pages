@@ -106,7 +106,7 @@ const cellGroupAircrafts: CellGroupType = {
         {
             title: (
                 <>
-                    <small>PC-21 NGx / PC-24</small>Primus Epic 2
+                    <small>PC-12 NGx / PC-24</small>Primus Epic 2
                 </>
             ),
             infos: ['部分设置可自动保存', '实装：MFD查看航图', '多项交互修正'],
