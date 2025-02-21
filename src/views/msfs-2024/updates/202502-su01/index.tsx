@@ -12,16 +12,21 @@ const cellGroupLeft: CellGroupType = {
     cells: [
         {
             title: '正式开放',
-            infos: ['旧版插件自动继承', '新版插件可选升级'],
+            infos: [
+                '免费赠送：塞斯纳185F',
+                '旧版插件自动继承',
+                '新版插件可选升级',
+            ],
             // rowSpan: 3,
             columnSpan: 2,
-            img: require('./imgs/20241126031220_1.jpg'),
-            backgroundSize: 'auto 175%',
-            backgroundPosition: '10% 26%',
-            // bgMaskOrientation: 'horizontal',
+            img: require('./imgs/c185f.png'),
+            backgroundSize: 'auto 190%',
+            backgroundPosition: '25% 100%',
+            bgMaskOrientation: 'horizontal',
             style: {
                 // '--mask-min-width': '100%',
-                '--mask-height-vertical': '125%',
+                '--mask-height-horizontal': '100%',
+                '--mask-opacity': '0.666',
             },
         },
         {
@@ -190,10 +195,10 @@ const cellGroupAircrafts2: CellGroupType = {
         },
         {
             title: 'PC-12 NGx',
-            infos: ['实装：机舱加压'],
+            infos: ['实装：机舱加压', '修复：自动油门'],
             img: require('./imgs/20241221001654_1.jpg'),
             backgroundSize: 'auto 400%',
-            backgroundPosition: '50% 68%',
+            backgroundPosition: '50% 71%',
             textSize: 'sm',
             // bgMaskOrientation: 'horizontal',
             style: {
@@ -254,7 +259,11 @@ const cellGroupRight: CellGroupType = {
         },
         {
             title: '自由飞行',
-            infos: ['自选时间解绑真实气象', '自定气象自动保存'],
+            infos: [
+                '修复：多人模式',
+                '自选时间解绑真实气象',
+                '自定气象自动保存',
+            ],
             img: require('./imgs/2025-01-02-05-00-44.png'),
             backgroundSize: '150% auto',
             backgroundPosition: '50% 65%',
