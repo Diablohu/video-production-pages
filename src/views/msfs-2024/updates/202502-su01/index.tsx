@@ -261,7 +261,7 @@ const cellGroupRight: CellGroupType = {
             title: '自由飞行',
             infos: [
                 '修复：多人模式',
-                '自选时间解绑真实气象',
+                '自选时间解绑历史气象',
                 '自定气象自动保存',
             ],
             img: require('./imgs/2025-01-02-05-00-44.png'),
