@@ -276,8 +276,12 @@ const cellGroupRight: CellGroupType = {
             },
         },
         {
-            title: '画面渲染',
-            infos: ['修复：地面材质模糊', '修复：建筑“峭壁”材质'],
+            title: '其他',
+            infos: [
+                '修复：地面材质模糊',
+                '修复：建筑“峭壁”材质',
+                '修复：按键绑定轴反馈',
+            ],
             img: require('./imgs/2025-02-04-04-34-29.png'),
             backgroundSize: '150% auto',
             backgroundPosition: '50% 50%',

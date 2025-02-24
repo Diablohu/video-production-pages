@@ -6,7 +6,7 @@ import {
 import { extend } from 'koot';
 import classNames from 'classnames';
 
-import styles from './index.module.less';
+import styles, { wrapper as classNameModule } from './index.module.less';
 
 // ============================================================================
 
@@ -14,7 +14,14 @@ export type CellProps = {
     /** 标题 */
     title: string | JSX.Element;
     /** 细节信息 */
-    infos?: string[];
+    infos?: Array<
+        | string
+        | JSX.Element
+        | {
+              type: 'fix' | 'new' | 'implement' | 'change' | 'remove';
+              content: string | JSX.Element;
+          }
+    >;
     /** 配图 */
     img?: string;
     mask?: boolean;
@@ -73,9 +80,17 @@ const Cell = extend<CellProps>({
             {children ?? (
                 <>
                     <strong>{title}</strong>
-                    {infos?.map((info, index) => (
-                        <span key={index}>{info}</span>
-                    ))}
+                    {infos?.map((info, index) => {
+                        if (typeof info === 'object' && 'content' in info) {
+                            return (
+                                <span key={index}>
+                                    <CellTag type={info.type}></CellTag>
+                                    {info.content}
+                                </span>
+                            );
+                        }
+                        return <span key={index}>{info}</span>;
+                    })}
                 </>
             )}
         </div>
@@ -83,3 +98,38 @@ const Cell = extend<CellProps>({
 });
 
 export default Cell;
+
+// ============================================================================
+
+export const CellTag = extend<
+    {
+        type: Exclude<
+            Required<CellProps>['infos'][0],
+            string | JSX.Element
+        >['type'];
+    } & DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>
+>({})(({ className, type = 'new', children, ...props }) => {
+    return (
+        <small
+            className={classNames([
+                className,
+                `${classNameModule}-cell-tag`,
+                `is-type-${type}`,
+            ])}
+            {...props}
+        >
+            {children ??
+                (type === 'fix'
+                    ? '修正'
+                    : type === 'new'
+                      ? '新'
+                      : type === 'implement'
+                        ? '实装'
+                        : type === 'change'
+                          ? '变更'
+                          : type === 'remove'
+                            ? '移除'
+                            : type)}
+        </small>
+    );
+});
