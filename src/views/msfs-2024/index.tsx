@@ -26,6 +26,7 @@ export type CellType = {
     backgroundSize?: string;
     /** CSS Style: background-position */
     backgroundPosition?: string;
+    delayed?: boolean;
     cells?: CellType[];
 } & Partial<CellProps>;
 

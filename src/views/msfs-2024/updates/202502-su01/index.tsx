@@ -11,9 +11,14 @@ const cellGroupLeft: CellGroupType = {
     title: '内置市场',
     cells: [
         {
-            title: '正式开放',
+            title: (
+                <>
+                    <small>延期了！</small>即将开放
+                </>
+            ),
             infos: [
                 '免费赠送：塞斯纳185F',
+                '（市场延期，但飞机已送出）',
                 '旧版插件自动继承',
                 '新版插件可选升级',
             ],
@@ -180,19 +185,19 @@ const cellGroupAircrafts2: CellGroupType = {
             //     '--mask-height-horizontal': '200%',
             // },
         },
-        {
-            title: '波音 737 MAX-8',
-            infos: ['更正：减推力起飞', '更正：爬升推力'],
-            img: require('./imgs/2025-01-03-02-23-13.png'),
-            backgroundSize: 'auto 800%',
-            backgroundPosition: '33% 48%',
-            textSize: 'sm',
-            // bgMaskOrientation: 'horizontal',
-            // style: {
-            //     '--mask-min-width': '100%',
-            //     '--mask-height-horizontal': '200%',
-            // },
-        },
+        // {
+        //     title: '波音 737 MAX-8',
+        //     infos: ['更正：减推力起飞', '更正：爬升推力'],
+        //     img: require('./imgs/2025-01-03-02-23-13.png'),
+        //     backgroundSize: 'auto 800%',
+        //     backgroundPosition: '33% 48%',
+        //     textSize: 'sm',
+        //     // bgMaskOrientation: 'horizontal',
+        //     // style: {
+        //     //     '--mask-min-width': '100%',
+        //     //     '--mask-height-horizontal': '200%',
+        //     // },
+        // },
         {
             title: 'PC-12 NGx',
             infos: ['实装：机舱加压', '修复：自动油门'],
@@ -221,6 +226,19 @@ const cellGroupAircrafts2: CellGroupType = {
                 '--mask-opacity': '0.5',
             },
         },
+        {
+            title: '其他大量机型改进',
+            infos: ['请参阅补丁说明', '几乎所有新机型'],
+            img: require('./imgs/2025-01-03-02-23-13.png'),
+            backgroundSize: 'auto 800%',
+            backgroundPosition: '33% 48%',
+            textSize: 'sm',
+            // bgMaskOrientation: 'horizontal',
+            // style: {
+            //     '--mask-min-width': '100%',
+            //     '--mask-height-horizontal': '200%',
+            // },
+        },
     ],
 };
 
@@ -245,7 +263,7 @@ const cellGroupRight: CellGroupType = {
         },
         {
             title: '飞行员生涯',
-            infos: ['修复：本地午夜报错'],
+            infos: ['修复：襟翼超速', '修复：乘客外挂', '修复：本地午夜报错'],
             img: require('./imgs/20241124224853_1.jpg'),
             backgroundSize: 'auto 450%',
             backgroundPosition: '48% 46%',
