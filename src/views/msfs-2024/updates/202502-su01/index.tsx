@@ -228,7 +228,7 @@ const cellGroupAircrafts2: CellGroupType = {
         },
         {
             title: '其他大量机型改进',
-            infos: ['请参阅补丁说明', '几乎所有新机型'],
+            infos: ['请参阅补丁说明', '涉及几乎所有机型'],
             img: require('./imgs/2025-01-03-02-23-13.png'),
             backgroundSize: 'auto 800%',
             backgroundPosition: '33% 48%',
@@ -296,8 +296,8 @@ const cellGroupRight: CellGroupType = {
         {
             title: '其他',
             infos: [
-                '修复：地面材质模糊',
                 '修复：建筑“峭壁”材质',
+                '修复：飞机注册号失效',
                 '修复：按键绑定轴反馈',
             ],
             img: require('./imgs/2025-02-04-04-34-29.png'),
