@@ -11,14 +11,10 @@ const cellGroupLeft: CellGroupType = {
     title: '内置市场',
     cells: [
         {
-            title: (
-                <>
-                    <small>延期了！</small>即将开放
-                </>
-            ),
+            title: <>正式开放</>,
             infos: [
                 '免费赠送：塞斯纳185F',
-                '（市场延期，但飞机已送出）',
+                '免费赠送：CAP-4',
                 '旧版插件自动继承',
                 '新版插件可选升级',
             ],
@@ -34,12 +30,37 @@ const cellGroupLeft: CellGroupType = {
                 '--mask-opacity': '0.666',
             },
         },
+        // {
+        //     title: <>新方式：租赁</>,
+        //     infos: ['购买时补差价'],
+        //     img: require('./imgs/20241201000704_1.jpg'),
+        //     backgroundSize: '150% auto',
+        //     backgroundPosition: '0 40%',
+        //     bgMaskOrientation: 'horizontal',
+        //     style: {
+        //         '--mask-min-width': '100%',
+        //         '--mask-height-horizontal': '100%',
+        //     },
+        // },
+        // {
+        //     title: <>新方式：赠礼</>,
+        //     infos: ['为好友购买'],
+        //     img: require('./imgs/20241026220555_1.jpg'),
+        //     backgroundSize: '275% auto',
+        //     backgroundPosition: '27% 65%',
+        //     bgMaskOrientation: 'horizontal',
+        //     style: {
+        //         '--mask-min-width': '100%',
+        //         '--mask-height-horizontal': '200%',
+        //     },
+        // },
         {
-            title: <>新方式：租赁</>,
-            infos: ['购买时补差价'],
-            img: require('./imgs/20241201000704_1.jpg'),
-            backgroundSize: '150% auto',
-            backgroundPosition: '0 40%',
+            title: <>世界更新#19</>,
+            infos: ['巴西、苏里南、圭亚那、法属圭亚那'],
+            columnSpan: 2,
+            img: require('./imgs/MSFS2024_WU19_Rio_12K_300dpi.png'),
+            backgroundSize: '275% auto',
+            backgroundPosition: '0% 37%',
             bgMaskOrientation: 'horizontal',
             style: {
                 '--mask-min-width': '100%',
@@ -47,20 +68,8 @@ const cellGroupLeft: CellGroupType = {
             },
         },
         {
-            title: <>新方式：赠礼</>,
-            infos: ['为好友购买'],
-            img: require('./imgs/20241026220555_1.jpg'),
-            backgroundSize: '275% auto',
-            backgroundPosition: '27% 65%',
-            bgMaskOrientation: 'horizontal',
-            style: {
-                '--mask-min-width': '100%',
-                '--mask-height-horizontal': '200%',
-            },
-        },
-        {
             title: <>全新打分机制</>,
-            infos: ['音画表现 & 拟真度'],
+            infos: ['技术质量 & 真实度'],
             img: require('./imgs/20250118212354_1.jpg'),
             backgroundSize: 'auto 200%',
             backgroundPosition: '15% 100%',
@@ -71,15 +80,15 @@ const cellGroupLeft: CellGroupType = {
             },
         },
         {
-            title: <>高级附加内容</>,
-            infos: ['提供零售'],
-            img: require('./imgs/20240803041415_1.jpg'),
-            backgroundSize: '175% auto',
-            backgroundPosition: '55% 47%',
+            title: <>豪华版内容</>,
+            infos: ['部分提供零售'],
+            img: require('./imgs/2025-01-11-04-33-09.png'),
+            backgroundSize: '700% auto',
+            backgroundPosition: '28% 32%',
             bgMaskOrientation: 'horizontal',
             style: {
-                '--mask-min-width': '100%',
-                '--mask-height-horizontal': '100%',
+                '--mask-min-width': '110%',
+                '--mask-height-horizontal': '300%',
             },
         },
         {
