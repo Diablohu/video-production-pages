@@ -3,14 +3,17 @@ import { extend } from 'koot';
 import classNames from 'classnames';
 import dayjs from 'dayjs';
 
-import FooterInfo from '@components/footer-info';
+import FooterInfo, {
+    type Props as FooterInfoProps,
+} from '@components/footer-info';
 
 import styles from './page.module.less';
 
 // ============================================================================
 
-interface ComponentProps {
-    updateDate?: string | boolean;
+export interface Props {
+    updateDate?: FooterInfoProps['date'] | boolean;
+    footerContent?: FooterInfoProps['content'];
     classNameBody?: string;
     prepend?: React.ReactNode;
 }
@@ -19,7 +22,7 @@ export type ViewType = 'output' | 'mask' | 'backdrop-mask' | 'watermark';
 
 // Functional Component =======================================================
 
-const Page = extend<ComponentProps>({
+const Page = extend<Props>({
     styles,
 })(({
     className,
@@ -27,6 +30,7 @@ const Page = extend<ComponentProps>({
     classNameBody,
     children,
     updateDate,
+    footerContent,
     prepend,
 }): JSX.Element => {
     const [viewType, setViewType] = useState<ViewType>();
@@ -83,6 +87,7 @@ const Page = extend<ComponentProps>({
                                   .format('YYYY-MM-DD')
                             : updateDate
                     }
+                    content={footerContent}
                 />
             )}
         </div>

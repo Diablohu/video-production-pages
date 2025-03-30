@@ -1,0 +1,65 @@
+@import '~vars.less';
+
+.component {
+    // grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 3fr 10fr 3fr;
+    // grid-template-rows: var(--title-cell-height) 7fr repeat(3, 3fr);
+    grid-template-rows: 1fr;
+
+    .group {
+        .grid {
+            grid-template-rows: 6fr 5fr 5fr 5fr 3fr;
+            .cell {
+                :not(.mod-type-center) {
+                    padding: 0 0 unit(100 * 17.5px / 1920px, vw)
+                        unit(100 * 30px / 1920px, vw);
+                }
+                strong {
+                    font-size: 1.6em;
+                    line-height: 1.2em;
+                    font-weight: 900;
+                    small {
+                        display: block;
+                        line-height: 1em;
+                        font-weight: normal;
+                        font-size: unit(3/4, em);
+                        margin-bottom: 0.1em;
+                        margin-left: -0.2em;
+                    }
+                }
+                span {
+                    font-size: 1.2em;
+                    line-height: 1.35em;
+                }
+            }
+        }
+
+        // &[data-name='marketplace'] .cell:nth-child(1),
+        // &[data-name='aircrafts'] .cell:nth-child(1) {
+        //     strong {
+        //         font-size: 2.25em;
+        //         small {
+        //             font-size: unit(3/5, em);
+        //         }
+        //     }
+        //     span {
+        //         font-size: 1.4em;
+        //         line-height: 1.5em;
+        //     }
+        // }
+
+        &[data-name='aircrafts'] {
+            .grid {
+            }
+        }
+
+        &[data-name='general'] {
+            .grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        &[data-name='career'] {
+        }
+    }
+}

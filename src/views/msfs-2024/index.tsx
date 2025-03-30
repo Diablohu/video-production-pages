@@ -8,7 +8,7 @@ import { extend } from 'koot';
 import classNames from 'classnames';
 
 import Cell, { type CellProps } from '@components/cell';
-import Page from '@views/page';
+import Page, { type Props as PageProps } from '@views/page';
 
 import styles, { wrapper as classNameModule } from './index.module.less';
 
@@ -40,12 +40,14 @@ export interface CellGroupType {
 
 // Functional Component =======================================================
 
-const MSFS2024Page = extend<{
-    classNameBody?: string;
-    subtitle?: string;
-    infos?: CellGroupType[];
-    infosClassName?: string;
-}>({
+const MSFS2024Page = extend<
+    {
+        classNameBody?: string;
+        subtitle?: string;
+        infos?: CellGroupType[];
+        infosClassName?: string;
+    } & Pick<PageProps, 'updateDate' | 'footerContent'>
+>({
     styles,
 })(({
     className,
@@ -54,13 +56,16 @@ const MSFS2024Page = extend<{
     subtitle = '',
     infos,
     infosClassName,
+    updateDate = true,
+    footerContent,
     ...props
 }) => {
     const isInfos = useMemo(() => Array.isArray(infos), [infos]);
 
     return (
         <Page
-            updateDate={true}
+            updateDate={updateDate}
+            footerContent={footerContent}
             className={classNames(className)}
             classNameBody={classNames(classNameBody, [
                 {
