@@ -26,8 +26,18 @@ textarea {
 // global styles --------------------------------------------------------------
 
 :root {
+    @font-face {
+        font-family: 'Helvetica Compressed';
+        font-display: swap;
+        src:
+            local(sans-serif),
+            url('./assets/public/fonts/Helvetica-Compressed.otf')
+                format('truetype');
+    }
+
     --logo-skew: -11deg;
-    --logo-font-family: Helvetica, alibaba-puhuiti, sans-serif;
+    --logo-font-family: 'Helvetica Compressed', Helvetica, alibaba-puhuiti,
+        sans-serif;
     --color-purple: #6a14d1;
 }
 
