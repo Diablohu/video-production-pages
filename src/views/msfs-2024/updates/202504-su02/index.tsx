@@ -16,7 +16,7 @@ const cellGroupAircrafts: CellGroupType = {
                     <small>综合改进</small>风挡 & 玻璃
                 </>
             ),
-            infos: ['反光、反射、雨水'],
+            infos: ['反光、反射、雨滴'],
             img: require('./imgs/2025-02-04-03-13-22.png'),
             backgroundSize: 'auto 175%',
             backgroundPosition: '0% 70%',
@@ -89,8 +89,8 @@ const cellGroupAircrafts: CellGroupType = {
             bgMaskOrientation: 'horizontal',
             // textSize: 'sm',
             style: {
-                '--mask-min-width': '125%',
-                '--mask-opacity': '0.75',
+                '--mask-min-width': '133%',
+                '--mask-opacity': '1',
                 justifyContent: 'center',
                 paddingBottom: '0',
             },
@@ -156,7 +156,7 @@ const cellGroupGeneral: CellGroupType = {
         },
         {
             title: <>VR 模式体验</>,
-            infos: ['修正工具栏交互', '修正 EFB 交互'],
+            infos: ['修正交互：工具栏', '修正交互：EFB'],
             columnSpan: 2,
             img: require('./imgs/vr.webp'),
             backgroundSize: 'auto 220%',
@@ -164,6 +164,7 @@ const cellGroupGeneral: CellGroupType = {
             bgMaskOrientation: 'horizontal',
             style: {
                 '--mask-min-width': '175%',
+                '--mask-opacity': '1',
             },
         },
         {
@@ -177,7 +178,8 @@ const cellGroupGeneral: CellGroupType = {
                     type: 'new',
                     content: '设置自动保存',
                 },
-                '飞行计划交互优化',
+                '交互优化：飞行计划',
+                '交互优化：飞机配载',
                 '键入不再触发游戏操作',
             ],
             columnSpan: 2,
@@ -188,7 +190,8 @@ const cellGroupGeneral: CellGroupType = {
             bgMaskOrientation: 'horizontal',
             style: {
                 '--mask-min-width': '150%',
-                '--mask-opacity': '0.75',
+                // '--mask-min-height': '500%',
+                // '--mask-opacity': '0.9',
             },
         },
         {
@@ -198,7 +201,7 @@ const cellGroupGeneral: CellGroupType = {
                     type: 'new',
                     content: '水上机场过滤器',
                 },
-                '确保机场可搜索',
+                '确保机场搜索功能可用',
             ],
             columnSpan: 2,
             img: require('../../gameplay/imgs/earth.jpg'),
@@ -228,24 +231,6 @@ const cellGroupGeneral: CellGroupType = {
             },
         },
         {
-            title: <>画面</>,
-            infos: [
-                {
-                    type: 'new',
-                    content: '自动曝光系数',
-                },
-                '调整手电自动开关规则',
-            ],
-            columnSpan: 2,
-            img: require('./imgs/20241226022349_1.jpg'),
-            backgroundSize: 'auto 500%',
-            backgroundPosition: '60% 55%',
-            bgMaskOrientation: 'horizontal',
-            style: {
-                '--mask-min-width': '125%',
-            },
-        },
-        {
             title: <>渲染技术</>,
             infos: [
                 {
@@ -267,6 +252,23 @@ const cellGroupGeneral: CellGroupType = {
             },
         },
         {
+            title: <>画面</>,
+            infos: [
+                {
+                    type: 'new',
+                    content: '自动曝光系数',
+                },
+            ],
+            columnSpan: 2,
+            img: require('./imgs/20241226022349_1.jpg'),
+            backgroundSize: 'auto 500%',
+            backgroundPosition: '60% 55%',
+            bgMaskOrientation: 'horizontal',
+            style: {
+                '--mask-min-width': '125%',
+            },
+        },
+        {
             title: <>按键绑定</>,
             infos: [
                 {
@@ -285,7 +287,7 @@ const cellGroupGeneral: CellGroupType = {
         },
         {
             title: <></>,
-            infos: ['调整绿植生成规则'],
+            infos: ['调整：绿植生成规则'],
             columnSpan: 2,
             img: require('./imgs/WU19_MSFS2024_Screenshots_02.jpg'),
             backgroundSize: '150% auto',
@@ -300,7 +302,7 @@ const cellGroupGeneral: CellGroupType = {
         },
         {
             title: <></>,
-            infos: ['调整水岸结冰效果'],
+            infos: ['调整：水岸结冰效果'],
             columnSpan: 2,
             img: require('./imgs/2025-01-01-02-17-13.png'),
             backgroundSize: '300% auto',
@@ -316,7 +318,7 @@ const cellGroupGeneral: CellGroupType = {
         },
         {
             title: <></>,
-            infos: ['更正字幕播放速度'],
+            infos: ['更正：字幕播放速度'],
             columnSpan: 2,
             img: require('./imgs/20240803041415_1.jpg'),
             backgroundSize: 'auto 250%',
@@ -337,28 +339,20 @@ const cellGroupCareer: CellGroupType = {
     title: '飞行员生涯',
     cells: [
         {
-            title: <>任务过滤器</>,
+            title: <>任务列表</>,
             infos: [
                 {
                     type: 'new',
-                    content: '按类型',
-                },
-                {
-                    type: 'new',
-                    content: '按难度',
-                },
-                {
-                    type: 'new',
-                    content: '按机型',
+                    content: '任务过滤器',
                 },
             ],
             rowSpan: 2,
             img: require('./imgs/20241124224853_1.jpg'),
             backgroundSize: 'auto 225%',
-            backgroundPosition: '60% 60%',
+            backgroundPosition: '60% 55%',
             bgMaskOrientation: 'vertical',
             style: {
-                '--mask-height-vertical': '125%',
+                '--mask-height-vertical': '100%',
             },
         },
         {
