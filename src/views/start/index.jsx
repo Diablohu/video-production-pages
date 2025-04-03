@@ -49,7 +49,7 @@ const PageStart = extend({
                 </Link> | <BtnUpdateAppType />
             </p>
         </Center>
-    ))
+    )),
 );
 
 export default PageStart;
@@ -106,7 +106,7 @@ const BtnUpdateAppType = extend({
                 })}
             </button>
         );
-    })
+    }),
 );
 function makeid(length) {
     let result = '';
@@ -115,7 +115,7 @@ function makeid(length) {
     const charactersLength = characters.length;
     for (let i = 0; i < length; i++) {
         result += characters.charAt(
-            Math.floor(Math.random() * charactersLength)
+            Math.floor(Math.random() * charactersLength),
         );
     }
     return result;
