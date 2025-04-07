@@ -83,9 +83,9 @@ const cellGroupAircrafts: CellGroupType = {
         {
             title: <></>,
             infos: ['A-10 添加机炮'],
-            img: require('./imgs/2025-03-30-23-36-30.png'),
-            backgroundSize: 'auto 500%',
-            backgroundPosition: '10% 62%',
+            img: require('./imgs/2025-04-07-00-47-01.png'),
+            backgroundSize: 'auto 300%',
+            backgroundPosition: '0% 60%',
             bgMaskOrientation: 'horizontal',
             // textSize: 'sm',
             style: {
@@ -179,7 +179,7 @@ const cellGroupGeneral: CellGroupType = {
                     content: '设置自动保存',
                 },
                 '交互优化：飞行计划',
-                '交互优化：飞机配载',
+                '交互优化：配载与燃油',
                 '键入不再触发游戏操作',
             ],
             columnSpan: 2,
@@ -252,12 +252,14 @@ const cellGroupGeneral: CellGroupType = {
             },
         },
         {
-            title: <>画面</>,
+            title: <>视角控制</>,
             infos: [
-                {
-                    type: 'new',
-                    content: '自动曝光系数',
-                },
+                // {
+                //     type: 'new',
+                //     content: '自动曝光系数',
+                // },
+                '调整重置视角操作',
+                '修正绑定视角操作',
             ],
             columnSpan: 2,
             img: require('./imgs/20241226022349_1.jpg'),
@@ -275,6 +277,7 @@ const cellGroupGeneral: CellGroupType = {
                     type: 'new',
                     content: '导入 & 导出配置',
                 },
+                '为机型特定绑定增设大类',
             ],
             columnSpan: 2,
             img: require('./imgs/20241123034224_1.jpg'),
