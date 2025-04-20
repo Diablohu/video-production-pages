@@ -144,7 +144,7 @@ const cellGroupGeneral: CellGroupType = {
         },
         {
             title: <>帧率性能优化</>,
-            infos: ['排查 3D 素材显存消耗', '改进 LOD 切换算法'],
+            infos: ['优化：3D 素材显存消耗', '改进：LOD 切换算法'],
             columnSpan: 2,
             img: require('./imgs/2025-01-19-22-38-54.png'),
             backgroundSize: 'auto 200%',
@@ -176,9 +176,9 @@ const cellGroupGeneral: CellGroupType = {
                 },
                 {
                     type: 'new',
-                    content: '设置自动保存',
+                    content: '自动保存设置',
                 },
-                '交互优化：飞行计划',
+                '全新界面：飞行计划',
                 '交互优化：配载与燃油',
                 '键入不再触发游戏操作',
             ],
@@ -215,7 +215,7 @@ const cellGroupGeneral: CellGroupType = {
         {
             title: <>全球机场</>,
             infos: [
-                '翻新数据库',
+                '翻新：导航和程序数据',
                 {
                     type: 'new',
                     content: '大兴、云冈、……',
@@ -258,8 +258,8 @@ const cellGroupGeneral: CellGroupType = {
                 //     type: 'new',
                 //     content: '自动曝光系数',
                 // },
-                '调整重置视角操作',
-                '修正绑定视角操作',
+                '优化：重置视角操作',
+                '修正：绑定视角操作',
             ],
             columnSpan: 2,
             img: require('./imgs/20241226022349_1.jpg'),
