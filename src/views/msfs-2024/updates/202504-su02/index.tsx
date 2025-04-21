@@ -122,6 +122,7 @@ const cellGroupGeneral: CellGroupType = {
             },
         },
         {
+            implemented: false,
             title: <>内置市场</>,
             infos: [
                 {
@@ -170,15 +171,18 @@ const cellGroupGeneral: CellGroupType = {
         {
             title: <>EFB</>,
             infos: [
-                {
-                    type: 'new',
-                    content: '暗色航图',
-                },
+                // {
+                //     type: 'new',
+                //     content: '暗色航图',
+                // },
                 {
                     type: 'new',
                     content: '自动保存设置',
                 },
-                '全新界面：飞行计划',
+                {
+                    type: 'new',
+                    content: '交互翻新：飞行计划',
+                },
                 '交互优化：配载与燃油',
                 '键入不再触发游戏操作',
             ],
@@ -262,12 +266,13 @@ const cellGroupGeneral: CellGroupType = {
                 '修正：绑定视角操作',
             ],
             columnSpan: 2,
-            img: require('./imgs/20241226022349_1.jpg'),
-            backgroundSize: 'auto 500%',
-            backgroundPosition: '60% 55%',
+            img: require('./imgs/20250326032840_1.jpg'),
+            backgroundSize: 'auto 175%',
+            backgroundPosition: '0% 60%',
             bgMaskOrientation: 'horizontal',
             style: {
                 '--mask-min-width': '125%',
+                '--mask-opacity': '0.5',
             },
         },
         {
@@ -359,6 +364,19 @@ const cellGroupCareer: CellGroupType = {
             },
         },
         {
+            implemented: false,
+            title: <>空客大型机</>,
+            infos: ['进驻职业生涯'],
+            img: require('./imgs/20241218012225_1.jpg'),
+            backgroundSize: 'auto 140%',
+            backgroundPosition: '0% 60%',
+            bgMaskOrientation: 'horizontal',
+            style: {
+                // '--mask-height-vertical': '100%',
+                '--mask-min-width': '100%',
+            },
+        },
+        {
             title: <>打工任务</>,
             infos: ['允许调整燃油量'],
             img: require('./imgs/2025-01-10-22-51-45.png'),
@@ -371,27 +389,25 @@ const cellGroupCareer: CellGroupType = {
             },
         },
         {
-            title: <>罗宾逊 R66</>,
-            infos: ['修正停机检查'],
+            title: <></>,
+            infos: [
+                <em
+                    style={{
+                        fontStyle: 'normal',
+                        lineHeight: '1.4em',
+                    }}
+                >
+                    罗宾逊 R-66
+                    <br />
+                    修正停机检查
+                </em>,
+            ],
             img: require('./imgs/Microsoft Flight Simulator 2024 – Xbox Games Showcase 2024.mp4_20250407_111449.930.jpg'),
-            backgroundSize: '250% auto',
-            backgroundPosition: '17% 23%',
+            backgroundSize: '190% auto',
+            backgroundPosition: '0% 24%',
             bgMaskOrientation: 'horizontal',
             style: {
-                '--mask-min-width': '120%',
-                // '--mask-height-vertical': '100%',
-                // justifyContent: 'center',
-                // paddingBottom: '0',
-            },
-        },
-        {
-            title: <></>,
-            infos: ['预留……'],
-            img: require('./imgs/20250206021031_1.jpg'),
-            backgroundSize: '150% auto',
-            backgroundPosition: '50% 40%',
-            style: {
-                '--mask-height-vertical': '550%',
+                '--mask-min-width': '150%',
                 justifyContent: 'center',
                 paddingBottom: '0',
             },

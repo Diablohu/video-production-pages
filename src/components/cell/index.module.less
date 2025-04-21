@@ -2,6 +2,12 @@
 
 .component {
     --font-size: 0.9vw;
+    --line-height: 1.3em;
+
+    --border-width: unit(100 * 2px / 1920px, vw);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --inset-shadow-color: rgba(0, 0, 0, 0.25);
+    --inset-shadow-z-index: 100;
 
     --mask-min-width: 0;
     --mask-max-width: none;
@@ -24,7 +30,7 @@
     padding: unit(100 * 15px / 1920px, vw) unit(100 * 15px / 1920px, vw)
         unit(100 * 10px / 1920px, vw) unit(100 * 15px / 1920px, vw);
     font-size: var(--font-size);
-    line-height: 1.3em;
+    line-height: var(--line-height);
     font-style: italic;
     text-shadow: 0 unit(100 * 2px / 1920px, vw) unit(100 * 5px / 1920px, vw)
         rgba(0, 0, 0, 0.5);
@@ -148,9 +154,9 @@
 
     &.mod-infocell {
         --mask-min-width: 80%;
+        --line-height: 1.5em;
 
         padding: 0 0 unit(100 * 25px / 1920px, vw) unit(100 * 35px / 1920px, vw);
-        line-height: 1.5em;
         letter-spacing: 0.1em;
         text-shadow:
             0 unit(100 * 2px / 1920px, vw) unit(100 * 5px / 1920px, vw)
@@ -192,11 +198,11 @@
             bottom: var(--offset);
             left: var(--offset);
             right: var(--offset);
-            border: unit(100 * 2px / 1920px, vw) solid rgba(255, 255, 255, 0.1);
+            border: var(--border-width) solid var(--border-color);
             border-radius: inherit;
-            z-index: 100;
+            z-index: var(--inset-shadow-z-index);
             box-shadow: inset 0 0 unit(100 * 20px / 1920px, vw)
-                rgba(0, 0, 0, 0.25);
+                var(--inset-shadow-color);
             .mod-mask({
                 display: none;
             });

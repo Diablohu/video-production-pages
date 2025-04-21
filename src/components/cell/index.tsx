@@ -2,6 +2,7 @@ import {
     type DetailedHTMLProps,
     type HTMLAttributes,
     type CSSProperties,
+    type ReactNode,
 } from 'react';
 import { extend } from 'koot';
 import classNames from 'classnames';
@@ -31,6 +32,7 @@ export type CellProps = {
     infoCell?: boolean;
     lightBorder?: boolean;
     style?: CSSProperties & Record<string, string>;
+    extra?: ReactNode;
 } & Partial<
     Omit<
         DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
@@ -55,6 +57,7 @@ const Cell = extend<CellProps>({
     type,
     infoCell = false,
     lightBorder = true,
+    extra,
     ...props
 }) => {
     return (
@@ -93,6 +96,7 @@ const Cell = extend<CellProps>({
                     })}
                 </>
             )}
+            {extra}
         </div>
     );
 });

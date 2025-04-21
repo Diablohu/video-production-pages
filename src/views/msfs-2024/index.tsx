@@ -28,6 +28,7 @@ export type CellType = {
     backgroundPosition?: string;
     delayed?: boolean;
     cells?: CellType[];
+    implemented?: false;
 } & Partial<CellProps>;
 
 /** 信息组 */
@@ -184,8 +185,7 @@ export const InfoCell: FC<
         columnSpan?: number;
         backgroundSize?: string;
         backgroundPosition?: string;
-        title?: CellType['title'];
-    }
+    } & Partial<Pick<CellType, 'title' | 'implemented'>>
 > = ({
     className,
     rowSpan,
@@ -193,11 +193,19 @@ export const InfoCell: FC<
     backgroundSize,
     backgroundPosition,
     style = {},
+    implemented = true,
+    extra,
     ...props
 }) => {
     return (
         <Cell
-            className={classNames([`${classNameModule}-cell`, className])}
+            className={classNames([
+                `${classNameModule}-cell`,
+                className,
+                {
+                    'is-not-implemented': implemented === false,
+                },
+            ])}
             style={{
                 gridRow: rowSpan ? `span ${rowSpan}` : undefined,
                 gridColumn: columnSpan ? `span ${columnSpan}` : undefined,
@@ -207,6 +215,16 @@ export const InfoCell: FC<
             }}
             infoCell
             data-title={props.title}
+            extra={
+                implemented === false ? (
+                    <>
+                        <em className="tag-not-implemented">暂未实装</em>
+                        {extra}
+                    </>
+                ) : (
+                    extra
+                )
+            }
             {...props}
         />
     );
