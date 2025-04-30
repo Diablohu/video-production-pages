@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type HTMLAttributes } from 'react';
 import { extend } from 'koot';
 import classNames from 'classnames';
 import dayjs from 'dayjs';
@@ -11,12 +11,12 @@ import styles from './page.module.less';
 
 // ============================================================================
 
-export interface Props {
+export type Props = {
     updateDate?: FooterInfoProps['date'] | boolean;
     footerContent?: FooterInfoProps['content'];
     classNameBody?: string;
     prepend?: React.ReactNode;
-}
+} & Pick<HTMLAttributes<HTMLDivElement>, 'style'>;
 
 export type ViewType = 'output' | 'mask' | 'backdrop-mask' | 'watermark';
 
@@ -32,6 +32,7 @@ const Page = extend<Props>({
     updateDate,
     footerContent,
     prepend,
+    style,
 }): JSX.Element => {
     const [viewType, setViewType] = useState<ViewType>();
 
@@ -68,6 +69,7 @@ const Page = extend<Props>({
                     [`is-view-${viewType}`]: !!viewType && viewType,
                 },
             ])}
+            style={style}
         >
             {prepend}
             <article

@@ -1,17 +1,23 @@
 @import '~vars.less';
 
 .component {
+    --page-margin-top: 200px;
+    --page-margin-bottom: 100px;
+    --page-margin-left: 75px;
+    --page-margin-right: 75px;
+
     position: relative;
     width: 100vw;
     height: 100vh;
     color: #fff;
-    border: 75px solid transparent;
-    border-top-width: 200px;
-    border-bottom-width: 100px;
+    border: var(--page-margin-left) solid transparent;
+    border-top-width: var(--page-margin-top);
+    border-bottom-width: var(--page-margin-bottom);
     .component-body {
         position: absolute;
         width: 100%;
         height: 100%;
+        z-index: 10;
     }
     .component-footer {
         position: absolute;
@@ -19,6 +25,7 @@
         width: 100%;
         transform: translateY(100%);
         padding: 0;
+        z-index: 10;
         .mod-mask({
             display: none;
         });

@@ -35,6 +35,12 @@ export default {
 
     childRoutes: [
         ...[
+            // Schedules =================================================
+            [
+                'schedule-2025-05-01',
+                require('@views/schedule/20250501-3-weeks').default,
+            ],
+
             // MSFS 2024 ONLY =================================================
             [
                 'msfs-2024-editions',

@@ -7,6 +7,7 @@ import styles from './index.module.less';
 // ============================================================================
 
 const sections = [
+    ['Schedules', 'schedule'],
     ['MSFS 2024', 'msfs-2024'],
     ['MSFS 2020', 'update'],
     ['Procedures', 'procedures'],
