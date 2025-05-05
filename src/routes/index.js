@@ -40,6 +40,10 @@ export default {
                 'schedule-2025-05-01',
                 require('@views/schedule/20250501-3-weeks').default,
             ],
+            [
+                'schedule-2025-05-08',
+                require('@views/schedule/20250505-0511').default,
+            ],
 
             // MSFS 2024 ONLY =================================================
             [
