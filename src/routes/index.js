@@ -161,6 +161,10 @@ export default {
                 'procedures-diamond-da42-vi',
                 require('@views/procedures/diamond-da42-vi').default,
             ],
+            [
+                'procedures-airbus-a350',
+                require('@views/procedures/airbus-a350').default,
+            ],
 
             // THIRD-PARTY ====================================================
             [

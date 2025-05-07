@@ -32,8 +32,8 @@
         left: calc(1px - 1px - var(--border-width));
         width: calc(100% + var(--border-width) * 2);
         height: calc(100% + var(--border-width) * 2);
-        box-shadow: inset 0 0 2px 2px
-                fade(@shadow-color, percentage(@shadow-opacity)),
+        box-shadow:
+            inset 0 0 2px 2px fade(@shadow-color, percentage(@shadow-opacity)),
             0 0 5px 5px fade(@shadow-color, 35%);
         border-radius: inherit;
     }
@@ -83,6 +83,9 @@
             content: '';
             flex: 1;
             .dashed();
+        }
+        &:has(span:empty) {
+            gap: 0;
         }
         .fmc-success {
             color: #fff;
