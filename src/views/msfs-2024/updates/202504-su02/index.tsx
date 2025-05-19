@@ -28,6 +28,23 @@ const cellGroupAircrafts: CellGroupType = {
             },
         },
         {
+            title: (
+                <>
+                    <small>综合改进</small>桨叶视效
+                </>
+            ),
+            infos: ['反桨、喷水'],
+            img: require('./imgs/20250403234355_1.jpg'),
+            backgroundSize: 'auto 150%',
+            backgroundPosition: '0% 95%',
+            bgMaskOrientation: 'horizontal',
+            style: {
+                '--mask-min-width': '125%',
+                // '--mask-height-horizontal': '100%',
+                // '--mask-opacity': '0.666',
+            },
+        },
+        {
             title: <>G3000 & G5000</>,
             infos: [
                 {
@@ -46,7 +63,7 @@ const cellGroupAircrafts: CellGroupType = {
             style: {
                 '--mask-min-width': '125%',
                 // '--mask-height-horizontal': '100%',
-                '--mask-opacity': '0.8',
+                '--mask-opacity': '1',
             },
         },
         {
@@ -56,20 +73,42 @@ const cellGroupAircrafts: CellGroupType = {
                     type: 'new',
                     content: '垂直剖面 VSD',
                 },
+                {
+                    type: 'new',
+                    content: '地形警报 GPWS',
+                },
             ],
             img: require('./imgs/20250329003241_1.jpg'),
             backgroundSize: 'auto 700%',
             backgroundPosition: '68% 73%',
             bgMaskOrientation: 'horizontal',
             style: {
-                // '--mask-min-width': '100%',
+                '--mask-min-width': '200%',
                 // '--mask-height-horizontal': '100%',
-                '--mask-opacity': '0.5',
+                '--mask-opacity': '0.75',
+            },
+        },
+        {
+            title: <>奖状 CJ4 & 经度</>,
+            infos: [
+                {
+                    type: 'new',
+                    content: '电子检查单',
+                },
+            ],
+            img: require('./imgs/c25c_checklist.png'),
+            backgroundSize: 'auto 550%',
+            backgroundPosition: '65% 22%',
+            bgMaskOrientation: 'horizontal',
+            style: {
+                '--mask-min-width': '175%',
+                // '--mask-height-horizontal': '100%',
+                // '--mask-opacity': '0.666',
             },
         },
         {
             title: <>波音 737 MAX-8</>,
-            infos: ['应答机支持输入', '调整非仪表屏幕亮度'],
+            infos: ['应答机支持输入', '优化自动驾驶稳定性'],
             img: require('../202502-su01/imgs/2025-01-03-02-23-13.png'),
             backgroundSize: 'auto 700%',
             backgroundPosition: '27% 44%',
@@ -80,21 +119,36 @@ const cellGroupAircrafts: CellGroupType = {
                 // '--mask-opacity': '0.666',
             },
         },
-        {
-            title: <></>,
-            infos: ['A-10 添加机炮'],
-            img: require('./imgs/2025-04-07-00-47-01.png'),
-            backgroundSize: 'auto 300%',
-            backgroundPosition: '0% 60%',
-            bgMaskOrientation: 'horizontal',
-            // textSize: 'sm',
-            style: {
-                '--mask-min-width': '133%',
-                '--mask-opacity': '1',
-                justifyContent: 'center',
-                paddingBottom: '0',
-            },
-        },
+        // {
+        //     title: <></>,
+        //     infos: ['萨博340 近乎重做'],
+        //     img: require('./imgs/2025-04-07-00-47-01.png'),
+        //     backgroundSize: 'auto 300%',
+        //     backgroundPosition: '0% 60%',
+        //     bgMaskOrientation: 'horizontal',
+        //     // textSize: 'sm',
+        //     style: {
+        //         '--mask-min-width': '133%',
+        //         '--mask-opacity': '1',
+        //         justifyContent: 'center',
+        //         paddingBottom: '0',
+        //     },
+        // },
+        // {
+        //     title: <></>,
+        //     infos: ['西锐 VisionJet 结冰失速警报可重置'],
+        //     img: require('./imgs/2025-04-07-00-47-01.png'),
+        //     backgroundSize: 'auto 300%',
+        //     backgroundPosition: '0% 60%',
+        //     bgMaskOrientation: 'horizontal',
+        //     // textSize: 'sm',
+        //     style: {
+        //         '--mask-min-width': '133%',
+        //         '--mask-opacity': '1',
+        //         justifyContent: 'center',
+        //         paddingBottom: '0',
+        //     },
+        // },
     ],
 };
 
@@ -122,27 +176,46 @@ const cellGroupGeneral: CellGroupType = {
             },
         },
         {
-            implemented: false,
-            title: <>内置市场</>,
+            title: <>全球机场</>,
             infos: [
+                '翻新：导航和程序数据',
                 {
                     type: 'new',
-                    content: '限时租赁',
+                    content: '大兴、云冈、……',
                 },
-                {
-                    type: 'new',
-                    content: '赠礼购买',
-                },
+                '插件机场不会污染 LIDO 航图',
             ],
             columnSpan: 3,
-            img: require('./imgs/20241026220555_1.jpg'),
-            backgroundSize: 'auto 300%',
-            backgroundPosition: '40% 70%',
+            img: require('./imgs/20250328214822_1.jpg'),
+            backgroundSize: 'auto 250%',
+            backgroundPosition: '15% 50%',
             bgMaskOrientation: 'horizontal',
             style: {
-                // '--mask-min-width': '100%',
+                // '--mask-min-width': '200%',
             },
         },
+        // {
+        //     implemented: false,
+        //     title: <>内置市场</>,
+        //     infos: [
+        //         {
+        //             type: 'new',
+        //             content: '限时租赁',
+        //         },
+        //         {
+        //             type: 'new',
+        //             content: '赠礼购买',
+        //         },
+        //     ],
+        //     columnSpan: 3,
+        //     img: require('./imgs/20241026220555_1.jpg'),
+        //     backgroundSize: 'auto 300%',
+        //     backgroundPosition: '40% 70%',
+        //     bgMaskOrientation: 'horizontal',
+        //     style: {
+        //         // '--mask-min-width': '100%',
+        //     },
+        // },
         {
             title: <>帧率性能优化</>,
             infos: ['优化：3D 素材显存消耗', '改进：LOD 切换算法'],
@@ -171,10 +244,10 @@ const cellGroupGeneral: CellGroupType = {
         {
             title: <>EFB</>,
             infos: [
-                // {
-                //     type: 'new',
-                //     content: '暗色航图',
-                // },
+                {
+                    type: 'new',
+                    content: '暗色航图',
+                },
                 {
                     type: 'new',
                     content: '自动保存设置',
@@ -183,7 +256,9 @@ const cellGroupGeneral: CellGroupType = {
                     type: 'new',
                     content: '交互翻新：飞行计划',
                 },
+                '优化：自动生成航线',
                 '交互优化：配载与燃油',
+                '交互优化：手动刷新气象',
                 '键入不再触发游戏操作',
             ],
             columnSpan: 2,
@@ -217,21 +292,23 @@ const cellGroupGeneral: CellGroupType = {
             },
         },
         {
-            title: <>全球机场</>,
+            title: <>视角控制</>,
             infos: [
-                '翻新：导航和程序数据',
-                {
-                    type: 'new',
-                    content: '大兴、云冈、……',
-                },
+                // {
+                //     type: 'new',
+                //     content: '自动曝光系数',
+                // },
+                '优化：重置视角操作',
+                '修正：绑定视角操作',
             ],
             columnSpan: 2,
-            img: require('./imgs/20250328214822_1.jpg'),
-            backgroundSize: 'auto 250%',
-            backgroundPosition: '35% 50%',
+            img: require('./imgs/20250326032840_1.jpg'),
+            backgroundSize: 'auto 175%',
+            backgroundPosition: '0% 60%',
             bgMaskOrientation: 'horizontal',
             style: {
-                // '--mask-min-width': '200%',
+                '--mask-min-width': '125%',
+                '--mask-opacity': '0.5',
             },
         },
         {
@@ -256,23 +333,21 @@ const cellGroupGeneral: CellGroupType = {
             },
         },
         {
-            title: <>视角控制</>,
+            title: <>选项</>,
             infos: [
-                // {
-                //     type: 'new',
-                //     content: '自动曝光系数',
-                // },
-                '优化：重置视角操作',
-                '修正：绑定视角操作',
+                {
+                    type: 'new',
+                    content: '自动曝光补偿',
+                },
+                '允许减小滚动缓存',
             ],
             columnSpan: 2,
-            img: require('./imgs/20250326032840_1.jpg'),
-            backgroundSize: 'auto 175%',
-            backgroundPosition: '0% 60%',
+            img: require('./imgs/20250426021008_1.jpg'),
+            backgroundSize: '175% auto',
+            backgroundPosition: '15% 70%',
             bgMaskOrientation: 'horizontal',
             style: {
-                '--mask-min-width': '125%',
-                '--mask-opacity': '0.5',
+                // '--mask-min-width': '200%',
             },
         },
         {
@@ -356,26 +431,26 @@ const cellGroupCareer: CellGroupType = {
             ],
             rowSpan: 2,
             img: require('./imgs/20241124224853_1.jpg'),
-            backgroundSize: 'auto 225%',
-            backgroundPosition: '60% 55%',
-            bgMaskOrientation: 'vertical',
-            style: {
-                '--mask-height-vertical': '100%',
-            },
-        },
-        {
-            implemented: false,
-            title: <>空客大型机</>,
-            infos: ['进驻职业生涯'],
-            img: require('./imgs/20241218012225_1.jpg'),
-            backgroundSize: 'auto 140%',
-            backgroundPosition: '0% 60%',
+            backgroundSize: 'auto 350%',
+            backgroundPosition: '48% 48%',
             bgMaskOrientation: 'horizontal',
             style: {
-                // '--mask-height-vertical': '100%',
-                '--mask-min-width': '100%',
+                '--mask-min-width': '125%',
             },
         },
+        // {
+        //     implemented: false,
+        //     title: <>空客大型机</>,
+        //     infos: ['进驻职业生涯'],
+        //     img: require('./imgs/20241218012225_1.jpg'),
+        //     backgroundSize: 'auto 140%',
+        //     backgroundPosition: '0% 60%',
+        //     bgMaskOrientation: 'horizontal',
+        //     style: {
+        //         // '--mask-height-vertical': '100%',
+        //         '--mask-min-width': '100%',
+        //     },
+        // },
         {
             title: <>打工任务</>,
             infos: ['允许调整燃油量'],
@@ -388,30 +463,30 @@ const cellGroupCareer: CellGroupType = {
                 '--mask-min-width': '100%',
             },
         },
-        {
-            title: <></>,
-            infos: [
-                <em
-                    style={{
-                        fontStyle: 'normal',
-                        lineHeight: '1.4em',
-                    }}
-                >
-                    罗宾逊 R-66
-                    <br />
-                    修正停机检查
-                </em>,
-            ],
-            img: require('./imgs/Microsoft Flight Simulator 2024 – Xbox Games Showcase 2024.mp4_20250407_111449.930.jpg'),
-            backgroundSize: '190% auto',
-            backgroundPosition: '0% 24%',
-            bgMaskOrientation: 'horizontal',
-            style: {
-                '--mask-min-width': '150%',
-                justifyContent: 'center',
-                paddingBottom: '0',
-            },
-        },
+        // {
+        //     title: <></>,
+        //     infos: [
+        //         <em
+        //             style={{
+        //                 fontStyle: 'normal',
+        //                 lineHeight: '1.4em',
+        //             }}
+        //         >
+        //             罗宾逊 R-66
+        //             <br />
+        //             修正停机检查
+        //         </em>,
+        //     ],
+        //     img: require('./imgs/Microsoft Flight Simulator 2024 – Xbox Games Showcase 2024.mp4_20250407_111449.930.jpg'),
+        //     backgroundSize: '190% auto',
+        //     backgroundPosition: '0% 24%',
+        //     bgMaskOrientation: 'horizontal',
+        //     style: {
+        //         '--mask-min-width': '150%',
+        //         justifyContent: 'center',
+        //         paddingBottom: '0',
+        //     },
+        // },
     ],
 };
 
@@ -422,9 +497,9 @@ const ThisPage = extend({
 })(({ className }) => {
     return (
         <Page
-            footerContent="公测版已实装 & 官方预告内容"
+            footerContent="正式更新亮点内容"
             classNameBody={className}
-            infos={[cellGroupAircrafts, cellGroupGeneral, cellGroupCareer]}
+            infos={[cellGroupGeneral, cellGroupAircrafts, cellGroupCareer]}
             subtitle={
                 <>
                     <small>Sim Update</small> 02
