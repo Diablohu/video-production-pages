@@ -333,7 +333,7 @@ const cellGroupGeneral: CellGroupType = {
             },
         },
         {
-            title: <>选项</>,
+            title: <>选项设置</>,
             infos: [
                 {
                     type: 'new',
