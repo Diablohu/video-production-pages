@@ -3,7 +3,7 @@
 .component {
     // grid-template-columns: repeat(3, 1fr);
     // grid-template-columns: 3fr 10fr 3fr;
-    grid-template-columns: 10fr 6fr;
+    grid-template-columns: 10fr 3fr 3fr;
     grid-template-rows: var(--title-cell-height) 6fr repeat(3, 5fr) 3fr;
     // grid-template-rows: 1fr;
 
@@ -58,6 +58,7 @@
 
         &[data-name='aircrafts'] {
             grid-row: 1 / span 4;
+            grid-column: 2 / span 2;
             margin-bottom: calc(var(--gap) * 0);
             .grid {
                 grid-template-rows: 6fr 5fr 5fr;
@@ -72,13 +73,21 @@
             }
         }
 
-        &[data-name='career'] {
+        &[data-name='career'],
+        &[data-name='marketplace'] {
             grid-row: 6 / span 1;
             margin-top: calc(var(--title-cell-height) * -2 - var(--gap));
             .grid {
                 grid-template-rows: 1fr;
-                grid-template-columns: repeat(2, 1fr);
+                // grid-template-columns: repeat(2, 1fr);
                 row-gap: 0;
+                .cell {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    justify-content: center;
+                }
             }
         }
     }

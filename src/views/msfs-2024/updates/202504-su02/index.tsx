@@ -422,17 +422,18 @@ const cellGroupCareer: CellGroupType = {
     title: '飞行员生涯',
     cells: [
         {
-            title: <>任务列表</>,
+            title: <></>,
             infos: [
                 {
                     type: 'new',
                     content: '任务过滤器',
                 },
+                '打工任务可调整燃油',
             ],
             rowSpan: 2,
             img: require('./imgs/20241124224853_1.jpg'),
             backgroundSize: 'auto 350%',
-            backgroundPosition: '48% 48%',
+            backgroundPosition: '45% 48%',
             bgMaskOrientation: 'horizontal',
             style: {
                 '--mask-min-width': '125%',
@@ -451,18 +452,18 @@ const cellGroupCareer: CellGroupType = {
         //         '--mask-min-width': '100%',
         //     },
         // },
-        {
-            title: <>打工任务</>,
-            infos: ['允许调整燃油量'],
-            img: require('./imgs/2025-01-10-22-51-45.png'),
-            backgroundSize: 'auto 200%',
-            backgroundPosition: '10% 65%',
-            bgMaskOrientation: 'horizontal',
-            style: {
-                // '--mask-height-vertical': '100%',
-                '--mask-min-width': '100%',
-            },
-        },
+        // {
+        //     title: <>打工任务</>,
+        //     infos: ['允许调整燃油量'],
+        //     img: require('./imgs/2025-01-10-22-51-45.png'),
+        //     backgroundSize: 'auto 200%',
+        //     backgroundPosition: '10% 65%',
+        //     bgMaskOrientation: 'horizontal',
+        //     style: {
+        //         // '--mask-height-vertical': '100%',
+        //         '--mask-min-width': '100%',
+        //     },
+        // },
         // {
         //     title: <></>,
         //     infos: [
@@ -490,6 +491,38 @@ const cellGroupCareer: CellGroupType = {
     ],
 };
 
+const cellGroupMarketplace: CellGroupType = {
+    name: 'marketplace',
+    title: '内置市场',
+    cells: [
+        {
+            title: (
+                <>
+                    <small>部分商品已支持</small>
+                </>
+            ),
+            infos: [
+                {
+                    type: 'new',
+                    content: '限时租赁',
+                },
+                {
+                    type: 'new',
+                    content: '赠礼购买',
+                },
+            ],
+            columnSpan: 3,
+            img: require('./imgs/20241026220555_1.jpg'),
+            backgroundSize: 'auto 300%',
+            backgroundPosition: '25% 70%',
+            bgMaskOrientation: 'horizontal',
+            style: {
+                '--mask-min-width': '133%',
+            },
+        },
+    ],
+};
+
 // Functional Component =======================================================
 
 const ThisPage = extend({
@@ -499,7 +532,12 @@ const ThisPage = extend({
         <Page
             footerContent="正式更新亮点内容"
             classNameBody={className}
-            infos={[cellGroupGeneral, cellGroupAircrafts, cellGroupCareer]}
+            infos={[
+                cellGroupGeneral,
+                cellGroupAircrafts,
+                cellGroupCareer,
+                cellGroupMarketplace,
+            ]}
             subtitle={
                 <>
                     <small>Sim Update</small> 02
