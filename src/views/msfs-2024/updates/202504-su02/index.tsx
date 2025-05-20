@@ -33,7 +33,7 @@ const cellGroupAircrafts: CellGroupType = {
                     <small>综合改进</small>桨叶视效
                 </>
             ),
-            infos: ['反桨、喷水'],
+            infos: ['反桨尘土、水花'],
             img: require('./imgs/20250403234355_1.jpg'),
             backgroundSize: 'auto 150%',
             backgroundPosition: '0% 95%',
