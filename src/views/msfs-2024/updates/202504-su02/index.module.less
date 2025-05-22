@@ -61,8 +61,8 @@
             grid-column: 2 / span 2;
             margin-bottom: calc(var(--gap) * -2);
             .grid {
-                grid-template-rows: 6fr 5fr 3fr 3fr;
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 6fr 5fr 6fr;
+                grid-template-columns: repeat(6, 1fr);
                 .cell {
                     strong {
                         em {
@@ -77,6 +77,20 @@
                             margin-top: 0.175em;
                             margin-bottom: -0.175em;
                             font-weight: 900;
+                        }
+                        &:has(small:first-child:last-child) {
+                            transform-origin: 50% 100%;
+                            padding-left: 0.15em;
+                        }
+                    }
+                    &:has(strong > small:first-child:last-child) {
+                        &::before {
+                            background: linear-gradient(
+                                to top,
+                                rgba(0, 0, 0, 0.95) 33.3333%,
+                                ease-in-out,
+                                rgba(0, 0, 0, 0) 100%
+                            );
                         }
                     }
                 }
