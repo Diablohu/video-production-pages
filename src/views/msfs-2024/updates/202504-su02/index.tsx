@@ -13,7 +13,8 @@ const cellGroupAircrafts: CellGroupType = {
         {
             title: (
                 <>
-                    <small>综合改进</small>风挡 & 玻璃
+                    <small>综合改进</small>
+                    <em>风挡 & 玻璃</em>
                 </>
             ),
             infos: ['反光、反射、雨滴'],
@@ -30,7 +31,8 @@ const cellGroupAircrafts: CellGroupType = {
         {
             title: (
                 <>
-                    <small>综合改进</small>桨叶视效
+                    <small>综合改进</small>
+                    <em>桨叶视效</em>
                 </>
             ),
             infos: ['反桨尘土、水花'],
@@ -80,16 +82,20 @@ const cellGroupAircrafts: CellGroupType = {
             ],
             img: require('./imgs/20250329003241_1.jpg'),
             backgroundSize: 'auto 700%',
-            backgroundPosition: '68% 73%',
+            backgroundPosition: '64% 68%',
             bgMaskOrientation: 'horizontal',
             style: {
-                '--mask-min-width': '200%',
+                '--mask-min-width': '150%',
                 // '--mask-height-horizontal': '100%',
                 '--mask-opacity': '0.75',
             },
         },
         {
-            title: <>奖状 CJ4 & 经度</>,
+            title: (
+                <>
+                    <small>奖状 CJ4 & 经度</small>
+                </>
+            ),
             infos: [
                 {
                     type: 'new',
@@ -97,58 +103,79 @@ const cellGroupAircrafts: CellGroupType = {
                 },
             ],
             img: require('./imgs/c25c_checklist.png'),
-            backgroundSize: 'auto 550%',
-            backgroundPosition: '65% 22%',
+            backgroundSize: 'auto 950%',
+            backgroundPosition: '50% 20%',
             bgMaskOrientation: 'horizontal',
             style: {
-                '--mask-min-width': '175%',
+                '--mask-min-width': '125%',
+                justifyContent: 'center',
+                paddingBottom: '0',
                 // '--mask-height-horizontal': '100%',
                 // '--mask-opacity': '0.666',
             },
         },
         {
-            title: <>波音 737 MAX-8</>,
-            infos: ['应答机支持输入', '优化自动驾驶稳定性'],
+            title: (
+                <>
+                    <small>西锐 VisionJet</small>
+                </>
+            ),
+            infos: [
+                {
+                    type: 'new',
+                    content: '电子检查单快捷切换',
+                },
+            ],
+            img: require('./imgs/2025-02-04-04-34-29.png'),
+            backgroundSize: 'auto 1000%',
+            backgroundPosition: '48% 51.5%',
+            bgMaskOrientation: 'horizontal',
+            // textSize: 'sm',
+            style: {
+                '--mask-min-width': '100%',
+                '--mask-opacity': '1',
+                justifyContent: 'center',
+                paddingBottom: '0',
+            },
+        },
+        {
+            title: (
+                <>
+                    <small>波音 737 MAX-8</small>
+                </>
+            ),
+            infos: ['应答机支持输入'],
             img: require('../202502-su01/imgs/2025-01-03-02-23-13.png'),
-            backgroundSize: 'auto 700%',
-            backgroundPosition: '27% 44%',
+            backgroundSize: 'auto 1200%',
+            backgroundPosition: '27% 45%',
             bgMaskOrientation: 'horizontal',
             style: {
-                '--mask-min-width': '175%',
+                '--mask-min-width': '100%',
+                justifyContent: 'center',
+                paddingBottom: '0',
                 // '--mask-height-horizontal': '100%',
                 // '--mask-opacity': '0.666',
             },
         },
-        // {
-        //     title: <></>,
-        //     infos: ['萨博340 近乎重做'],
-        //     img: require('./imgs/2025-04-07-00-47-01.png'),
-        //     backgroundSize: 'auto 300%',
-        //     backgroundPosition: '0% 60%',
-        //     bgMaskOrientation: 'horizontal',
-        //     // textSize: 'sm',
-        //     style: {
-        //         '--mask-min-width': '133%',
-        //         '--mask-opacity': '1',
-        //         justifyContent: 'center',
-        //         paddingBottom: '0',
-        //     },
-        // },
-        // {
-        //     title: <></>,
-        //     infos: ['西锐 VisionJet 结冰失速警报可重置'],
-        //     img: require('./imgs/2025-04-07-00-47-01.png'),
-        //     backgroundSize: 'auto 300%',
-        //     backgroundPosition: '0% 60%',
-        //     bgMaskOrientation: 'horizontal',
-        //     // textSize: 'sm',
-        //     style: {
-        //         '--mask-min-width': '133%',
-        //         '--mask-opacity': '1',
-        //         justifyContent: 'center',
-        //         paddingBottom: '0',
-        //     },
-        // },
+        {
+            title: (
+                <>
+                    <small>萨博340B</small>
+                </>
+            ),
+            infos: ['超多修正'],
+            img: require('./imgs/SP-KPC_2019-04-22_130550.jpg'),
+            backgroundSize: '200% auto',
+            backgroundPosition: '0% 45%',
+            bgMaskOrientation: 'horizontal',
+            // textSize: 'sm',
+            style: {
+                // '--mask-min-width': '133%',
+                '--mask-opacity': '0.5',
+                justifyContent: 'center',
+                paddingBottom: '0',
+            },
+        },
     ],
 };
 
@@ -342,12 +369,12 @@ const cellGroupGeneral: CellGroupType = {
                 '允许减小滚动缓存',
             ],
             columnSpan: 2,
-            img: require('./imgs/20250426021008_1.jpg'),
-            backgroundSize: '175% auto',
-            backgroundPosition: '15% 70%',
+            img: require('./imgs/20241226022349_1.jpg'),
+            backgroundSize: '400% auto',
+            backgroundPosition: '59% 52%',
             bgMaskOrientation: 'horizontal',
             style: {
-                // '--mask-min-width': '200%',
+                '--mask-min-width': '150%',
             },
         },
         {
@@ -432,8 +459,8 @@ const cellGroupCareer: CellGroupType = {
             ],
             rowSpan: 2,
             img: require('./imgs/20241124224853_1.jpg'),
-            backgroundSize: 'auto 350%',
-            backgroundPosition: '45% 48%',
+            backgroundSize: 'auto 450%',
+            backgroundPosition: '41% 47%',
             bgMaskOrientation: 'horizontal',
             style: {
                 '--mask-min-width': '125%',
@@ -506,18 +533,18 @@ const cellGroupMarketplace: CellGroupType = {
                     type: 'new',
                     content: '限时租赁',
                 },
-                {
-                    type: 'new',
-                    content: '赠礼购买',
-                },
+                // {
+                //     type: 'new',
+                //     content: '赠礼购买',
+                // },
             ],
             columnSpan: 3,
             img: require('./imgs/20241026220555_1.jpg'),
-            backgroundSize: 'auto 300%',
-            backgroundPosition: '25% 70%',
+            backgroundSize: 'auto 400%',
+            backgroundPosition: '20% 68%',
             bgMaskOrientation: 'horizontal',
             style: {
-                '--mask-min-width': '133%',
+                '--mask-min-width': '125%',
             },
         },
     ],

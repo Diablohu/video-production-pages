@@ -59,15 +59,24 @@
         &[data-name='aircrafts'] {
             grid-row: 1 / span 4;
             grid-column: 2 / span 2;
-            margin-bottom: calc(var(--gap) * 0);
+            margin-bottom: calc(var(--gap) * -2);
             .grid {
-                grid-template-rows: 6fr 5fr 5fr;
+                grid-template-rows: 6fr 5fr 3fr 3fr;
                 grid-template-columns: repeat(2, 1fr);
                 .cell {
                     strong {
+                        em {
+                            font-style: normal;
+                        }
                         small {
                             padding-bottom: 0.25em;
                             padding-left: 0.175em;
+                        }
+                        small:first-child:last-child {
+                            padding-bottom: 0;
+                            margin-top: 0.175em;
+                            margin-bottom: -0.175em;
+                            font-weight: 900;
                         }
                     }
                 }
@@ -77,12 +86,18 @@
         &[data-name='career'],
         &[data-name='marketplace'] {
             grid-row: 6 / span 1;
-            margin-top: calc(var(--title-cell-height) * -2 - var(--gap));
+            margin-top: calc(var(--title-cell-height) * -1 - var(--gap));
             .grid {
                 grid-template-rows: 1fr;
                 // grid-template-columns: repeat(2, 1fr);
                 row-gap: 0;
                 .cell {
+                    strong {
+                        small:first-child:last-child {
+                            padding-bottom: 0;
+                            margin-bottom: -0.175em;
+                        }
+                    }
                     display: flex;
                     flex-flow: column nowrap;
                     padding-top: 0;
