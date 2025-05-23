@@ -49,7 +49,11 @@ const cellGroupAircrafts: CellGroupType = {
             },
         },
         {
-            title: <>G3000 & G5000</>,
+            title: (
+                <>
+                    <small>G3000 & G5000</small>
+                </>
+            ),
             infos: [
                 {
                     type: 'new',
@@ -61,18 +65,25 @@ const cellGroupAircrafts: CellGroupType = {
                 },
             ],
             img: require('./imgs/20250401040817_1.jpg'),
-            columnSpan: 3,
-            backgroundSize: 'auto 500%',
-            backgroundPosition: '30% 22%',
+            columnSpan: 2,
+            backgroundSize: 'auto 250%',
+            backgroundPosition: '39% 30%',
             bgMaskOrientation: 'horizontal',
             style: {
-                '--mask-min-width': '125%',
-                // '--mask-height-horizontal': '100%',
-                '--mask-opacity': '1',
+                '--mask-height-vertical': '100%',
+                '--mask-opacity': '0.75',
+                justifyContent: 'bottom',
+                alignItems: 'center',
+                paddingLeft: '0',
+                textAlign: 'center',
             },
         },
         {
-            title: <>Primus Epic 2</>,
+            title: (
+                <>
+                    <small>Primus Epic 2</small>
+                </>
+            ),
             infos: [
                 {
                     type: 'new',
@@ -80,18 +91,47 @@ const cellGroupAircrafts: CellGroupType = {
                 },
                 {
                     type: 'new',
-                    content: '地形警报 GPWS',
+                    content: '近地警告 GPWS',
                 },
             ],
             img: require('./imgs/20250329003241_1.jpg'),
-            columnSpan: 3,
-            backgroundSize: 'auto 700%',
-            backgroundPosition: '64% 68%',
+            columnSpan: 2,
+            backgroundSize: 'auto 300%',
+            backgroundPosition: '75% 85%',
             bgMaskOrientation: 'horizontal',
             style: {
-                '--mask-min-width': '150%',
-                // '--mask-height-horizontal': '100%',
-                '--mask-opacity': '0.75',
+                '--mask-height-vertical': '75%',
+                '--mask-opacity': '0.5',
+                justifyContent: 'bottom',
+                alignItems: 'center',
+                paddingLeft: '0',
+                textAlign: 'center',
+            },
+        },
+        {
+            title: (
+                <>
+                    <small>波音 787-10</small>
+                </>
+            ),
+            infos: [
+                {
+                    type: 'new',
+                    content: '垂直剖面 VSD',
+                },
+            ],
+            img: require('./imgs/Microsoft Flight Simulator 2024 2025_5_23 21_54_48.png'),
+            columnSpan: 2,
+            backgroundSize: 'auto 200%',
+            backgroundPosition: '64% 100%',
+            bgMaskOrientation: 'horizontal',
+            style: {
+                '--mask-height-vertical': '75%',
+                '--mask-opacity': '0.5',
+                justifyContent: 'bottom',
+                alignItems: 'center',
+                paddingLeft: '0',
+                textAlign: 'center',
             },
         },
         {
@@ -109,7 +149,7 @@ const cellGroupAircrafts: CellGroupType = {
             img: require('./imgs/c25c_checklist.png'),
             columnSpan: 2,
             backgroundSize: 'auto 550%',
-            backgroundPosition: '58% 22%',
+            backgroundPosition: '58% 23%',
             bgMaskOrientation: 'vertical',
             style: {
                 '--mask-height-vertical': '100%',
@@ -139,8 +179,8 @@ const cellGroupAircrafts: CellGroupType = {
             bgMaskOrientation: 'vertical',
             // textSize: 'sm',
             style: {
-                // '--mask-height-vertical': '100%',
-                '--mask-opacity': '1',
+                '--mask-height-vertical': '50%',
+                '--mask-opacity': '0.5',
                 justifyContent: 'bottom',
                 alignItems: 'center',
                 paddingLeft: '0',
@@ -161,7 +201,7 @@ const cellGroupAircrafts: CellGroupType = {
             bgMaskOrientation: 'vertical',
             style: {
                 '--mask-height-vertical': '100%',
-                '--mask-opacity': '1',
+                '--mask-opacity': '0.75',
                 justifyContent: 'bottom',
                 alignItems: 'center',
                 paddingLeft: '0',
