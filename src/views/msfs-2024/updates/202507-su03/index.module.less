@@ -18,6 +18,9 @@
                     padding: 0 0 unit(100 * 17.5px / 1920px, vw)
                         unit(100 * 30px / 1920px, vw);
                 }
+                &.mod-type-center {
+                    padding-bottom: unit(100 * 17.5px / 1920px, vw);
+                }
                 strong {
                     font-size: 1.6em;
                     line-height: 1.2em;
@@ -34,6 +37,9 @@
                 span {
                     font-size: 1.125em;
                     line-height: 1.5em;
+                    // & > small:first-child:last-child {
+                    //     line-height: 2em;
+                    // }
                 }
             }
         }
@@ -64,7 +70,7 @@
             grid-row: 1 / span 4;
             margin-bottom: calc(var(--gap) * 2 + var(--gap) * 2);
             .grid {
-                grid-template-rows: 11fr 6fr;
+                grid-template-rows: 14fr 8fr;
             }
         }
 
