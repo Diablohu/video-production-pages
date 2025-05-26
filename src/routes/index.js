@@ -75,8 +75,12 @@ export default {
                 require('@views/msfs-2024/updates/202502-su01').default,
             ],
             [
-                'msfs-2024-update-202504-su02',
-                require('@views/msfs-2024/updates/202504-su02').default,
+                'msfs-2024-update-202505-su02',
+                require('@views/msfs-2024/updates/202505-su02').default,
+            ],
+            [
+                'msfs-2024-update-202507-su03',
+                require('@views/msfs-2024/updates/202507-su03').default,
             ],
 
             // FULL YEAR PLAN =================================================
