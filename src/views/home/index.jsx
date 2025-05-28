@@ -9,7 +9,7 @@ import styles from './index.module.less';
 const sections = [
     ['Schedules', 'schedule'],
     ['MSFS 2024', 'msfs-2024'],
-    ['MSFS 2020', 'update'],
+    ['MSFS 2020', 'update|msfs-2020'],
     ['Procedures', 'procedures'],
     ['Aircrafts Comparison', 'aircrafts-compare'],
     ['Monthly Free Mods', 'monthly-free-mods'],
@@ -33,7 +33,7 @@ const PageHome = extend({
                 prefix: pathPrefix,
                 list: [],
             };
-            const prefixRegex = new RegExp(`^${pathPrefix}-`, 'i');
+            const prefixRegex = new RegExp(`^(${pathPrefix})-`, 'i');
             remainingRoutes = remainingRoutes.reduce(
                 (remainingRoutes, route) => {
                     if (prefixRegex.test(route.path)) {

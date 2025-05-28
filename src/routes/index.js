@@ -83,17 +83,7 @@ export default {
                 require('@views/msfs-2024/updates/202507-su03').default,
             ],
 
-            // FULL YEAR PLAN =================================================
-            [
-                '2023-full-year-plan',
-                require('@views/2023-full-year-plan').default,
-            ],
-            [
-                '2024-full-year-plan',
-                require('@views/2024-full-year-plan').default,
-            ],
-
-            // UPDATES & PATCHES ==============================================
+            // MSFS 2020 UPDATES & PATCHES ====================================
             ['update-aau1', require('@views/update-aau1').default],
             [
                 'update-202303-su12',
@@ -130,6 +120,20 @@ export default {
             [
                 'update-202403-su15-notable',
                 require('@views/update-202403-su15-notable').default,
+            ],
+            [
+                'msfs-2020-update-202507-su16',
+                require('@views/msfs-2020/updates/202507-su16').default,
+            ],
+
+            // FULL YEAR PLAN =================================================
+            [
+                '2023-full-year-plan',
+                require('@views/2023-full-year-plan').default,
+            ],
+            [
+                '2024-full-year-plan',
+                require('@views/2024-full-year-plan').default,
             ],
 
             // MONTHLY FREE MODS ==============================================

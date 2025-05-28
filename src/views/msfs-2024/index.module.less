@@ -154,8 +154,8 @@
         0 2px 4px #2c82f3,
         0 1px 2px #2c82f3;
     .mod-mask({
-        background: #fff;
-        text-shadow: none;
+        background: #fff !important;
+        text-shadow: none !important;
     });
 }
 
@@ -182,5 +182,42 @@
                 opacity: 0;
             });
         }
+    }
+}
+
+// ============================================================================
+
+.component.component-edition-2020 {
+    .component-logo {
+        & > .bottom {
+            &::before {
+                background-image: none;
+                top: -11px;
+                left: 67px;
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                content: '2020';
+                .title-style();
+                font-family: var(--logo-font-family);
+                text-align: left;
+                // color: #7f979f;
+                font-size: 55px;
+                transform: skew(var(--logo-skew)) scale(0.75, 1);
+                letter-spacing: 0.025em;
+                font-weight: 100;
+                font-style: normal;
+            }
+            & > em {
+                color: #9ab5bf;
+            }
+        }
+    }
+    .component-title-cell {
+        background: var(--color-purple)
+            linear-gradient(160deg, var(--color-purple), #9f18ff);
+        text-shadow:
+            0 2px 4px var(--color-purple),
+            0 1px 2px var(--color-purple);
     }
 }
