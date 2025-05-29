@@ -48,6 +48,16 @@
             .grid {
                 grid-template-rows: 6fr 3.75fr 3.75fr 3fr;
                 grid-template-columns: repeat(2, 1fr);
+                .cell.no-2024-tech {
+                    --border-color: rgba(255, 50, 50, 0.75);
+                    --inset-shadow-color: rgba(255, 0, 0, 0.75);
+                    &::before {
+                        background-color: #f00;
+                    }
+                    &::after {
+                        backdrop-filter: saturate(25%);
+                    }
+                }
             }
         }
 
