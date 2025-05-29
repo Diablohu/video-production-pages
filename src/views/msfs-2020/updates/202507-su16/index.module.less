@@ -1,15 +1,19 @@
 @import '~vars.less';
 
 .component {
-    padding-top: unit(250 * 20px / 1920px, vw);
-    padding-bottom: unit(250 * 20px / 1920px, vw);
+    --cell-info-font-size: 1.125em;
+    --cell-info-line-height: 1.5em;
+
+    // padding-top: unit(250 * 20px / 1920px, vw);
+    // padding-bottom: unit(250 * 20px / 1920px, vw);
     padding-left: unit(500 * 20px / 1920px, vw);
     padding-right: unit(500 * 20px / 1920px, vw);
+    // grid-template-rows: var(--title-cell-height) 7fr repeat(3, 3fr);
+    grid-template-rows: var(--title-cell-height) 6fr 4fr 3fr 3.5fr;
+    // grid-template-rows: 1fr;
     // grid-template-columns: repeat(3, 1fr);
     // grid-template-columns: 3fr 10fr 3fr;
-    grid-template-columns: 10fr 3fr;
-    // grid-template-rows: var(--title-cell-height) 7fr repeat(3, 3fr);
-    grid-template-rows: var(--title-cell-height) 6fr var(--title-cell-height) 5fr 5fr;
+    grid-template-columns: 4fr 9fr;
 
     .group {
         .grid {
@@ -20,26 +24,6 @@
                 }
                 &.mod-type-center {
                     padding-bottom: unit(100 * 17.5px / 1920px, vw);
-                }
-                strong {
-                    font-size: 1.6em;
-                    line-height: 1.2em;
-                    font-weight: 900;
-                    small {
-                        display: block;
-                        line-height: 1em;
-                        font-weight: normal;
-                        font-size: unit(3/4, em);
-                        margin-bottom: 0.1em;
-                        margin-left: -0.2em;
-                    }
-                }
-                span {
-                    font-size: 1.125em;
-                    line-height: 1.5em;
-                    // & > small:first-child:last-child {
-                    //     line-height: 2em;
-                    // }
                 }
             }
         }
@@ -58,27 +42,78 @@
         //     }
         // }
 
-        &[data-name='general'] {
+        &[data-name='digital-twin'] {
             grid-row: 1 / span 5;
+            // margin-bottom: calc(var(--gap) * 2 + var(--gap) * 2);
             .grid {
-                grid-template-rows: 6fr 5fr 5fr;
-                grid-template-columns: repeat(6, 1fr);
-            }
-        }
-
-        &[data-name='career'] {
-            grid-row: 1 / span 4;
-            margin-bottom: calc(var(--gap) * 2 + var(--gap) * 2);
-            .grid {
-                grid-template-rows: 14fr 8fr;
+                grid-template-rows: 6fr 3.75fr 3.75fr 3fr;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         &[data-name='aircrafts'] {
-            grid-row: 5 / span 1;
-            margin-top: calc(var(--title-cell-height) * -1);
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 2;
             .grid {
-                // grid-template-columns: 1fr 1fr;
+                grid-template-rows: repeat(2, 1fr);
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        &[data-name='avionics'] {
+            grid-column: 2 / span 1;
+            grid-row: 3 / span 2;
+            margin-bottom: calc(var(--gap) * 1);
+            .grid {
+                grid-template-rows: 4fr 3fr;
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        &[data-name='other'] {
+            grid-column: 2 / span 1;
+            grid-row: 5 / span 1;
+            // margin-top: calc(var(--title-cell-height) * -1 - var(--gap));
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+                // .cell {
+                //     strong {
+                //         font-size: 1.5em;
+                //     }
+                //     span {
+                //         font-size: 1.1em;
+                //         // line-height: 1.35em;
+                //     }
+                // }
+                // .small-cell {
+                //     padding: 0;
+                //     // &::before {
+                //     //     background: linear-gradient(
+                //     //         to right,
+                //     //         rgba(0, 0, 0, 0.65) 17.5%,
+                //     //         rgba(0, 0, 0, 0) 100%
+                //     //     );
+                //     //     width: 80%;
+                //     //     height: 100%;
+                //     //     bottom: 0;
+                //     //     left: -10px;
+                //     // }
+                //     strong {
+                //         position: absolute;
+                //         top: 0;
+                //         left: 15px;
+                //         height: 100%;
+                //         display: flex;
+                //         flex-flow: column nowrap;
+                //         font-size: unit(4/3, em);
+                //         justify-content: center;
+                //     }
+                // }
+                // .grid {
+                //     grid-template-rows: repeat(2, 1fr);
+                //     .cell {
+                //     }
+                // }
             }
         }
     }

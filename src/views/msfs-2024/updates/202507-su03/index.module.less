@@ -1,6 +1,9 @@
 @import '~vars.less';
 
 .component {
+    --cell-info-font-size: 1.125em;
+    --cell-info-line-height: 1.5em;
+
     padding-top: unit(250 * 20px / 1920px, vw);
     padding-bottom: unit(250 * 20px / 1920px, vw);
     padding-left: unit(500 * 20px / 1920px, vw);
@@ -20,26 +23,6 @@
                 }
                 &.mod-type-center {
                     padding-bottom: unit(100 * 17.5px / 1920px, vw);
-                }
-                strong {
-                    font-size: 1.6em;
-                    line-height: 1.2em;
-                    font-weight: 900;
-                    small {
-                        display: block;
-                        line-height: 1em;
-                        font-weight: normal;
-                        font-size: unit(3/4, em);
-                        margin-bottom: 0.1em;
-                        margin-left: -0.2em;
-                    }
-                }
-                span {
-                    font-size: 1.125em;
-                    line-height: 1.5em;
-                    // & > small:first-child:last-child {
-                    //     line-height: 2em;
-                    // }
                 }
             }
         }

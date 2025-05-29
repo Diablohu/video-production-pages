@@ -159,7 +159,7 @@
     });
 }
 
-.component-cell {
+.component .component-cell.mod-infocell {
     &.is-not-implemented {
         --border-color: rgba(255, 50, 50, 0.75);
         --inset-shadow-color: rgba(255, 0, 0, 0.75);
@@ -182,6 +182,26 @@
                 opacity: 0;
             });
         }
+    }
+    & > strong {
+        font-size: var(--cell-title-font-size, 1.75em);
+        font-weight: var(--cell-title-font-weight, 900);
+        line-height: var(--cell-title-line-height, 1.2em);
+        small {
+            display: block;
+            line-height: 1em;
+            font-weight: normal;
+            font-size: unit(3/4, em);
+            margin-bottom: 0.1em;
+            margin-left: -0.2em;
+            strong {
+                font-size: 1.2em;
+            }
+        }
+    }
+    span {
+        font-size: var(--cell-info-font-size, 1.3em);
+        line-height: var(--cell-info-line-height, 1.35em);
     }
 }
 
