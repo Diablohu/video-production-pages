@@ -122,7 +122,7 @@ const cellGroupDigitalTwin: CellGroupType = {
 
 const cellGroupAircrafts: CellGroupType = {
     name: 'aircrafts',
-    title: '机型 / 航电',
+    title: '内置机型 & 航电',
     cells: [
         {
             title: <>塞斯纳奖状经度</>,
