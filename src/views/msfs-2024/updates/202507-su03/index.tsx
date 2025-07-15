@@ -19,7 +19,7 @@ const cellGroupGeneral: CellGroupType = {
                 },
                 <small>* 不支持：卫星图、地形和摄影测量数据</small>,
             ],
-            columnSpan: 3,
+            columnSpan: 9,
             img: require('./imgs/2025-01-19-22-33-45.png'),
             backgroundSize: '115% auto',
             backgroundPosition: '0% 60%',
@@ -31,7 +31,7 @@ const cellGroupGeneral: CellGroupType = {
         {
             title: <>AI航班 & 多人模式</>,
             infos: ['改进：机型和涂装匹配'],
-            columnSpan: 3,
+            columnSpan: 9,
             img: require('./imgs/20250401035437_1.jpg'),
             backgroundSize: 'auto 400%',
             backgroundPosition: '70% 80%',
@@ -49,8 +49,9 @@ const cellGroupGeneral: CellGroupType = {
                     type: 'new',
                     content: '赠礼购买',
                 },
+                '默认显示开发商名称',
             ],
-            columnSpan: 2,
+            columnSpan: 6,
             img: require('./imgs/20241026220555_1.jpg'),
             backgroundSize: 'auto 300%',
             backgroundPosition: '35% 70%',
@@ -62,10 +63,13 @@ const cellGroupGeneral: CellGroupType = {
         {
             title: <>EFB</>,
             infos: [
-                '设置配载时可触发登机流程 *',
+                {
+                    type: 'new',
+                    content: '设定配载时触发登机 *',
+                },
                 <small>* 可选行为，原行为也有保留</small>,
             ],
-            columnSpan: 2,
+            columnSpan: 6,
             img: require('./imgs/20250518010540_1.jpg'),
             backgroundSize: 'auto 150%',
             backgroundPosition: '70% 80%',
@@ -87,8 +91,12 @@ const cellGroupGeneral: CellGroupType = {
                     type: 'new',
                     content: '禁用设备',
                 },
+                {
+                    type: 'new',
+                    content: '锁定档案',
+                },
             ],
-            columnSpan: 2,
+            columnSpan: 6,
             img: require('./imgs/20250517191601_1.jpg'),
             backgroundSize: '425% auto',
             backgroundPosition: '0% 47%',
@@ -106,6 +114,7 @@ const cellGroupGeneral: CellGroupType = {
                     显存占用
                 </>,
             ],
+            columnSpan: 3,
             img: require('./imgs/2025-01-19-22-38-54.png'),
             backgroundSize: 'auto 150%',
             backgroundPosition: '70% 100%',
@@ -117,17 +126,35 @@ const cellGroupGeneral: CellGroupType = {
             },
         },
         {
+            title: <>图像设置</>,
+            infos: [
+                {
+                    type: 'new',
+                    content: '帧率限制',
+                },
+            ],
+            columnSpan: 4,
+            img: require('./imgs/2025-02-23-03-44-52.png'),
+            backgroundSize: 'auto 150%',
+            backgroundPosition: '50% 75%',
+            bgMaskOrientation: 'vertical',
+            style: {
+                '--mask-height-vertical': '100%',
+                // '--mask-min-width': '200%',
+            },
+        },
+        {
             title: <>拍照模式</>,
             infos: [
                 {
                     type: 'new',
-                    content: '允许更改照片目录',
+                    content: '更改照片目录',
                 },
             ],
-            columnSpan: 2,
+            columnSpan: 4,
             img: require('./imgs/2025-03-13-22-12-09.png'),
             backgroundSize: 'auto 175%',
-            backgroundPosition: '20% 70%',
+            backgroundPosition: '30% 70%',
             bgMaskOrientation: 'vertical',
             style: {
                 '--mask-height-vertical': '100%',
@@ -135,8 +162,8 @@ const cellGroupGeneral: CellGroupType = {
         },
         {
             title: <>世界地图</>,
-            infos: ['选择固定翼默认不显示直升机坪'],
-            columnSpan: 2,
+            infos: ['为固定翼过滤直升机坪'],
+            columnSpan: 4,
             img: require('../../gameplay/imgs/earth.jpg'),
             backgroundSize: 'auto 150%',
             backgroundPosition: '50% 35%',
@@ -155,6 +182,7 @@ const cellGroupGeneral: CellGroupType = {
                     交互问题
                 </>,
             ],
+            columnSpan: 3,
             img: require('./imgs/vr.webp'),
             backgroundSize: 'auto 125%',
             backgroundPosition: '60% 100%',
