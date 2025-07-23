@@ -192,7 +192,7 @@ export const InfoCell: FC<
         columnSpan?: number;
         backgroundSize?: string;
         backgroundPosition?: string;
-    } & Partial<Pick<CellType, 'title' | 'implemented'>>
+    } & Partial<Pick<CellType, 'title' | 'implemented' | 'delayed'>>
 > = ({
     className,
     rowSpan,
@@ -201,6 +201,7 @@ export const InfoCell: FC<
     backgroundPosition,
     style = {},
     implemented = true,
+    delayed = false,
     extra,
     ...props
 }) => {
@@ -211,6 +212,7 @@ export const InfoCell: FC<
                 className,
                 {
                     'is-not-implemented': implemented === false,
+                    'is-delayed': delayed === true,
                 },
             ])}
             style={{
@@ -226,6 +228,11 @@ export const InfoCell: FC<
                 implemented === false ? (
                     <>
                         <em className="tag-not-implemented">暂未实装</em>
+                        {extra}
+                    </>
+                ) : delayed === true ? (
+                    <>
+                        <em className="tag-delayed">已延期</em>
                         {extra}
                     </>
                 ) : (

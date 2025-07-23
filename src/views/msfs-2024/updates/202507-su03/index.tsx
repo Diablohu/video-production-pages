@@ -42,22 +42,16 @@ const cellGroupGeneral: CellGroupType = {
             },
         },
         {
-            implemented: false,
+            // implemented: false,
             title: <>内置市场</>,
-            infos: [
-                {
-                    type: 'new',
-                    content: '赠礼购买',
-                },
-                '默认显示开发商名称',
-            ],
+            infos: ['第三方开发商可开放租赁', '默认显示开发商名称'],
             columnSpan: 6,
             img: require('./imgs/20241026220555_1.jpg'),
             backgroundSize: 'auto 300%',
             backgroundPosition: '35% 70%',
             bgMaskOrientation: 'horizontal',
             style: {
-                // '--mask-min-width': '100%',
+                '--mask-min-width': '200%',
             },
         },
         {
@@ -133,7 +127,7 @@ const cellGroupGeneral: CellGroupType = {
                     content: '帧率限制',
                 },
             ],
-            columnSpan: 4,
+            columnSpan: 6,
             img: require('./imgs/2025-02-23-03-44-52.png'),
             backgroundSize: 'auto 150%',
             backgroundPosition: '50% 75%',
@@ -151,28 +145,28 @@ const cellGroupGeneral: CellGroupType = {
                     content: '更改照片目录',
                 },
             ],
-            columnSpan: 4,
+            columnSpan: 6,
             img: require('./imgs/2025-03-13-22-12-09.png'),
             backgroundSize: 'auto 175%',
-            backgroundPosition: '30% 70%',
+            backgroundPosition: '20% 70%',
             bgMaskOrientation: 'vertical',
             style: {
                 '--mask-height-vertical': '100%',
             },
         },
-        {
-            title: <>世界地图</>,
-            infos: ['为固定翼过滤直升机坪'],
-            columnSpan: 4,
-            img: require('../../gameplay/imgs/earth.jpg'),
-            backgroundSize: 'auto 150%',
-            backgroundPosition: '50% 35%',
-            bgMaskOrientation: 'vertical',
-            style: {
-                '--mask-height-vertical': '100%',
-                // '--mask-min-width': '200%',
-            },
-        },
+        // {
+        //     title: <>世界地图</>,
+        //     infos: ['为固定翼过滤直升机坪'],
+        //     columnSpan: 4,
+        //     img: require('../../gameplay/imgs/earth.jpg'),
+        //     backgroundSize: 'auto 150%',
+        //     backgroundPosition: '50% 35%',
+        //     bgMaskOrientation: 'vertical',
+        //     style: {
+        //         '--mask-height-vertical': '100%',
+        //         // '--mask-min-width': '200%',
+        //     },
+        // },
         {
             title: <>VR 模式</>,
             infos: [
@@ -221,7 +215,8 @@ const cellGroupCareer: CellGroupType = {
     title: '飞行员生涯',
     cells: [
         {
-            implemented: false,
+            // implemented: false,
+            delayed: true,
             title: <>空客大型机</>,
             infos: ['进驻职业生涯'],
             img: require('./imgs/20250214233202_1.jpg'),
