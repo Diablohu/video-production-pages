@@ -6,14 +6,14 @@
 
     // padding-top: unit(250 * 20px / 1920px, vw);
     // padding-bottom: unit(250 * 20px / 1920px, vw);
-    padding-left: unit(500 * 20px / 1920px, vw);
-    padding-right: unit(500 * 20px / 1920px, vw);
+    // padding-left: unit(500 * 20px / 1920px, vw);
+    // padding-right: unit(500 * 20px / 1920px, vw);
     // grid-template-rows: var(--title-cell-height) 7fr repeat(3, 3fr);
     grid-template-rows: var(--title-cell-height) 6fr 4fr 3fr 3.5fr;
     // grid-template-rows: 1fr;
     // grid-template-columns: repeat(3, 1fr);
     // grid-template-columns: 3fr 10fr 3fr;
-    grid-template-columns: 4fr 9fr;
+    grid-template-columns: 5fr 9fr;
 
     .group {
         .grid {
@@ -46,8 +46,8 @@
             grid-row: 1 / span 5;
             // margin-bottom: calc(var(--gap) * 2 + var(--gap) * 2);
             .grid {
-                grid-template-rows: 6fr 3.75fr 3.75fr 3fr;
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 6.25fr repeat(3, 3.5fr);
+                grid-template-columns: repeat(3, 1fr);
                 .cell.no-2024-tech {
                     --border-color: rgba(255, 50, 50, 0.75);
                     --inset-shadow-color: rgba(255, 0, 0, 0.75);

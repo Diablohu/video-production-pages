@@ -14,7 +14,7 @@ const cellGroupDigitalTwin: CellGroupType = {
             title: <>数据翻新</>,
             infos: ['与 2024 平台保持数据一致'],
             // rowSpan: 2,
-            columnSpan: 2,
+            columnSpan: 3,
             img: require('../../../msfs-2024/gameplay/imgs/earth.jpg'),
             backgroundSize: 'auto 150%',
             backgroundPosition: '50% 35%',
@@ -66,25 +66,6 @@ const cellGroupDigitalTwin: CellGroupType = {
             title: (
                 <>
                     <small>
-                        <strong>机场</strong>
-                    </small>
-                </>
-            ),
-            infos: [],
-            img: require('./imgs/20240418233621_1.jpg'),
-            backgroundSize: 'auto 125%',
-            backgroundPosition: '50% 35%',
-            bgMaskOrientation: 'vertical',
-            style: {
-                '--mask-height-vertical': '100%',
-                // '--mask-min-width': '200%',
-                '--mask-opacity': '0.4',
-            },
-        },
-        {
-            title: (
-                <>
-                    <small>
                         <strong>道路</strong>
                     </small>
                 </>
@@ -102,11 +83,36 @@ const cellGroupDigitalTwin: CellGroupType = {
         {
             title: (
                 <>
-                    <small>不含 2024 平台新技术</small>
+                    <small>
+                        <strong>机场数据库未更新</strong>
+                    </small>
                 </>
             ),
-            infos: ['3D绿植、四季景观、郊外摄影测量……'],
-            columnSpan: 2,
+            infos: ['仍为原始 NavBlue 数据'],
+            columnSpan: 3,
+            className: 'no-2024-tech',
+            img: require('./imgs/20240418233621_1.jpg'),
+            backgroundSize: '100% auto',
+            backgroundPosition: '50% 50%',
+            bgMaskOrientation: 'horizontal',
+            style: {
+                // '--mask-height-vertical': '100%',
+                // '--mask-min-width': '200%',
+                // '--mask-opacity': '0.4',
+                '--mask-min-width': '200%',
+                '--mask-opacity': '0.6667',
+            },
+        },
+        {
+            title: (
+                <>
+                    <small>
+                        <strong>不含 2024 平台新技术</strong>
+                    </small>
+                </>
+            ),
+            infos: ['3D绿植、四季景观、峭壁贴图、郊外摄影测量……'],
+            columnSpan: 3,
             className: 'no-2024-tech',
             img: require('./imgs/2025-02-23-03-44-52.png'),
             backgroundSize: '100% auto',
