@@ -101,13 +101,7 @@ const cellGroupGeneral: CellGroupType = {
         },
         {
             title: <>帧率性能</>,
-            infos: [
-                <>
-                    继续优化
-                    <br />
-                    显存占用
-                </>,
-            ],
+            infos: [<>持续优化</>],
             columnSpan: 3,
             img: require('./imgs/2025-01-19-22-38-54.png'),
             backgroundSize: 'auto 150%',
