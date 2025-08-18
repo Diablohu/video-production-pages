@@ -120,7 +120,10 @@ const cellGroupGeneral: CellGroupType = {
                     type: 'new',
                     content: '帧率限制',
                 },
-                '调整：各类交通的选项',
+                {
+                    type: 'new',
+                    content: '各类交通细节选项',
+                },
             ],
             columnSpan: 6,
             img: require('./imgs/2025-02-23-03-44-52.png'),
