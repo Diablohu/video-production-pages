@@ -4,10 +4,10 @@
     --cell-info-font-size: 1.125em;
     --cell-info-line-height: 1.5em;
 
-    padding-top: unit(250 * 20px / 1920px, vw);
-    padding-bottom: unit(250 * 20px / 1920px, vw);
-    padding-left: unit(500 * 20px / 1920px, vw);
-    padding-right: unit(500 * 20px / 1920px, vw);
+    padding-top: unit(175 * 20px / 1920px, vw);
+    padding-bottom: unit(175 * 20px / 1920px, vw);
+    // padding-left: unit(500 * 20px / 1920px, vw);
+    // padding-right: unit(500 * 20px / 1920px, vw);
     // grid-template-columns: repeat(3, 1fr);
     // grid-template-columns: 3fr 10fr 3fr;
     grid-template-columns: 9fr 3fr;
@@ -49,15 +49,15 @@
             }
         }
 
-        &[data-name='career'] {
+        &[data-name='aircrafts'] {
             grid-row: 1 / span 4;
-            margin-bottom: calc(var(--gap) * 2 + var(--gap) * 2);
+            margin-bottom: calc(var(--gap) * 2 + var(--gap) * 1);
             .grid {
-                grid-template-rows: 14fr 8fr;
+                grid-template-rows: 5fr 4fr 4fr;
             }
         }
 
-        &[data-name='aircrafts'] {
+        &[data-name='career'] {
             grid-row: 5 / span 1;
             margin-top: calc(var(--title-cell-height) * -1);
             .grid {

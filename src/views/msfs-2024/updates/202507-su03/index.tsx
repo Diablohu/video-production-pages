@@ -122,10 +122,10 @@ const cellGroupGeneral: CellGroupType = {
                 },
                 {
                     type: 'new',
-                    content: '各类交通细节选项',
+                    content: '交通类别细节选项',
                 },
             ],
-            columnSpan: 6,
+            columnSpan: 4,
             img: require('./imgs/2025-02-23-03-44-52.png'),
             backgroundSize: 'auto 150%',
             backgroundPosition: '50% 87%',
@@ -143,13 +143,25 @@ const cellGroupGeneral: CellGroupType = {
                     content: '更改照片目录',
                 },
             ],
-            columnSpan: 6,
+            columnSpan: 4,
             img: require('./imgs/2025-03-13-22-12-09.png'),
             backgroundSize: 'auto 175%',
-            backgroundPosition: '20% 70%',
+            backgroundPosition: '40% 70%',
             bgMaskOrientation: 'vertical',
             style: {
                 '--mask-height-vertical': '100%',
+            },
+        },
+        {
+            title: <>内置 ATC</>,
+            infos: ['优化 IFR 指令', '优化进离场高度指令'],
+            columnSpan: 4,
+            img: require('../202505-su02/imgs/20240803041415_1.jpg'),
+            backgroundSize: 'auto 250%',
+            backgroundPosition: '70% 45%',
+            bgMaskOrientation: 'vertical',
+            style: {
+                '--mask-height-vertical': '150%',
             },
         },
         // {
@@ -169,9 +181,9 @@ const cellGroupGeneral: CellGroupType = {
             title: <>VR 模式</>,
             infos: [
                 <>
-                    继续修正
+                    持续修正
                     <br />
-                    交互问题
+                    交互体验
                 </>,
             ],
             columnSpan: 3,
@@ -193,16 +205,40 @@ const cellGroupAircrafts: CellGroupType = {
     title: '机型 / 航电',
     cells: [
         {
-            title: <>波音 737 MAX-8</>,
-            infos: ['修正：夜间舱内曝光', '调整配平轮灵敏度'],
-            img: require('./imgs/20250525170926_1.jpg'),
-            backgroundSize: '130% auto',
-            backgroundPosition: '0% 90%',
+            title: <>空客大型机</>,
+            infos: ['支持从 EFB 导入飞行计划', '支持 3D 乘客'],
+            img: require('./imgs/2025-08-21／iniBuilds A330 Passengers.mp4_20250821_022034.370.png'),
+            backgroundSize: 'auto 300%',
+            backgroundPosition: '70% 65%',
             bgMaskOrientation: 'horizontal',
             style: {
                 '--mask-min-width': '125%',
                 // '--mask-height-horizontal': '100%',
                 // '--mask-opacity': '0.666',
+            },
+        },
+        {
+            title: <>波音 737 MAX-8</>,
+            infos: ['修正：夜间舱内曝光'],
+            img: require('./imgs/20250525170926_1.jpg'),
+            backgroundSize: '130% auto',
+            backgroundPosition: '0% 90%',
+            bgMaskOrientation: 'horizontal',
+            style: {
+                '--mask-min-width': '100%',
+                // '--mask-height-horizontal': '100%',
+                // '--mask-opacity': '0.666',
+            },
+        },
+        {
+            title: <>PC-12 NGx</>,
+            infos: ['修正：生涯模式高空缺氧'],
+            img: require('./imgs/20250203013916_1.jpg'),
+            backgroundSize: 'auto 250%',
+            backgroundPosition: '0% 85%',
+            bgMaskOrientation: 'vertical',
+            style: {
+                '--mask-height-vertical': '100%',
             },
         },
     ],
@@ -214,27 +250,16 @@ const cellGroupCareer: CellGroupType = {
     cells: [
         {
             // implemented: false,
-            delayed: true,
-            title: <>空客大型机</>,
-            infos: ['进驻职业生涯'],
-            img: require('./imgs/20250214233202_1.jpg'),
-            backgroundSize: 'auto 140%',
-            backgroundPosition: '50% 100%',
+            // delayed: true,
+            title: <>细节优化</>,
+            infos: ['简报信息：气温替换为风', '无管制机场：可申请后推'],
+            img: require('../202505-su02/imgs/20241124224853_1.jpg'),
+            backgroundSize: 'auto 300%',
+            backgroundPosition: '30% 50%',
             bgMaskOrientation: 'horizontal',
             style: {
                 // '--mask-height-vertical': '100%',
-                '--mask-min-width': '100%',
-            },
-        },
-        {
-            title: <>PC-12 NGx</>,
-            infos: ['修正：高空缺氧'],
-            img: require('./imgs/20250203013916_1.jpg'),
-            backgroundSize: 'auto 225%',
-            backgroundPosition: '35% 85%',
-            bgMaskOrientation: 'vertical',
-            style: {
-                '--mask-height-vertical': '100%',
+                '--mask-min-width': '120%',
             },
         },
     ],
