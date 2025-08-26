@@ -10,7 +10,9 @@ export type ProcedureItemType =
     | string
     | JSX.Element
     | [string, string]
-    | [string, string, string];
+    | [string, string, string]
+    | [number, string, string]
+    | [number, string, string, string];
 
 export interface ProceduresProps {
     title: string;
@@ -43,15 +45,33 @@ const Precedures = extend<ProceduresProps>({
                                 {
                                     'mod-no-left':
                                         typeof item[0] === 'undefined',
+                                    [`mod-level-${item[0]}`]:
+                                        typeof item[0] === 'number',
+                                    'mod-no-dots':
+                                        typeof item[0] === 'number' &&
+                                        item.length === 2,
                                 },
                             ])}
                             key={index}
                         >
-                            <dt>
-                                {item.length > 2 && `${item.at(1)} `}
-                                {item.at(0)}
-                            </dt>
-                            <dd className="action">{item.at(-1)}</dd>
+                            {typeof item[0] === 'number' &&
+                            item.length === 2 ? (
+                                <dt>{item[1]}</dt>
+                            ) : (
+                                <>
+                                    <dt>
+                                        {item
+                                            .slice(
+                                                typeof item[0] === 'number'
+                                                    ? 1
+                                                    : 0,
+                                                -1,
+                                            )
+                                            .join(' ')}
+                                    </dt>
+                                    <dd className="action">{item.at(-1)}</dd>
+                                </>
+                            )}
                         </dl>
                     ),
                 )}
