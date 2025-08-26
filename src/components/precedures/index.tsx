@@ -6,27 +6,36 @@ import styles from './index.module.less';
 
 // ============================================================================
 
+export type ProcedureItemType =
+    | string
+    | JSX.Element
+    | [string, string]
+    | [string, string, string];
+
 export interface ProceduresProps {
     title: string;
-    list: Array<Array<string | undefined> | string | ElementType>;
+    list?: Array<Array<string | undefined> | string | ElementType>;
+    steps?: Array<ProcedureItemType | ElementType>;
 }
 
 // Functional Component =======================================================
 
 const Precedures = extend<ProceduresProps>({
     styles,
-})(({ className, title, list }): JSX.Element => {
+})(({ className, title, list, steps }): JSX.Element => {
     return (
         <div className={className}>
             <h3>{title}</h3>
             <div className="body">
-                {list.map((item, index) =>
-                    isValidElement(item) ? (
-                        <span className="info">{item}</span>
-                    ) : !Array.isArray(item) ? (
+                {(list || steps || []).map((item, index) =>
+                    item === '' ? (
                         <strong className="title" key={index}>
                             {item}
                         </strong>
+                    ) : !Array.isArray(item) || isValidElement(item) ? (
+                        <span className="info" key={index}>
+                            {item}
+                        </span>
                     ) : (
                         <dl
                             className={classNames([
@@ -44,7 +53,7 @@ const Precedures = extend<ProceduresProps>({
                             </dt>
                             <dd className="action">{item.at(-1)}</dd>
                         </dl>
-                    )
+                    ),
                 )}
             </div>
         </div>

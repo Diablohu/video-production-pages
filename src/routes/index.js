@@ -173,6 +173,10 @@ export default {
                 'procedures-airbus-a350',
                 require('@views/procedures/airbus-a350').default,
             ],
+            [
+                'procedures-cirrus-sf50-vision-jet',
+                require('@views/procedures/cirrus-sf50-vision-jet').default,
+            ],
 
             // THIRD-PARTY ====================================================
             [
