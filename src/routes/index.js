@@ -204,6 +204,11 @@ export default {
                 require('@views/best-small-airplanes-202301').default,
             ],
             ['game-pass-tiers', require('@views/game-pass-tiers').default],
+            [
+                'msfs-2020-2024-aircrafts-backport',
+                require('@views/msfs-2020/special/2024-aircrafts-backport')
+                    .default,
+            ],
         ].map(([path, component]) => ({
             path,
             component,
