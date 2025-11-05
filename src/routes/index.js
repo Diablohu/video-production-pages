@@ -2,6 +2,8 @@
 import routeCheck from 'koot/React/route-check';
 import App from '@views/app';
 
+import routesMSFS2024 from './msfs-2024';
+
 /**
  * @type {Object} 路由配置对象
  * 原则上支持任何与 `react-router` (v3) 兼容的对象
@@ -34,6 +36,7 @@ export default {
     },
 
     childRoutes: [
+        ...routesMSFS2024,
         ...[
             // Schedules =================================================
             [
@@ -43,44 +46,6 @@ export default {
             [
                 'schedule-2025-05-08',
                 require('@views/schedule/20250505-0511').default,
-            ],
-
-            // MSFS 2024 ONLY =================================================
-            [
-                'msfs-2024-editions',
-                require('@views/msfs-2024/editions').default,
-            ],
-            [
-                'msfs-2024-pc-specs',
-                require('@views/msfs-2024/pc-specs').default,
-            ],
-            [
-                'msfs-2024-default-aircrafts',
-                require('@views/msfs-2024/default-aircrafts').default,
-            ],
-            [
-                'msfs-2024-gameplay',
-                require('@views/msfs-2024/gameplay').default,
-            ],
-            [
-                'msfs-2024-improvements',
-                require('@views/msfs-2024/improvements').default,
-            ],
-            [
-                'msfs-2024-marketplace',
-                require('@views/msfs-2024/marketplace').default,
-            ],
-            [
-                'msfs-2024-update-202502-su01',
-                require('@views/msfs-2024/updates/202502-su01').default,
-            ],
-            [
-                'msfs-2024-update-202505-su02',
-                require('@views/msfs-2024/updates/202505-su02').default,
-            ],
-            [
-                'msfs-2024-update-202507-su03',
-                require('@views/msfs-2024/updates/202507-su03').default,
             ],
 
             // MSFS 2020 UPDATES & PATCHES ====================================

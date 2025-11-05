@@ -48,6 +48,7 @@ const MSFS2024Page = extend<
         infos?: CellGroupType[];
         infosClassName?: string;
         edition?: '2020' | '2024';
+        beta?: boolean | string;
     } & Pick<PageProps, 'updateDate' | 'footerContent'>
 >({
     styles,
@@ -61,6 +62,7 @@ const MSFS2024Page = extend<
     updateDate = true,
     footerContent,
     edition = '2024',
+    beta = false,
     ...props
 }) => {
     const isInfos = useMemo(() => Array.isArray(infos), [infos]);
