@@ -33,7 +33,7 @@ export default [
             require('@views/msfs-2024/updates/202507-su03').default,
         ],
         [
-            'msfs-2024-update-202507-su04',
+            'msfs-2024-update-202511-su04',
             require('@views/msfs-2024/updates/202511-su04').default,
         ],
     ].map(([path, component]) => ({

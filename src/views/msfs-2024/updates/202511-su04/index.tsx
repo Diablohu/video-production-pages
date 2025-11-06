@@ -121,7 +121,11 @@ const cellGroupGeneral: CellGroupType = {
         },
         {
             title: <>城市夜景：全面重做</>,
-            infos: ['改进：根除褐色蒙层'],
+            infos: [
+                '改进：根除褐色蒙层',
+                '改进：更多地面细节',
+                '修正：过曝建筑',
+            ],
             columnSpan: 15,
             img: require('./imgs/20251031213838_1.jpg'),
             backgroundSize: '125% auto',
