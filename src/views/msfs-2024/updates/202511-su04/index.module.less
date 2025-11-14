@@ -94,6 +94,18 @@
             // margin-bottom: calc(var(--gap) * 2 + var(--gap) * 1);
             .grid {
                 // grid-template-rows: 5fr 4fr 4fr;
+                .cell:first-child {
+                    & > strong {
+                        margin-bottom: 0;
+                    }
+                }
+                .cell:nth-child(n + 2) {
+                    justify-content: center;
+                    padding-bottom: 0;
+                    & > strong {
+                        margin-bottom: 0.15em;
+                    }
+                }
             }
         }
     }

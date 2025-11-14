@@ -62,7 +62,7 @@ const cellGroupGameplay: CellGroupType = {
             },
         },
         {
-            // implemented: false,
+            implemented: false,
             // delayed: true,
             title: (
                 <>
@@ -163,7 +163,7 @@ const cellGroupGeneral: CellGroupType = {
         },
         {
             title: <>多人模式</>,
-            infos: [{ type: 'new', content: '低清模型选项' }],
+            infos: [{ type: 'new', content: '简易模型' }],
             columnSpan: 10,
             img: require('./imgs/2025-11-01-01-08-05.png'),
             backgroundSize: '350% auto',
@@ -310,14 +310,16 @@ const cellGroupAircrafts: CellGroupType = {
         },
         {
             // implemented: false,
-            title: <>佳明 G1000 航电</>,
+            title: <>佳明系列航电</>,
             infos: ['修正：CRS 旋钮'],
             img: require('./imgs/20251025012906_1.jpg'),
-            backgroundSize: '100% auto',
+            backgroundSize: '125% auto',
             backgroundPosition: '100% 100%',
-            bgMaskOrientation: 'vertical',
+            bgMaskOrientation: 'horizontal',
             textSize: 'sm',
-            style: { '--mask-height-vertical': '100%' },
+            style: {
+                '--mask-opacity': '0.5',
+            },
         },
     ],
 };
