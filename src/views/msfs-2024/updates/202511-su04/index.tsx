@@ -289,7 +289,7 @@ const cellGroupAircrafts: CellGroupType = {
         {
             implemented: false,
             title: <>波音 787-10</>,
-            infos: ['修正：3D 模型'],
+            infos: ['完善：3D 模型'],
             img: require('./imgs/353boeing-10_web.webp'),
             backgroundSize: '125% auto',
             backgroundPosition: '50% 50%',
@@ -300,7 +300,7 @@ const cellGroupAircrafts: CellGroupType = {
         {
             implemented: false,
             title: <>空客直升机 H225</>,
-            infos: ['修正：3D 模型'],
+            infos: ['完善：3D 模型'],
             img: require('./imgs/airbus-h225-helicopter-5-1024x683.jpg'),
             backgroundSize: '112% auto',
             backgroundPosition: '0% 55%',
