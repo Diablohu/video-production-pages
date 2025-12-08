@@ -94,6 +94,11 @@
             // margin-bottom: calc(var(--gap) * 2 + var(--gap) * 1);
             .grid {
                 // grid-template-rows: 5fr 4fr 4fr;
+                // .cell {
+                //     & > strong {
+                //         margin-bottom: 0;
+                //     }
+                // }
                 .cell:first-child {
                     & > strong {
                         margin-bottom: 0;
@@ -101,9 +106,10 @@
                 }
                 .cell:nth-child(n + 2) {
                     justify-content: center;
+                    padding-top: 0.2em;
                     padding-bottom: 0;
                     & > strong {
-                        margin-bottom: 0.15em;
+                        margin-bottom: 0.1em;
                     }
                 }
             }

@@ -44,7 +44,7 @@ const cellGroupGameplay: CellGroupType = {
     title: '游戏玩法',
     cells: [
         {
-            implemented: false,
+            // implemented: false,
             // delayed: true,
             title: (
                 <>
@@ -255,7 +255,7 @@ const cellGroupAircrafts: CellGroupType = {
     title: '机型 / 航电',
     cells: [
         {
-            implemented: false,
+            // implemented: false,
             title: (
                 <>
                     <small>免费赠送</small>BOOM XB-1
@@ -266,6 +266,20 @@ const cellGroupAircrafts: CellGroupType = {
             backgroundSize: 'auto 150%',
             backgroundPosition: '35% 50%',
             bgMaskOrientation: 'horizontal',
+            style: {
+                '--mask-min-width': '125%',
+                // '--mask-height-horizontal': '100%',
+                // '--mask-opacity': '0.666',
+            },
+        },
+        {
+            title: <>空客大飞机</>,
+            infos: ['进驻飞行员生涯'],
+            img: require('./imgs/20251121232729_1.jpg'),
+            backgroundSize: '300% auto',
+            backgroundPosition: '37.5% 70%',
+            bgMaskOrientation: 'horizontal',
+            textSize: 'sm',
             style: {
                 '--mask-min-width': '125%',
                 // '--mask-height-horizontal': '100%',
