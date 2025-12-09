@@ -416,7 +416,7 @@ const cellGroupAircrafts: CellGroupType = {
             },
         },
         {
-            implemented: false,
+            // implemented: false,
             title: <>空直 H225</>,
             infos: ['完善：3D 模型'],
             img: require('./imgs/airbus-h225-helicopter-5-1024x683.jpg'),
