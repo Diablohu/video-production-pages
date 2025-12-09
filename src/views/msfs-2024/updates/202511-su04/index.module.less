@@ -10,14 +10,14 @@
     // padding-right: unit(00 * 20px / 1920px, vw);
     // grid-template-columns: repeat(3, 1fr);
     // grid-template-columns: 3fr 10fr 3fr;
-    grid-template-columns: 3fr 10fr 3fr;
+    grid-template-columns: 3fr 10fr 5fr;
     // grid-template-rows: var(--title-cell-height) 7fr repeat(3, 3fr);
     grid-template-rows:
         var(--title-cell-height) 7fr var(--title-cell-height)
         5fr 5fr 5fr;
-    // left: calc(var(--gap) * -3);
-    // right: calc(var(--gap) * -3);
-    // width: auto !important;
+    left: calc(var(--gap) * -4);
+    right: calc(var(--gap) * -4);
+    width: auto !important;
 
     .group {
         .grid {
@@ -93,13 +93,19 @@
             grid-row: 1 / span 6;
             // margin-bottom: calc(var(--gap) * 2 + var(--gap) * 1);
             .grid {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 3.5fr repeat(5, 2.5fr);
                 // grid-template-rows: 5fr 4fr 4fr;
                 // .cell {
                 //     & > strong {
                 //         margin-bottom: 0;
                 //     }
                 // }
+                .cell.mod-text-size-sm {
+                    padding-left: 1.5em;
+                }
                 .cell:first-child {
+                    padding-bottom: 0.75em;
                     & > strong {
                         margin-bottom: 0;
                     }
