@@ -15,6 +15,7 @@
     grid-template-rows:
         var(--title-cell-height) 4fr 4fr 4fr var(--title-cell-height)
         3.4fr;
+    gap: var(--gap) calc(var(--gap) * 4);
     left: calc(var(--gap) * -4);
     right: calc(var(--gap) * -4);
     width: auto !important;
@@ -54,26 +55,30 @@
             .grid {
                 grid-template-rows: 3fr 3fr 2fr 2fr;
                 grid-template-columns: repeat(12, 1fr);
-                // .cell {
-                //     span > small:first-child:last-child {
-                //         line-height: 1.6667em;
-                //     }
-                // }
+                .cell:nth-child(1) {
+                    // span:has(small) + span:has(small) {
+                    //     margin-top: -0.1em;
+                    // }
+                    span:not(:has(small)) + span:has(small) {
+                        margin-top: 0.3333em;
+                    }
+                }
+                .cell:nth-child(2),
+                .cell:nth-child(3) {
+                    padding-bottom: 0;
+                    justify-content: center;
+                }
             }
         }
 
-        &[data-name='aircrafts'] {
-            grid-row: 1 / span 4;
-            // margin-bottom: calc(var(--gap) * 2 + var(--gap) * 1);
+        &[data-name='aircrafts'],
+        &[data-name='avionics'] {
             .grid {
-                grid-template-columns: repeat(12, 1fr);
-                grid-template-rows: repeat(2, 3fr) repeat(2, 2fr);
-                // grid-template-rows: 5fr 4fr 4fr;
-                // .cell {
-                //     & > strong {
-                //         margin-bottom: 0;
-                //     }
-                // }
+                .cell {
+                    & > strong {
+                        // margin-bottom: 0;
+                    }
+                }
                 // .cell.mod-text-size-sm {
                 //     justify-content: center;
                 //     padding-left: 1.5em;
@@ -96,9 +101,30 @@
             }
         }
 
+        &[data-name='aircrafts'] {
+            grid-row: 1 / span 4;
+            // margin-bottom: calc(var(--gap) * 2 + var(--gap) * 1);
+            .grid {
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows: repeat(2, 3fr) repeat(2, 2fr);
+                // grid-template-rows: 5fr 4fr 4fr;
+                .cell:nth-child(1),
+                .cell:nth-child(2) {
+                    padding-bottom: 0;
+                    justify-content: center;
+                }
+                .cell:nth-child(n + 6) {
+                    --cell-title-font-size: 1.5em;
+                    padding-bottom: 0;
+                    justify-content: center;
+                }
+            }
+        }
+
         &[data-name='avionics'] {
             grid-column: 2 / span 1;
             grid-row: 5 / span 2;
+            --cell-title-font-size: 1.5em;
             .grid {
                 // grid-template-rows: 6fr 5fr 5fr;
                 grid-template-columns: repeat(12, 1fr);
