@@ -47,7 +47,7 @@
     height: var(--logo-height);
     top: calc(var(--logo-height) * -1 - var(--gap) * 1.5);
     left: 50%;
-    overflow: hidden;
+    // overflow: hidden;
     margin-left: calc(var(--logo-width) * -0.5);
     .mod-mask({
         display: none;
@@ -57,11 +57,15 @@
     });
 
     & > .top,
-    & > .bottom {
+    & > .bottom,
+    & > .bottom-extra {
         position: absolute;
         left: 0;
         width: 100%;
         overflow: hidden;
+    }
+    & > .top,
+    & > .bottom {
         &::before {
             content: '';
             position: absolute;
@@ -76,15 +80,17 @@
 
     & > .top {
         height: var(--logo-slice-y);
+        // overflow: hidden;
         &::before {
             top: 0;
         }
     }
-    & > .bottom {
+    & > .bottom,
+    & > .bottom-extra {
         top: var(--logo-slice-y);
         height: calc(var(--logo-height) - var(--logo-slice-y));
-        text-align: right;
         padding-right: 25px;
+        // mask: linear-gradient(to bottom, #000, #fff);
         & > em {
             .title-style();
             font-family: var(--logo-font-family);
@@ -92,10 +98,8 @@
             font-size: 55px;
             font-weight: 100;
             transform: skew(var(--logo-skew)) scale(0.75, 1);
-            transform-origin: 100% 50%;
             display: flex;
             flex-flow: row nowrap;
-            justify-content: flex-end;
             align-items: baseline;
             height: 100%;
             margin-top: -11px;
@@ -115,6 +119,22 @@
             &::before {
                 margin-left: -196px;
             }
+        }
+    }
+    & > .bottom {
+        text-align: right;
+        & > em {
+            justify-content: flex-end;
+            transform-origin: 100% 50%;
+        }
+    }
+    & > .bottom-extra {
+        left: 100%;
+        margin-left: -2em;
+        padding-left: 1em;
+        & > em {
+            justify-content: flex-start;
+            transform-origin: 0% 50%;
         }
     }
 }

@@ -45,6 +45,7 @@ const MSFS2024Page = extend<
     {
         classNameBody?: string;
         subtitle?: string;
+        subtitleExtra?: string;
         infos?: CellGroupType[];
         infosClassName?: string;
         edition?: '2020' | '2024';
@@ -57,6 +58,7 @@ const MSFS2024Page = extend<
     classNameBody,
     children,
     subtitle = '',
+    subtitleExtra = '',
     infos,
     infosClassName,
     updateDate = true,
@@ -89,6 +91,11 @@ const MSFS2024Page = extend<
                     <span className="bottom">
                         {Boolean(subtitle) && <em>{subtitle}</em>}
                     </span>
+                    {Boolean(subtitleExtra) && (
+                        <em className="bottom-extra">
+                            <em>{subtitleExtra}</em>
+                        </em>
+                    )}
                 </div>
             }
             {...props}

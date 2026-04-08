@@ -36,6 +36,10 @@ export default [
             'msfs-2024-update-202511-su04',
             require('@views/msfs-2024/updates/202511-su04').default,
         ],
+        [
+            'msfs-2024-update-202605-su05+aau04',
+            require('@views/msfs-2024/updates/202605-su05+aau04').default,
+        ],
     ].map(([path, component]) => ({
         path,
         component,
