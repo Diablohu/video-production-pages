@@ -21,7 +21,7 @@ const cellGroupGeneral: CellGroupType = {
                 <small>・丛林</small>,
             ],
             columnSpan: 4,
-            rowSpan: 2,
+            rowSpan: 5,
             img: require('./imgs/2026-03-28-01-33-29.png'),
             backgroundSize: 'auto 150%',
             backgroundPosition: '20% 50%',
@@ -40,6 +40,7 @@ const cellGroupGeneral: CellGroupType = {
                 },
             ],
             columnSpan: 8,
+            rowSpan: 3,
             img: require('./imgs/2026-01-24-23-21-22.png'),
             backgroundSize: '175% auto',
             backgroundPosition: '85% 30%',
@@ -71,6 +72,7 @@ const cellGroupGeneral: CellGroupType = {
                 },
             ],
             columnSpan: 8,
+            rowSpan: 3,
             img: require('./imgs/20251124154437_1.jpg'),
             backgroundSize: 'auto 300%',
             backgroundPosition: '25% 35%',
@@ -81,9 +83,29 @@ const cellGroupGeneral: CellGroupType = {
             },
         },
         {
+            title: <>飞行员生涯</>,
+            infos: [
+                { type: 'new', content: 'VTOL 执照' },
+                '防止出生时判定坠毁',
+            ],
+            columnSpan: 4,
+            rowSpan: 3,
+            img: require('./imgs/2025-12-12-20-50-04.png'),
+            backgroundSize: '150% auto',
+            backgroundPosition: '40% 90%',
+            // type: 'center',
+            bgMaskOrientation: 'vertical',
+            textSize: 'sm',
+            style: {
+                '--mask-height-vertical': '125%',
+                // justifyContent: 'flex-end',
+            },
+        },
+        {
             title: <>VR</>,
             infos: [{ type: 'new', content: '支持 PSVR2' }, '菜单位置独立保存'],
             columnSpan: 4,
+            rowSpan: 2,
             img: require('./imgs/20260104033226_1.jpg'),
             backgroundSize: '150% auto',
             backgroundPosition: '0% 70%',
@@ -102,6 +124,7 @@ const cellGroupGeneral: CellGroupType = {
                 '自动隐藏不可用的 App',
             ],
             columnSpan: 4,
+            rowSpan: 2,
             img: require('./imgs/20251213223951_1.jpg'),
             backgroundSize: '300% auto',
             backgroundPosition: '40% 95%',
@@ -111,8 +134,9 @@ const cellGroupGeneral: CellGroupType = {
         },
         {
             title: <>多人模式模型匹配</>,
-            infos: ['确保旋翼不会匹配固定翼', '按规格寻找相近机型'],
+            infos: ['确保旋翼不映射成固定翼', '按规格寻找相近机型'],
             columnSpan: 4,
+            rowSpan: 2,
             img: require('./imgs/2025-12-14-03-31-35.png'),
             backgroundSize: '150% auto',
             backgroundPosition: '100% 50%',
@@ -121,24 +145,10 @@ const cellGroupGeneral: CellGroupType = {
             style: { '--mask-height-vertical': '200%', '--mask-opacity': '0' },
         },
         {
-            title: <>飞行员生涯</>,
-            infos: ['防止出生时判定坠毁'],
-            columnSpan: 4,
-            img: require('./imgs/2025-12-12-20-50-04.png'),
-            backgroundSize: '150% auto',
-            backgroundPosition: '40% 50%',
-            // type: 'center',
-            bgMaskOrientation: 'vertical',
-            textSize: 'sm',
-            style: {
-                '--mask-height-vertical': '125%',
-                // justifyContent: 'flex-end',
-            },
-        },
-        {
             title: <>热点问题修复</>,
             infos: ['多倍帧生成选项', '地标标记'],
             columnSpan: 4,
+            rowSpan: 2,
             img: require('./imgs/2026-01-24-23-24-03.png'),
             backgroundSize: '150% auto',
             backgroundPosition: '40% 50%',
@@ -160,6 +170,7 @@ const cellGroupGeneral: CellGroupType = {
                 },
             ],
             columnSpan: 4,
+            rowSpan: 2,
             img: require('./imgs/20251129021014_1.jpg'),
             backgroundSize: '100% auto',
             backgroundPosition: '35% 100%',
@@ -180,7 +191,7 @@ const cellGroupAircrafts: CellGroupType = {
     title: '机型',
     cells: [
         {
-            // implemented: false,
+            implemented: false,
             title: 'ATR-42/72-600',
             infos: ['翻新：2024 原生版', '支持生涯模式'],
             columnSpan: 6,
@@ -195,7 +206,7 @@ const cellGroupAircrafts: CellGroupType = {
             },
         },
         {
-            // implemented: false,
+            implemented: false,
             title: '安东诺夫 AN-2',
             infos: ['翻新：2024 原生版', '支持生涯模式'],
             columnSpan: 6,
@@ -210,7 +221,7 @@ const cellGroupAircrafts: CellGroupType = {
             },
         },
         {
-            // implemented: false,
+            implemented: false,
             title: '福克 F.VII',
             infos: ['翻新：2024 原生版', '开发转移到 iniBuilds'],
             columnSpan: 4,
@@ -226,7 +237,7 @@ const cellGroupAircrafts: CellGroupType = {
             },
         },
         {
-            // implemented: false,
+            implemented: false,
             title: '马尔凯蒂 S.55',
             infos: ['翻新：2024 原生版'],
             columnSpan: 4,
@@ -242,7 +253,7 @@ const cellGroupAircrafts: CellGroupType = {
             },
         },
         {
-            // implemented: false,
+            implemented: false,
             title: 'Latécoère 631',
             infos: ['翻新：2024 原生版'],
             columnSpan: 4,
@@ -339,7 +350,7 @@ const cellGroupAvionics: CellGroupType = {
                 <>
                     Avidyne
                     <br />
-                    IFD 540/550
+                    IFD 540 / 550
                 </>
             ),
             infos: ['向开发者开放'],
