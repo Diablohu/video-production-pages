@@ -68,6 +68,19 @@
                     padding-bottom: 0;
                     justify-content: center;
                 }
+                .cell:nth-child(n + 7) {
+                    padding: 0;
+                    align-items: center;
+                    justify-content: center;
+                    & > strong {
+                        transform-origin: 50% 50%;
+                    }
+                    &::before {
+                        opacity: var(--mask-opacity);
+                        height: 100%;
+                        background: #000;
+                    }
+                }
             }
         }
 
