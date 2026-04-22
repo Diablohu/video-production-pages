@@ -151,7 +151,7 @@ const cellGroupGeneral: CellGroupType = {
         },
         {
             title: <>热点问题修复</>,
-            infos: ['多倍帧生成选项', '地标标记'],
+            infos: ['AMD 显卡锯齿图像', '地标标记不显示', '出生时无视所选跑道'],
             columnSpan: 3,
             rowSpan: 2,
             img: require('./imgs/2026-01-24-23-24-03.png'),
