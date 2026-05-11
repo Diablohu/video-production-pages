@@ -86,7 +86,7 @@ const cellGroupGeneral: CellGroupType = {
         {
             title: <>飞行员生涯</>,
             infos: [
-                { type: 'new', content: '超重运输执照' },
+                { type: 'new', content: '超大货物运输执照' },
                 { type: 'new', content: 'VTOL 执照' },
                 '防止出生时判定坠毁',
             ],
@@ -222,7 +222,7 @@ const cellGroupAircrafts: CellGroupType = {
         {
             implemented: false,
             title: 'ATR-42/72-600',
-            infos: ['翻新：2024 原生版', '支持生涯模式'],
+            infos: ['翻新重做，支持生涯模式'],
             columnSpan: 6,
             img: require('./imgs/FSWeekend 2026 LIVE on the FSElite Stage (SATURDAY 21st March 2026).mp4_20260409_020226.590.png'),
             backgroundSize: '133% auto',
@@ -237,7 +237,7 @@ const cellGroupAircrafts: CellGroupType = {
         {
             implemented: false,
             title: '安东诺夫 AN-2',
-            infos: ['翻新：2024 原生版', '支持生涯模式'],
+            infos: ['翻新重做，支持生涯模式'],
             columnSpan: 6,
             img: require('./imgs/FSWeekend 2026 LIVE on the FSElite Stage (SATURDAY 21st March 2026).mp4_20260409_020221.670.png'),
             backgroundSize: '125% auto',
@@ -250,9 +250,9 @@ const cellGroupAircrafts: CellGroupType = {
             },
         },
         {
-            implemented: false,
+            // implemented: false,
             title: '福克 F.VII',
-            infos: ['翻新：2024 原生版', '开发转移到 iniBuilds'],
+            infos: ['翻新重做，支持生涯模式', '开发转移到 iniBuilds'],
             columnSpan: 4,
             img: require('./imgs/FSWeekend 2026 LIVE on the FSElite Stage (SATURDAY 21st March 2026).mp4_20260409_020244.397.png'),
             backgroundSize: '133% auto',
@@ -268,7 +268,7 @@ const cellGroupAircrafts: CellGroupType = {
         {
             implemented: false,
             title: '马尔凯蒂 S.55',
-            infos: ['翻新：2024 原生版'],
+            infos: ['翻新重做'],
             columnSpan: 4,
             img: require('./imgs/FSWeekend 2026 LIVE on the FSElite Stage (SATURDAY 21st March 2026).mp4_20260409_020314.720.png'),
             backgroundSize: '133% auto',
@@ -284,7 +284,7 @@ const cellGroupAircrafts: CellGroupType = {
         {
             implemented: false,
             title: 'Latécoère 631',
-            infos: ['翻新：2024 原生版'],
+            infos: ['翻新重做'],
             columnSpan: 4,
             img: require('./imgs/FSWeekend 2026 LIVE on the FSElite Stage (SATURDAY 21st March 2026).mp4_20260409_020252.390.png'),
             backgroundSize: '133% auto',
@@ -297,6 +297,22 @@ const cellGroupAircrafts: CellGroupType = {
                 '--mask-opacity': '0.75',
             },
         },
+        // {
+        //     // implemented: false,
+        //     title: '空客 A330',
+        //     infos: ['修复：ND 地形显示不可用'],
+        //     columnSpan: 6,
+        //     img: require('./imgs/2026-03-21-01-08-02.png'),
+        //     backgroundSize: '175% auto',
+        //     backgroundPosition: '0% 57%',
+        //     bgMaskOrientation: 'horizontal',
+        //     textSize: 'sm',
+        //     style: {
+        //         '--mask-min-width': '75%',
+        //         // '--mask-height-horizontal': '100%',
+        //         // '--mask-opacity': '0.666',
+        //     },
+        // },
         {
             // implemented: false,
             title: '波音 737 MAX-8',
