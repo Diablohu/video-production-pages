@@ -220,7 +220,7 @@ const cellGroupAircrafts: CellGroupType = {
     title: '机型',
     cells: [
         {
-            implemented: false,
+            // implemented: false,
             title: 'ATR-42/72-600',
             infos: ['翻新重做，支持生涯模式'],
             columnSpan: 6,
@@ -235,7 +235,7 @@ const cellGroupAircrafts: CellGroupType = {
             },
         },
         {
-            implemented: false,
+            // implemented: false,
             title: '安东诺夫 AN-2',
             infos: ['翻新重做，支持生涯模式'],
             columnSpan: 6,
@@ -266,7 +266,7 @@ const cellGroupAircrafts: CellGroupType = {
             },
         },
         {
-            implemented: false,
+            // implemented: false,
             title: '马尔凯蒂 S.55',
             infos: ['翻新重做'],
             columnSpan: 4,
@@ -282,7 +282,7 @@ const cellGroupAircrafts: CellGroupType = {
             },
         },
         {
-            implemented: false,
+            // implemented: false,
             title: 'Latécoère 631',
             infos: ['翻新重做'],
             columnSpan: 4,

@@ -140,8 +140,11 @@
 }
 
 .component-infos {
+    --grid-gap-x: calc(var(--gap) * 3);
+    --grid-gap-y: var(--gap);
+
     display: grid;
-    gap: var(--gap) calc(var(--gap) * 3);
+    gap: var(--grid-gap-y) var(--grid-gap-x);
 
     .group {
         display: flex;
@@ -153,6 +156,15 @@
             gap: var(--gap);
         }
     }
+}
+
+.component-title-cell,
+.component-cell {
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    .mod-mask({
+        --shadow-color: rgba(255, 255, 255, 0.5);
+    });
 }
 
 .component-title-cell {

@@ -1,6 +1,7 @@
 @import '~vars.less';
 
-.component {
+:root .component {
+    --grid-gap-x: calc(var(--gap) * 4);
     --cell-info-font-size: 1.125em;
     --cell-info-line-height: 1.5em;
 
@@ -15,14 +16,13 @@
     grid-template-rows:
         var(--title-cell-height) 4fr 4fr 4fr var(--title-cell-height)
         3.4fr;
-    gap: var(--gap) calc(var(--gap) * 4);
     left: calc(var(--gap) * -4);
     right: calc(var(--gap) * -4);
     width: auto !important;
 
     .group {
         .grid {
-            overflow: hidden;
+            // overflow: hidden;
             .cell {
                 :not(.mod-type-center) {
                     padding: 0 0 unit(100 * 17.5px / 1920px, vw)
