@@ -299,7 +299,7 @@ const cellGroupAircrafts: CellGroupType = {
         },
         {
             // implemented: false,
-            title: '空客 A330',
+            title: '空客大型机',
             infos: ['修复：ND 地形显示（时好时坏）'],
             columnSpan: 6,
             img: require('./imgs/2026-03-21-01-08-02.png'),
